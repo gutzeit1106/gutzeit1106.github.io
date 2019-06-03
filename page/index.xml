@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on YONEHUB</title>
-    <link>http://yonehub.y10e.com/page/</link>
+    <link>http://gutzeit1106.github.io/page/</link>
     <description>Recent content in Pages on YONEHUB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     
-	<atom:link href="http://yonehub.y10e.com/page/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gutzeit1106.github.io/page/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>http://yonehub.y10e.com/page/about/</link>
+      <link>http://gutzeit1106.github.io/page/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://yonehub.y10e.com/page/about/</guid>
+      <guid>http://gutzeit1106.github.io/page/about/</guid>
       <description>Yusuke Yoneda パブリッククラウド業界で働いているITエンジニア @ Tokyo 出身は関西 ITは仕事であり趣味。 Qiitaにも書いたり書かなかったり。 &amp;gt; https://qiita.com/yy1106 免責事項 こ</description>
     </item>
     

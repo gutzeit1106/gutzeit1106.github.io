@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tech on YONEHUB</title>
-    <link>http://yonehub.y10e.com/categories/tech/</link>
+    <link>http://gutzeit1106.github.io/categories/tech/</link>
     <description>Recent content in Tech on YONEHUB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://yonehub.y10e.com/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gutzeit1106.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DOCKERの削除系コマンド</title>
-      <link>http://yonehub.y10e.com/2019/02/11/20190211_docker/</link>
+      <link>http://gutzeit1106.github.io/2019/02/11/20190211_docker/</link>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0900</pubDate>
       
-      <guid>http://yonehub.y10e.com/2019/02/11/20190211_docker/</guid>
+      <guid>http://gutzeit1106.github.io/2019/02/11/20190211_docker/</guid>
       <description>停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除 docker system prune 停止コンテナ一括削除 docker container prune 全コンテナ一括削除 docker rm -f `docker ps -a -q`</description>
     </item>
     
     <item>
       <title>2019年に読みたい技術関連書籍（積読リスト）</title>
-      <link>http://yonehub.y10e.com/2019/01/02/20190102_books2019/</link>
+      <link>http://gutzeit1106.github.io/2019/01/02/20190102_books2019/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0900</pubDate>
       
-      <guid>http://yonehub.y10e.com/2019/01/02/20190102_books2019/</guid>
+      <guid>http://gutzeit1106.github.io/2019/01/02/20190102_books2019/</guid>
       <description>2019年に読んでおきたい書籍のまとめ。おそらく日々の中で色々と新しく読んでみたい本も増えると思うので7冊に厳選してみる。 #1 マスタリングWi</description>
     </item>
     

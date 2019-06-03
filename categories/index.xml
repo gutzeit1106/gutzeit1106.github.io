@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on YONEHUB</title>
-    <link>http://yonehub.y10e.com/categories/</link>
+    <link>http://gutzeit1106.github.io/categories/</link>
     <description>Recent content in Categories on YONEHUB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://yonehub.y10e.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gutzeit1106.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tech</title>
-      <link>http://yonehub.y10e.com/categories/tech/</link>
+      <link>http://gutzeit1106.github.io/categories/tech/</link>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0900</pubDate>
       
-      <guid>http://yonehub.y10e.com/categories/tech/</guid>
+      <guid>http://gutzeit1106.github.io/categories/tech/</guid>
       <description></description>
     </item>
     
