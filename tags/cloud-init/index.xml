@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cloud-init on YONEHUB</title>
-    <link>http://gutzeit1106.github.io/tags/cloud-init/</link>
+    <link>https://yonehub.y10e.com/tags/cloud-init/</link>
     <description>Recent content in Cloud-init on YONEHUB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Wed, 01 May 2019 21:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://gutzeit1106.github.io/tags/cloud-init/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://yonehub.y10e.com/tags/cloud-init/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Cloud-init Reference List</title>
-      <link>http://gutzeit1106.github.io/2019/05/01/20190501_cloudinit_linklist/</link>
+      <link>https://yonehub.y10e.com/2019/05/01/20190501_cloudinit_linklist/</link>
       <pubDate>Wed, 01 May 2019 21:00:00 +0900</pubDate>
       
-      <guid>http://gutzeit1106.github.io/2019/05/01/20190501_cloudinit_linklist/</guid>
+      <guid>https://yonehub.y10e.com/2019/05/01/20190501_cloudinit_linklist/</guid>
       <description>Cloud-init 公式 https://cloudinit.readthedocs.io/en/latest/</description>
     </item>
     
