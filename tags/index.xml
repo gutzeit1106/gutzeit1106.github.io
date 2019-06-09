@@ -6,17 +6,62 @@
     <description>Recent content in Tags on YONEHUB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 04 Jun 2019 04:00:00 +0900</lastBuildDate>
     
 	<atom:link href="http://gutzeit1106.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>git</title>
+      <link>http://gutzeit1106.github.io/tags/git/</link>
+      <pubDate>Tue, 04 Jun 2019 04:00:00 +0900</pubDate>
+      
+      <guid>http://gutzeit1106.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>http://gutzeit1106.github.io/tags/github/</link>
+      <pubDate>Tue, 04 Jun 2019 04:00:00 +0900</pubDate>
+      
+      <guid>http://gutzeit1106.github.io/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Docker</title>
       <link>http://gutzeit1106.github.io/tags/docker/</link>
-      <pubDate>Mon, 11 Feb 2019 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 02 Jun 2019 22:24:02 +0900</pubDate>
       
       <guid>http://gutzeit1106.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>http://gutzeit1106.github.io/tags/kubernetes/</link>
+      <pubDate>Sun, 02 Jun 2019 22:24:02 +0900</pubDate>
+      
+      <guid>http://gutzeit1106.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloud-init</title>
+      <link>http://gutzeit1106.github.io/tags/cloud-init/</link>
+      <pubDate>Wed, 01 May 2019 21:00:00 +0900</pubDate>
+      
+      <guid>http://gutzeit1106.github.io/tags/cloud-init/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://gutzeit1106.github.io/tags/linux/</link>
+      <pubDate>Wed, 01 May 2019 21:00:00 +0900</pubDate>
+      
+      <guid>http://gutzeit1106.github.io/tags/linux/</guid>
       <description></description>
     </item>
     

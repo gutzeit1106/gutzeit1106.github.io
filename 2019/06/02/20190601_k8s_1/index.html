@@ -7,9 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Pages - YONEHUB</title>
-  <meta property="og:title" content="Pages" />
-  <meta name="twitter:title" content="Pages" />
+  <title>k8s Cheat Sheet #1 -基本 - YONEHUB</title>
+  <meta property="og:title" content="k8s Cheat Sheet #1 -基本" />
+  <meta name="twitter:title" content="k8s Cheat Sheet #1 -基本" />
+  <meta name="description" content="・help参照 kubectl --help ・version確認(Client と Server ) kubectl version ・yaml minifestの適用 Kubectl -f FileName k8sクラスタのローカルcontext関">
+  <meta property="og:description" content="・help参照 kubectl --help ・version確認(Client と Server ) kubectl version ・yaml minifestの適用 Kubectl -f FileName k8sクラスタのローカルcontext関">
+  <meta name="twitter:description" content="・help参照 kubectl --help ・version確認(Client と Server ) kubectl version ・yaml minifestの適用 Kubectl -f FileName k8sクラスタのローカルcontext関">
   <meta name="author" content="Yusuke Yoneda"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -30,14 +33,64 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/gutzeit1106.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/gutzeit1106.github.io\/2019\/06\/02\/20190601_k8s_1\/",
+          "name": "K8s cheat sheet #1 基本"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Yusuke Yoneda"
+  },
+  "headline": "k8s Cheat Sheet #1 -基本",
+  "description" : "・help参照 kubectl --help ・version確認(Client と Server ) kubectl version ・yaml minifestの適用 Kubectl -f FileName k8sクラスタのローカルcontext関",
+  "inLanguage" : "en",
+  "wordCount":  189 ,
+  "datePublished" : "2019-06-02T22:24:02",
+  "dateModified" : "2019-06-02T22:24:02",
+  "image" : "http:\/\/gutzeit1106.github.io\/img\/me.jpg",
+  "keywords" : [ "kubernetes, docker" ],
+  "mainEntityOfPage" : "http:\/\/gutzeit1106.github.io\/2019\/06\/02\/20190601_k8s_1\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/gutzeit1106.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/gutzeit1106.github.io\/img\/me.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="Pages" />
+<meta property="og:title" content="k8s Cheat Sheet #1 -基本" />
+<meta property="og:description" content="・help参照 kubectl --help ・version確認(Client と Server ) kubectl version ・yaml minifestの適用 Kubectl -f FileName k8sクラスタのローカルcontext関">
 <meta property="og:image" content="http://gutzeit1106.github.io/img/me.jpg" />
-<meta property="og:url" content="http://gutzeit1106.github.io/page/" />
+<meta property="og:url" content="http://gutzeit1106.github.io/2019/06/02/20190601_k8s_1/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="YONEHUB" />
 
-  <meta name="twitter:title" content="Pages" />
+  <meta name="twitter:title" content="k8s Cheat Sheet #1 -基本" />
+  <meta name="twitter:description" content="・help参照 kubectl --help ・version確認(Client と Server ) kubectl version ・yaml minifestの適用 Kubectl -f FileName k8sクラスタのローカルcontext関">
   <meta name="twitter:image" content="http://gutzeit1106.github.io/img/me.jpg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@gutzeit1106" />
@@ -48,7 +101,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@gutzeit1106" />
   <meta name="twitter:creator" content="@gutzeit1106" />
-  <meta property="og:url" content="http://gutzeit1106.github.io/page/" />
+  <meta property="og:url" content="http://gutzeit1106.github.io/2019/06/02/20190601_k8s_1/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="YONEHUB" />
 
@@ -185,42 +238,17 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
+            <div class="post-heading">
               
-                <h1>Pages</h1>
-              
-              
-                <hr class="small">
+                <h1>k8s Cheat Sheet #1 -基本</h1>
               
               
               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-
-    
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        <div class="posts-list">
-          
-            <article class="post-preview">
-              <a href="http://gutzeit1106.github.io/page/about/">
-                <h2 class="post-title"></h2>
-
-                
-              </a>
-
-              <p class="post-meta">
+              
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
+  <i class="fas fa-calendar"></i>&nbsp;Posted on June 2, 2019
   
   
   
@@ -231,23 +259,90 @@
 </span>
 
 
-              </p>
-              <div class="post-entry">
-                
-                  Yusuke Yoneda パブリッククラウド業界で働いているITエンジニア @ Tokyo 出身は関西 ITは仕事であり趣味 Qiitaにも書いたり書かなかったり。 &gt; https://qiita.com/yy1106 免責事項 この
-                  <a href="http://gutzeit1106.github.io/page/about/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
               
-
-            </article>
-          
+            </div>
+          </div>
         </div>
-        
       </div>
     </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>・help参照</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">kubectl --help </code></pre></div>
+<p>・version確認(Client と Server )</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">kubectl version </code></pre></div>
+<p>・yaml minifestの適用</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">Kubectl -f FileName </code></pre></div>
+<p>k8sクラスタのローカルcontext関連のコマンド</p>
+
+<p>・Local Configの一覧表示</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">kubectl config view </code></pre></div>
+<p>・現在アクティブになっているcontextの表示</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">kubectl config current-context </code></pre></div>
+<p>・アクティブなcontextの切り替え</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">kubectl config use-context CONTEXT_NAME  </code></pre></div>
+<p>・Contextの一覧表示</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">kubectl config get-contexts </code></pre></div>
+<p>・Local Configのクラスタ名だけ一覧表示</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">kubectl config get-clusters</code></pre></div>
+
+        
+          <div class="blog-tags">
+            
+              <a href="http://gutzeit1106.github.io//tags/kubernetes/">kubernetes</a>&nbsp;
+            
+              <a href="http://gutzeit1106.github.io//tags/docker/">docker</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+          
+          
+          <h4 class="see-also">See also</h4>
+          <ul>
+          
+            <li><a href="/2019/06/01/20190601_k8s_0/">kubectl --help</a></li>
+          
+            <li><a href="/2019/06/01/20190601_k8s_linklist/">k8s Reference List</a></li>
+          
+          </ul>
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://gutzeit1106.github.io/2019/06/01/20190601_k8s_0/" data-toggle="tooltip" data-placement="top" title="kubectl --help">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://gutzeit1106.github.io/2019/06/04/20190603_git_0/" data-toggle="tooltip" data-placement="top" title="GitのCommitユーザを修正する方法">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
   </div>
+</div>
 
     <footer>
   <div class="container">
@@ -289,7 +384,7 @@
               </li>
           
           <li>
-            <a href="/page/index.xml" title="RSS">
+            <a href="" title="RSS">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-rss fa-stack-1x fa-inverse"></i>

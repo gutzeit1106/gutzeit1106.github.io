@@ -7,9 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Pages - YONEHUB</title>
-  <meta property="og:title" content="Pages" />
-  <meta name="twitter:title" content="Pages" />
+  <title>Docker Cheat Sheet #3 - 削除系コマンド - YONEHUB</title>
+  <meta property="og:title" content="Docker Cheat Sheet #3 - 削除系コマンド" />
+  <meta name="twitter:title" content="Docker Cheat Sheet #3 - 削除系コマンド" />
+  <meta name="description" content="停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除 docker system prune 停止コンテナ一括削除 docker container prune 全コンテナ一括削除 docker rm -f `docker ps -a -q`">
+  <meta property="og:description" content="停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除 docker system prune 停止コンテナ一括削除 docker container prune 全コンテナ一括削除 docker rm -f `docker ps -a -q`">
+  <meta name="twitter:description" content="停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除 docker system prune 停止コンテナ一括削除 docker container prune 全コンテナ一括削除 docker rm -f `docker ps -a -q`">
   <meta name="author" content="Yusuke Yoneda"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -30,14 +33,64 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/gutzeit1106.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/gutzeit1106.github.io\/2019\/02\/11\/20190211_docker3\/",
+          "name": "Docker cheat sheet #3 削除系コマンド"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Yusuke Yoneda"
+  },
+  "headline": "Docker Cheat Sheet #3 - 削除系コマンド",
+  "description" : "停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除 docker system prune 停止コンテナ一括削除 docker container prune 全コンテナ一括削除 docker rm -f `docker ps -a -q`",
+  "inLanguage" : "en",
+  "wordCount":  218 ,
+  "datePublished" : "2019-02-11T04:00:00",
+  "dateModified" : "2019-02-11T04:00:00",
+  "image" : "http:\/\/gutzeit1106.github.io\/img\/me.jpg",
+  "keywords" : [ "Docker" ],
+  "mainEntityOfPage" : "http:\/\/gutzeit1106.github.io\/2019\/02\/11\/20190211_docker3\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/gutzeit1106.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/gutzeit1106.github.io\/img\/me.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="Pages" />
+<meta property="og:title" content="Docker Cheat Sheet #3 - 削除系コマンド" />
+<meta property="og:description" content="停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除 docker system prune 停止コンテナ一括削除 docker container prune 全コンテナ一括削除 docker rm -f `docker ps -a -q`">
 <meta property="og:image" content="http://gutzeit1106.github.io/img/me.jpg" />
-<meta property="og:url" content="http://gutzeit1106.github.io/page/" />
+<meta property="og:url" content="http://gutzeit1106.github.io/2019/02/11/20190211_docker3/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="YONEHUB" />
 
-  <meta name="twitter:title" content="Pages" />
+  <meta name="twitter:title" content="Docker Cheat Sheet #3 - 削除系コマンド" />
+  <meta name="twitter:description" content="停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除 docker system prune 停止コンテナ一括削除 docker container prune 全コンテナ一括削除 docker rm -f `docker ps -a -q`">
   <meta name="twitter:image" content="http://gutzeit1106.github.io/img/me.jpg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@gutzeit1106" />
@@ -48,7 +101,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@gutzeit1106" />
   <meta name="twitter:creator" content="@gutzeit1106" />
-  <meta property="og:url" content="http://gutzeit1106.github.io/page/" />
+  <meta property="og:url" content="http://gutzeit1106.github.io/2019/02/11/20190211_docker3/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="YONEHUB" />
 
@@ -185,42 +238,17 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
+            <div class="post-heading">
               
-                <h1>Pages</h1>
-              
-              
-                <hr class="small">
+                <h1>Docker Cheat Sheet #3 - 削除系コマンド</h1>
               
               
               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-
-    
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        <div class="posts-list">
-          
-            <article class="post-preview">
-              <a href="http://gutzeit1106.github.io/page/about/">
-                <h2 class="post-title"></h2>
-
-                
-              </a>
-
-              <p class="post-meta">
+              
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on January 1, 0001
+  <i class="fas fa-calendar"></i>&nbsp;Posted on February 11, 2019
   
   
   
@@ -231,23 +259,92 @@
 </span>
 
 
-              </p>
-              <div class="post-entry">
-                
-                  Yusuke Yoneda パブリッククラウド業界で働いているITエンジニア @ Tokyo 出身は関西 ITは仕事であり趣味 Qiitaにも書いたり書かなかったり。 &gt; https://qiita.com/yy1106 免責事項 この
-                  <a href="http://gutzeit1106.github.io/page/about/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
               
-
-            </article>
-          
+            </div>
+          </div>
         </div>
-        
       </div>
     </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker system prune</code></pre></div>
+<p>停止コンテナ一括削除</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker container prune</code></pre></div>
+<p>全コンテナ一括削除</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker rm -f <span class="sb">`</span>docker ps -a -q<span class="sb">`</span></code></pre></div>
+<p>未使用イメージ一括削除</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker image prune</code></pre></div>
+<p>タグ無しイメージ一括削除</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker rmi <span class="sb">`</span>docker images -f <span class="s2">&#34;dangling=true&#34;</span> -q<span class="sb">`</span></code></pre></div>
+<p>未使用ボリューム一括削除</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker volume rm docker volume ls -q</code></pre></div>
+<p>未使用ネットワーク一括削除</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker network prune</code></pre></div>
+<p>コンテナを動いているとイメージを削除できないので、本当に全部削除したい時は次の順序で実施する</p>
+
+<p>コンテナを全削除する</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker ps -aq <span class="p">|</span> xargs docker rm</code></pre></div>
+<p>イメージを全削除する</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker images -aq <span class="p">|</span> xargs docker rmi</code></pre></div>
+
+        
+          <div class="blog-tags">
+            
+              <a href="http://gutzeit1106.github.io//tags/docker/">Docker</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+          
+          
+          <h4 class="see-also">See also</h4>
+          <ul>
+          
+            <li><a href="/2019/02/11/20190211_docker2/">Docker Cheat Sheet #2 - 表示系</a></li>
+          
+            <li><a href="/2019/02/11/20190211_docker1/">Docker Cheat Sheet #1 - 基本系</a></li>
+          
+            <li><a href="/2019/02/11/20190211_docker0/">Docker --help</a></li>
+          
+          </ul>
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://gutzeit1106.github.io/2019/02/11/20190211_docker2/" data-toggle="tooltip" data-placement="top" title="Docker Cheat Sheet #2 - 表示系">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://gutzeit1106.github.io/2019/05/01/20190501_cloudinit_linklist/" data-toggle="tooltip" data-placement="top" title="Cloud-init Reference List">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
   </div>
+</div>
 
     <footer>
   <div class="container">
@@ -289,7 +386,7 @@
               </li>
           
           <li>
-            <a href="/page/index.xml" title="RSS">
+            <a href="" title="RSS">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-rss fa-stack-1x fa-inverse"></i>

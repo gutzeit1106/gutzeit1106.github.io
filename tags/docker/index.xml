@@ -6,18 +6,81 @@
     <description>Recent content in Docker on YONEHUB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 02 Jun 2019 22:24:02 +0900</lastBuildDate>
     
 	<atom:link href="http://gutzeit1106.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>DOCKERの削除系コマンド</title>
-      <link>http://gutzeit1106.github.io/2019/02/11/20190211_docker/</link>
+      <title>k8s Cheat Sheet #1 -基本</title>
+      <link>http://gutzeit1106.github.io/2019/06/02/20190601_k8s_1/</link>
+      <pubDate>Sun, 02 Jun 2019 22:24:02 +0900</pubDate>
+      
+      <guid>http://gutzeit1106.github.io/2019/06/02/20190601_k8s_1/</guid>
+      <description>・help参照 kubectl --help ・version確認(Client と Server ) kubectl version ・yaml minifestの適用 Kubectl -f FileName k8sクラスタのローカルcontext関</description>
+    </item>
+    
+    <item>
+      <title>kubectl --help</title>
+      <link>http://gutzeit1106.github.io/2019/06/01/20190601_k8s_0/</link>
+      <pubDate>Sat, 01 Jun 2019 04:10:00 +0900</pubDate>
+      
+      <guid>http://gutzeit1106.github.io/2019/06/01/20190601_k8s_0/</guid>
+      <description>kubectl --help kubectl controls the Kubernetes cluster manager. Find more information at: https://kubernetes.io/docs/reference/kubectl/overview/ Basic Commands (Beginner): create Create a resource from a file or from stdin. expose Take a replication controller, service, deployment or pod and expose it as a new Kubernetes Service run Run a particular image on the cluster set Set specific features on objects Basic Commands (Intermediate): explain Documentation of resources get Display one or many resources</description>
+    </item>
+    
+    <item>
+      <title>k8s Reference List</title>
+      <link>http://gutzeit1106.github.io/2019/06/01/20190601_k8s_linklist/</link>
+      <pubDate>Sat, 01 Jun 2019 04:00:00 +0900</pubDate>
+      
+      <guid>http://gutzeit1106.github.io/2019/06/01/20190601_k8s_linklist/</guid>
+      <description>Kubernets Official https://kubernetes.io/ k8s - Github reposittory https://github.com/kubernetes k8sの概念とかアーキテクチャとかyamlの例とか https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/ Kubectlのリファレンス https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands Kubectl Cheat Sheet https://kubernetes.io/docs/reference/kubectl/cheatsheet/ Azure Kubernetes Service - Github reposittory https://github.com/Azure/AKS</description>
+    </item>
+    
+    <item>
+      <title>Docker Cheat Sheet #3 - 削除系コマンド</title>
+      <link>http://gutzeit1106.github.io/2019/02/11/20190211_docker3/</link>
+      <pubDate>Mon, 11 Feb 2019 04:00:00 +0900</pubDate>
+      
+      <guid>http://gutzeit1106.github.io/2019/02/11/20190211_docker3/</guid>
+      <description>停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除 docker system prune 停止コンテナ一括削除 docker container prune 全コンテナ一括削除 docker rm -f `docker ps -a -q`</description>
+    </item>
+    
+    <item>
+      <title>Docker Cheat Sheet #2 - 表示系</title>
+      <link>http://gutzeit1106.github.io/2019/02/11/20190211_docker2/</link>
+      <pubDate>Mon, 11 Feb 2019 03:00:33 +0900</pubDate>
+      
+      <guid>http://gutzeit1106.github.io/2019/02/11/20190211_docker2/</guid>
+      <description>・コンテナの一覧表示 dokcer ps // or docker container list #※defaultはrunningされたコンテナのみ表示 -a で全表示 dokcer ps -a ・コンテナイメージの一覧表示 docker images ・</description>
+    </item>
+    
+    <item>
+      <title>Docker Cheat Sheet #1 - 基本系</title>
+      <link>http://gutzeit1106.github.io/2019/02/11/20190211_docker1/</link>
+      <pubDate>Mon, 11 Feb 2019 02:00:33 +0900</pubDate>
+      
+      <guid>http://gutzeit1106.github.io/2019/02/11/20190211_docker1/</guid>
+      <description>・help 表示 docker --help ・Dockerイメージの作成 docker build -t ImageName:TagName {DockerFileのあるディレクトリ} #example docker build --tag sample/basic:1.0 . ・Dockerイメージのリスト表</description>
+    </item>
+    
+    <item>
+      <title>Docker --help</title>
+      <link>http://gutzeit1106.github.io/2019/02/11/20190211_docker0/</link>
+      <pubDate>Mon, 11 Feb 2019 01:00:00 +0900</pubDate>
+      
+      <guid>http://gutzeit1106.github.io/2019/02/11/20190211_docker0/</guid>
+      <description>docker --help Usage: docker [OPTIONS] COMMAND A self-sufficient runtime for containers Options: --config string Location of client config files (default &amp;#34;C:\\Users\\xxx\\.docker&amp;#34;) -D, --debug Enable debug mode -H, --host list Daemon socket(s) to connect to -l, --log-level string Set the logging level (&amp;#34;debug&amp;#34;|&amp;#34;info&amp;#34;|&amp;#34;warn&amp;#34;|&amp;#34;error&amp;#34;|&amp;#34;fatal&amp;#34;) (default &amp;#34;info&amp;#34;) --tls Use TLS; implied by --tlsverify --tlscacert string Trust certs signed only by this CA (default &amp;#34;C:\\Users\\yuyon\\.docker\\ca.pem&amp;#34;) --tlscert string Path to TLS certificate file (default &amp;#34;C:\\Users\\yuyon\\.docker\\cert.pem&amp;#34;)</description>
+    </item>
+    
+    <item>
+      <title>Docker Reference List</title>
+      <link>http://gutzeit1106.github.io/2019/02/11/20190211_docker_linklist/</link>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0900</pubDate>
       
-      <guid>http://gutzeit1106.github.io/2019/02/11/20190211_docker/</guid>
-      <description>停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除 docker system prune 停止コンテナ一括削除 docker container prune 全コンテナ一括削除 docker rm -f `docker ps -a -q`</description>
+      <guid>http://gutzeit1106.github.io/2019/02/11/20190211_docker_linklist/</guid>
+      <description>Docker のリファレンス https://docs.docker.com/reference/ Docker Sample https://docs.docker.com/samples/ Docker Cmd Referance https://docs.docker.com/engine/reference/commandline/cli/ Docker File Reference https://docs.docker.com/engine/reference/builder/ Dokcer Compose Cmd Referance https://docs.docker.com/compose/reference/overview/ Dokcer Compose Referance https://docs.docker.com/compose/compose-file/</description>
     </item>
     
   </channel>
