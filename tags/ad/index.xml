@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Security on YONEHUB</title>
-    <link>https://gutzeit1106.github.io/tags/security/</link>
-    <description>Recent content in Security on YONEHUB</description>
+    <title>AD on YONEHUB</title>
+    <link>https://gutzeit1106.github.io/tags/ad/</link>
+    <description>Recent content in AD on YONEHUB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 07 Jul 2019 00:00:00 +0900</lastBuildDate>
     
-	<atom:link href="https://gutzeit1106.github.io/tags/security/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gutzeit1106.github.io/tags/ad/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://gutzeit1106.github.io/2019/07/07/20190707_azure_ad/</guid>
       <description>Azure AD の価格プランによる機能比較 FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。 BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は1008円</description>
-    </item>
-    
-    <item>
-      <title>NTLM認証の覚え書き</title>
-      <link>https://gutzeit1106.github.io/2019/06/16/20190616_ntlm/</link>
-      <pubDate>Sun, 16 Jun 2019 22:03:28 +0900</pubDate>
-      
-      <guid>https://gutzeit1106.github.io/2019/06/16/20190616_ntlm/</guid>
-      <description>Windows環境では、NTLM（NT LAN Manager）とKerberosの２つの認証プロトコルが主に利用される。 Windows 2000以降はKerbe</description>
     </item>
     
   </channel>

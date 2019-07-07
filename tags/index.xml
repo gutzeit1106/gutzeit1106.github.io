@@ -6,10 +6,55 @@
     <description>Recent content in Tags on YONEHUB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 16 Jun 2019 22:47:23 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jul 2019 00:00:01 +0900</lastBuildDate>
     
 	<atom:link href="https://gutzeit1106.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Azure</title>
+      <link>https://gutzeit1106.github.io/tags/azure/</link>
+      <pubDate>Sun, 07 Jul 2019 00:00:01 +0900</pubDate>
+      
+      <guid>https://gutzeit1106.github.io/tags/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CosmosDB</title>
+      <link>https://gutzeit1106.github.io/tags/cosmosdb/</link>
+      <pubDate>Sun, 07 Jul 2019 00:00:01 +0900</pubDate>
+      
+      <guid>https://gutzeit1106.github.io/tags/cosmosdb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Database</title>
+      <link>https://gutzeit1106.github.io/tags/database/</link>
+      <pubDate>Sun, 07 Jul 2019 00:00:01 +0900</pubDate>
+      
+      <guid>https://gutzeit1106.github.io/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AD</title>
+      <link>https://gutzeit1106.github.io/tags/ad/</link>
+      <pubDate>Sun, 07 Jul 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://gutzeit1106.github.io/tags/ad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://gutzeit1106.github.io/tags/security/</link>
+      <pubDate>Sun, 07 Jul 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://gutzeit1106.github.io/tags/security/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Tips</title>
@@ -39,15 +84,6 @@
     </item>
     
     <item>
-      <title>Security</title>
-      <link>https://gutzeit1106.github.io/tags/security/</link>
-      <pubDate>Sun, 16 Jun 2019 22:03:28 +0900</pubDate>
-      
-      <guid>https://gutzeit1106.github.io/tags/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>git</title>
       <link>https://gutzeit1106.github.io/tags/git/</link>
       <pubDate>Tue, 04 Jun 2019 04:00:00 +0900</pubDate>
@@ -66,7 +102,7 @@
     </item>
     
     <item>
-      <title>Docker</title>
+      <title>docker</title>
       <link>https://gutzeit1106.github.io/tags/docker/</link>
       <pubDate>Sun, 02 Jun 2019 22:24:02 +0900</pubDate>
       

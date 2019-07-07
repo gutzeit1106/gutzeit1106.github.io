@@ -3,26 +3,72 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://gutzeit1106.github.io/tags/azure/</loc>
+    <lastmod>2019-07-07T00:00:01+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gutzeit1106.github.io/2019/07/07/20190707_azure_sql/</loc>
+    <lastmod>2019-07-07T00:00:01+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gutzeit1106.github.io/categories/</loc>
-    <lastmod>2019-06-16T22:47:23+09:00</lastmod>
+    <lastmod>2019-07-07T00:00:01+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gutzeit1106.github.io/tags/cosmosdb/</loc>
+    <lastmod>2019-07-07T00:00:01+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gutzeit1106.github.io/tags/database/</loc>
+    <lastmod>2019-07-07T00:00:01+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gutzeit1106.github.io/post/</loc>
-    <lastmod>2019-06-16T22:47:23+09:00</lastmod>
+    <lastmod>2019-07-07T00:00:01+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gutzeit1106.github.io/tags/</loc>
-    <lastmod>2019-06-16T22:47:23+09:00</lastmod>
+    <lastmod>2019-07-07T00:00:01+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gutzeit1106.github.io/categories/tech/</loc>
-    <lastmod>2019-06-16T22:47:23+09:00</lastmod>
+    <lastmod>2019-07-07T00:00:01+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gutzeit1106.github.io/</loc>
+    <lastmod>2019-07-07T00:00:01+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gutzeit1106.github.io/tags/ad/</loc>
+    <lastmod>2019-07-07T00:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gutzeit1106.github.io/2019/07/07/20190707_azure_ad/</loc>
+    <lastmod>2019-07-07T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gutzeit1106.github.io/tags/security/</loc>
+    <lastmod>2019-07-07T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -44,24 +90,12 @@
   </url>
   
   <url>
-    <loc>https://gutzeit1106.github.io/</loc>
-    <lastmod>2019-06-16T22:47:23+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://gutzeit1106.github.io/2019/06/16/20190616_ntlm/</loc>
     <lastmod>2019-06-16T22:03:28+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://gutzeit1106.github.io/tags/network/</loc>
-    <lastmod>2019-06-16T22:03:28+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gutzeit1106.github.io/tags/security/</loc>
     <lastmod>2019-06-16T22:03:28+09:00</lastmod>
     <priority>0</priority>
   </url>
