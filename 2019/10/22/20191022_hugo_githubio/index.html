@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Github pages &#43; Hugoでブログ構築 - YONEHUB</title>
+  <meta property="og:title" content="Github pages &#43; Hugoでブログ構築" />
+  <meta name="twitter:title" content="Github pages &#43; Hugoでブログ構築" />
+  <meta name="description" content="クラウドのVM上でWordpressで公開していたブログをgithub pages &#43; Hugoに移行してみた。 Hugoは静的サイトジェネレータの一つで、">
+  <meta property="og:description" content="クラウドのVM上でWordpressで公開していたブログをgithub pages &#43; Hugoに移行してみた。 Hugoは静的サイトジェネレータの一つで、">
+  <meta name="twitter:description" content="クラウドのVM上でWordpressで公開していたブログをgithub pages &#43; Hugoに移行してみた。 Hugoは静的サイトジェネレータの一つで、">
+  <meta name="author" content="Yusuke Yoneda"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "YONEHUB",
+    
+    "url": "https:\/\/gutzeit1106.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/gutzeit1106.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/gutzeit1106.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/gutzeit1106.github.io\/2019\/10\/22\/20191022_hugo_githubio\/",
+          "name": "Github pages \x2b hugoでブログ構築"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Yusuke Yoneda"
+  },
+  "headline": "Github pages \x2b Hugoでブログ構築",
+  "description" : "クラウドのVM上でWordpressで公開していたブログをgithub pages \x2b Hugoに移行してみた。 Hugoは静的サイトジェネレータの一つで、",
+  "inLanguage" : "en",
+  "wordCount":  2725 ,
+  "datePublished" : "2019-10-22T22:03:28",
+  "dateModified" : "2019-10-22T22:03:28",
+  "image" : "https:\/\/gutzeit1106.github.io\/img\/me.jpg",
+  "keywords" : [ "hugo, blog, go, git" ],
+  "mainEntityOfPage" : "https:\/\/gutzeit1106.github.io\/2019\/10\/22\/20191022_hugo_githubio\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/gutzeit1106.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/gutzeit1106.github.io\/img\/me.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Github pages &#43; Hugoでブログ構築" />
+<meta property="og:description" content="クラウドのVM上でWordpressで公開していたブログをgithub pages &#43; Hugoに移行してみた。 Hugoは静的サイトジェネレータの一つで、">
+<meta property="og:image" content="https://gutzeit1106.github.io/img/me.jpg" />
+<meta property="og:url" content="https://gutzeit1106.github.io/2019/10/22/20191022_hugo_githubio/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="YONEHUB" />
+
+  <meta name="twitter:title" content="Github pages &#43; Hugoでブログ構築" />
+  <meta name="twitter:description" content="クラウドのVM上でWordpressで公開していたブログをgithub pages &#43; Hugoに移行してみた。 Hugoは静的サイトジェネレータの一つで、">
+  <meta name="twitter:image" content="https://gutzeit1106.github.io/img/me.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@gutzeit1106" />
+  <meta name="twitter:creator" content="@gutzeit1106" />
+  <link href='https://gutzeit1106.github.io/img/favicon.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://gutzeit1106.github.io/img/me.jpg" />
+  <meta name="twitter:image" content="https://gutzeit1106.github.io/img/me.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@gutzeit1106" />
+  <meta name="twitter:creator" content="@gutzeit1106" />
+  <meta property="og:url" content="https://gutzeit1106.github.io/2019/10/22/20191022_hugo_githubio/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="YONEHUB" />
+
+  <meta name="generator" content="Hugo 0.55.6" />
+  <link rel="alternate" href="https://gutzeit1106.github.io/index.xml" type="application/rss+xml" title="YONEHUB"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://gutzeit1106.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://gutzeit1106.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://gutzeit1106.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133674179-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://gutzeit1106.github.io/">YONEHUB</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="YONEHUB" href="https://gutzeit1106.github.io/">
+            <img class="avatar-img" src="https://gutzeit1106.github.io/img/me.jpg" alt="YONEHUB" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+              
+                <h1>Github pages &#43; Hugoでブログ構築</h1>
+              
+
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 22, 2019
+  
+  
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Yusuke Yoneda
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>クラウドのVM上でWordpressで公開していたブログをgithub pages + Hugoに移行してみた。
+Hugoは静的サイトジェネレータの一つで、Go言語で作られています。MarkDown等の記述性の高い形式で書かれたファイルを指定したデザインテーマでHTML + CSSのWEBコンテンツに変換してくれます。</p>
+
+<h3 id="why-github-pages">Why GitHub Pages?</h3>
+
+<ol>
+<li><p>第一の理由はコストです。クラウドとはいえ Web Server の稼働代金も1000円/月程度かかるので無料で使えるgithub pagesに移行を考えました。</p></li>
+
+<li><p>カスタムドメインが使用可能。ブログのドメインは変えたくなかったのですが、github pagesはカスタムドメインに対応しています。</p></li>
+
+<li><p>Httpsが無料で使える。github pagesはでLet&rsquo;s EncryptのSSL証明書が自動発行されるのでカスタムドメインでhttpsが無料で使えます。<a href="https://github.blog/2018-05-01-github-pages-custom-domains-https/">Custom domains on GitHub Pages gain support for HTTPS</a></p></li>
+</ol>
+
+<h3 id="why-hugo">Why Hugo?</h3>
+
+<ol>
+<li><p>Themeのデザインが自分好みのものが多かった。移行に際して、python ベースのpelicanも試してみましたがHugoの方が自分好みのものが多かったので主に使用することに決めました。</p></li>
+
+<li><p>記事生成が早い。pelicanと比べてもGoベースのHugoはサクサク動いてくれる感があります。ストレスフリーに作るためにも重要な要素です。</p></li>
+</ol>
+
+<h3 id="手順">手順</h3>
+
+<ol>
+<li><p>gitHub上に必要なリポジトリを作成しておく（作業用とgithub.ioの公開用2つ必要になります）</p></li>
+
+<li><p>Hugoコマンドを利用してblogのコンテンツを生成する</p></li>
+
+<li><p>作業用リポジトリにある/publicをgithub.io用の公開リポジトリのサブモジュールとして設定する</p></li>
+
+<li><p>リポジトリへのpushを自動化する</p></li>
+</ol>
+
+<h3 id="1-github上に必要なリポジトリを作成しておく">1. GitHub上に必要なリポジトリを作成しておく</h3>
+
+<p>github pagesでhugoを運用していくために次の２つのリポジトリをgithub上に用意します。</p>
+
+<ol>
+<li>github pagesとして公開するファイルを配置するリポジトリ　</li>
+<li>公開ファイルにhugoで変換する前に生コンテンツ（マークダウンなど）を配置するリポジトリ</li>
+</ol>
+
+<p>1のリポジトリについては、github pagesの機能を使うためのgithubのご作法なので、リポジトリ名は指定の形式　（username.github.io）で作る必要があります。
+（サイトのURLはデフォルトで<a href="https://username.github.ioとなりますが、カスタムドメインが設定可能なので独自ドメインをつけたい場合は、リポジトリのSettings">https://username.github.ioとなりますが、カスタムドメインが設定可能なので独自ドメインをつけたい場合は、リポジトリのSettings</a> &gt; Custom domainで指定できます）
+2のリポジトリは元コンテンツファイル群を配置するためのリポジトリです。私はprivateリポジトリとして運用しています。
+2つのリポジトリを作成したら、2つ目のリポジトリをローカルにcloneします。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://github.com/xxx/xxx.git</code></pre></div>
+<h3 id="2-hugoコマンドを利用してblogのコンテンツを生成する">2. Hugoコマンドを利用してblogのコンテンツを生成する</h3>
+
+<p>まずはHugoを作業端末にインストールしましょう。MacであればHomebrewでインストールできます。（WindowsはChocolateyでインストールすることができるようです）</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">brew install hugo</code></pre></div>
+<p>インストールしたあとは、<a href="https://gohugo.io/getting-started/quick-start/">HUGO - Quick Start</a>に従って進めていきます。
+hugo new site　SiteName でコンテンツの雛形が作成できまるので、cloneしたフォルダの直下で実行しましょう。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">hugo new site newblog
+$ tree
+├── archetypes
+│   └── default.md
+├── config.toml
+├── content
+├── data
+├── layouts
+├── static
+└── themes</code></pre></div>
+<p>主に編集するフォルダは、上記の中でcontent, theme, config.tomlになると思います。中でもcontentは、公開記事の元となるmarkdownを配置するので一番ファイル作成や編集の頻度が高いと思います。</p>
+
+<p>blog自体の雛形が作られたので、ここからはコンテンツの作成や設定の作業です。
+こだわり始めるといくらでもできるので、最低限の３つに絞って記載します。</p>
+
+<p>1.サイトデザイン（theme）の適用</p>
+
+<p>2.ブログ記事の作成</p>
+
+<p>3.設定ファイルの編集（config.toml）
+<br></p>
+
+<h4 id="1-サイトデザイン-theme-の適用">1.サイトデザイン（theme）の適用</h4>
+
+<p>Hugoでは数多くのテーマが公開されています。
+<a href="https://themes.gohugo.io/tags/simple/">Hugo Themes</a>から、好みのテーマを探してきます。(Demoページなども用意されていて素晴らしい！)
+テーマが決まったら上で作成したthemesディレクトリに関連ファイルをcloneしてきます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> themes
+git clone https://github.com/Tazeg/hugo-blog-jeffprod.git 
+ls
+hugo-blog-jeffprod</code></pre></div>
+<h3 id="2-ブログ記事の作成">2.ブログ記事の作成</h3>
+
+<p>一旦、config.tomlと同階層まで移動して、hugo new post/new.mdコマンドで記事の元となるファイルを作成します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">hugo new post/new.md</code></pre></div>
+<p>content配下にpost/new.mdが生成されるので、このファイルをエディタで編集していきます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">---
+title: <span class="s2">&#34;New&#34;</span>　<span class="c1">#タイトル</span>
+date: <span class="m">2019</span>-10-22T18:40:33+09:00　<span class="c1">#記事の公開日時</span>
+draft: <span class="nb">true</span>　<span class="c1">#下書きか否か。falseで記事として公開されます。</span>
+---</code></pre></div>
+<p>一般的に使用するいくつかの項目を足すと次のようになります。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">---
+title: <span class="s2">&#34;New&#34;</span>
+date: <span class="m">2019</span>-10-22T18:40:33+09:00
+draft: <span class="nb">false</span>
+categories: <span class="o">[</span><span class="s2">&#34;Tech&#34;</span><span class="o">]</span>
+tags: <span class="o">[</span><span class="s2">&#34;git&#34;</span>,<span class="s2">&#34;hugo&#34;</span>,<span class="s2">&#34;go&#34;</span><span class="o">]</span>
+Authors: <span class="s2">&#34;Hoge Fuga&#34;</span>
+---</code></pre></div>
+<p>本文はその下にMarkdown形式で書いていきます。この時、次のコマンドでローカルサーバを起動させておくと記事の修正が逐次反映されてブラウザで確認できるので便利です。
+(-tでthemeを指定するのでテーマを試してみたいときにも便利です。)</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">hugo server -D -t hugo-blog-jeffprod</code></pre></div>
+<h3 id="3-設定ファイルの編集-config-toml">3.設定ファイルの編集（config.toml）</h3>
+
+<p>使用するテーマに寄って変わる部分があるので、テーマのページなどを参照して追記する必要があります。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">baseURL</span> <span class="o">=</span> <span class="s2">&#34;https://xxx.github.io//&#34;</span>
+<span class="nv">languageCode</span> <span class="o">=</span> <span class="s2">&#34;ja-jp&#34;</span> 
+<span class="nv">title</span> <span class="o">=</span> <span class="s2">&#34;Hugo New Blog&#34;</span></code></pre></div>
+<p>内容が固まったらhugo -t で公開ファイルを/public配下に生成します</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">hugo -t hugo-blog-jeffprod</code></pre></div>
+<h3 id="3-作業用リポジトリにある-publicをgithub-io用の公開リポジトリのサブモジュールとして設定する">3.作業用リポジトリにある/publicをgithub.io用の公開リポジトリのサブモジュールとして設定する</h3>
+
+<p>/public配下には、cssやhtmlなどの公開用ファイルが生成されますが、本来これは github pagesの公開用リポジトリに配置される必要があります。
+手動作業で生成したファイルをgithub pagesの公開用リポジトリにpushしていくこともできますが、面倒すぎるので、/public配下をサブモジュールとして別のリポジトリと紐づけておきます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">git submodule add -b master git@github.com:UserName/UserName.github.io.git public</code></pre></div>
+<h3 id="リポジトリへのpushを自動化する">リポジトリへのpushを自動化する</h3>
+
+<p>公開ファイルを生成して、github リポジトリにpushしていくことでブログを更新することになりますが面倒なのでスクリプト化しておきます。
+themeなどは環境によって変えると良いとおもいます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/bash
+</span><span class="cp"></span>
+<span class="c1"># 公開ファイルの生成</span>
+hugo -t hugo-blog-jeffprod
+
+<span class="nb">cd</span> public
+git add .
+
+<span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;building mysite `date`&#34;</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">1</span> <span class="o">]</span>
+  <span class="k">then</span> <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+<span class="k">fi</span>
+git commit -m <span class="s2">&#34;</span><span class="nv">$msg</span><span class="s2">&#34;</span>
+
+<span class="c1"># サブモジュールサイトへのPush</span>
+git push origin master
+
+<span class="c1">#作業用リポジトリへのpush</span>
+<span class="nb">cd</span> ..
+git add .
+git commit -m <span class="s2">&#34;</span><span class="nv">$msg</span><span class="s2">&#34;</span>
+git push</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ ./deploy.sh</code></pre></div>
+<p>デプロイ後に&rdquo;https：//UserName.github.io/&ldquo;にアクセスすると自身のサイトが確認できるはずです。</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://gutzeit1106.github.io//tags/hugo/">hugo</a>&nbsp;
+            
+              <a href="https://gutzeit1106.github.io//tags/blog/">blog</a>&nbsp;
+            
+              <a href="https://gutzeit1106.github.io//tags/go/">go</a>&nbsp;
+            
+              <a href="https://gutzeit1106.github.io//tags/git/">git</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+          
+          
+          <h4 class="see-also">See also</h4>
+          <ul>
+          
+            <li><a href="/2019/06/04/20190603_git_0/">GitのCommitユーザを修正する方法</a></li>
+          
+          </ul>
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://gutzeit1106.github.io/2019/10/21/20191021_rust/" data-toggle="tooltip" data-placement="top" title="MacにRustをインストールしてHelloWorldするまで">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://www.facebook.com/yyoneda" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/gutzeit1106" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/gutzeit1106" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/yusuke-yoneda-788118105" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Yusuke Yoneda
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://gutzeit1106.github.io/">YONEHUB</a>
+          
+        </p>
+        <p class="credits copyright">
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://gutzeit1106.github.io/js/main.js"></script>
+<script src="https://gutzeit1106.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://gutzeit1106.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+
