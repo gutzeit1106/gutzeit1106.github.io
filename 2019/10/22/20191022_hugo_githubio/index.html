@@ -63,7 +63,7 @@
   "headline": "Github pages \x2b Hugoでブログ構築",
   "description" : "クラウドのVM上でWordpressで公開していたブログをgithub pages \x2b Hugoに移行してみた。 Hugoは静的サイトジェネレータの一つで、",
   "inLanguage" : "en",
-  "wordCount":  2725 ,
+  "wordCount":  2726 ,
   "datePublished" : "2019-10-22T22:03:28",
   "dateModified" : "2019-10-22T22:03:28",
   "image" : "https:\/\/gutzeit1106.github.io\/img\/me.jpg",
@@ -291,7 +291,7 @@ if (!doNotTrack) {
 <p>クラウドのVM上でWordpressで公開していたブログをgithub pages + Hugoに移行してみた。
 Hugoは静的サイトジェネレータの一つで、Go言語で作られています。MarkDown等の記述性の高い形式で書かれたファイルを指定したデザインテーマでHTML + CSSのWEBコンテンツに変換してくれます。</p>
 
-<h3 id="why-github-pages">Why GitHub Pages?</h3>
+<h2 id="why-github-pages">Why GitHub Pages?</h2>
 
 <ol>
 <li><p>第一の理由はコストです。クラウドとはいえ Web Server の稼働代金も1000円/月程度かかるので無料で使えるgithub pagesに移行を考えました。</p></li>
@@ -301,7 +301,7 @@ Hugoは静的サイトジェネレータの一つで、Go言語で作られて�
 <li><p>Httpsが無料で使える。github pagesはでLet&rsquo;s EncryptのSSL証明書が自動発行されるのでカスタムドメインでhttpsが無料で使えます。<a href="https://github.blog/2018-05-01-github-pages-custom-domains-https/">Custom domains on GitHub Pages gain support for HTTPS</a></p></li>
 </ol>
 
-<h3 id="why-hugo">Why Hugo?</h3>
+<h2 id="why-hugo">Why Hugo?</h2>
 
 <ol>
 <li><p>Themeのデザインが自分好みのものが多かった。移行に際して、python ベースのpelicanも試してみましたがHugoの方が自分好みのものが多かったので主に使用することに決めました。</p></li>
@@ -309,7 +309,7 @@ Hugoは静的サイトジェネレータの一つで、Go言語で作られて�
 <li><p>記事生成が早い。pelicanと比べてもGoベースのHugoはサクサク動いてくれる感があります。ストレスフリーに作るためにも重要な要素です。</p></li>
 </ol>
 
-<h3 id="手順">手順</h3>
+<h2 id="手順">手順</h2>
 
 <ol>
 <li><p>gitHub上に必要なリポジトリを作成しておく（作業用とgithub.ioの公開用2つ必要になります）</p></li>
@@ -356,14 +356,15 @@ $ tree
 <p>blog自体の雛形が作られたので、ここからはコンテンツの作成や設定の作業です。
 こだわり始めるといくらでもできるので、最低限の３つに絞って記載します。</p>
 
-<p>1.サイトデザイン（theme）の適用</p>
+<p>a.サイトデザイン（theme）の適用</p>
 
-<p>2.ブログ記事の作成</p>
+<p>b.ブログ記事の作成</p>
 
-<p>3.設定ファイルの編集（config.toml）
-<br></p>
+<p>c.設定ファイルの編集（config.toml）</p>
 
-<h4 id="1-サイトデザイン-theme-の適用">1.サイトデザイン（theme）の適用</h4>
+<p><br></p>
+
+<h3 id="a-サイトデザイン-theme-の適用">a.サイトデザイン（theme）の適用</h3>
 
 <p>Hugoでは数多くのテーマが公開されています。
 <a href="https://themes.gohugo.io/tags/simple/">Hugo Themes</a>から、好みのテーマを探してきます。(Demoページなども用意されていて素晴らしい！)
@@ -372,7 +373,7 @@ $ tree
 git clone https://github.com/Tazeg/hugo-blog-jeffprod.git 
 ls
 hugo-blog-jeffprod</code></pre></div>
-<h3 id="2-ブログ記事の作成">2.ブログ記事の作成</h3>
+<h3 id="b-ブログ記事の作成">b.ブログ記事の作成</h3>
 
 <p>一旦、config.tomlと同階層まで移動して、hugo new post/new.mdコマンドで記事の元となるファイルを作成します。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">hugo new post/new.md</code></pre></div>
@@ -394,7 +395,7 @@ Authors: <span class="s2">&#34;Hoge Fuga&#34;</span>
 <p>本文はその下にMarkdown形式で書いていきます。この時、次のコマンドでローカルサーバを起動させておくと記事の修正が逐次反映されてブラウザで確認できるので便利です。
 (-tでthemeを指定するのでテーマを試してみたいときにも便利です。)</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">hugo server -D -t hugo-blog-jeffprod</code></pre></div>
-<h3 id="3-設定ファイルの編集-config-toml">3.設定ファイルの編集（config.toml）</h3>
+<h3 id="c-設定ファイルの編集-config-toml">c.設定ファイルの編集（config.toml）</h3>
 
 <p>使用するテーマに寄って変わる部分があるので、テーマのページなどを参照して追記する必要があります。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">baseURL</span> <span class="o">=</span> <span class="s2">&#34;https://xxx.github.io//&#34;</span>
@@ -407,7 +408,7 @@ Authors: <span class="s2">&#34;Hoge Fuga&#34;</span>
 <p>/public配下には、cssやhtmlなどの公開用ファイルが生成されますが、本来これは github pagesの公開用リポジトリに配置される必要があります。
 手動作業で生成したファイルをgithub pagesの公開用リポジトリにpushしていくこともできますが、面倒すぎるので、/public配下をサブモジュールとして別のリポジトリと紐づけておきます。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">git submodule add -b master git@github.com:UserName/UserName.github.io.git public</code></pre></div>
-<h3 id="リポジトリへのpushを自動化する">リポジトリへのpushを自動化する</h3>
+<h3 id="4-リポジトリへのpushを自動化する">4. リポジトリへのpushを自動化する</h3>
 
 <p>公開ファイルを生成して、github リポジトリにpushしていくことでブログを更新することになりますが面倒なのでスクリプト化しておきます。
 themeなどは環境によって変えると良いとおもいます。</p>
