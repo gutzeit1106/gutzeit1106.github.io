@@ -6,10 +6,28 @@
     <description>Recent content in Tech on YONEHUB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 22 Oct 2019 22:03:28 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 07 Nov 2019 17:47:23 +0900</lastBuildDate>
     
 	<atom:link href="https://gutzeit1106.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Microsoft Ignite 2019 で発表された新機能のまとめ(VM/VMSS編)</title>
+      <link>https://gutzeit1106.github.io/2019/11/07/20191107_ignite2019_iaas/</link>
+      <pubDate>Thu, 07 Nov 2019 17:47:23 +0900</pubDate>
+      
+      <guid>https://gutzeit1106.github.io/2019/11/07/20191107_ignite2019_iaas/</guid>
+      <description>今週は Microsoft Ignite 2019 で盛り上がった一週間でした。 自分の周りでは、Keynote で取り上げられていた、Azure Arc や Azure Synapse が特に話題になっていた気がしま</description>
+    </item>
+    
+    <item>
+      <title>VM ScalesetのOrchestration Modeについて</title>
+      <link>https://gutzeit1106.github.io/2019/11/06/20191106_vmss_orchestrationmode/</link>
+      <pubDate>Wed, 06 Nov 2019 22:47:23 +0900</pubDate>
+      
+      <guid>https://gutzeit1106.github.io/2019/11/06/20191106_vmss_orchestrationmode/</guid>
+      <description>Microsoft Ignite 2019で触れられていた、VM Scaleset のOrchestration modeというプレビュー機能について調べてみました。 要約すると、VM Scal</description>
+    </item>
     
     <item>
       <title>Github pages &#43; Hugoでブログ構築</title>

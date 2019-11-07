@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Azure on YONEHUB</title>
-    <link>https://gutzeit1106.github.io/tags/azure/</link>
-    <description>Recent content in Azure on YONEHUB</description>
+    <title>Microsoft Ignite 2019 on YONEHUB</title>
+    <link>https://gutzeit1106.github.io/tags/microsoft-ignite-2019/</link>
+    <description>Recent content in Microsoft Ignite 2019 on YONEHUB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Thu, 07 Nov 2019 17:47:23 +0900</lastBuildDate>
     
-	<atom:link href="https://gutzeit1106.github.io/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gutzeit1106.github.io/tags/microsoft-ignite-2019/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -27,24 +27,6 @@
       
       <guid>https://gutzeit1106.github.io/2019/11/06/20191106_vmss_orchestrationmode/</guid>
       <description>Microsoft Ignite 2019で触れられていた、VM Scaleset のOrchestration modeというプレビュー機能について調べてみました。 要約すると、VM Scal</description>
-    </item>
-    
-    <item>
-      <title>Azure SQL DatabaseとCosmosDBの要点整理(2019/7)</title>
-      <link>https://gutzeit1106.github.io/2019/07/07/20190707_azure_sql/</link>
-      <pubDate>Sun, 07 Jul 2019 00:00:01 +0900</pubDate>
-      
-      <guid>https://gutzeit1106.github.io/2019/07/07/20190707_azure_sql/</guid>
-      <description>Azure SQL Database サーバ Azure SQL Databaseサーバは、各種機能の中央管理をおこなう論理的リソースで、以下のような管理機能を提供している。 データベースアク</description>
-    </item>
-    
-    <item>
-      <title>Azure Active Directoryの要点整理(2019/07)</title>
-      <link>https://gutzeit1106.github.io/2019/07/07/20190707_azure_ad/</link>
-      <pubDate>Sun, 07 Jul 2019 00:00:00 +0900</pubDate>
-      
-      <guid>https://gutzeit1106.github.io/2019/07/07/20190707_azure_ad/</guid>
-      <description>Azure AD の価格プランによる機能比較 FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。 BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は1008円</description>
     </item>
     
   </channel>

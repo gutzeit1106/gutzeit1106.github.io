@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Microsoft Ignite 2019 で発表された新機能のまとめ(VM/VMSS編)) - YONEHUB</title>
+  <meta property="og:title" content="Microsoft Ignite 2019 で発表された新機能のまとめ(VM/VMSS編))" />
+  <meta name="twitter:title" content="Microsoft Ignite 2019 で発表された新機能のまとめ(VM/VMSS編))" />
+  <meta name="description" content="今週は、Microsoft Ignite 2019 で盛り上がった一週間でした。 私の周りでは、Keynoteで取り上げられていた、Azure Arc や Azure Synapse が特に話題にな">
+  <meta property="og:description" content="今週は、Microsoft Ignite 2019 で盛り上がった一週間でした。 私の周りでは、Keynoteで取り上げられていた、Azure Arc や Azure Synapse が特に話題にな">
+  <meta name="twitter:description" content="今週は、Microsoft Ignite 2019 で盛り上がった一週間でした。 私の周りでは、Keynoteで取り上げられていた、Azure Arc や Azure Synapse が特に話題にな">
+  <meta name="author" content="Yusuke Yoneda"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "YONEHUB",
+    
+    "url": "https:\/\/gutzeit1106.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/gutzeit1106.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/gutzeit1106.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/gutzeit1106.github.io\/2019\/11\/06\/20191106_ignite2019_iaas\/",
+          "name": "Microsoft ignite 2019 で発表された新機能のまとめ( v m\/ v m s s編))"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Yusuke Yoneda"
+  },
+  "headline": "Microsoft Ignite 2019 で発表された新機能のまとめ(VM\/VMSS編))",
+  "description" : "今週は、Microsoft Ignite 2019 で盛り上がった一週間でした。 私の周りでは、Keynoteで取り上げられていた、Azure Arc や Azure Synapse が特に話題にな",
+  "inLanguage" : "en",
+  "wordCount":  1574 ,
+  "datePublished" : "2019-11-06T22:47:23",
+  "dateModified" : "2019-11-06T22:47:23",
+  "image" : "https:\/\/gutzeit1106.github.io\/img\/me.jpg",
+  "keywords" : [ "azure, Microsoft Ignite 2019" ],
+  "mainEntityOfPage" : "https:\/\/gutzeit1106.github.io\/2019\/11\/06\/20191106_ignite2019_iaas\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/gutzeit1106.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/gutzeit1106.github.io\/img\/me.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Microsoft Ignite 2019 で発表された新機能のまとめ(VM/VMSS編))" />
+<meta property="og:description" content="今週は、Microsoft Ignite 2019 で盛り上がった一週間でした。 私の周りでは、Keynoteで取り上げられていた、Azure Arc や Azure Synapse が特に話題にな">
+<meta property="og:image" content="https://gutzeit1106.github.io/img/me.jpg" />
+<meta property="og:url" content="https://gutzeit1106.github.io/2019/11/06/20191106_ignite2019_iaas/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="YONEHUB" />
+
+  <meta name="twitter:title" content="Microsoft Ignite 2019 で発表された新機能のまとめ(VM/VMSS編))" />
+  <meta name="twitter:description" content="今週は、Microsoft Ignite 2019 で盛り上がった一週間でした。 私の周りでは、Keynoteで取り上げられていた、Azure Arc や Azure Synapse が特に話題にな">
+  <meta name="twitter:image" content="https://gutzeit1106.github.io/img/me.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@gutzeit1106" />
+  <meta name="twitter:creator" content="@gutzeit1106" />
+  <link href='https://gutzeit1106.github.io/img/favicon.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://gutzeit1106.github.io/img/me.jpg" />
+  <meta name="twitter:image" content="https://gutzeit1106.github.io/img/me.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@gutzeit1106" />
+  <meta name="twitter:creator" content="@gutzeit1106" />
+  <meta property="og:url" content="https://gutzeit1106.github.io/2019/11/06/20191106_ignite2019_iaas/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="YONEHUB" />
+
+  <meta name="generator" content="Hugo 0.55.6" />
+  <link rel="alternate" href="https://gutzeit1106.github.io/index.xml" type="application/rss+xml" title="YONEHUB"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://gutzeit1106.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://gutzeit1106.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://gutzeit1106.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133674179-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://gutzeit1106.github.io/">YONEHUB</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="YONEHUB" href="https://gutzeit1106.github.io/">
+            <img class="avatar-img" src="https://gutzeit1106.github.io/img/me.jpg" alt="YONEHUB" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+              
+                <h1>Microsoft Ignite 2019 で発表された新機能のまとめ(VM/VMSS編))</h1>
+              
+
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on November 6, 2019
+  
+  
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Yusuke Yoneda
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>今週は、Microsoft Ignite 2019 で盛り上がった一週間でした。
+私の周りでは、Keynoteで取り上げられていた、Azure Arc や Azure Synapse が特に話題になっていた気がします。
+それ以外にも、新機能の発表、プレビュー機能のGAニュースが山盛りでした。
+発表された項目は、<a href="https://news.microsoft.com/wp-content/uploads/prod/sites/563/2019/11/Ignite-2019-Book-of-News.pdf">Book of News Microsoft Ignite 2019</a>に記載がありますが、indexだけで7ページもあります。
+しばらくキャッチアップに注力せねば&hellip;</p>
+
+<p>そんな中、Azure の IaaS 系のサービスについては最新状況をだいたい把握しているつもりでしたが、VM Scaleset(VMSS)で初めて認識した機能があったので、その機能の検証と、ついでにIgnite 2019で触れていたVM/VMSSの機能についてまとめてみました。</p>
+
+<p>#### Azure Da_v4 and Das_v4 virtual machines
+新しいVMサイズがGAされました。AMD EPYC™ 7452 プロセッサを搭載した Da_v4 と Das_v4 になります。</p>
+
+<h4 id="serial-console-for-azure-government-cloud-public-preview">Serial Console for Azure Government Cloud public preview</h4>
+
+<p>Azure Government Cloud でシリアルコンソール機能がパブリックプレビューになりました。通常のパブリックなAzureだととっくにGAされているので、これは日本のユーザにはあんまり関係なさそうな気がします。</p>
+
+<h4 id="azure-generation-2-virtual-machines-generally-available">Azure Generation 2 virtual machines generally available</h4>
+
+<p>Azure上で hyper-V 第2世代の仮想マシンが利用できる機能がGAになりました。
+第2世代の仮想マシンでは、OSのbootがUEFI形式になるため、OSディスクを2TB以上にすることができます。（第一世代はレガシーBIOSだったので、OSディスクは2TB以下しか使用できませんでした。データディスクは2TB以上使えます。）
+ただし、Azureの機能でBitlockerなどを有効化するAzure Disk Encryptionや, DR対策でよく使用されるAzure Site Recoveryは、まだ第2世代仮想マシンには対応していないようなので今後の対応を待つ必要がありそうです。</p>
+
+<p>参考:<a href="https://docs.microsoft.com/en-us/azure/virtual-machines/windows/generation-2">Support for generation 2 VMs on Azure</a></p>
+
+<h4 id="new-features-for-azure-virtual-machine-scale-sets">New features for Azure virtual machine scale sets</h4>
+
+<p>仮想マシンスケールセットでいくつかプレビューの機能が紹介されました。
+ドキュメントは以下の通りです。実用的な機能が増えてきた印象です。1は知らなかった機能なので別途調べてみました。</p>
+
+<ol>
+<li><p><a href="https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/orchestration-modes">Orchestration mode (preview)</a></p></li>
+
+<li><p><a href="https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-scale-in-policy">Preview: Use custom scale-in policies with Azure virtual machine scale sets</a></p></li>
+
+<li><p><a href="https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/shared-image-galleries">Shared Image Galleries overview</a></p></li>
+
+<li><p><a href="https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-terminate-notification">Terminate notification for Azure virtual machine scale set instances (Preview)</a></p></li>
+
+<li><p><a href="https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-instance-protection">Instance Protection for Azure virtual machine scale set instances (Preview)</a></p></li>
+</ol>
+
+<p>2は、スケールインする際に削除されるインスタンスを選ぶポリシーを選択できるオプションです。
+3は、ユーザが作ったイメージをいろいろと共有できるShared Image GalleriesとVMSSの統合です。
+4は、スケールインの際にインスタンス削除開始までの時間を制御できるオプションです。終了処理をしてからスケールインしたい時などに有用。
+5は、特定のインスタンスを自動スケールなどの操作から保護できるオプションです。</p>
+
+<h4 id="azure-hbv2-virtual-machines-coming-soon">Azure HBv2 virtual machines coming soon</h4>
+
+<p>AMD EPYCが搭載されたHPC向け（RDMA使用可）の仮想マシンサイズ HBv2 の紹介です。このサイズはまだGAではないみたいです。</p>
+
+<p>参考:<a href="https://azure.microsoft.com/ja-jp/blog/introducing-the-new-hbv2-azure-virtual-machines-for-high-performance-computing/">ハイ パフォーマンス コンピューティング用の新しい HBv2 Azure 仮想マシンの概要</a></p>
+
+<h3 id="azure-ea-v4-and-eas-v4-series-virtual-machines">Azure Ea v4 and Eas v4 series virtual machines</h3>
+
+<p>AMD EPYC 7452 が搭載された仮想マシンサイズEa v4/Eas v4がGAされました。</p>
+
+<h3 id="azure-nvv4-virtual-machine-public-preview">Azure NVv4 virtual machine public preview</h3>
+
+<p>AMD EPYC 7002 プロセッサと Radeon MI25 GPUが搭載されたNVv4がパブリックプレビューになりました。</p>
+
+<p>参考:<a href="https://azure.microsoft.com/en-us/blog/introducing-nvv4-azure-virtual-machines-for-gpu-visualization-workloads/">Introducing NVv4 Azure Virtual Machines for GPU visualization workloads</a></p>
+
+<h3 id="azure-ndv2-virtual-machines-public-preview">Azure NDv2 virtual machines public preview</h3>
+
+<p>NVIDIA Tesla V100のGPUとIntel Xeon Platinum 8168 が搭載されたNDv2がパブリックプレビューになりました。</p>
+
+<h3 id="proximity-placement-groups-now-generally-available">Proximity placement groups now generally available</h3>
+
+<p>Proximity placement groups(日本語だと近接通信配置グループ?)がGAされたようです。PPGと略しているみたい。
+PPGは、可用性ゾーンよりもさらにデータセンター内の物理的な距離を近づけて仮想マシンを配置できるオプションです。物理的距離が近いので、仮想マシン間の通信レイテンシが小さくなることが期待されます。</p>
+
+<h3 id="azure-spot-virtual-machines">Azure Spot Virtual Machines</h3>
+
+<p>Azure Spot VMがVM/VMSSで2020の始めくらいにプレビュー利用できるようになるらしい。</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://gutzeit1106.github.io//tags/azure/">azure</a>&nbsp;
+            
+              <a href="https://gutzeit1106.github.io//tags/microsoft-ignite-2019/">Microsoft Ignite 2019</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+          
+          
+          <h4 class="see-also">See also</h4>
+          <ul>
+          
+            <li><a href="/2019/11/06/20191106_vmss_orchestrationmode/">Microsoft Ignite 2019 で発表された新機能のまとめ(VM/VMSS編))</a></li>
+          
+          </ul>
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://gutzeit1106.github.io/2019/11/06/20191106_vmss_orchestrationmode/" data-toggle="tooltip" data-placement="top" title="Microsoft Ignite 2019 で発表された新機能のまとめ(VM/VMSS編))">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://www.facebook.com/yyoneda" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/gutzeit1106" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/gutzeit1106" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/yusuke-yoneda-788118105" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Yusuke Yoneda
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://gutzeit1106.github.io/">YONEHUB</a>
+          
+        </p>
+        <p class="credits copyright">
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://gutzeit1106.github.io/js/main.js"></script>
+<script src="https://gutzeit1106.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://gutzeit1106.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

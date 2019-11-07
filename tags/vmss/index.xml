@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vmss on YONEHUB</title>
+    <link>https://gutzeit1106.github.io/tags/vmss/</link>
+    <description>Recent content in vmss on YONEHUB</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 06 Nov 2019 22:47:23 +0900</lastBuildDate>
+    
+	<atom:link href="https://gutzeit1106.github.io/tags/vmss/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VM ScalesetのOrchestration Modeについて</title>
+      <link>https://gutzeit1106.github.io/2019/11/06/20191106_vmss_orchestrationmode/</link>
+      <pubDate>Wed, 06 Nov 2019 22:47:23 +0900</pubDate>
+      
+      <guid>https://gutzeit1106.github.io/2019/11/06/20191106_vmss_orchestrationmode/</guid>
+      <description>Microsoft Ignite 2019で触れられていた、VM Scaleset のOrchestration modeというプレビュー機能について調べてみました。 要約すると、VM Scal</description>
+    </item>
+    
+  </channel>
+</rss>

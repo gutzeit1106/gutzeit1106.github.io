@@ -7,9 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>YONEHUB - YONEHUB</title>
-  <meta property="og:title" content="YONEHUB" />
-  <meta name="twitter:title" content="YONEHUB" />
+  <title>Visual Studio Code Extentionの開発準備 - YONEHUB</title>
+  <meta property="og:title" content="Visual Studio Code Extentionの開発準備" />
+  <meta name="twitter:title" content="Visual Studio Code Extentionの開発準備" />
+  <meta name="description" content="###準備 Homebrewでnpmとnodeのインストール brew install npmnpm install -g yo generator-codeyo codeyo code ? What type of extension do you want to create? New Language Pack (Localization) ❯ New Extension (TypeScript) New Extension (JavaScript) New Color Theme New Language Support New Code Snippets New Keymap">
+  <meta property="og:description" content="###準備 Homebrewでnpmとnodeのインストール brew install npmnpm install -g yo generator-codeyo codeyo code ? What type of extension do you want to create? New Language Pack (Localization) ❯ New Extension (TypeScript) New Extension (JavaScript) New Color Theme New Language Support New Code Snippets New Keymap">
+  <meta name="twitter:description" content="###準備 Homebrewでnpmとnodeのインストール brew install npmnpm install -g yo generator-codeyo codeyo code ? What type of extension do you want to create? New Language Pack (Localization) ❯ New Extension …">
   <meta name="author" content="Yusuke Yoneda"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -30,14 +33,64 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/gutzeit1106.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/gutzeit1106.github.io\/2019\/10\/25\/20191025_howto_develop_vscode-copy\/",
+          "name": "Visual studio code extentionの開発準備"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Yusuke Yoneda"
+  },
+  "headline": "Visual Studio Code Extentionの開発準備",
+  "description" : "###準備 Homebrewでnpmとnodeのインストール brew install npmnpm install -g yo generator-codeyo codeyo code ? What type of extension do you want to create? New Language Pack (Localization) ❯ New Extension (TypeScript) New Extension (JavaScript) New Color Theme New Language Support New Code Snippets New Keymap",
+  "inLanguage" : "en",
+  "wordCount":  124 ,
+  "datePublished" : "2019-10-25T22:47:23",
+  "dateModified" : "2019-10-25T22:47:23",
+  "image" : "https:\/\/gutzeit1106.github.io\/img\/me.jpg",
+  "keywords" : [ "Visual Studio Code, Tips" ],
+  "mainEntityOfPage" : "https:\/\/gutzeit1106.github.io\/2019\/10\/25\/20191025_howto_develop_vscode-copy\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/gutzeit1106.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/gutzeit1106.github.io\/img\/me.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="YONEHUB" />
+<meta property="og:title" content="Visual Studio Code Extentionの開発準備" />
+<meta property="og:description" content="###準備 Homebrewでnpmとnodeのインストール brew install npmnpm install -g yo generator-codeyo codeyo code ? What type of extension do you want to create? New Language Pack (Localization) ❯ New Extension (TypeScript) New Extension (JavaScript) New Color Theme New Language Support New Code Snippets New Keymap">
 <meta property="og:image" content="https://gutzeit1106.github.io/img/me.jpg" />
-<meta property="og:url" content="https://gutzeit1106.github.io/" />
+<meta property="og:url" content="https://gutzeit1106.github.io/2019/10/25/20191025_howto_develop_vscode-copy/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="YONEHUB" />
 
-  <meta name="twitter:title" content="YONEHUB" />
+  <meta name="twitter:title" content="Visual Studio Code Extentionの開発準備" />
+  <meta name="twitter:description" content="###準備 Homebrewでnpmとnodeのインストール brew install npmnpm install -g yo generator-codeyo codeyo code ? What type of extension do you want to create? New Language Pack (Localization) ❯ New Extension …">
   <meta name="twitter:image" content="https://gutzeit1106.github.io/img/me.jpg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@gutzeit1106" />
@@ -48,7 +101,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@gutzeit1106" />
   <meta name="twitter:creator" content="@gutzeit1106" />
-  <meta property="og:url" content="https://gutzeit1106.github.io/" />
+  <meta property="og:url" content="https://gutzeit1106.github.io/2019/10/25/20191025_howto_develop_vscode-copy/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="YONEHUB" />
 
@@ -196,18 +249,29 @@ if (!doNotTrack) {
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
+            <div class="post-heading">
               
+              
+                <h1>Visual Studio Code Extentionの開発準備</h1>
               
 
               
-                
               
               
-                
-                  <span class="page-subheading">def output(title=&#39;クラウドエンジニアの雑記&#39;):</span>
-                
-              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 25, 2019
+  
+  
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Yusuke Yoneda
+  
+  
+</span>
+
+
               
             </div>
           </div>
@@ -218,195 +282,83 @@ if (!doNotTrack) {
 
 
     
-  <div role="main" class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>###準備</p>
 
-        <div class="posts-list">
-          
-          
-            <article class="post-preview">
-              <a href="https://gutzeit1106.github.io/2019/02/11/20190211_docker1/">
-                <h2 class="post-title">Docker Cheat Sheet #1 - 基本系</h2>
-                
-                
-              </a>
+<p>Homebrewでnpmとnodeのインストール</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">brew install npm</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm install -g yo generator-code</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">yo code</code></pre></div><div class="highlight"><pre class="chroma">yo code
+? What type of extension do you want to create? 
+  New Language Pack (Localization) 
+❯ New Extension (TypeScript) 
+  New Extension (JavaScript) 
+  New Color Theme 
+  New Language Support 
+  New Code Snippets 
+  New Keymap </pre></div>
+<p>What&rsquo;s the name of your extension? extSample
+? What&rsquo;s the identifier of your extension? extSampleid
+? What&rsquo;s the description of your extension? this is vs code ext sample
+? Initialize a git repository? Yes
+? Which package manager to use? npm</p>
 
-              <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on February 11, 2019
-  
-  
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Yusuke Yoneda
-  
-  
-</span>
+<p>cd extSampleid/
+$ ls
+CHANGELOG.md                    node_modules                    package.json                    tsconfig.json                   vsc-extension-quickstart.md
+README.md                       package-lock.json               src                             tslint.json</p>
 
-
-              <div class="post-entry">
-                
-                  ・help 表示 docker --help ・Dockerイメージの作成 docker build -t ImageName:TagName {DockerFileのあるディレクトリ} #example docker build --tag sample/basic:1.0 . ・Dockerイメージのリスト表
-                  <a href="https://gutzeit1106.github.io/2019/02/11/20190211_docker1/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="https://gutzeit1106.github.io//tags/docker/">Docker</a>&nbsp;
-                  
-                </div>
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://gutzeit1106.github.io/2019/02/11/20190211_docker0/">
-                <h2 class="post-title">Docker --help</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on February 11, 2019
-  
-  
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Yusuke Yoneda
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  docker --help Usage: docker [OPTIONS] COMMAND A self-sufficient runtime for containers Options: --config string Location of client config files (default &#34;C:\\Users\\xxx\\.docker&#34;) -D, --debug Enable debug mode -H, --host list Daemon socket(s) to connect to -l, --log-level string Set the logging level (&#34;debug&#34;|&#34;info&#34;|&#34;warn&#34;|&#34;error&#34;|&#34;fatal&#34;) (default &#34;info&#34;) --tls Use TLS; implied by --tlsverify --tlscacert string Trust certs signed only by this CA (default &#34;C:\\Users\\yuyon\\.docker\\ca.pem&#34;) --tlscert string Path to TLS certificate file (default &#34;C:\\Users\\yuyon\\.docker\\cert.pem&#34;)
-                  <a href="https://gutzeit1106.github.io/2019/02/11/20190211_docker0/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="https://gutzeit1106.github.io//tags/docker/">Docker</a>&nbsp;
-                  
-                </div>
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://gutzeit1106.github.io/2019/02/11/20190211_docker_linklist/">
-                <h2 class="post-title">Docker Reference List</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on February 11, 2019
-  
-  
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Yusuke Yoneda
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <p>Docker のリファレンス<br>
-<a href="https://docs.docker.com/reference/">https://docs.docker.com/reference/</a></p>
-
-<p>Docker Sample<br>
-<a href="https://docs.docker.com/samples/">https://docs.docker.com/samples/</a></p>
-
-<p>Docker Cmd Referance<br>
-<a href="https://docs.docker.com/engine/reference/commandline/cli/">https://docs.docker.com/engine/reference/commandline/cli/</a></p>
-
-<p>Docker File Reference<br>
-<a href="https://docs.docker.com/engine/reference/builder/">https://docs.docker.com/engine/reference/builder/</a></p>
-
-<p>Dokcer Compose Cmd Referance<br>
-<a href="https://docs.docker.com/compose/reference/overview/">https://docs.docker.com/compose/reference/overview/</a></p>
-
-<p>Dokcer Compose Referance<br>
-<a href="https://docs.docker.com/compose/compose-file/">https://docs.docker.com/compose/compose-file/</a></p>
-
-                
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="https://gutzeit1106.github.io//tags/docker/">Docker</a>&nbsp;
-                  
-                </div>
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://gutzeit1106.github.io/2019/01/02/20190102_books2019/">
-                <h2 class="post-title">2019年に読みたい技術関連書籍（積読リスト）</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on January 2, 2019
-  
-  
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Yusuke Yoneda
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  2019年に読んでおきたい書籍のまとめ。おそらく日々の中で色々と新しく読んでみたい本も増えると思うので7冊に厳選してみる。 #1 マスタリングWi
-                  <a href="https://gutzeit1106.github.io/2019/01/02/20190102_books2019/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="https://gutzeit1106.github.io//tags/book/">Book</a>&nbsp;
-                  
-                    <a href="https://gutzeit1106.github.io//tags/tech/">Tech</a>&nbsp;
-                  
-                </div>
-              
-            </article>
-          
-        </div>
 
         
-          <ul class="pager main-pager">
+          <div class="blog-tags">
             
-              <li class="previous">
-                <a href="https://gutzeit1106.github.io/page/1/">&larr; Newer Posts</a>
-              </li>
+              <a href="https://gutzeit1106.github.io//tags/visual-studio-code/">Visual Studio Code</a>&nbsp;
             
+              <a href="https://gutzeit1106.github.io//tags/tips/">Tips</a>&nbsp;
             
+          </div>
+        
+
+        
+
+        
+          
+          
+          <h4 class="see-also">See also</h4>
+          <ul>
+          
+            <li><a href="/2019/06/16/20190616_vscode_markdown/">Visual Studio CodeでMarkdownファイルをプレビューする</a></li>
+          
           </ul>
+          
         
-      </div>
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://gutzeit1106.github.io/2019/10/22/20191022_hugo_githubio/" data-toggle="tooltip" data-placement="top" title="Github pages &#43; Hugoでブログ構築">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://gutzeit1106.github.io/2019/11/06/20191106_vmss_orchestrationmode/" data-toggle="tooltip" data-placement="top" title="Microsoft Ignite 2019 で発表された新機能のまとめ(VM/VMSS編))">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
     </div>
   </div>
+</div>
 
     <footer>
   <div class="container">
@@ -448,7 +400,7 @@ if (!doNotTrack) {
               </li>
           
           <li>
-            <a href="/index.xml" title="RSS">
+            <a href="" title="RSS">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
@@ -475,8 +427,6 @@ if (!doNotTrack) {
           
         </p>
         <p class="credits copyright">
-          
-            return None;
           
         </p>
       </div>
