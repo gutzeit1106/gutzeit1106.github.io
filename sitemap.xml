@@ -3,50 +3,67 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://gutzeit1106.github.io/tags/azure/</loc>
-    <lastmod>2019-11-07T17:47:23+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://gutzeit1106.github.io/categories/</loc>
-    <lastmod>2019-11-07T17:47:23+09:00</lastmod>
+    <lastmod>2019-11-08T12:47:23+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gutzeit1106.github.io/tags/microsoft-ignite-2019/</loc>
-    <lastmod>2019-11-07T17:47:23+09:00</lastmod>
+    <lastmod>2019-11-08T12:47:23+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gutzeit1106.github.io/2019/11/08/20191108_ignite2019_aks/</loc>
+    <lastmod>2019-11-08T12:47:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gutzeit1106.github.io/post/</loc>
+    <lastmod>2019-11-08T12:47:23+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gutzeit1106.github.io/tags/</loc>
+    <lastmod>2019-11-08T12:47:23+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gutzeit1106.github.io/categories/tech/</loc>
+    <lastmod>2019-11-08T12:47:23+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gutzeit1106.github.io/</loc>
+    <lastmod>2019-11-08T12:47:23+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gutzeit1106.github.io/tags/aks/</loc>
+    <lastmod>2019-11-08T12:47:23+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gutzeit1106.github.io/tags/azure/</loc>
+    <lastmod>2019-11-08T12:47:23+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gutzeit1106.github.io/tags/container/</loc>
+    <lastmod>2019-11-08T12:47:23+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://gutzeit1106.github.io/2019/11/07/20191107_ignite2019_iaas/</loc>
     <lastmod>2019-11-07T17:47:23+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gutzeit1106.github.io/post/</loc>
-    <lastmod>2019-11-07T17:47:23+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gutzeit1106.github.io/tags/</loc>
-    <lastmod>2019-11-07T17:47:23+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gutzeit1106.github.io/categories/tech/</loc>
-    <lastmod>2019-11-07T17:47:23+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gutzeit1106.github.io/</loc>
-    <lastmod>2019-11-07T17:47:23+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
