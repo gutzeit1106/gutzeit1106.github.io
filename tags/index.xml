@@ -6,17 +6,62 @@
     <description>Recent content in Tags on YONEHUB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 08 Nov 2019 12:47:23 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 11 Nov 2019 21:47:23 +0900</lastBuildDate>
     
 	<atom:link href="https://gutzeit1106.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Mac</title>
+      <link>https://gutzeit1106.github.io/tags/mac/</link>
+      <pubDate>Mon, 11 Nov 2019 21:47:23 +0900</pubDate>
+      
+      <guid>https://gutzeit1106.github.io/tags/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RaspberryPi</title>
+      <link>https://gutzeit1106.github.io/tags/raspberrypi/</link>
+      <pubDate>Mon, 11 Nov 2019 21:47:23 +0900</pubDate>
+      
+      <guid>https://gutzeit1106.github.io/tags/raspberrypi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspbian</title>
+      <link>https://gutzeit1106.github.io/tags/raspbian/</link>
+      <pubDate>Mon, 11 Nov 2019 21:47:23 +0900</pubDate>
+      
+      <guid>https://gutzeit1106.github.io/tags/raspbian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Microsoft Ignite 2019</title>
       <link>https://gutzeit1106.github.io/tags/microsoft-ignite-2019/</link>
-      <pubDate>Fri, 08 Nov 2019 12:47:23 +0900</pubDate>
+      <pubDate>Mon, 11 Nov 2019 00:48:00 +0900</pubDate>
       
       <guid>https://gutzeit1106.github.io/tags/microsoft-ignite-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>azure</title>
+      <link>https://gutzeit1106.github.io/tags/azure/</link>
+      <pubDate>Mon, 11 Nov 2019 00:48:00 +0900</pubDate>
+      
+      <guid>https://gutzeit1106.github.io/tags/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>storage</title>
+      <link>https://gutzeit1106.github.io/tags/storage/</link>
+      <pubDate>Mon, 11 Nov 2019 00:48:00 +0900</pubDate>
+      
+      <guid>https://gutzeit1106.github.io/tags/storage/</guid>
       <description></description>
     </item>
     
@@ -26,15 +71,6 @@
       <pubDate>Fri, 08 Nov 2019 12:47:23 +0900</pubDate>
       
       <guid>https://gutzeit1106.github.io/tags/aks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>azure</title>
-      <link>https://gutzeit1106.github.io/tags/azure/</link>
-      <pubDate>Fri, 08 Nov 2019 12:47:23 +0900</pubDate>
-      
-      <guid>https://gutzeit1106.github.io/tags/azure/</guid>
       <description></description>
     </item>
     
@@ -183,7 +219,7 @@
     </item>
     
     <item>
-      <title>Docker</title>
+      <title>docker</title>
       <link>https://gutzeit1106.github.io/tags/docker/</link>
       <pubDate>Sun, 02 Jun 2019 22:24:02 +0900</pubDate>
       
