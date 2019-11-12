@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Visual Studio Code on YONEHUB</title>
-    <link>https://gutzeit1106.github.io/tags/visual-studio-code/</link>
+    <link>https://yonehub.y10e.com/tags/visual-studio-code/</link>
     <description>Recent content in Visual Studio Code on YONEHUB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 16 Jun 2019 22:47:23 +0900</lastBuildDate>
     
-	<atom:link href="https://gutzeit1106.github.io/tags/visual-studio-code/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://yonehub.y10e.com/tags/visual-studio-code/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Visual Studio CodeでMarkdownファイルをプレビューする</title>
-      <link>https://gutzeit1106.github.io/2019/06/16/20190616_vscode_markdown/</link>
+      <link>https://yonehub.y10e.com/2019/06/16/20190616_vscode_markdown/</link>
       <pubDate>Sun, 16 Jun 2019 22:47:23 +0900</pubDate>
       
-      <guid>https://gutzeit1106.github.io/2019/06/16/20190616_vscode_markdown/</guid>
+      <guid>https://yonehub.y10e.com/2019/06/16/20190616_vscode_markdown/</guid>
       <description>Visual Stadio CodeでMarkdownファイルを記載している時に、リアルタイムにプレビュー表示をする方法についてのメモです。 手順 View &amp;gt; Command Palette</description>
     </item>
     
