@@ -4,18 +4,59 @@
   
   <url>
     <loc>https://yonehub.y10e.com/categories/</loc>
-    <lastmod>2019-11-11T21:47:23+09:00</lastmod>
+    <lastmod>2019-11-16T12:47:23+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/tags/microsoft/</loc>
+    <lastmod>2019-11-16T12:47:23+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/2019/11/16/20191116_dapr/</loc>
+    <lastmod>2019-11-16T12:47:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/post/</loc>
+    <lastmod>2019-11-16T12:47:23+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/tags/</loc>
+    <lastmod>2019-11-16T12:47:23+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/categories/tech/</loc>
+    <lastmod>2019-11-16T12:47:23+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/</loc>
+    <lastmod>2019-11-16T12:47:23+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/tags/container/</loc>
+    <lastmod>2019-11-16T12:47:23+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/tags/dapr/</loc>
+    <lastmod>2019-11-16T12:47:23+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yonehub.y10e.com/tags/mac/</loc>
-    <lastmod>2019-11-11T21:47:23+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yonehub.y10e.com/post/</loc>
     <lastmod>2019-11-11T21:47:23+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -33,24 +74,6 @@
   
   <url>
     <loc>https://yonehub.y10e.com/tags/raspbian/</loc>
-    <lastmod>2019-11-11T21:47:23+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yonehub.y10e.com/tags/</loc>
-    <lastmod>2019-11-11T21:47:23+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yonehub.y10e.com/categories/tech/</loc>
-    <lastmod>2019-11-11T21:47:23+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yonehub.y10e.com/</loc>
     <lastmod>2019-11-11T21:47:23+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -85,12 +108,6 @@
   
   <url>
     <loc>https://yonehub.y10e.com/tags/aks/</loc>
-    <lastmod>2019-11-08T12:47:23+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yonehub.y10e.com/tags/container/</loc>
     <lastmod>2019-11-08T12:47:23+09:00</lastmod>
     <priority>0</priority>
   </url>
