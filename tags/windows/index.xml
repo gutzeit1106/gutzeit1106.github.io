@@ -6,18 +6,18 @@
     <description>Recent content in Windows on YONEHUB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 13 Nov 2019 20:47:23 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 20 Nov 2019 20:47:23 +0900</lastBuildDate>
     
 	<atom:link href="https://yonehub.y10e.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Raspberry Pi用にRaspbianのインストール(Mac)</title>
-      <link>https://yonehub.y10e.com/2019/11/13/20191112_windows_eos/</link>
-      <pubDate>Wed, 13 Nov 2019 20:47:23 +0900</pubDate>
+      <title> Windows 7、Windows Server 2008/R2 の延長セキュリティ更新プログラム（ESU）を入手する方法</title>
+      <link>https://yonehub.y10e.com/2019/11/20/20191120_windows_eos/</link>
+      <pubDate>Wed, 20 Nov 2019 20:47:23 +0900</pubDate>
       
-      <guid>https://yonehub.y10e.com/2019/11/13/20191112_windows_eos/</guid>
-      <description>Raspberry Pi 用の Micro SD カードに Raspbian をインストール手順を時間があくととすぐ忘れてしまうので手順をメモしておく。 対象の Windows デバイスの延長セキュリティ更新プログ</description>
+      <guid>https://yonehub.y10e.com/2019/11/20/20191120_windows_eos/</guid>
+      <description>Windows Server 2008 および 2008 R2 の延長サポートは、2020 年 1 月 14 日に終了しますが、オンプレミス環境で追加の料金を支払うことで 3 年間の延長セキュリティ更新プ</description>
     </item>
     
   </channel>

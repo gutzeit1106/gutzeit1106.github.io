@@ -4,7 +4,65 @@
   
   <url>
     <loc>https://yonehub.y10e.com/categories/</loc>
-    <lastmod>2019-11-16T12:47:23+09:00</lastmod>
+    <lastmod>2019-11-21T06:48:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/tags/microsoft-ignite-2019/</loc>
+    <lastmod>2019-11-21T06:48:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/2019/11/21/20191121_ignite2019_network/</loc>
+    <lastmod>2019-11-21T06:48:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/tags/network/</loc>
+    <lastmod>2019-11-21T06:48:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/post/</loc>
+    <lastmod>2019-11-21T06:48:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/tags/</loc>
+    <lastmod>2019-11-21T06:48:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/categories/tech/</loc>
+    <lastmod>2019-11-21T06:48:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/</loc>
+    <lastmod>2019-11-21T06:48:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/tags/azure/</loc>
+    <lastmod>2019-11-21T06:48:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/2019/11/20/20191120_windows_eos/</loc>
+    <lastmod>2019-11-20T20:47:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yonehub.y10e.com/tags/windows/</loc>
+    <lastmod>2019-11-20T20:47:23+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -17,30 +75,6 @@
   <url>
     <loc>https://yonehub.y10e.com/2019/11/16/20191116_dapr/</loc>
     <lastmod>2019-11-16T12:47:23+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yonehub.y10e.com/post/</loc>
-    <lastmod>2019-11-16T12:47:23+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yonehub.y10e.com/tags/</loc>
-    <lastmod>2019-11-16T12:47:23+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yonehub.y10e.com/categories/tech/</loc>
-    <lastmod>2019-11-16T12:47:23+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yonehub.y10e.com/</loc>
-    <lastmod>2019-11-16T12:47:23+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -75,18 +109,6 @@
   <url>
     <loc>https://yonehub.y10e.com/tags/raspbian/</loc>
     <lastmod>2019-11-11T21:47:23+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yonehub.y10e.com/tags/azure/</loc>
-    <lastmod>2019-11-11T00:48:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yonehub.y10e.com/tags/microsoft-ignite-2019/</loc>
-    <lastmod>2019-11-11T00:48:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -228,12 +250,6 @@
   <url>
     <loc>https://yonehub.y10e.com/2019/06/16/20190616_ntlm/</loc>
     <lastmod>2019-06-16T22:03:28+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yonehub.y10e.com/tags/network/</loc>
-    <lastmod>2019-06-16T22:03:28+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

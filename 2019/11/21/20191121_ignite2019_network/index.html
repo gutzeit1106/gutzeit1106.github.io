@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Microsoft Ignite 2019 で発表された新機能のまとめ(Network編) - YONEHUB</title>
+  <meta property="og:title" content="Microsoft Ignite 2019 で発表された新機能のまとめ(Network編)" />
+  <meta name="twitter:title" content="Microsoft Ignite 2019 で発表された新機能のまとめ(Network編)" />
+  <meta name="description" content="Microsoft Ignite 2019 の Network 系サービスの update まとめです。 4つのカテゴリに分けて各種サービスの update が紹介されていました。 ・Connect &amp; Extend ・Protect ・Del">
+  <meta property="og:description" content="Microsoft Ignite 2019 の Network 系サービスの update まとめです。 4つのカテゴリに分けて各種サービスの update が紹介されていました。 ・Connect &amp; Extend ・Protect ・Del">
+  <meta name="twitter:description" content="Microsoft Ignite 2019 の Network 系サービスの update まとめです。 4つのカテゴリに分けて各種サービスの update が紹介されていました。 ・Connect &amp; Extend ・Protect ・Del">
+  <meta name="author" content="Yusuke Yoneda"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "YONEHUB",
+    
+    "url": "https:\/\/yonehub.y10e.com\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/yonehub.y10e.com\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/yonehub.y10e.com\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/yonehub.y10e.com\/2019\/11\/21\/20191121_ignite2019_network\/",
+          "name": "Microsoft ignite 2019 で発表された新機能のまとめ( network編)"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Yusuke Yoneda"
+  },
+  "headline": "Microsoft Ignite 2019 で発表された新機能のまとめ(Network編)",
+  "description" : "Microsoft Ignite 2019 の Network 系サービスの update まとめです。 4つのカテゴリに分けて各種サービスの update が紹介されていました。 ・Connect \x26amp; Extend ・Protect ・Del",
+  "inLanguage" : "en",
+  "wordCount":  2280 ,
+  "datePublished" : "2019-11-21T06:48:00",
+  "dateModified" : "2019-11-21T06:48:00",
+  "image" : "https:\/\/yonehub.y10e.com\/img\/me.jpg",
+  "keywords" : [ "azure, Network, Microsoft Ignite 2019" ],
+  "mainEntityOfPage" : "https:\/\/yonehub.y10e.com\/2019\/11\/21\/20191121_ignite2019_network\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/yonehub.y10e.com\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/yonehub.y10e.com\/img\/me.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Microsoft Ignite 2019 で発表された新機能のまとめ(Network編)" />
+<meta property="og:description" content="Microsoft Ignite 2019 の Network 系サービスの update まとめです。 4つのカテゴリに分けて各種サービスの update が紹介されていました。 ・Connect &amp; Extend ・Protect ・Del">
+<meta property="og:image" content="https://yonehub.y10e.com/img/me.jpg" />
+<meta property="og:url" content="https://yonehub.y10e.com/2019/11/21/20191121_ignite2019_network/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="YONEHUB" />
+
+  <meta name="twitter:title" content="Microsoft Ignite 2019 で発表された新機能のまとめ(Network編)" />
+  <meta name="twitter:description" content="Microsoft Ignite 2019 の Network 系サービスの update まとめです。 4つのカテゴリに分けて各種サービスの update が紹介されていました。 ・Connect &amp; Extend ・Protect ・Del">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y10exxx" />
+  <meta name="twitter:creator" content="@y10exxx" />
+  <link href='https://yonehub.y10e.com/img/favicon.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://yonehub.y10e.com/img/card.png" />
+  <meta name="twitter:image" content="https://yonehub.y10e.com/img/card.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y10exxx" />
+  <meta name="twitter:creator" content="@y10exxx" />
+  <meta property="og:url" content="https://yonehub.y10e.com/2019/11/21/20191121_ignite2019_network/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="YONEHUB" />
+
+  <meta name="generator" content="Hugo 0.55.6" />
+  <link rel="alternate" href="https://yonehub.y10e.com/index.xml" type="application/rss+xml" title="YONEHUB"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://yonehub.y10e.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://yonehub.y10e.com/css/highlight.min.css" /><link rel="stylesheet" href="https://yonehub.y10e.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133674179-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://yonehub.y10e.com/">YONEHUB</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="YONEHUB" href="https://yonehub.y10e.com/">
+            <img class="avatar-img" src="https://yonehub.y10e.com/img/me.jpg" alt="YONEHUB" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+              
+                <h1>Microsoft Ignite 2019 で発表された新機能のまとめ(Network編)</h1>
+              
+
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on November 21, 2019
+  
+  
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Yusuke Yoneda
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Microsoft Ignite 2019 の Network 系サービスの update まとめです。
+4つのカテゴリに分けて各種サービスの update が紹介されていました。</p>
+
+<p>・Connect &amp; Extend<br>
+・Protect<br>
+・Deliver<br>
+・Monitoring<br></p>
+
+<p>ネットワークサービスは、難しいですね。機能ごとのセッションを追いきれなかったので、補足とかある人は <a href="https://twitter.com/y10exxx">twitter</a> とかでご教示いただきたいなぁ。</p>
+
+<h2 id="1-connect-extend">1. Connect &amp; Extend</h2>
+
+<h3 id="azure-peering-service-preview">Azure Peering Service (Preview)</h3>
+
+<p>ISP を介してパブリックネットワーク経由で Microsoftクラウド(Office 365、Dynamics 365、Azure など)に最適かつ信頼性の高いルーティングを提供するサービスです。
+専用接続を使用して、Microsoftクラウドにセキュアなネットワーク接続をおこなうサービスとしては、Azure ExpressRoute　がありましたが、Peering Service では、プライベート回線ではなくパブリックネットワークが利用されます。<br>
+日本でも、NTT コミュニケーションズや IIJ が早くも対応サービスを公表していました。</p>
+
+<p>Azure Peering Service<br>
+<a href="https://docs.microsoft.com/ja-jp/azure/peering-service/">https://docs.microsoft.com/ja-jp/azure/peering-service/</a></p>
+
+<h3 id="azure-virtual-wan">Azure Virtual WAN</h3>
+
+<p>Azure Virtual WAN は、Azureを介して拠点間接続を行うことができる大規模拠点間接続サービスです。
+Ignite 2019 では、プレビューだった　ExpressRoute と P2S VPN　接続との統合が一般提供となりました。</p>
+
+<p>Azure Firewall や Azure Virtual WAN に存在する各リージョンのハブとハブの間で接続させる機能についてのプレビュー開始が紹介されていました。</p>
+
+<p>それに伴い公式ドキュメントも更新されているようです。</p>
+
+<p>Azure Virtual WAN の概要<br>
+<a href="https://docs.microsoft.com/ja-jp/azure/virtual-wan/virtual-wan-about">https://docs.microsoft.com/ja-jp/azure/virtual-wan/virtual-wan-about</a></p>
+
+<h3 id="expressroute">ExpressRoute</h3>
+
+<p>オンプレミスからのネットワークトラフィックを Azure 上の仮想ネットワークゲートウェイをバイパスできる FastPath のオプションが GA になりました</p>
+
+<p>ExpressRoute 仮想ネットワーク ゲートウェイと FastPath<br>
+<a href="https://docs.microsoft.com/ja-jp/azure/expressroute/expressroute-about-virtual-network-gateways#fastpath">https://docs.microsoft.com/ja-jp/azure/expressroute/expressroute-about-virtual-network-gateways#fastpath</a></p>
+
+<p>また、ExpressRoute Direct で使用できる ExpressRoute Local が GA になったようです。
+ExpressRoute Local では、アクセス可能なリージョンが限定されていますが、データ転送料金などが追加で発生ない SKU らしいです。ただ、ExpressRoute Global Reachも使えないみたいですね。</p>
+
+<p>ExpressRoute Local<br>
+<a href="https://docs.microsoft.com/ja-jp/azure/expressroute/expressroute-faqs#expressroute-local">https://docs.microsoft.com/ja-jp/azure/expressroute/expressroute-faqs#expressroute-local</a></p>
+
+<p>ネットワークデバイスと Microsoft のネットワーク デバイスの間の物理リンクと MACSec(Media Access Control Security)で暗号化する機能がプレビューで紹介されていました。ExpressRoute Direct のみ利用可能のようです。</p>
+
+<p>MACsec によるポイントツーポイント暗号化に関する FAQ <br>
+<a href="https://docs.microsoft.com/ja-jp/azure/expressroute/expressroute-about-encryption#point-to-point-encryption-by-macsec-faq">https://docs.microsoft.com/ja-jp/azure/expressroute/expressroute-about-encryption#point-to-point-encryption-by-macsec-faq</a></p>
+
+<h3 id="expressroute-for-satellites-ga">ExpressRoute for satellites (GA)</h3>
+
+<p>衛星接続とExpressRouteを通じてMicrosoft サービスに接続できる<a href="https://azure.microsoft.com/de-de/updates/azure-expressroute-for-satellites-is-now-available/">Azure ExpressRoute for satellites</a> が GA となりました。</p>
+
+<p>Satellite connectivity expands reach of Azure ExpressRoute across the globe <br>
+<a href="https://azure.microsoft.com/en-us/blog/satellite-connectivity-expands-reach-of-azure-expressroute-across-the-globe/">https://azure.microsoft.com/en-us/blog/satellite-connectivity-expands-reach-of-azure-expressroute-across-the-globe/</a></p>
+
+<h3 id="vpn">VPN</h3>
+
+<p>S2S 接続では、10Gbpsの帯域の Gateway タイプと、全ての Gateway タイプでIKEv1とIKEv2のサポートがGAになったようです。
+VPN Gateway でのパケットパキャプチャ採取も開発しているらしいです。これは早く GA なってほしいですね。</p>
+
+<p>P2S 接続では、Azure ADと多要素認証のサポート、Windows アプリの Azure VPN Clinetを開発しているみたいです。</p>
+
+<h3 id="ipv6-in-azure-vnets">IPv6 in Azure VNETs</h3>
+
+<p>Azure の仮想ネットワーク内で、IPv4 と IPv6 の両方がサポートされるようになりました。GA らしいです。
+ただ、ドキュメントはまだ更新されていないので、今後反映されていくものと思われます。</p>
+
+<p>What is IPv6 for Azure Virtual Network? (Preview)<br>
+<a href="https://docs.microsoft.com/en-us/azure/virtual-network/ipv6-overview">https://docs.microsoft.com/en-us/azure/virtual-network/ipv6-overview</a></p>
+
+<h2 id="2-protect">2. Protect</h2>
+
+<h3 id="azure-private-link-preview">Azure Private Link (Preview)</h3>
+
+<p>Azure Private Link が、プレビューで公開されました。Azure Storage や SQL、Cosmos DB などの PaaS リソースに対して、仮想ネットワーク内のプライベート IP を経由して接続できる機能になります。</p>
+
+<p>Azure Private Link <br>
+<a href="https://docs.microsoft.com/ja-jp/azure/private-link/">https://docs.microsoft.com/ja-jp/azure/private-link/</a></p>
+
+<h3 id="azure-firewall-manager-preview">Azure Firewall Manager (Preview)</h3>
+
+<p>Azure Firewall Manager という機能がプレビューで公開されました。
+リージョンやサブスクリプションをまたがる複数のAzure Firewall インスタンスを一元的にセキュリティポリシーを展開、管理できるみたいです。</p>
+
+<p>Azure Firewall Manager is now in preview <br>
+<a href="https://azure.microsoft.com/ja-jp/updates/azure-firewall-manager-is-now-in-preview/">https://azure.microsoft.com/ja-jp/updates/azure-firewall-manager-is-now-in-preview/</a></p>
+
+<h3 id="azure-bastion">Azure Bastion</h3>
+
+<p>JumpBox の PaaS のような、サーバーをもたずに仮想ネットワークから Azure VM に RDP や SSH ができるようになる Azure Bastion が GA になりました。
+プレビューから GA まで早かったですね。　</p>
+
+<p>Azure Bastion とは<br>
+<a href="https://docs.microsoft.com/ja-jp/azure/bastion/bastion-overview">https://docs.microsoft.com/ja-jp/azure/bastion/bastion-overview</a></p>
+
+<h3 id="azure-waf">Azure WAF</h3>
+
+<p>Azure Front Door や Azure Application Gateway と統合した WAF サービスになったという話でした。(updateなのか？)URIなどで WAF ポリシーをカスタマイズできたり地理レベルでフィルタリングを適用したりするような機能が開発中らしいです。</p>
+
+<h2 id="3-deliver">3. Deliver</h2>
+
+<h3 id="application-gateway">Application Gateway</h3>
+
+<p>Application Gateway のところで発表するの？って感じでしたが、AKS の Application Gateway Ingres Controleer が GA しました。<br>
+他には、Application GatewayとAzure Keyvaltが統合され、SSL 証明書を管理する機能がGAになりました。レイテンシやバックエンドのエラーコードなどメトリックも拡充したらしいです。</p>
+
+<p>Comming Soonとしては、リスナーにワイルドカードが許容されるようになりサブドメインごとにリスナー作成が不要になる Wildcard listener が開発中らしいです。</p>
+
+<h3 id="azure-front-door">Azure Front Door</h3>
+
+<p>内部動作の update のようでしたが、HTTPパフォーマンスが向上したり、DDos対策などでセキュリティ性も向上しているようです。</p>
+
+<h3 id="azure-cdn">Azure CDN</h3>
+
+<p>Azure Storage や VM、Media Serviceから Microsoftの Azure CDN　のエグレストラフィックは無料になりました。
+CDN ルールのカスタマイズ性や容易さを向上できるように開発を進めているとのこと。</p>
+
+<h2 id="4-monitoring">4. Monitoring</h2>
+
+<h3 id="internet-analyzer-preview">Internet Analyzer(Preview)</h3>
+
+<p>Azure Internet Analyzerがプレビューで公開されました。次のようなことができるらしい。</p>
+
+<p>・web アプリをクラウドに移行した時のインパクト計測<br>
+・Azure Front DoorやCDNを使用したときのパフォーマンス影響の計測<br>
+・2種類のweb appやマルチリージョンのアプリを配置したときのパフォーマンスなどを計測<br></p>
+
+<p>Internet Analyzer<br>
+<a href="https://azure.microsoft.com/ja-jp/services/internet-analyzer/">https://azure.microsoft.com/ja-jp/services/internet-analyzer/</a></p>
+
+<h3 id="azure-monitor-for-networks">Azure Monitor for networks</h3>
+
+<p>ネットワーク周りのモニタリング、メトリック計測などが向上、拡充したそうです。
+Traffic 分析の処理速度向上やロードバランサーやグローバルピアリング、UDRなどの接続性チェックが向上が挙げられていました。</p>
+
+<p>今後としては、クラウドネットワーク全体の正常性を確認できるコンソールやエージェント、設定レスな機能の開発を進めているらしいです。　</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://yonehub.y10e.com//tags/azure/">azure</a>&nbsp;
+            
+              <a href="https://yonehub.y10e.com//tags/network/">Network</a>&nbsp;
+            
+              <a href="https://yonehub.y10e.com//tags/microsoft-ignite-2019/">Microsoft Ignite 2019</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+          
+          
+          <h4 class="see-also">See also</h4>
+          <ul>
+          
+            <li><a href="/2019/11/11/20191110_ignite2019_storage/">Microsoft Ignite 2019 で発表された新機能のまとめ(Storage編)</a></li>
+          
+            <li><a href="/2019/11/08/20191108_ignite2019_aks/">Microsoft Ignite 2019 で発表された新機能のまとめ(AKS/Container編)</a></li>
+          
+            <li><a href="/2019/11/07/20191107_ignite2019_iaas/">Microsoft Ignite 2019 で発表された新機能のまとめ(VM/VMSS編)</a></li>
+          
+          </ul>
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://yonehub.y10e.com/2019/11/20/20191120_windows_eos/" data-toggle="tooltip" data-placement="top" title=" Windows 7、Windows Server 2008/R2 の延長セキュリティ更新プログラム（ESU）を入手する方法">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://www.facebook.com/yyoneda" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/y10e" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/y10exxx" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/yusuke-yoneda-788118105" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Yusuke Yoneda
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://yonehub.y10e.com/">YONEHUB</a>
+          
+        </p>
+        <p class="credits copyright">
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://yonehub.y10e.com/js/main.js"></script>
+<script src="https://yonehub.y10e.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://yonehub.y10e.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

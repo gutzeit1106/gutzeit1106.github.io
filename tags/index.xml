@@ -6,10 +6,46 @@
     <description>Recent content in Tags on YONEHUB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 16 Nov 2019 12:47:23 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 21 Nov 2019 06:48:00 +0900</lastBuildDate>
     
 	<atom:link href="https://yonehub.y10e.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Microsoft Ignite 2019</title>
+      <link>https://yonehub.y10e.com/tags/microsoft-ignite-2019/</link>
+      <pubDate>Thu, 21 Nov 2019 06:48:00 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/tags/microsoft-ignite-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://yonehub.y10e.com/tags/network/</link>
+      <pubDate>Thu, 21 Nov 2019 06:48:00 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>azure</title>
+      <link>https://yonehub.y10e.com/tags/azure/</link>
+      <pubDate>Thu, 21 Nov 2019 06:48:00 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/tags/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://yonehub.y10e.com/tags/windows/</link>
+      <pubDate>Wed, 20 Nov 2019 20:47:23 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/tags/windows/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Microsoft</title>
@@ -62,24 +98,6 @@
       <pubDate>Mon, 11 Nov 2019 21:47:23 +0900</pubDate>
       
       <guid>https://yonehub.y10e.com/tags/raspbian/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Azure</title>
-      <link>https://yonehub.y10e.com/tags/azure/</link>
-      <pubDate>Mon, 11 Nov 2019 00:48:00 +0900</pubDate>
-      
-      <guid>https://yonehub.y10e.com/tags/azure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Microsoft Ignite 2019</title>
-      <link>https://yonehub.y10e.com/tags/microsoft-ignite-2019/</link>
-      <pubDate>Mon, 11 Nov 2019 00:48:00 +0900</pubDate>
-      
-      <guid>https://yonehub.y10e.com/tags/microsoft-ignite-2019/</guid>
       <description></description>
     </item>
     
@@ -215,15 +233,6 @@
       <pubDate>Sun, 16 Jun 2019 22:47:23 +0900</pubDate>
       
       <guid>https://yonehub.y10e.com/tags/visual-studio-code/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Network</title>
-      <link>https://yonehub.y10e.com/tags/network/</link>
-      <pubDate>Sun, 16 Jun 2019 22:03:28 +0900</pubDate>
-      
-      <guid>https://yonehub.y10e.com/tags/network/</guid>
       <description></description>
     </item>
     

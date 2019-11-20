@@ -6,10 +6,28 @@
     <description>Recent content in Tech on YONEHUB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 16 Nov 2019 12:47:23 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 21 Nov 2019 06:48:00 +0900</lastBuildDate>
     
 	<atom:link href="https://yonehub.y10e.com/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Microsoft Ignite 2019 で発表された新機能のまとめ(Network編)</title>
+      <link>https://yonehub.y10e.com/2019/11/21/20191121_ignite2019_network/</link>
+      <pubDate>Thu, 21 Nov 2019 06:48:00 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/11/21/20191121_ignite2019_network/</guid>
+      <description>Microsoft Ignite 2019 の Network 系サービスの update まとめです。 4つのカテゴリに分けて各種サービスの update が紹介されていました。 ・Connect &amp;amp; Extend ・Protect ・Del</description>
+    </item>
+    
+    <item>
+      <title> Windows 7、Windows Server 2008/R2 の延長セキュリティ更新プログラム（ESU）を入手する方法</title>
+      <link>https://yonehub.y10e.com/2019/11/20/20191120_windows_eos/</link>
+      <pubDate>Wed, 20 Nov 2019 20:47:23 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/11/20/20191120_windows_eos/</guid>
+      <description>Windows Server 2008 および 2008 R2 の延長サポートは、2020 年 1 月 14 日に終了しますが、オンプレミス環境で追加の料金を支払うことで 3 年間の延長セキュリティ更新プ</description>
+    </item>
     
     <item>
       <title>Microsoftのマイクロサービス構築フレームワーク Dapr を動かす</title>
