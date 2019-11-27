@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 02 Jun 2019 22:24:02 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 25 Nov 2019 12:47:23 +0900</lastBuildDate>
     
 	<atom:link href="https://yonehub.y10e.com/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Azure Kubernetes Service(AKS)で Dapr を動かす（Setup編）</title>
+      <link>https://yonehub.y10e.com/2019/11/25/20191126_dapr_aks_setup/</link>
+      <pubDate>Mon, 25 Nov 2019 12:47:23 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/11/25/20191126_dapr_aks_setup/</guid>
+      <description>先日、stand-alone な環境で dapr の動作を検証しました。 次は、Kubernetes cluster 上で dapr の動作を検証してみたいと思います。Miniku</description>
+    </item>
     
     <item>
       <title>k8s Cheat Sheet #1 -基本</title>

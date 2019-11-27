@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Azure Kubernetes Service(AKS)で Dapr を動かす（Setup編） | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="Cloud Engineer&#39;s blog">
+<link rel="prev" href="https://yonehub.y10e.com/2019/11/21/20191121_ignite2019_network/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2019/11/25/20191126_dapr_aks_setup/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+  <meta name="twitter:title" content="Azure Kubernetes Service(AKS)で Dapr を動かす（Setup編）" />
+  <meta name="twitter:description" content="先日、stand-alone な環境で dapr の動作を検証しました。 次は、Kubernetes cluster 上で dapr の動作を検証してみたいと思います。Miniku">
+  <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
+  
+<meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y10exxx" />
+  <meta name="twitter:creator" content="@y10exxx" /><script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Azure Kubernetes Service(AKS)で Dapr を動かす（Setup編）",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/yonehub.y10e.com\/2019\/11\/25\/20191126_dapr_aks_setup\/"
+    },
+    
+    "genre": "posts",
+    
+        "keywords": "dapr, container, AKS, kubernetes, Microsoft",
+    
+    "wordcount":  1111 ,
+    "url": "https:\/\/yonehub.y10e.com\/2019\/11\/25\/20191126_dapr_aks_setup\/",
+    
+        "datePublished": "2019-11-25T12:47:23\x2b09:00",
+    
+    
+        "dateModified": "2019-11-28T00:32:08\x2b09:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Yusuke.Yoneda",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/yonehub.y10e.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            if (!window.localStorage.getItem('theme')){
+                var current = new Date();
+                if (current.getHours() >= 23 || current.getHours() <= 4){
+                    window.localStorage.setItem('theme', 'dark');
+                    location.reload();
+                }else{
+                    window.localStorage.setItem('theme', 'light');
+                }
+            }
+
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://yonehub.y10e.com/">YONEHUB</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://yonehub.y10e.com/">YONEHUB</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Azure Kubernetes Service(AKS)で Dapr を動かす（Setup編）</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/development/">Development</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-11-25>2019-11-25</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1111 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                
+                <div class="post-toc-content always-active">
+                    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#0-ドキュメント">0. ドキュメント</a></li>
+<li><a href="#1-azure-kubernetes-service-aks-cluster-の作成">1. Azure Kubernetes Service(AKS) Cluster の作成</a></li>
+<li><a href="#2-dapr-cli-のインストール">2. Dapr CLI　のインストール</a></li>
+<li><a href="#3-aks-クラスタに-dapr-をインストールする">3. AKS クラスタに dapr をインストールする</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>toc</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#0-ドキュメント">0. ドキュメント</a></li>
+<li><a href="#1-azure-kubernetes-service-aks-cluster-の作成">1. Azure Kubernetes Service(AKS) Cluster の作成</a></li>
+<li><a href="#2-dapr-cli-のインストール">2. Dapr CLI　のインストール</a></li>
+<li><a href="#3-aks-クラスタに-dapr-をインストールする">3. AKS クラスタに dapr をインストールする</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+<p>先日、<a href="../../../../2019/11/16/20191116_dapr/">stand-alone な環境</a>で dapr の動作を検証しました。
+次は、Kubernetes cluster 上で dapr の動作を検証してみたいと思います。Minikube などのローカルな環境でも試すことができそうでしたが、折角なので Azure Kubernetes Service(AKS) で検証してみます。</p>
+
+<a class="post-dummy-target" id="0-ドキュメント"></a><h3>0. ドキュメント</h3>
+
+<p>Installing Dapr on a Kubernetes cluster <br>
+<a href="https://github.com/dapr/docs/blob/master/getting-started/environment-setup.md#installing-dapr-on-a-kubernetes-cluster">https://github.com/dapr/docs/blob/master/getting-started/environment-setup.md#installing-dapr-on-a-kubernetes-cluster</a></p>
+
+<p>Set up an Azure Kubernetes Service cluster <br>
+<a href="https://github.com/dapr/docs/blob/master/getting-started/cluster/setup-aks.md">https://github.com/dapr/docs/blob/master/getting-started/cluster/setup-aks.md</a></p>
+
+<a class="post-dummy-target" id="1-azure-kubernetes-service-aks-cluster-の作成"></a><h3>1. Azure Kubernetes Service(AKS) Cluster の作成</h3>
+
+<p>前提条件として、次を作業端末にセットアップします。</p>
+
+<p>・Azure CLI <br>
+・kubectl <br></p>
+
+<p>はじめに dapr 検証環境用の AKS Cluster を <a href="https://docs.microsoft.com/ja-jp/cli/azure/install-azure-cli?view=azure-cli-latest">Azure CLI</a> で作成します。kubectl　も前提として必要になるので、<a href="https://docs.microsoft.com/ja-jp/azure/aks/kubernetes-walkthrough">クイック スタート:Azure CLI を使用して Azure Kubernetes Service クラスターをデプロイする</a>を見ると良いかと思います。</p>
+
+<p>インストール後に次のコマンドを実行していきます。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># Azure への接続</span>
+az login
+
+<span class="c1"># サブスクリプションの選択</span>
+az account <span class="nb">set</span> -s &lt;YourSubscriptionId&gt;
+
+<span class="c1"># リソースグループの作成</span>
+az group create --name myAKSdapr --location japaneast
+
+<span class="c1"># AKS クラスタの作成（k8sは、1.13.x 以上を使用する必要があるので必要に応じて--kubernetes-versionで指定する）</span>
+az aks create --resource-group myAKSdapr <span class="se">\
+</span><span class="se"></span>    --name myAKSDaprCluster <span class="se">\
+</span><span class="se"></span>    --node-count <span class="m">2</span> <span class="se">\
+</span><span class="se"></span>    --enable-addons http_application_routing
+    --enable-rbac <span class="se">\
+</span><span class="se"></span>    --generate-ssh-keys
+
+<span class="c1"># クラスタの資格情報を取得する</span>
+az aks get-credentials --resource-group myAKSdapr --name myAKSDaprCluster</code></pre></td></tr></table>
+</div>
+</div>
+<p>なお、<a href="https://github.com/helm/helm/issues/6374#issuecomment-537185486">k8s のバージョン 1.6.x で helm 2.15.0 以下が動作しない</a>という問題があるようなので、この後 dapr を helm でインストールする際は、kubernetes のバージョンに注意した方が良いです。</p>
+
+<p>一応、クラスタ作成後に kubectl get node で確認しておきます。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl get node
+NAME                                STATUS   ROLES   AGE     VERSION
+aks-nodepool1-37284717-vmss000000   Ready    agent   5m39s   v1.13.12
+aks-nodepool1-37284717-vmss000001   Ready    agent   5m51s   v1.13.12</pre></td></tr></table>
+</div>
+</div>
+<a class="post-dummy-target" id="2-dapr-cli-のインストール"></a><h3>2. Dapr CLI　のインストール</h3>
+
+<p>今回の作業端末は、Mac ではなく Visual Studio Code の Remote Deployment で接続した　Ubuntu 環境のため、Dapr CLI をインストールする。
+ちなみに、Mac 用の　dapr CLI のインストールは、<a href="../../../../2019/11/16/20191116_dapr/">前回</a>を参照してください。<br>
+次のコマンドで最新の dapr cli が、/usr/local/bin にインストールされる。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">wget -q https://raw.githubusercontent.com/dapr/cli/master/install/install.sh -O - | /bin/bash
+Your system is linux_amd64
+Installing Dapr CLI...
+
+Downloading https://github.com/dapr/cli/releases/download/v0.2.0/dapr_linux_amd64.tar.gz ...
+dapr installed into /usr/local/bin successfully.
+cli version: 0.2.0 
+runtime version: n/a
+To get started with Dapr, please visit https://github.com/dapr/docs/tree/master/getting-started</pre></td></tr></table>
+</div>
+</div>
+<a class="post-dummy-target" id="3-aks-クラスタに-dapr-をインストールする"></a><h3>3. AKS クラスタに dapr をインストールする</h3>
+
+<p>次のコマンドで、AKS クラスタに dapr をインストールする。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ dapr init --kubernetes
+⌛  Making the jump to hyperspace...
+ℹ️  Note: this installation is recommended for testing purposes. For production environments, please use Helm 
+
+✅  Deploying the Dapr Operator to your cluster...
+✅  Success! Dapr has been installed. To verify, run &#39;kubectl get pods -w&#39; in your terminal</pre></td></tr></table>
+</div>
+</div>
+<p>上記の通りインストールが正常に完了した後に、kubectl get pods で pod を確認すると、dapr関連の pod (dapr-operator, dapr-placement, dapr-sidecar-injector) が表示される。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl get pods -w
+NAME                                     READY   STATUS    RESTARTS   AGE
+dapr-operator-68f7dcb454-nv25m           1/1     Running   0          70s
+dapr-placement-6d77d54dc6-5bsp4          1/1     Running   0          70s
+dapr-sidecar-injector-86d6ccf956-5j56p   1/1     Running   0          70s</pre></td></tr></table>
+</div>
+</div>
+<p>この時、この pod は、default の namespace に作成されるが、helm を使ってインストールすることで、任意の namespace 配下に作成ができる。
+アンインストールしたいときは、次のコマンドを実行します。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">dapr uninstall --kubernetes</pre></td></tr></table>
+</div>
+</div>
+<p>先ほどの 3 つの pod が Terminating になっていくことがわかります。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">kubectl get pods
+NAME                                     READY   STATUS        RESTARTS   AGE
+dapr-operator-68f7dcb454-nv25m           0/1     Terminating   0          22m
+dapr-placement-6d77d54dc6-5bsp4          0/1     Terminating   0          22m
+dapr-sidecar-injector-86d6ccf956-5j56p   0/1     Terminating   0          22m</pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2019-11-28</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2019/11/25/20191126_dapr_aks_setup/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f11%2f25%2f20191126_dapr_aks_setup%2f&amp;text=Azure%20Kubernetes%20Service%28AKS%29%e3%81%a7%20Dapr%20%e3%82%92%e5%8b%95%e3%81%8b%e3%81%99%ef%bc%88Setup%e7%b7%a8%ef%bc%89&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2019%2f11%2f25%2f20191126_dapr_aks_setup%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+    
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f11%2f25%2f20191126_dapr_aks_setup%2f&amp;title=Azure%20Kubernetes%20Service%28AKS%29%e3%81%a7%20Dapr%20%e3%82%92%e5%8b%95%e3%81%8b%e3%81%99%ef%bc%88Setup%e7%b7%a8%ef%bc%89" target="_blank" title="Share on LinkedIn">
+            <i class="fab fa-linkedin fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/dapr/"><i class="fas fa-tag fa-fw"></i>dapr</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/container/"><i class="fas fa-tag fa-fw"></i>container</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/aks/"><i class="fas fa-tag fa-fw"></i>AKS</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/kubernetes/"><i class="fas fa-tag fa-fw"></i>kubernetes</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/microsoft/"><i class="fas fa-tag fa-fw"></i>Microsoft</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://yonehub.y10e.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://yonehub.y10e.com/2019/11/21/20191121_ignite2019_network/" class="prev" rel="prev" title="Microsoft Ignite 2019 で発表された新機能のまとめ(Network編)"><i class="fas fa-angle-left fa-fw"></i>Microsoft Ignite 2019 で発表された新機能のまとめ(Network編)</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            　　<div id="disqus_thread"></div>
+        <script>
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yonehub.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2019</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://yonehub.y10e.com/">Yusuke.Yoneda</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133674179-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>

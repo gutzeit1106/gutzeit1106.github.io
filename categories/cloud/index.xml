@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on YONEHUB</title>
+    <link>https://yonehub.y10e.com/categories/cloud/</link>
+    <description>Recent content in Cloud on YONEHUB</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Thu, 21 Nov 2019 06:48:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://yonehub.y10e.com/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Microsoft Ignite 2019 で発表された新機能のまとめ(Network編)</title>
+      <link>https://yonehub.y10e.com/2019/11/21/20191121_ignite2019_network/</link>
+      <pubDate>Thu, 21 Nov 2019 06:48:00 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/11/21/20191121_ignite2019_network/</guid>
+      <description>Microsoft Ignite 2019 の Network 系サービスの update まとめです。 4つのカテゴリに分けて各種サービスの update が紹介されていました。 ・Connect &amp;amp; Extend ・Protect ・Del</description>
+    </item>
+    
+    <item>
+      <title> Windows 7、Windows Server 2008/R2 の延長セキュリティ更新プログラムを入手する方法</title>
+      <link>https://yonehub.y10e.com/2019/11/20/20191120_windows_eos/</link>
+      <pubDate>Wed, 20 Nov 2019 20:47:23 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/11/20/20191120_windows_eos/</guid>
+      <description>Windows Server 2008 および 2008 R2 の延長サポートは、2020 年 1 月 14 日に終了しますが、オンプレミス環境で追加の料金を支払うことで 3 年間の延長セキュリティ更新プ</description>
+    </item>
+    
+    <item>
+      <title>Microsoft Ignite 2019 で発表された新機能のまとめ(Storage編)</title>
+      <link>https://yonehub.y10e.com/2019/11/11/20191110_ignite2019_storage/</link>
+      <pubDate>Mon, 11 Nov 2019 00:48:00 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/11/11/20191110_ignite2019_storage/</guid>
+      <description>Microsoft Ignite 2019 の Storage周りの update まとめです。 公開情報がまだ十分にない preview な機能の紹介が多かった印象でした。 1. Azure Disk ディスク関連の update は、 Azure VM とかぶっ</description>
+    </item>
+    
+    <item>
+      <title>Microsoft Ignite 2019 で発表された新機能のまとめ(AKS/Container編)</title>
+      <link>https://yonehub.y10e.com/2019/11/08/20191108_ignite2019_aks/</link>
+      <pubDate>Fri, 08 Nov 2019 12:47:23 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/11/08/20191108_ignite2019_aks/</guid>
+      <description>Microsoft Ignite 2019 で AKS / Container 関連も多く update がありました。 画期的というよりは、実用的な機能が充実してきたと思える機能が多くありました。 1. Threat protection for Azure Kubernetes Service Azure Security Cen</description>
+    </item>
+    
+    <item>
+      <title>Microsoft Ignite 2019 で発表された新機能のまとめ(VM/VMSS編)</title>
+      <link>https://yonehub.y10e.com/2019/11/07/20191107_ignite2019_iaas/</link>
+      <pubDate>Thu, 07 Nov 2019 17:47:23 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/11/07/20191107_ignite2019_iaas/</guid>
+      <description>今週は Microsoft Ignite 2019 で盛り上がった一週間でした。 自分の周りでは、Keynote で取り上げられていた、Azure Arc や Azure Synapse が特に話題になっていた気がしま</description>
+    </item>
+    
+    <item>
+      <title>VM ScalesetのOrchestration Modeについて</title>
+      <link>https://yonehub.y10e.com/2019/11/06/20191106_vmss_orchestrationmode/</link>
+      <pubDate>Wed, 06 Nov 2019 22:47:23 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/11/06/20191106_vmss_orchestrationmode/</guid>
+      <description>Microsoft Ignite 2019で触れられていた、VM Scaleset のOrchestration modeというプレビュー機能について調べてみました。 要約すると、VM Scal</description>
+    </item>
+    
+    <item>
+      <title>Azure SQL DatabaseとCosmosDBの要点整理(2019/7)</title>
+      <link>https://yonehub.y10e.com/2019/07/07/20190707_azure_sql/</link>
+      <pubDate>Sun, 07 Jul 2019 00:00:01 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/07/07/20190707_azure_sql/</guid>
+      <description>Azure SQL Database サーバ Azure SQL Databaseサーバは、各種機能の中央管理をおこなう論理的リソースで、以下のような管理機能を提供している。 データベースアク</description>
+    </item>
+    
+    <item>
+      <title>Azure Active Directoryの要点整理(2019/07)</title>
+      <link>https://yonehub.y10e.com/2019/07/07/20190707_azure_ad/</link>
+      <pubDate>Sun, 07 Jul 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/07/07/20190707_azure_ad/</guid>
+      <description>Azure AD の価格プランによる機能比較 FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。 BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は1008円</description>
+    </item>
+    
+    <item>
+      <title>k8s Cheat Sheet #1 -基本</title>
+      <link>https://yonehub.y10e.com/2019/06/02/20190601_k8s_1/</link>
+      <pubDate>Sun, 02 Jun 2019 22:24:02 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/06/02/20190601_k8s_1/</guid>
+      <description>・help参照 1 kubectl --help ・version確認(Client と Server ) 1 kubectl version ・yaml minifestの適用 1 Kubectl -f FileName k8sクラスタのローカルconte</description>
+    </item>
+    
+    <item>
+      <title>kubectl --help</title>
+      <link>https://yonehub.y10e.com/2019/06/01/20190601_k8s_0/</link>
+      <pubDate>Sat, 01 Jun 2019 04:10:00 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/06/01/20190601_k8s_0/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70</description>
+    </item>
+    
+    <item>
+      <title>k8s Reference List</title>
+      <link>https://yonehub.y10e.com/2019/06/01/20190601_k8s_linklist/</link>
+      <pubDate>Sat, 01 Jun 2019 04:00:00 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/06/01/20190601_k8s_linklist/</guid>
+      <description>Kubernets Official https://kubernetes.io/ k8s - Github reposittory https://github.com/kubernetes k8sの概念とかアーキテクチャとかyamlの例とか https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/ Kubectlのリファレンス https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands Kubectl Cheat Sheet https://kubernetes.io/docs/reference/kubectl/cheatsheet/ Azure Kubernetes Service - Github reposittory https://github.com/Azure/AKS</description>
+    </item>
+    
+    <item>
+      <title>Cloud-init Reference List</title>
+      <link>https://yonehub.y10e.com/2019/05/01/20190501_cloudinit_linklist/</link>
+      <pubDate>Wed, 01 May 2019 21:00:00 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/05/01/20190501_cloudinit_linklist/</guid>
+      <description>Cloud-init 公式 https://cloudinit.readthedocs.io/en/latest/</description>
+    </item>
+    
+    <item>
+      <title>Docker Cheat Sheet #3 - 削除系コマンド</title>
+      <link>https://yonehub.y10e.com/2019/02/11/20190211_docker3/</link>
+      <pubDate>Mon, 11 Feb 2019 04:00:00 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/02/11/20190211_docker3/</guid>
+      <description>停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除 1 docker system prune 停止コンテナ一括削除 1 docker container prune 全コンテナ一括削除 1 docker rm -f `docker</description>
+    </item>
+    
+    <item>
+      <title>Docker Cheat Sheet #2 - 表示系</title>
+      <link>https://yonehub.y10e.com/2019/02/11/20190211_docker2/</link>
+      <pubDate>Mon, 11 Feb 2019 03:00:33 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/02/11/20190211_docker2/</guid>
+      <description>・コンテナの一覧表示 1 2 3 4 dokcer ps // or docker container list #※defaultはrunningされたコンテナのみ表示 -a で全表示 dokcer ps -a ・コンテナイメージの一覧表</description>
+    </item>
+    
+    <item>
+      <title>Docker Cheat Sheet #1 - 基本系</title>
+      <link>https://yonehub.y10e.com/2019/02/11/20190211_docker1/</link>
+      <pubDate>Mon, 11 Feb 2019 02:00:33 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/02/11/20190211_docker1/</guid>
+      <description>・help 表示 1 docker --help ・Dockerイメージの作成 1 2 3 4 docker build -t ImageName:TagName {DockerFileのあるディレクトリ} #example docker build --tag sample/basic:1.0 . ・Dockerイメージ</description>
+    </item>
+    
+    <item>
+      <title>Docker --help</title>
+      <link>https://yonehub.y10e.com/2019/02/11/20190211_docker0/</link>
+      <pubDate>Mon, 11 Feb 2019 01:00:00 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/02/11/20190211_docker0/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70</description>
+    </item>
+    
+    <item>
+      <title>Docker Reference List</title>
+      <link>https://yonehub.y10e.com/2019/02/11/20190211_docker_linklist/</link>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://yonehub.y10e.com/2019/02/11/20190211_docker_linklist/</guid>
+      <description>Docker のリファレンス https://docs.docker.com/reference/ Docker Sample https://docs.docker.com/samples/ Docker Cmd Referance https://docs.docker.com/engine/reference/commandline/cli/ Docker File Reference https://docs.docker.com/engine/reference/builder/ Dokcer Compose Cmd Referance https://docs.docker.com/compose/reference/overview/ Dokcer Compose Referance https://docs.docker.com/compose/compose-file/</description>
+    </item>
+    
+  </channel>
+</rss>
