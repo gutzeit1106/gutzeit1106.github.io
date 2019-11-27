@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tips on YONEHUB</title>
     <link>https://yonehub.y10e.com/tags/tips/</link>
     <description>Recent content in Tips on YONEHUB</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
+    <language>ja</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Sun, 16 Jun 2019 22:47:23 +0900</lastBuildDate>
     
 	<atom:link href="https://yonehub.y10e.com/tags/tips/index.xml" rel="self" type="application/rss+xml" />

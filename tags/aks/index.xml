@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>aks on YONEHUB</title>
     <link>https://yonehub.y10e.com/tags/aks/</link>
     <description>Recent content in aks on YONEHUB</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
+    <language>ja</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Fri, 08 Nov 2019 12:47:23 +0900</lastBuildDate>
     
 	<atom:link href="https://yonehub.y10e.com/tags/aks/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +18,7 @@
       <pubDate>Fri, 08 Nov 2019 12:47:23 +0900</pubDate>
       
       <guid>https://yonehub.y10e.com/2019/11/08/20191108_ignite2019_aks/</guid>
-      <description>Microsoft Ignite 2019 で AKS / Container 関連も多く update がありました。 画期的というよりは、実用的な機能が充実してきたと思える機能が多くありました。 Threat protection for Azure Kubernetes Service Azure Security Cent</description>
+      <description>Microsoft Ignite 2019 で AKS / Container 関連も多く update がありました。 画期的というよりは、実用的な機能が充実してきたと思える機能が多くありました。 1. Threat protection for Azure Kubernetes Service Azure Security Cen</description>
     </item>
     
   </channel>

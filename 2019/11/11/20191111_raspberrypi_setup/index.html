@@ -1,295 +1,241 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
-  <head>
-    
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Raspberry Pi用にRaspbianのインストール(Mac) | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="Cloud Engineer&#39;s blog">
+<link rel="prev" href="https://yonehub.y10e.com/2019/11/11/20191110_ignite2019_storage/" />
+<link rel="next" href="https://yonehub.y10e.com/2019/11/16/20191116_dapr/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2019/11/11/20191111_raspberrypi_setup/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-  <title>Raspberry Pi用にRaspbianのインストール(Mac) - YONEHUB</title>
-  <meta property="og:title" content="Raspberry Pi用にRaspbianのインストール(Mac)" />
   <meta name="twitter:title" content="Raspberry Pi用にRaspbianのインストール(Mac)" />
-  <meta name="description" content="Raspberry Pi 用の Micro SD カードに Raspbian をインストール手順を時間があくととすぐ忘れてしまうので手順をメモしておく。 1. SDカードの選別 基本的に SD カードのサイズは">
-  <meta property="og:description" content="Raspberry Pi 用の Micro SD カードに Raspbian をインストール手順を時間があくととすぐ忘れてしまうので手順をメモしておく。 1. SDカードの選別 基本的に SD カードのサイズは">
   <meta name="twitter:description" content="Raspberry Pi 用の Micro SD カードに Raspbian をインストール手順を時間があくととすぐ忘れてしまうので手順をメモしておく。 1. SDカードの選別 基本的に SD カードのサイズは">
-  <meta name="author" content="Yusuke Yoneda"/><script type="application/ld+json">
-{
+  <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
+  
+<meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y10exxx" />
+  <meta name="twitter:creator" content="@y10exxx" /><script type="application/ld+json">
+    {
     "@context": "http://schema.org",
-    "@type": "WebSite",
-    "name": "YONEHUB",
+    "@type": "BlogPosting",
+    "headline": "Raspberry Pi用にRaspbianのインストール(Mac)",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/yonehub.y10e.com\/2019\/11\/11\/20191111_raspberrypi_setup\/"
+    },
     
-    "url": "https:\/\/yonehub.y10e.com\/"
-}
-</script><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "name": "",
-  "url": "https:\/\/yonehub.y10e.com\/"
-  
-  
-  
-  
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@id": "https:\/\/yonehub.y10e.com\/",
-          "name": "home"
-        }
-    },{
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@id": "https:\/\/yonehub.y10e.com\/2019\/11\/11\/20191111_raspberrypi_setup\/",
-          "name": "Raspberry pi用に raspbianのインストール( mac)"
-        }
-    }]
-}
-</script><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Article",
-  "author": {
-    "name" : "Yusuke Yoneda"
-  },
-  "headline": "Raspberry Pi用にRaspbianのインストール(Mac)",
-  "description" : "Raspberry Pi 用の Micro SD カードに Raspbian をインストール手順を時間があくととすぐ忘れてしまうので手順をメモしておく。 1. SDカードの選別 基本的に SD カードのサイズは",
-  "inLanguage" : "en",
-  "wordCount":  1131 ,
-  "datePublished" : "2019-11-11T21:47:23",
-  "dateModified" : "2019-11-11T21:47:23",
-  "image" : "https:\/\/yonehub.y10e.com\/img\/me.jpg",
-  "keywords" : [ "Mac, Raspbian, RaspberryPi" ],
-  "mainEntityOfPage" : "https:\/\/yonehub.y10e.com\/2019\/11\/11\/20191111_raspberrypi_setup\/",
-  "publisher" : {
-    "@type": "Organization",
-    "name" : "https:\/\/yonehub.y10e.com\/",
-    "logo" : {
-        "@type" : "ImageObject",
-        "url" : "https:\/\/yonehub.y10e.com\/img\/me.jpg",
-        "height" :  60 ,
-        "width" :  60
+    "genre": "posts",
+    
+        "keywords": "Mac, Raspbian, RaspberryPi",
+    
+    "wordcount":  1162 ,
+    "url": "https:\/\/yonehub.y10e.com\/2019\/11\/11\/20191111_raspberrypi_setup\/",
+    
+        "datePublished": "2019-11-11T21:47:23\x2b09:00",
+    
+    
+        "dateModified": "2019-11-11T21:47:23\x2b09:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Yusuke.Yoneda",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/yonehub.y10e.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
     }
-  }
-}
-</script>
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
 
-<meta property="og:title" content="Raspberry Pi用にRaspbianのインストール(Mac)" />
-<meta property="og:description" content="Raspberry Pi 用の Micro SD カードに Raspbian をインストール手順を時間があくととすぐ忘れてしまうので手順をメモしておく。 1. SDカードの選別 基本的に SD カードのサイズは">
-<meta property="og:image" content="https://yonehub.y10e.com/img/me.jpg" />
-<meta property="og:url" content="https://yonehub.y10e.com/2019/11/11/20191111_raspberrypi_setup/" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="YONEHUB" />
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
 
-  <meta name="twitter:title" content="Raspberry Pi用にRaspbianのインストール(Mac)" />
-  <meta name="twitter:description" content="Raspberry Pi 用の Micro SD カードに Raspbian をインストール手順を時間があくととすぐ忘れてしまうので手順をメモしておく。 1. SDカードの選別 基本的に SD カードのサイズは">
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@y10exxx" />
-  <meta name="twitter:creator" content="@y10exxx" />
-  <link href='https://yonehub.y10e.com/img/favicon.png' rel='icon' type='image/x-icon'/>
-  <meta property="og:image" content="https://yonehub.y10e.com/img/card.png" />
-  <meta name="twitter:image" content="https://yonehub.y10e.com/img/card.png" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@y10exxx" />
-  <meta name="twitter:creator" content="@y10exxx" />
-  <meta property="og:url" content="https://yonehub.y10e.com/2019/11/11/20191111_raspberrypi_setup/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="YONEHUB" />
+    </head>
+    <body>
+        <script>
+            if (!window.localStorage.getItem('theme')){
+                var current = new Date();
+                if (current.getHours() >= 23 || current.getHours() <= 4){
+                    window.localStorage.setItem('theme', 'dark');
+                    location.reload();
+                }else{
+                    window.localStorage.setItem('theme', 'light');
+                }
+            }
 
-  <meta name="generator" content="Hugo 0.55.6" />
-  <link rel="alternate" href="https://yonehub.y10e.com/index.xml" type="application/rss+xml" title="YONEHUB"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://yonehub.y10e.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
-  <link rel="stylesheet" href="https://yonehub.y10e.com/css/highlight.min.css" /><link rel="stylesheet" href="https://yonehub.y10e.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
-
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-133674179-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-  </head>
-  <body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://yonehub.y10e.com/">YONEHUB</a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="main-navbar">
-      <ul class="nav navbar-nav navbar-right">
-        
-          
-            <li>
-              <a title="Blog" href="/">Blog</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="Tags" href="/tags">Tags</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="About" href="/page/about/">About</a>
-            </li>
-          
-        
-
-        
-
-        
-      </ul>
-    </div>
-
-    
-      <div class="avatar-container">
-        <div class="avatar-img-border">
-          <a title="YONEHUB" href="https://yonehub.y10e.com/">
-            <img class="avatar-img" src="https://yonehub.y10e.com/img/me.jpg" alt="YONEHUB" />
-          </a>
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://yonehub.y10e.com/">YONEHUB</a>
         </div>
-      </div>
-    
-
-  </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
 </nav>
-
-
-
-
-    
-
-
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-<div class="pswp__bg"></div>
-
-<div class="pswp__scroll-wrap">
-    
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-    </div>
-    
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
-      
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-      <button class="pswp__button pswp__button--share" title="Share"></button>
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-      
-      
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
-    </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
-    </div>
-    </div>
-    </div>
-</div>
-
-
-  
-  
-  
-
-
-
-
-
-
-  
-
-  <header class="header-section ">
-    
-    <div class="intro-header no-img">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="post-heading">
-              
-              
-                <h1>Raspberry Pi用にRaspbianのインストール(Mac)</h1>
-              
-
-              
-              
-              
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 11, 2019
-  
-  
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Yusuke Yoneda
-  
-  
-</span>
-
-
-              
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://yonehub.y10e.com/">YONEHUB</a>
             </div>
-          </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
         </div>
-      </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
     </div>
-  </header>
-
-
+</nav><main class="main">
+                <div class="container">
+                    
     
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <article role="main" class="blog-post">
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Raspberry Pi用にRaspbianのインストール(Mac)</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+                <span class="post-category">
+                        
+                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/tech/">Tech</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-11-11>2019-11-11</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;</div>
+        </div>
+
         
+
+        <div class="post-toc" id="post-toc">
+                <h2 class="post-toc-title"></h2>
+                <div class="post-toc-content">
+                    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1-sdカードの選別">1. SDカードの選別</a></li>
+<li><a href="#2-インストール方法の選択">2. インストール方法の選択</a></li>
+<li><a href="#3-micro-sdカードのフォーマット">3. Micro SDカードのフォーマット</a></li>
+<li><a href="#4-raspbian-のダウンロードと書き込み">4. Raspbian のダウンロードと書き込み</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span></span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1-sdカードの選別">1. SDカードの選別</a></li>
+<li><a href="#2-インストール方法の選択">2. インストール方法の選択</a></li>
+<li><a href="#3-micro-sdカードのフォーマット">3. Micro SDカードのフォーマット</a></li>
+<li><a href="#4-raspbian-のダウンロードと書き込み">4. Raspbian のダウンロードと書き込み</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
 
 <p>Raspberry Pi 用の Micro SD カードに Raspbian をインストール手順を時間があくととすぐ忘れてしまうので手順をメモしておく。</p>
 
-<h3 id="1-sdカードの選別">1. SDカードの選別</h3>
+<a class="post-dummy-target" id="1-sdカードの選別"></a><h3>1. SDカードの選別</h3>
 
 <p>基本的に SD カードのサイズは、マイクロSDカードが必要（ただし Raspberry Pi Model A およびRaspberry Pi Model B は、フル SD カード）
 NOOBS、Raspbianのイメージインストールは最小推奨で 8GB 以上なので、それ以上のサイズが必要。
@@ -298,7 +244,7 @@ NOOBS、Raspbianのイメージインストールは最小推奨で 8GB 以上�
 <p>SD Card
 <a href="https://www.raspberrypi.org/documentation/installation/sd-cards.md">https://www.raspberrypi.org/documentation/installation/sd-cards.md</a></p>
 
-<h3 id="2-インストール方法の選択">2. インストール方法の選択</h3>
+<a class="post-dummy-target" id="2-インストール方法の選択"></a><h3>2. インストール方法の選択</h3>
 
 <p>NOOBS を使う方法と、Raspbian を直接イメージとして焼く方法の２種類がある。
 NOOBS でも Raspbian はオフラインインストールできるみたいだが、若干 SD カードの容量を無題にするかなと思われる。
@@ -307,7 +253,7 @@ NOOBS で Ubuntuなどの Raspbian 以外の OS をインストールするこ�
 <p>Raspberry Pi - Downloads
 <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p>
 
-<h3 id="3-micro-sdカードのフォーマット">3. Micro SDカードのフォーマット</h3>
+<a class="post-dummy-target" id="3-micro-sdカードのフォーマット"></a><h3>3. Micro SDカードのフォーマット</h3>
 
 <p>PC に SD カードを接続して、ディスクユーティリティを起動する。
 Raspberry Pi は、FAT ファイルシステムのみサポートしているので、exFAT などは利用できません。</p>
@@ -316,18 +262,54 @@ Raspberry Pi は、FAT ファイルシステムのみサポートしているの
 
 <p><img src="/img/20191111_raspbian/1_diskutility.png" align="left"><br clear="left"></p>
 
-<h3 id="4-raspbian-のダウンロードと書き込み">4. Raspbian のダウンロードと書き込み</h3>
+<a class="post-dummy-target" id="4-raspbian-のダウンロードと書き込み"></a><h3>4. Raspbian のダウンロードと書き込み</h3>
 
 <p>Raspbian のイメージを次からダウンロードします。デスクトップ版や推奨ソフトウェア込み版などがあるので好みに応じて選びます。</p>
 
 <p><a href="https://www.raspberrypi.org/downloads/raspbian/">https://www.raspberrypi.org/downloads/raspbian/</a></p>
 
 <p>ターミナルを起動し、まずはzipを解凍する。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ unzip <span class="m">2019</span>-09-26-raspbian-buster.zip 
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ unzip <span class="m">2019</span>-09-26-raspbian-buster.zip 
 Archive:  <span class="m">2019</span>-09-26-raspbian-buster.zip
-  inflating: <span class="m">2019</span>-09-26-raspbian-buster.img </code></pre></div>
+  inflating: <span class="m">2019</span>-09-26-raspbian-buster.img </code></pre></td></tr></table>
+</div>
+</div>
 <p>SDカードのデバイス名を確認する。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ df -h
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ df -h
 /dev/disk2s1    29Gi  <span class="m">1</span>.5Mi   29Gi     <span class="m">1</span>%       <span class="m">0</span>                   <span class="m">0</span>  <span class="m">100</span>%   /Volumes/RASPBIAN
 
 $ diskutil list
@@ -349,155 +331,261 @@ $ diskutil list
 /dev/disk2 <span class="o">(</span>external, physical<span class="o">)</span>:
    <span class="c1">#:                       TYPE NAME                    SIZE       IDENTIFIER</span>
    <span class="m">0</span>:     FDisk_partition_scheme                        *31.0 GB    disk2
-   <span class="m">1</span>:                 DOS_FAT_32 RASPBIAN                <span class="m">31</span>.0 GB    disk2s1</code></pre></div>
+   <span class="m">1</span>:                 DOS_FAT_32 RASPBIAN                <span class="m">31</span>.0 GB    disk2s1</code></pre></td></tr></table>
+</div>
+</div>
 <p>MACでSDカードを接続すると、自動マウントされてイメージを書き込むタイミングでResource busyで怒られることになるので先にアンマウントしておく。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo diskutil umount /Volumes/RASPBIAN</code></pre></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">sudo diskutil umount /Volumes/RASPBIAN</code></pre></td></tr></table>
+</div>
+</div>
 <p>dd コマンドでimgをdisk2のデバイスに書き込む。ここで disk でなく rdisk で指定した方が書き込みが早くなる点に注目。
 なにやら 20 倍ほど早くなるとのこと。<a href="https://superuser.com/questions/631592/why-is-dev-rdisk-about-20-times-faster-than-dev-disk-in-mac-os-x">Why is “/dev/rdisk” about 20 times faster than “/dev/disk” in Mac OS X</a>
 イメージ書き込み待ち中暇なので調べたところ、disk と rdisk もデバイスとしては同じものを指定しているが、disk はランダムアクセス可能なデバイス、rdisk はシーケンシャルアクセスされるデバイスを意味しているらしい。
 disk 指定の場合、 IO は 4KB に分割され、カーネル空間の Buffer Cache を経由してデバイスへ Read/Write されることになる。一方、rdiskはk基本的に Buffer Cache を経由せずに直接デバイスへIOとなる。
 なので、dd コマンドでの書き込みのようなシーケンシャルアクセスでは、余計なオーバヘッドが発生しない rdisk 指定のアクセスが圧倒的に早いという話。</p>
-<div class="highlight"><pre class="chroma">$ sudo dd bs=1m if=2019-09-26-raspbian-buster.img of=/dev/rdisk2
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ sudo dd bs=1m if=2019-09-26-raspbian-buster.img of=/dev/rdisk2
 3652+0 records in
 3652+0 records out
-3829399552 bytes transferred in 274.894541 secs (13930431 bytes/sec)</pre></div>
+3829399552 bytes transferred in 274.894541 secs (13930431 bytes/sec)</pre></td></tr></table>
+</div>
+</div>
+        </div>
 
-        
-          <div class="blog-tags">
-            
-              <a href="https://yonehub.y10e.com//tags/mac/">Mac</a>&nbsp;
-            
-              <a href="https://yonehub.y10e.com//tags/raspbian/">Raspbian</a>&nbsp;
-            
-              <a href="https://yonehub.y10e.com//tags/raspberrypi/">RaspberryPi</a>&nbsp;
-            
-          </div>
-        
-
-        
-
-        
-          
-          
-        
-      </article>
-
-      
-        <ul class="pager blog-pager">
-          
-            <li class="previous">
-              <a href="https://yonehub.y10e.com/2019/11/11/20191110_ignite2019_storage/" data-toggle="tooltip" data-placement="top" title="Microsoft Ignite 2019 で発表された新機能のまとめ(Storage編)">&larr; Previous Post</a>
-            </li>
-          
-          
-            <li class="next">
-              <a href="https://yonehub.y10e.com/2019/11/16/20191116_dapr/" data-toggle="tooltip" data-placement="top" title="Microsoftのマイクロサービス構築フレームワーク Dapr を動かす">Next Post &rarr;</a>
-            </li>
-          
-        </ul>
-      
-
-
-      
-        
-        
-      
-
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>%!(EXTRA string=2019-11-11)</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2019/11/11/20191111_raspberrypi_setup/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f11%2f11%2f20191111_raspberrypi_setup%2f&amp;text=Raspberry%20Pi%e7%94%a8%e3%81%abRaspbian%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%28Mac%29&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2019%2f11%2f11%2f20191111_raspberrypi_setup%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+    
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f11%2f11%2f20191111_raspberrypi_setup%2f&amp;title=Raspberry%20Pi%e7%94%a8%e3%81%abRaspbian%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%28Mac%29" target="_blank" title="Share on LinkedIn">
+            <i class="fab fa-linkedin fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
     </div>
-  </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/mac/"><i class="fas fa-tag fa-fw"></i>Mac</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/raspbian/"><i class="fas fa-tag fa-fw"></i>Raspbian</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/raspberrypi/"><i class="fas fa-tag fa-fw"></i>RaspberryPi</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();"></a></span>&nbsp;|&nbsp;<span><a href="https://yonehub.y10e.com/"></a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://yonehub.y10e.com/2019/11/11/20191110_ignite2019_storage/" class="prev" rel="prev" title="Microsoft Ignite 2019 で発表された新機能のまとめ(Storage編)"><i class="fas fa-angle-left fa-fw"></i>Microsoft Ignite 2019 で発表された新機能のまとめ(Storage編)</a>
+        
+        
+            <a href="https://yonehub.y10e.com/2019/11/16/20191116_dapr/" class="next" rel="next" title="Microsoftのマイクロサービス構築フレームワーク Dapr を動かす">Microsoftのマイクロサービス構築フレームワーク Dapr を動かす<i class="fas fa-angle-right fa-fw"></i></a>
+        
+    </div>
 </div>
 
-    <footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <ul class="list-inline text-center footer-links">
-          
-              <li>
-                <a href="https://www.facebook.com/yyoneda" title="Facebook">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/y10e" title="GitHub">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://twitter.com/y10exxx" title="Twitter">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://linkedin.com/in/yusuke-yoneda-788118105" title="LinkedIn">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-          
-          <li>
-            <a href="" title="RSS">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-        <p class="credits copyright text-muted">
-          
+        <div class="post-comment">
             
-              Yusuke Yoneda
             
-          
 
-          &nbsp;&bull;&nbsp;&copy;
-          
-            2019
-          
-
-          
-            &nbsp;&bull;&nbsp;
-            <a href="https://yonehub.y10e.com/">YONEHUB</a>
-          
-        </p>
-        <p class="credits copyright">
-          
-        </p>
-      </div>
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2019</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://yonehub.y10e.com/">Yusuke.Yoneda</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
     </div>
-  </div>
-</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</footer>
 
-<script src="https://yonehub.y10e.com/js/main.js"></script>
-<script src="https://yonehub.y10e.com/js/highlight.min.js"></script>
-<script> hljs.initHighlightingOnLoad(); </script>
-<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://yonehub.y10e.com/js/load-photoswipe.js"></script>
+
+    
+    
 
 
 
 
+    
+    
+
+
+
+
+    
+    
 
 
 
 
 
-  </body>
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133674179-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
 </html>
-
