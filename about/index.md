@@ -1,4 +1,4 @@
-# about
+# About
 
 <div style="text-align: center;">
 逝者如斯夫。不舎昼夜
