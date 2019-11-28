@@ -240,7 +240,7 @@
             
             
             
-            Microsoft Ignite 2019で触れられていた、VM Scaleset のOrchestration modeというプレビュー機能について調べてみました。 要約すると、VM Scal
+            Microsoft Ignite 2019で触れられていた、VM Scaleset のOrchestration modeというプレビュー機能について調べてみました。 要約すると、VM Scalesetに通常の仮想マシンを追加できる機能でした。 ・2種類のOrchestration(ScaleSetVM or VM)を選択できる（VMSS作成時のみ） ・ScaleSetVMモードは以前のVMSS。VMSSの雛形にそったVMインスタンスをスケールさせるので、基本
         
     </div>
     <div class="post-footer">
@@ -287,7 +287,7 @@
             
             
             
-            クラウドのVM上でWordpressで公開していたブログをgithub pages + Hugoに移行してみた。 Hugoは静的サイトジェネレータの一つで、
+            クラウドのVM上でWordpressで公開していたブログをgithub pages + Hugoに移行してみた。 Hugoは静的サイトジェネレータの一つで、Go言語で作られています。MarkDown等の記述性の高い形式で書かれたファイルを指定したデザインテーマでHTML + CSSのWEBコンテンツに変換してくれます。 Why GitHub Pages? 第一の理由はコストです。クラウドとはいえ Web Server の稼働代金も1000円/月程度かかるので無料で使え
         
     </div>
     <div class="post-footer">
@@ -336,7 +336,7 @@
             
             
             
-            Mac OSにRustをインストールして実行するまでのメモです。 手順 まずはターミナルで次のコマンドを実行する。（選択肢が出たら、1のdefault
+            Mac OSにRustをインストールして実行するまでのメモです。 手順 まずはターミナルで次のコマンドを実行する。（選択肢が出たら、1のdefaultで良いと思う） 1 curl --proto &#39;=https&#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh ターミナルを再起動するか、以下のコマンドを実行してパスを通す。 1 source ~/.bash_profile インストール後はrustcのバージョンを確認する。 1 2 rustc --version rustc 1.38.0 (625451e37 2019-09-23) インストールが確認できたら適当なパスにhello.rsという名称でファイルを作り、エディタで内
         
     </div>
     <div class="post-footer">
@@ -381,7 +381,7 @@
             
             
             
-            Azure SQL Database サーバ Azure SQL Databaseサーバは、各種機能の中央管理をおこなう論理的リソースで、以下のような管理機能を提供している。 データベースアク
+            Azure SQL Database サーバ Azure SQL Databaseサーバは、各種機能の中央管理をおこなう論理的リソースで、以下のような管理機能を提供している。 データベースアクセス（ログイン） Firewall Rule 監査規則 脅威検出ポリシー（SQLインジェクション、ブルートフォース攻撃など） 自動フェールオーバーグループ Azure SQL Databaseサーバは、Database を作成するにあたって事前に存在している必要がある。 Azure SQL Database Azure SQL Databaseには、次の3つ
         
     </div>
     <div class="post-footer">
@@ -428,7 +428,7 @@
             
             
             
-            Azure AD の価格プランによる機能比較 FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。 BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は1008円
+            Azure AD の価格プランによる機能比較 FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。 BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は1008円/月 参考:Azure Active Directory のプラン機能対応表 ※PREMIUM P1以上が必要な主な機能 MFA(Multi-Factor Authentication)の有効化 Azure AD Connect Health 条件付きアクセス Cloud App Discovery(組織で利用しているクラウドアプリケーションの利用状況の可視化) ※PREMIUM P2以上が必
         
     </div>
     <div class="post-footer">
@@ -475,7 +475,7 @@
             
             
             
-            Visual Stadio CodeでMarkdownファイルを記載している時に、リアルタイムにプレビュー表示をする方法についてのメモです。 手順 View &gt; Command Palette
+            Visual Stadio CodeでMarkdownファイルを記載している時に、リアルタイムにプレビュー表示をする方法についてのメモです。 手順 View &gt; Command Paletteを開く（Macだとshift + command + p） &ldquo;Markdown:Open Preview to the Side&rdquo;を選択する この通り
         
     </div>
     <div class="post-footer">
@@ -520,7 +520,7 @@
             
             
             
-            Windows環境では、NTLM（NT LAN Manager）とKerberosの２つの認証プロトコルが主に利用される。 Windows 2000以降はKerbe
+            Windows環境では、NTLM（NT LAN Manager）とKerberosの２つの認証プロトコルが主に利用される。 Windows 2000以降はKerberos認証が推奨になっているが、未だによく見るNTLM認証の動きを整理する NTLMはいわゆるチャレンジ、レスポンス方式で、チャレンジといわれるランダムデータを元にパスワード値を組み合わせて計算し、クライアント側とサーバ側でその比較をおこなうことで認証要求の正当
         
     </div>
     <div class="post-footer">
@@ -565,7 +565,7 @@
             
             
             
-            githubのcontributionsを見ていたら確かにリポジトリ更新したはずなのに草が生えてなかった。 contributions Activityを見ると、なぜか
+            githubのcontributionsを見ていたら確かにリポジトリ更新したはずなのに草が生えてなかった。 contributions Activityを見ると、なぜか違うユーザでcommitしたことになっている。 どうやら、メインのPCはMacなのだがたまにサブのWindowsからおこなったcommitが別ユーザで実施したことになっているらしい。そこでgitのcommitユーザの確認と過去のcommitユーザの修正方法につい
         
     </div>
     <div class="post-footer">
