@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Azure Kubernetes Service(AKS) で Dapr を動かす(HelloWord編) | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="Cloud Engineer&#39;s blog">
+<link rel="prev" href="https://yonehub.y10e.com/2019/11/27/20191127_dapr_aks_setup/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2019/11/29/20191130_dapr_aks_helloworld/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+  <meta name="twitter:title" content="Azure Kubernetes Service(AKS) で Dapr を動かす(HelloWord編)" />
+  <meta name="twitter:description" content="前回は、AKS 上で Dapr をセットアップしました。 次は、Azure Kubernetes Service(AKS) 上で dapr のサンプルアプリケーションを動作させてみます。（前回と同様、動作検証時の dapr は v0.2 になります。） 最終的なアーキテクチャは次の通りです。 dapr がインストールされた環境で、python と node.js の POD が動作しま …">
+  <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
+  
+<meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y10exxx" />
+  <meta name="twitter:creator" content="@y10exxx" /><script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Azure Kubernetes Service(AKS) で Dapr を動かす(HelloWord編)",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/yonehub.y10e.com\/2019\/11\/29\/20191130_dapr_aks_helloworld\/"
+    },
+    
+    "genre": "posts",
+    
+        "keywords": "dapr, container, AKS, kubernetes, Microsoft",
+    
+    "wordcount":  2413 ,
+    "url": "https:\/\/yonehub.y10e.com\/2019\/11\/29\/20191130_dapr_aks_helloworld\/",
+    
+        "datePublished": "2019-11-29T12:47:23\x2b09:00",
+    
+    
+        "dateModified": "2019-11-29T12:47:23\x2b09:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Yusuke.Yoneda",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/yonehub.y10e.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            if (!window.localStorage.getItem('theme')){
+                var current = new Date();
+                if (current.getHours() >= 23 || current.getHours() <= 4){
+                    window.localStorage.setItem('theme', 'dark');
+                    location.reload();
+                }else{
+                    window.localStorage.setItem('theme', 'light');
+                }
+            }
+
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://yonehub.y10e.com/">YONEHUB</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://yonehub.y10e.com/">YONEHUB</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Azure Kubernetes Service(AKS) で Dapr を動かす(HelloWord編)</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/development/">Development</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-11-29>2019-11-29</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 2413 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>5 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                
+                <div class="post-toc-content always-active">
+                    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#0-ドキュメント">0. ドキュメント</a></li>
+<li><a href="#1-前提条件">1. 前提条件</a></li>
+<li><a href="#2-state-store-redis-の構築">2. State Store (Redis)の構築</a></li>
+<li><a href="#3-node-js-app-を-dapr-とデプロイする">3. Node.js App を dapr とデプロイする</a></li>
+<li><a href="#4-python-app-を-dapr-とデプロイする">4. python App を dapr とデプロイする</a></li>
+<li><a href="#5-メッセージログを確認する">5. メッセージログを確認する</a></li>
+<li><a href="#6-アプリケーションからの応答を確認する">6. アプリケーションからの応答を確認する</a></li>
+<li><a href="#7-あとしまつ">7. あとしまつ</a></li>
+<li><a href="#8-補足">8. 補足</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Index</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#0-ドキュメント">0. ドキュメント</a></li>
+<li><a href="#1-前提条件">1. 前提条件</a></li>
+<li><a href="#2-state-store-redis-の構築">2. State Store (Redis)の構築</a></li>
+<li><a href="#3-node-js-app-を-dapr-とデプロイする">3. Node.js App を dapr とデプロイする</a></li>
+<li><a href="#4-python-app-を-dapr-とデプロイする">4. python App を dapr とデプロイする</a></li>
+<li><a href="#5-メッセージログを確認する">5. メッセージログを確認する</a></li>
+<li><a href="#6-アプリケーションからの応答を確認する">6. アプリケーションからの応答を確認する</a></li>
+<li><a href="#7-あとしまつ">7. あとしまつ</a></li>
+<li><a href="#8-補足">8. 補足</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+<p>前回は、<a href="https://yonehub.y10e.com/2019/11/27/20191127_dapr_aks_setup/">AKS 上で Dapr をセットアップ</a>しました。
+次は、Azure Kubernetes Service(AKS) 上で dapr のサンプルアプリケーションを動作させてみます。（前回と同様、動作検証時の dapr は v0.2 になります。）<br>
+最終的なアーキテクチャは次の通りです。</p>
+
+<p><img src="/img/20191130_aks_dapr/Architecture_Diagram.png" align="left"><br clear="left"></p>
+
+<p>dapr がインストールされた環境で、python と node.js の POD が動作します。python と node.js の POD　は、それぞれの POD 内でサイドカーとして動作する dapr API を経由して、state 情報の更新と取得が行われます。</p>
+
+<a class="post-dummy-target" id="0-ドキュメント"></a><h3>0. ドキュメント</h3>
+
+<p>Hello Kubernetes <br>
+<a href="https://github.com/dapr/samples/tree/master/2.hello-kubernetes">https://github.com/dapr/samples/tree/master/2.hello-kubernetes</a></p>
+
+<p>Redis and Dapr  <br>
+<a href="https://github.com/dapr/docs/blob/master/concepts/components/redis.md#configuration">https://github.com/dapr/docs/blob/master/concepts/components/redis.md#configuration</a></p>
+
+<a class="post-dummy-target" id="1-前提条件"></a><h3>1. 前提条件</h3>
+
+<p><a href="https://github.com/dapr/docs/blob/master/concepts/components/redis.md#configuration">Azure Kubernetes Service(AKS)で Dapr を動かす（Setup編）</a>で、全手順を完了し、3. AKS クラスタに dapr がインストールされている状態から始めます。</p>
+
+<a class="post-dummy-target" id="2-state-store-redis-の構築"></a><h3>2. State Store (Redis)の構築</h3>
+
+<p>Dapr は、Redis, CosmosDB, DynamoDB, Cassandra など様々なデータストアを state 情報のストアとして使用できます。
+今回は、Redis を使用したいと思います。</p>
+
+<p>今回 Redisは、Helm で作成しようと思いますので、helm をセットアップします。11月に Helm 3.0.0 が stable でリリースされたので、まずは Helm3 のセットアップから始めます。以下は Linux が作業端末であることを前提としているので、その他の環境の場合は<a href="https://helm.sh/docs/intro/install/">Helm 公式</a>を参照してください。Helm3は、Tillerless になっていたりコマンドが少し違うため、実際成功したコマンドも記載しておきます。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">$curl</span> https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 <span class="p">|</span> bash
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+<span class="m">100</span>  <span class="m">6617</span>  <span class="m">100</span>  <span class="m">6617</span>    <span class="m">0</span>     <span class="m">0</span>  <span class="m">21483</span>      <span class="m">0</span> --:--:-- --:--:-- --:--:-- <span class="m">21414</span>
+Downloading https://get.helm.sh/helm-v3.0.0-linux-amd64.tar.gz
+Preparing to install helm into /usr/local/bin
+helm installed into /usr/local/bin/helm</code></pre></td></tr></table>
+</div>
+</div>
+<p>helm のコマンドがインストールできたら chart repository を登録しておきます。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+&#34;stable&#34; has been added to your repositories</pre></td></tr></table>
+</div>
+</div>
+<p>repository が参照できることを確認します。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$helm search repo stable
+NAME                                    CHART VERSION   APP VERSION                     DESCRIPTION                                       
+stable/acs-engine-autoscaler            2.2.2           2.1.1                           DEPRECATED Scales worker nodes within agent pools 
+stable/aerospike                        0.3.1           v4.5.0.5                        A Helm chart for Aerospike in Kubernetes          
+stable/airflow                          5.1.0           1.10.4                          Airflow is a platform to programmatically autho...
+# more</pre></td></tr></table>
+</div>
+</div>
+<p>今回、redis は defaultの namespace に作成しようと思います。次のコマンドで redis をインストールします。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ helm install redis stable/redis </pre></td></tr></table>
+</div>
+</div>
+<p>redis がインストールされていることが確認できます。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ helm list
+NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
+redis   default         1               2019-11-28 17:49:09.405349951 +0000 UTC deployed        redis-10.0.2    5.0.7    
+
+$ kubectl get pods -n redis
+NAME             READY   STATUS              RESTARTS   AGE
+redis-master-0   1/1     Running             0          6m2s
+redis-slave-0    1/1     Running             0          6m2s
+redis-slave-1    1/1     Running             0          5m21s</pre></td></tr></table>
+</div>
+</div>
+<p>redis が作成できたら、次の deploy/redis.yaml を使用して redis の設定を実行します。</p>
+
+<p>dapr/samples <br>
+<a href="https://github.com/dapr/samples/tree/master/2.hello-kubernetes/deploy">https://github.com/dapr/samples/tree/master/2.hello-kubernetes/deploy</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl get secret --namespace redis redis -o jsonpath=&#34;{.data.redis-password}&#34; | base64 --decode</pre></td></tr></table>
+</div>
+</div>
+<p>YOUR_REDIS_HOST_HERE, YOUR_REDIS_KEY_HERE の箇所を編集します。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml">apiVersion<span class="p">:</span><span class="w"> </span>dapr.io/v1alpha1<span class="w">
+</span><span class="w"></span>kind<span class="p">:</span><span class="w"> </span>Component<span class="w">
+</span><span class="w"></span>metadata<span class="p">:</span><span class="w">
+</span><span class="w">  </span>name<span class="p">:</span><span class="w"> </span>statestore<span class="w">
+</span><span class="w"></span>spec<span class="p">:</span><span class="w">
+</span><span class="w">  </span>type<span class="p">:</span><span class="w"> </span>state.redis<span class="w">
+</span><span class="w">  </span>metadata<span class="p">:</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span>redisHost<span class="w">
+</span><span class="w">    </span>value<span class="p">:</span><span class="w"> </span>redis-master<span class="p">:</span><span class="m">6379</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span>redisPassword<span class="w">
+</span><span class="w">    </span>value<span class="p">:</span><span class="w"> </span>&lt;YOUR_REDIS_KEY_HERE&gt;</code></pre></td></tr></table>
+</div>
+</div>
+<p>YOUR_REDIS_KEY_HERE については、次のコマンドで確認した値を指定します。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl get secret redis -o jsonpath=&#34;{.data.redis-password}&#34; | base64 --decode</pre></td></tr></table>
+</div>
+</div>
+<p>ファイルを修正したら構成を apply します。これで一旦、redis の作業は完了です。
+ちなみに redis の key は、kubernetes の Secrets にも保存できます。Sample は <a href="https://github.com/dapr/docs/blob/master/concepts/components/secrets.md">こちら</a> で紹介されていました。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl apply -f ./deploy/redis.yaml
+component.dapr.io/statestore created</pre></td></tr></table>
+</div>
+</div>
+<a class="post-dummy-target" id="3-node-js-app-を-dapr-とデプロイする"></a><h3>3. Node.js App を dapr とデプロイする</h3>
+
+<p>おなじく sample の deploy/node.yaml を使用します。</p>
+
+<p>deploy/node.yaml を見ると Deployment の annotations で dapr サイドカーの設定が有効化されていることがわかります。
+これと同時にサイドカーの dapr に対して、アプリの id や port などの情報を指定しています。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml">annotations<span class="p">:</span><span class="w">
+</span><span class="w">        </span>dapr.io/enabled<span class="p">:</span><span class="w"> </span><span class="s2">&#34;true&#34;</span><span class="w">
+</span><span class="w">        </span>dapr.io/id<span class="p">:</span><span class="w"> </span><span class="s2">&#34;nodeapp&#34;</span><span class="w">
+</span><span class="w">        </span>dapr.io/port<span class="p">:</span><span class="w"> </span><span class="s2">&#34;3000&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>デプロイします。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl apply -f ./deploy/node.yaml
+service/nodeapp created
+deployment.apps/nodeapp created</pre></td></tr></table>
+</div>
+</div>
+<p>デプロイ後、kubectl get pod で nodeapp からはじまる pod が確認できます。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl get pods --selector=app=node
+NAME                       READY   STATUS    RESTARTS   AGE
+nodeapp-5956c68964-wfnsh   2/2     Running   0          41h
+$ kubectl exec -it nodeapp-5956c68964-wfnsh /bin/ash</pre></td></tr></table>
+</div>
+</div>
+<p>サンプルは、alpine ベースのコンテナなので、ash で接続して、node.js のコードを確認することも可能です。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl exec -it nodeapp-5956c68964-wfnsh /bin/ash
+Defaulting container name to node.
+Use &#39;kubectl describe pod/nodeapp-5956c68964-wfnsh -n default&#39; to see all of the containers in this pod.
+/app # ls
+app.js             node_modules       package-lock.json  package.json
+/app # cat app.js 
+// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+const express = require(&#39;express&#39;);
+const bodyParser = require(&#39;body-parser&#39;);
+require(&#39;isomorphic-fetch&#39;);
+
+const app = express();
+app.use(bodyParser.json());
+
+const daprPort = process.env.DAPR_HTTP_PORT || 3500;
+const stateUrl = `http://localhost:${daprPort}/v1.0/state`;
+const port = 3000;
+
+app.get(&#39;/order&#39;, (_req, res) =&gt; {
+    fetch(`${stateUrl}/order`)
+        .then((response) =&gt; {
+            if (!response.ok) {
+                throw &#34;Could not get state.&#34;;
+            }
+
+            return response.text();
+        }).then((orders) =&gt; {
+            res.send(orders);
+        }).catch((error) =&gt; {
+            console.log(error);
+            res.status(500).send({message: error});
+        });
+});
+
+app.post(&#39;/neworder&#39;, (req, res) =&gt; {
+    const data = req.body.data;
+    const orderId = data.orderId;
+    console.log(&#34;Got a new order! Order ID: &#34; + orderId);
+
+    const state = [{
+        key: &#34;order&#34;,
+        value: data
+    }];
+
+    fetch(stateUrl, {
+        method: &#34;POST&#34;,
+        body: JSON.stringify(state),
+        headers: {
+            &#34;Content-Type&#34;: &#34;application/json&#34;
+        }
+    }).then((response) =&gt; {
+        if (!response.ok) {
+            throw &#34;Failed to persist state.&#34;;
+        }
+
+        console.log(&#34;Successfully persisted state.&#34;);
+        res.status(200).send();
+    }).catch((error) =&gt; {
+        console.log(error);
+        res.status(500).send({message: error});
+    });
+});</pre></td></tr></table>
+</div>
+</div>
+<p>このアプリは、<a href="https://yonehub.y10e.com/2019/11/16/20191116_dapr/">こちら</a>と同じものになります。
+GET /order と POST /neworder の 2つのメソッドがあり、neworder では、dapr の <a href="https://github.com/dapr/docs/blob/master/reference/api/state.md">State management</a> の API を利用して、リクエストで受け取った order 情報( key:order )を記録します。order では、Key:order の状態を取得しいます。</p>
+
+<p>以降の作業のために、node.yaml で同じくデプロイされている service の IP を確認して環境変数にセットしておきます。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl get svc nodeapp
+NAME      TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)        AGE
+nodeapp   LoadBalancer   10.0.42.100   xx.xxx.xxx.xxx   80:32133/TCP   9m55s
+$ export NODE_APP=$(kubectl get svc nodeapp --output &#39;jsonpath={.status.loadBalancer.ingress[0].ip}&#39;)</pre></td></tr></table>
+</div>
+</div>
+<a class="post-dummy-target" id="4-python-app-を-dapr-とデプロイする"></a><h3>4. python App を dapr とデプロイする</h3>
+
+<p>今度は sample の /deploy/python.yaml を使用します。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl apply -f ./deploy/python.yaml
+deployment.apps/pythonapp created</pre></td></tr></table>
+</div>
+</div>
+<p>デプロイ後、kubectl get pod で pythonapp からはじまる pod が確認できます。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ kubectl get pods --selector=app=python
+NAME                         READY   STATUS    RESTARTS   AGE
+pythonapp-5d9649fccd-pv8x6   2/2     Running   0          42h</pre></td></tr></table>
+</div>
+</div>
+<p>python の sample も、alpine ベースのコンテナなので、ash で接続してアプリのコードを見てみます。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">kubectl exec -it pythonapp-5d9649fccd-pv8x6 /bin/ash
+/app # cat app.py 
+# ------------------------------------------------------------
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
+# ------------------------------------------------------------
+
+import time
+import requests
+import os
+
+dapr_port = os.getenv(&#34;DAPR_HTTP_PORT&#34;, 3500)
+dapr_url = &#34;http://localhost:{}/v1.0/invoke/nodeapp/method/neworder&#34;.format(dapr_port)
+
+n = 0
+while True:
+    n += 1
+    message = {&#34;data&#34;: {&#34;orderId&#34;: n}}
+
+    try:
+        response = requests.post(dapr_url, json=message)
+    except Exception as e:
+        print(e)
+
+    time.sleep(1)</pre></td></tr></table>
+</div>
+</div>
+<p>このアプリは非常にシンプルです。1 秒毎にサイドカーの dapr のエンドポイント対して、次の HTTP REQUEST を POST しています。
+この時、Node.js の アプリケーションの ID と neworder のメソッドを指定することで、dapr 経由で nodeapp のサービスを call しているということになります。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">POST http://localhost:&lt;daprPort&gt;/v1.0/invoke/&lt;appId&gt;/method/&lt;method-name&gt;</pre></td></tr></table>
+</div>
+</div>
+<p><a href="https://github.com/dapr/docs/blob/master/reference/api/service_invocation.md">Service Invocation</a></p>
+
+<a class="post-dummy-target" id="5-メッセージログを確認する"></a><h3>5. メッセージログを確認する</h3>
+
+<p>Node.js App のログを次のコマンドで確認してみます。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">kubectl logs --selector=app=node -c node</pre></td></tr></table>
+</div>
+</div>
+<p>そうすると、1 秒毎に Order 情報が更新されているメッセージが確認できるかと思います。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Got a new order! Order ID: 1
+Successfully persisted state.
+Got a new order! Order ID: 2
+Successfully persisted state.
+Got a new order! Order ID: 3
+Successfully persisted state.
+Got a new order! Order ID: 4
+Successfully persisted state.
+Got a new order! Order ID: 5
+Successfully persisted state.</pre></td></tr></table>
+</div>
+</div>
+<a class="post-dummy-target" id="6-アプリケーションからの応答を確認する"></a><h3>6. アプリケーションからの応答を確認する</h3>
+
+<p>Node.js の GET エンドポイントに接続すると最新の order の状態（orderId）が確認できます。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ curl $NODE_APP/order
+{&#34;orderId&#34;:72}</pre></td></tr></table>
+</div>
+</div>
+<a class="post-dummy-target" id="7-あとしまつ"></a><h3>7. あとしまつ</h3>
+
+<p>/deploy のディレクトリに移動して次を実行することで、AKS 上のリソースを削除します。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">kubectl delete -f .</pre></td></tr></table>
+</div>
+</div>
+<a class="post-dummy-target" id="8-補足"></a><h3>8. 補足</h3>
+
+<p>手順 5, 6　で正常な値が取れない場合、dapr の設定などがおかしい可能性があります。
+その際は、nodeapp の POD 内の daprd のログなどを見るとどのようなエラーが発生しているかわかると思います。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">kubectl logs nodeapp-5956c68964-wfnsh  -c daprd</pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2019-11-29</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2019/11/29/20191130_dapr_aks_helloworld/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f11%2f29%2f20191130_dapr_aks_helloworld%2f&amp;text=Azure%20Kubernetes%20Service%28AKS%29%20%e3%81%a7%20Dapr%20%e3%82%92%e5%8b%95%e3%81%8b%e3%81%99%28HelloWord%e7%b7%a8%29&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2019%2f11%2f29%2f20191130_dapr_aks_helloworld%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+    
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f11%2f29%2f20191130_dapr_aks_helloworld%2f&amp;title=Azure%20Kubernetes%20Service%28AKS%29%20%e3%81%a7%20Dapr%20%e3%82%92%e5%8b%95%e3%81%8b%e3%81%99%28HelloWord%e7%b7%a8%29" target="_blank" title="Share on LinkedIn">
+            <i class="fab fa-linkedin fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/dapr/"><i class="fas fa-tag fa-fw"></i>dapr</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/container/"><i class="fas fa-tag fa-fw"></i>container</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/aks/"><i class="fas fa-tag fa-fw"></i>AKS</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/kubernetes/"><i class="fas fa-tag fa-fw"></i>kubernetes</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/microsoft/"><i class="fas fa-tag fa-fw"></i>Microsoft</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://yonehub.y10e.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://yonehub.y10e.com/2019/11/27/20191127_dapr_aks_setup/" class="prev" rel="prev" title="Azure Kubernetes Service(AKS)で Dapr を動かす（Setup編）"><i class="fas fa-angle-left fa-fw"></i>Azure Kubernetes Service(AKS)で Dapr を動かす（Setup編）</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            　　<div id="disqus_thread"></div>
+        <script>
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yonehub.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2019</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://yonehub.y10e.com/">Yusuke.Yoneda</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133674179-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>

@@ -12,9 +12,18 @@
             <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
         
         
-            <lastBuildDate>Wed, 27 Nov 2019 12:47:23 +0900</lastBuildDate>
+            <lastBuildDate>Fri, 29 Nov 2019 12:47:23 +0900</lastBuildDate>
         
         <atom:link href="https://yonehub.y10e.com/posts/" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>Azure Kubernetes Service(AKS) で Dapr を動かす(HelloWord編)</title>
+                <link>https://yonehub.y10e.com/2019/11/29/20191130_dapr_aks_helloworld/</link>
+                <pubDate>Fri, 29 Nov 2019 12:47:23 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/11/29/20191130_dapr_aks_helloworld/</guid>
+                <description>前回は、AKS 上で Dapr をセットアップしました。 次は、Azure Kubernetes Service(AKS) 上で dapr のサンプルアプリケーションを動作させてみます。（前回と同様、動作検証時の dapr は v0.2 になります。） 最終的なアーキテクチャは次の通りです。 dapr がインストールされた環境で、python と node.js の POD が動作します。python と node.js の POD は、それぞれの POD 内でサイドカーとして動作する dapr API を経由して、state 情報の更新と取得が行われます。 0. ドキュメント Hello</description>
+            </item>
         
             <item>
                 <title>Azure Kubernetes Service(AKS)で Dapr を動かす（Setup編）</title>
@@ -22,7 +31,7 @@
                 <pubDate>Wed, 27 Nov 2019 12:47:23 +0900</pubDate>
                 
                 <guid>https://yonehub.y10e.com/2019/11/27/20191127_dapr_aks_setup/</guid>
-                <description>先日、stand-alone な環境で dapr の動作を検証しました。 次は、Kubernetes cluster 上で dapr の動作を検証してみたいと思います。Minikube などのローカルな環境でも試すことができそうでしたが、折角なので Azure Kubernetes Service(AKS) で検証してみます。 0. ドキュメント Installing Dapr on a Kubernetes cluster https://github.com/dapr/docs/blob/master/getting-started/environment-setup.md#installing-dapr-on-a-kubernetes-cluster Set up an Azure Kubernetes Service cluster https://github.com/dapr/docs/blob/master/getting-started/cluster/setup-aks.md 1. Azure Kubernetes Service(AKS) Cluster の作成 前提条件として、次を作業端末にセットアップします。 ・Azure CLI ・kubectl はじめに dapr 検証環境用の AKS Cluster を Azure</description>
+                <description>先日、stand-alone な環境で dapr の動作を検証しました。 次は、Kubernetes cluster 上で dapr の動作を検証してみたいと思います。Minikube などのローカルな環境でも試すことができそうでしたが、折角なので Azure Kubernetes Service(AKS) で検証してみます。動作検証時の dapr は v0.2 になります。 0. ドキュメント Installing Dapr on a Kubernetes cluster https://github.com/dapr/docs/blob/master/getting-started/environment-setup.md#installing-dapr-on-a-kubernetes-cluster Set up an Azure Kubernetes Service cluster https://github.com/dapr/docs/blob/master/getting-started/cluster/setup-aks.md 1. Azure Kubernetes Service(AKS) Cluster の作成 前提条件として、次を作業端末にセットアップします。 ・Azure CLI ・kubectl</description>
             </item>
         
             <item>
@@ -140,15 +149,6 @@
                 
                 <guid>https://yonehub.y10e.com/2019/06/16/20190616_vscode_markdown/</guid>
                 <description>Visual Stadio CodeでMarkdownファイルを記載している時に、リアルタイムにプレビュー表示をする方法についてのメモです。 手順 View &amp;gt; Command Paletteを開く（Macだとshift + command + p） &amp;ldquo;Markdown:Open Preview to the Side&amp;rdquo;を選択する この通り</description>
-            </item>
-        
-            <item>
-                <title>NTLM認証の覚え書き</title>
-                <link>https://yonehub.y10e.com/2019/06/16/20190616_ntlm/</link>
-                <pubDate>Sun, 16 Jun 2019 22:03:28 +0900</pubDate>
-                
-                <guid>https://yonehub.y10e.com/2019/06/16/20190616_ntlm/</guid>
-                <description>Windows環境では、NTLM（NT LAN Manager）とKerberosの２つの認証プロトコルが主に利用される。 Windows 2000以降はKerberos認証が推奨になっているが、未だによく見るNTLM認証の動きを整理する NTLMはいわゆるチャレンジ、レスポンス方式で、チャレンジといわれるランダムデータを元にパスワード値を組み合わせて計算し、クライアント側とサーバ側でその比較をおこなうことで認証要求の正当</description>
             </item>
         
     </channel>

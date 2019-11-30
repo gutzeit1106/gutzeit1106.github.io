@@ -2,7 +2,7 @@
 
 
 先日、[stand-alone な環境](../../../../2019/11/16/20191116_dapr/)で dapr の動作を検証しました。
-次は、Kubernetes cluster 上で dapr の動作を検証してみたいと思います。Minikube などのローカルな環境でも試すことができそうでしたが、折角なので Azure Kubernetes Service(AKS) で検証してみます。
+次は、Kubernetes cluster 上で dapr の動作を検証してみたいと思います。Minikube などのローカルな環境でも試すことができそうでしたが、折角なので Azure Kubernetes Service(AKS) で検証してみます。動作検証時の dapr は v0.2 になります。
 
 ### 0. ドキュメント
 Installing Dapr on a Kubernetes cluster <br>
