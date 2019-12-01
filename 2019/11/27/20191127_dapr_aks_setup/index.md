@@ -17,7 +17,7 @@ https://github.com/dapr/docs/blob/master/getting-started/cluster/setup-aks.md
 ・Azure CLI <br>
 ・kubectl <br>
 
-はじめに dapr 検証環境用の AKS Cluster を [Azure CLI](https://docs.microsoft.com/ja-jp/cli/azure/install-azure-cli?view=azure-cli-latest) で作成します。kubectl　も前提として必要になるので、[クイック スタート:Azure CLI を使用して Azure Kubernetes Service クラスターをデプロイする](https://docs.microsoft.com/ja-jp/azure/aks/kubernetes-walkthrough)を見ると良いかと思います。
+はじめに dapr 検証環境用の AKS Cluster を [Azure CLI](https://docs.microsoft.com/ja-jp/cli/azure/install-azure-cli?view=azure-cli-latest) で作成します。kubectl も前提として必要になるので、[クイック スタート:Azure CLI を使用して Azure Kubernetes Service クラスターをデプロイする](https://docs.microsoft.com/ja-jp/azure/aks/kubernetes-walkthrough)を見ると良いかと思います。
 
 インストール後に次のコマンドを実行していきます。
 

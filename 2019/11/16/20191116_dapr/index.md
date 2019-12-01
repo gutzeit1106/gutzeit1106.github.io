@@ -7,7 +7,7 @@ Daprは、プログラミング言語に依存せずマイクロサービス間�
 
 <img src="/img/20191116_dapr/dapr_conceptual_model.jpg" align="left"><br clear="left">
 
-ローカルでインストールし動作を試して見ました。
+ローカルでインストールし動作を試して見ました。(動作検証時の)
 
 ### 1. ドキュメント
 Dapr 公式<br>

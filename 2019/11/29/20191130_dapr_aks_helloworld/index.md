@@ -78,11 +78,6 @@ redis が作成できたら、次の deploy/redis.yaml を使用して redis の
 dapr/samples <br>
 https://github.com/dapr/samples/tree/master/2.hello-kubernetes/deploy
 
-
-```
-$ kubectl get secret --namespace redis redis -o jsonpath="{.data.redis-password}" | base64 --decode
-```
-
 YOUR_REDIS_HOST_HERE, YOUR_REDIS_KEY_HERE の箇所を編集します。
 
 ```yaml
