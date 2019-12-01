@@ -18,7 +18,7 @@
 <meta name="theme-color" content="#ffffff">
 
   <meta name="twitter:title" content="Azure Kubernetes Service(AKS) で Dapr を動かす(HelloWord編)" />
-  <meta name="twitter:description" content="前回は、AKS 上で Dapr をセットアップしました。 次は、Azure Kubernetes Service(AKS) 上で dapr のサンプルアプリケーションを動作させてみます。（前回と同様、動作検証時の dapr は v0.2 になります。） 最終的なアーキテクチャは次の通りです。 dapr がインストールされた環境で、python と node.js の POD が動作しま …">
+  <meta name="twitter:description" content="前回は、AKS 上で Dapr をセットアップしました。 次は、Azure Kubernetes Service(AKS) 上で dapr のサンプルアプリケーションを動作させてみます。（前回と同様、動作検証時の dapr は v0.2 になります。）最終的なアーキテクチャは次の通りです。 dapr がインストールされた環境で、python と node.js の POD が動作しま …">
   <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
   
 <meta name="twitter:card" content="summary" />
@@ -37,13 +37,13 @@
     
         "keywords": "dapr, container, AKS, kubernetes, Microsoft",
     
-    "wordcount":  2400 ,
+    "wordcount":  2256 ,
     "url": "https:\/\/yonehub.y10e.com\/2019\/11\/29\/20191130_dapr_aks_helloworld\/",
     
         "datePublished": "2019-11-29T12:47:23\x2b09:00",
     
     
-        "dateModified": "2019-12-01T04:50:26\x2b09:00",
+        "dateModified": "2019-12-01T23:29:42\x2b09:00",
     
     
         "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
@@ -155,7 +155,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-11-29>2019-11-29</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 2400 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 2256 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>5 min&nbsp;</div>
         </div>
 
@@ -165,23 +165,21 @@
                 
                 <div class="post-toc-content always-active">
                     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#0-ドキュメント">0. ドキュメント</a></li>
-<li><a href="#1-前提条件">1. 前提条件</a></li>
-<li><a href="#2-state-store-redis-の構築">2. State Store (Redis)の構築</a></li>
-<li><a href="#3-node-js-app-を-dapr-とデプロイする">3. Node.js App を dapr とデプロイする</a></li>
-<li><a href="#4-python-app-を-dapr-とデプロイする">4. python App を dapr とデプロイする</a></li>
-<li><a href="#5-メッセージログを確認する">5. メッセージログを確認する</a></li>
-<li><a href="#6-アプリケーションからの応答を確認する">6. アプリケーションからの応答を確認する</a></li>
-<li><a href="#7-あとしまつ">7. あとしまつ</a></li>
-<li><a href="#8-補足">8. 補足</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#0-">0. ドキュメント</a></li>
+        <li><a href="#1-">1. 前提条件</a></li>
+        <li><a href="#2-state-store-redis">2. State Store (Redis)の構築</a></li>
+        <li><a href="#3-nodejs-app--dapr-">3. Node.js App を dapr とデプロイする</a></li>
+        <li><a href="#4-python-app--dapr-">4. python App を dapr とデプロイする</a></li>
+        <li><a href="#5-">5. メッセージログを確認する</a></li>
+        <li><a href="#6-">6. アプリケーションからの応答を確認する</a></li>
+        <li><a href="#7-">7. あとしまつ</a></li>
+        <li><a href="#8-">8. 補足</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
                 </div>
             </div>
@@ -192,23 +190,21 @@
                         
                         
                         <nav id="TableOfContentsMobile">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#0-ドキュメント">0. ドキュメント</a></li>
-<li><a href="#1-前提条件">1. 前提条件</a></li>
-<li><a href="#2-state-store-redis-の構築">2. State Store (Redis)の構築</a></li>
-<li><a href="#3-node-js-app-を-dapr-とデプロイする">3. Node.js App を dapr とデプロイする</a></li>
-<li><a href="#4-python-app-を-dapr-とデプロイする">4. python App を dapr とデプロイする</a></li>
-<li><a href="#5-メッセージログを確認する">5. メッセージログを確認する</a></li>
-<li><a href="#6-アプリケーションからの応答を確認する">6. アプリケーションからの応答を確認する</a></li>
-<li><a href="#7-あとしまつ">7. あとしまつ</a></li>
-<li><a href="#8-補足">8. 補足</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#0-">0. ドキュメント</a></li>
+        <li><a href="#1-">1. 前提条件</a></li>
+        <li><a href="#2-state-store-redis">2. State Store (Redis)の構築</a></li>
+        <li><a href="#3-nodejs-app--dapr-">3. Node.js App を dapr とデプロイする</a></li>
+        <li><a href="#4-python-app--dapr-">4. python App を dapr とデプロイする</a></li>
+        <li><a href="#5-">5. メッセージログを確認する</a></li>
+        <li><a href="#6-">6. アプリケーションからの応答を確認する</a></li>
+        <li><a href="#7-">7. あとしまつ</a></li>
+        <li><a href="#8-">8. 補足</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
                     </div>
                 </details>
@@ -240,37 +236,25 @@
             
             
             
-            
-
-<p>前回は、<a href="https://yonehub.y10e.com/2019/11/27/20191127_dapr_aks_setup/">AKS 上で Dapr をセットアップ</a>しました。
-次は、Azure Kubernetes Service(AKS) 上で dapr のサンプルアプリケーションを動作させてみます。（前回と同様、動作検証時の dapr は v0.2 になります。）<br>
+            <p>前回は、<a href="https://yonehub.y10e.com/2019/11/27/20191127_dapr_aks_setup/">AKS 上で Dapr をセットアップ</a>しました。
+次は、Azure Kubernetes Service(AKS) 上で dapr のサンプルアプリケーションを動作させてみます。（前回と同様、動作検証時の dapr は v0.2 になります。）<!-- raw HTML omitted -->
 最終的なアーキテクチャは次の通りです。</p>
-
-<p><img src="/img/20191130_aks_dapr/Architecture_Diagram.png" align="left"><br clear="left"></p>
-
-<p>dapr がインストールされた環境で、python と node.js の POD が動作します。python と node.js の POD　は、それぞれの POD 内でサイドカーとして動作する dapr API を経由して、state 情報の更新と取得が行われます。</p>
-
-<a class="post-dummy-target" id="0-ドキュメント"></a><h3>0. ドキュメント</h3>
-
-<p>Hello Kubernetes <br>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>dapr がインストールされた環境で、python と node.js の POD が動作します。python と node.js の POD は、それぞれの POD 内でサイドカーとして動作する dapr API を経由して、state 情報の更新と取得が行われます。</p>
+<a class="post-dummy-target" id="0-"></a><h3>0. ドキュメント</h3>
+<p>Hello Kubernetes <!-- raw HTML omitted -->
 <a href="https://github.com/dapr/samples/tree/master/2.hello-kubernetes">https://github.com/dapr/samples/tree/master/2.hello-kubernetes</a></p>
-
-<p>Redis and Dapr  <br>
+<p>Redis and Dapr  <!-- raw HTML omitted -->
 <a href="https://github.com/dapr/docs/blob/master/concepts/components/redis.md#configuration">https://github.com/dapr/docs/blob/master/concepts/components/redis.md#configuration</a></p>
-
-<a class="post-dummy-target" id="1-前提条件"></a><h3>1. 前提条件</h3>
-
+<a class="post-dummy-target" id="1-"></a><h3>1. 前提条件</h3>
 <p><a href="https://github.com/dapr/docs/blob/master/concepts/components/redis.md#configuration">Azure Kubernetes Service(AKS)で Dapr を動かす（Setup編）</a>で、全手順を完了し、3. AKS クラスタに dapr がインストールされている状態から始めます。</p>
-
-<a class="post-dummy-target" id="2-state-store-redis-の構築"></a><h3>2. State Store (Redis)の構築</h3>
-
+<a class="post-dummy-target" id="2-state-store-redis"></a><h3>2. State Store (Redis)の構築</h3>
 <p>Dapr は、Redis, CosmosDB, DynamoDB, Cassandra など様々なデータストアを state 情報のストアとして使用できます。
 今回は、Redis を使用したいと思います。</p>
-
 <p>今回 Redisは、Helm で作成しようと思いますので、helm をセットアップします。11月に Helm 3.0.0 が stable でリリースされたので、まずは Helm3 のセットアップから始めます。以下は Linux が作業端末であることを前提としているので、その他の環境の場合は<a href="https://helm.sh/docs/intro/install/">Helm 公式</a>を参照してください。Helm3は、Tillerless になっていたりコマンドが少し違うため、実際成功したコマンドも記載しておきます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -285,63 +269,23 @@
 <span class="m">100</span>  <span class="m">6617</span>  <span class="m">100</span>  <span class="m">6617</span>    <span class="m">0</span>     <span class="m">0</span>  <span class="m">21483</span>      <span class="m">0</span> --:--:-- --:--:-- --:--:-- <span class="m">21414</span>
 Downloading https://get.helm.sh/helm-v3.0.0-linux-amd64.tar.gz
 Preparing to install helm into /usr/local/bin
-helm installed into /usr/local/bin/helm</code></pre></td></tr></table>
+helm installed into /usr/local/bin/helm
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>helm のコマンドがインストールできたら chart repository を登録しておきます。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$helm repo add stable https://kubernetes-charts.storage.googleapis.com/
-&#34;stable&#34; has been added to your repositories</pre></td></tr></table>
-</div>
-</div>
-<p>repository が参照できることを確認します。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$helm search repo stable
+</div><p>helm のコマンドがインストールできたら chart repository を登録しておきます。</p>
+<pre><code>$helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+&quot;stable&quot; has been added to your repositories
+</code></pre><p>repository が参照できることを確認します。</p>
+<pre><code>$helm search repo stable
 NAME                                    CHART VERSION   APP VERSION                     DESCRIPTION                                       
 stable/acs-engine-autoscaler            2.2.2           2.1.1                           DEPRECATED Scales worker nodes within agent pools 
 stable/aerospike                        0.3.1           v4.5.0.5                        A Helm chart for Aerospike in Kubernetes          
 stable/airflow                          5.1.0           1.10.4                          Airflow is a platform to programmatically autho...
-# more</pre></td></tr></table>
-</div>
-</div>
-<p>今回、redis は defaultの namespace に作成しようと思います。次のコマンドで redis をインストールします。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ helm install redis stable/redis </pre></td></tr></table>
-</div>
-</div>
-<p>redis がインストールされていることが確認できます。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ helm list
+# more
+</code></pre><p>今回、redis は defaultの namespace に作成しようと思います。次のコマンドで redis をインストールします。</p>
+<pre><code>$ helm install redis stable/redis 
+</code></pre><p>redis がインストールされていることが確認できます。</p>
+<pre><code>$ helm list
 NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
 redis   default         1               2019-11-28 17:49:09.405349951 +0000 UTC deployed        redis-10.0.2    5.0.7    
 
@@ -349,18 +293,14 @@ $ kubectl get pods -n redis
 NAME             READY   STATUS              RESTARTS   AGE
 redis-master-0   1/1     Running             0          6m2s
 redis-slave-0    1/1     Running             0          6m2s
-redis-slave-1    1/1     Running             0          5m21s</pre></td></tr></table>
-</div>
-</div>
-<p>redis が作成できたら、次の deploy/redis.yaml を使用して redis の設定を実行します。</p>
-
-<p>dapr/samples <br>
+redis-slave-1    1/1     Running             0          5m21s
+</code></pre><p>redis が作成できたら、次の deploy/redis.yaml を使用して redis の設定を実行します。</p>
+<p>dapr/samples <!-- raw HTML omitted -->
 <a href="https://github.com/dapr/samples/tree/master/2.hello-kubernetes/deploy">https://github.com/dapr/samples/tree/master/2.hello-kubernetes/deploy</a></p>
-
 <p>YOUR_REDIS_HOST_HERE, YOUR_REDIS_KEY_HERE の箇所を編集します。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -383,39 +323,22 @@ redis-slave-1    1/1     Running             0          5m21s</pre></td></tr></t
 </span><span class="w">  </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span>redisHost<span class="w">
 </span><span class="w">    </span>value<span class="p">:</span><span class="w"> </span>redis-master<span class="p">:</span><span class="m">6379</span><span class="w">
 </span><span class="w">  </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span>redisPassword<span class="w">
-</span><span class="w">    </span>value<span class="p">:</span><span class="w"> </span>&lt;YOUR_REDIS_KEY_HERE&gt;</code></pre></td></tr></table>
+</span><span class="w">    </span>value<span class="p">:</span><span class="w"> </span>&lt;YOUR_REDIS_KEY_HERE&gt;<span class="w">
+</span></code></pre></td></tr></table>
 </div>
-</div>
-<p>YOUR_REDIS_KEY_HERE については、次のコマンドで確認した値を指定します。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ kubectl get secret redis -o jsonpath=&#34;{.data.redis-password}&#34; | base64 --decode</pre></td></tr></table>
-</div>
-</div>
-<p>ファイルを修正したら構成を apply します。これで一旦、redis の作業は完了です。
+</div><p>YOUR_REDIS_KEY_HERE については、次のコマンドで確認した値を指定します。</p>
+<pre><code>$ kubectl get secret redis -o jsonpath=&quot;{.data.redis-password}&quot; | base64 --decode
+</code></pre><p>ファイルを修正したら構成を apply します。これで一旦、redis の作業は完了です。
 ちなみに redis の key は、kubernetes の Secrets にも保存できます。Sample は <a href="https://github.com/dapr/docs/blob/master/concepts/components/secrets.md">こちら</a> で紹介されていました。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ kubectl apply -f ./deploy/redis.yaml
-component.dapr.io/statestore created</pre></td></tr></table>
-</div>
-</div>
-<a class="post-dummy-target" id="3-node-js-app-を-dapr-とデプロイする"></a><h3>3. Node.js App を dapr とデプロイする</h3>
-
+<pre><code>$ kubectl apply -f ./deploy/redis.yaml
+component.dapr.io/statestore created
+</code></pre><a class="post-dummy-target" id="3-nodejs-app--dapr-"></a><h3>3. Node.js App を dapr とデプロイする</h3>
 <p>おなじく sample の deploy/node.yaml を使用します。</p>
-
 <p>deploy/node.yaml を見ると Deployment の annotations で dapr サイドカーの設定が有効化されていることがわかります。
 これと同時にサイドカーの dapr に対して、アプリの id や port などの情報を指定しています。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -424,111 +347,22 @@ component.dapr.io/statestore created</pre></td></tr></table>
 <pre class="chroma"><code class="language-yaml" data-lang="yaml">annotations<span class="p">:</span><span class="w">
 </span><span class="w">        </span>dapr.io/enabled<span class="p">:</span><span class="w"> </span><span class="s2">&#34;true&#34;</span><span class="w">
 </span><span class="w">        </span>dapr.io/id<span class="p">:</span><span class="w"> </span><span class="s2">&#34;nodeapp&#34;</span><span class="w">
-</span><span class="w">        </span>dapr.io/port<span class="p">:</span><span class="w"> </span><span class="s2">&#34;3000&#34;</span></code></pre></td></tr></table>
+</span><span class="w">        </span>dapr.io/port<span class="p">:</span><span class="w"> </span><span class="s2">&#34;3000&#34;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
-</div>
-<p>デプロイします。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ kubectl apply -f ./deploy/node.yaml
+</div><p>デプロイします。</p>
+<pre><code>$ kubectl apply -f ./deploy/node.yaml
 service/nodeapp created
-deployment.apps/nodeapp created</pre></td></tr></table>
-</div>
-</div>
-<p>デプロイ後、kubectl get pod で nodeapp からはじまる pod が確認できます。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ kubectl get pods --selector=app=node
+deployment.apps/nodeapp created
+</code></pre><p>デプロイ後、kubectl get pod で nodeapp からはじまる pod が確認できます。</p>
+<pre><code>$ kubectl get pods --selector=app=node
 NAME                       READY   STATUS    RESTARTS   AGE
 nodeapp-5956c68964-wfnsh   2/2     Running   0          41h
-$ kubectl exec -it nodeapp-5956c68964-wfnsh /bin/ash</pre></td></tr></table>
-</div>
-</div>
-<p>サンプルは、alpine ベースのコンテナなので、ash で接続して、node.js のコードを確認することも可能です。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ kubectl exec -it nodeapp-5956c68964-wfnsh /bin/ash
+$ kubectl exec -it nodeapp-5956c68964-wfnsh /bin/ash
+</code></pre><p>サンプルは、alpine ベースのコンテナなので、ash で接続して、node.js のコードを確認することも可能です。</p>
+<pre><code>$ kubectl exec -it nodeapp-5956c68964-wfnsh /bin/ash
 Defaulting container name to node.
-Use &#39;kubectl describe pod/nodeapp-5956c68964-wfnsh -n default&#39; to see all of the containers in this pod.
+Use 'kubectl describe pod/nodeapp-5956c68964-wfnsh -n default' to see all of the containers in this pod.
 /app # ls
 app.js             node_modules       package-lock.json  package.json
 /app # cat app.js 
@@ -537,9 +371,9 @@ app.js             node_modules       package-lock.json  package.json
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-const express = require(&#39;express&#39;);
-const bodyParser = require(&#39;body-parser&#39;);
-require(&#39;isomorphic-fetch&#39;);
+const express = require('express');
+const bodyParser = require('body-parser');
+require('isomorphic-fetch');
 
 const app = express();
 app.use(bodyParser.json());
@@ -548,11 +382,11 @@ const daprPort = process.env.DAPR_HTTP_PORT || 3500;
 const stateUrl = `http://localhost:${daprPort}/v1.0/state`;
 const port = 3000;
 
-app.get(&#39;/order&#39;, (_req, res) =&gt; {
+app.get('/order', (_req, res) =&gt; {
     fetch(`${stateUrl}/order`)
         .then((response) =&gt; {
             if (!response.ok) {
-                throw &#34;Could not get state.&#34;;
+                throw &quot;Could not get state.&quot;;
             }
 
             return response.text();
@@ -564,111 +398,51 @@ app.get(&#39;/order&#39;, (_req, res) =&gt; {
         });
 });
 
-app.post(&#39;/neworder&#39;, (req, res) =&gt; {
+app.post('/neworder', (req, res) =&gt; {
     const data = req.body.data;
     const orderId = data.orderId;
-    console.log(&#34;Got a new order! Order ID: &#34; + orderId);
+    console.log(&quot;Got a new order! Order ID: &quot; + orderId);
 
     const state = [{
-        key: &#34;order&#34;,
+        key: &quot;order&quot;,
         value: data
     }];
 
     fetch(stateUrl, {
-        method: &#34;POST&#34;,
+        method: &quot;POST&quot;,
         body: JSON.stringify(state),
         headers: {
-            &#34;Content-Type&#34;: &#34;application/json&#34;
+            &quot;Content-Type&quot;: &quot;application/json&quot;
         }
     }).then((response) =&gt; {
         if (!response.ok) {
-            throw &#34;Failed to persist state.&#34;;
+            throw &quot;Failed to persist state.&quot;;
         }
 
-        console.log(&#34;Successfully persisted state.&#34;);
+        console.log(&quot;Successfully persisted state.&quot;);
         res.status(200).send();
     }).catch((error) =&gt; {
         console.log(error);
         res.status(500).send({message: error});
     });
-});</pre></td></tr></table>
-</div>
-</div>
-<p>このアプリは、<a href="https://yonehub.y10e.com/2019/11/16/20191116_dapr/">こちら</a>と同じものになります。
+});
+</code></pre><p>このアプリは、<a href="https://yonehub.y10e.com/2019/11/16/20191116_dapr/">こちら</a>と同じものになります。
 GET /order と POST /neworder の 2つのメソッドがあり、neworder では、dapr の <a href="https://github.com/dapr/docs/blob/master/reference/api/state.md">State management</a> の API を利用して、リクエストで受け取った order 情報( key:order )を記録します。order では、Key:order の状態を取得しいます。</p>
-
 <p>以降の作業のために、node.yaml で同じくデプロイされている service の IP を確認して環境変数にセットしておきます。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ kubectl get svc nodeapp
+<pre><code>$ kubectl get svc nodeapp
 NAME      TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)        AGE
 nodeapp   LoadBalancer   10.0.42.100   xx.xxx.xxx.xxx   80:32133/TCP   9m55s
-$ export NODE_APP=$(kubectl get svc nodeapp --output &#39;jsonpath={.status.loadBalancer.ingress[0].ip}&#39;)</pre></td></tr></table>
-</div>
-</div>
-<a class="post-dummy-target" id="4-python-app-を-dapr-とデプロイする"></a><h3>4. python App を dapr とデプロイする</h3>
-
+$ export NODE_APP=$(kubectl get svc nodeapp --output 'jsonpath={.status.loadBalancer.ingress[0].ip}')
+</code></pre><a class="post-dummy-target" id="4-python-app--dapr-"></a><h3>4. python App を dapr とデプロイする</h3>
 <p>今度は sample の /deploy/python.yaml を使用します。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ kubectl apply -f ./deploy/python.yaml
-deployment.apps/pythonapp created</pre></td></tr></table>
-</div>
-</div>
-<p>デプロイ後、kubectl get pod で pythonapp からはじまる pod が確認できます。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ kubectl get pods --selector=app=python
+<pre><code>$ kubectl apply -f ./deploy/python.yaml
+deployment.apps/pythonapp created
+</code></pre><p>デプロイ後、kubectl get pod で pythonapp からはじまる pod が確認できます。</p>
+<pre><code>$ kubectl get pods --selector=app=python
 NAME                         READY   STATUS    RESTARTS   AGE
-pythonapp-5d9649fccd-pv8x6   2/2     Running   0          42h</pre></td></tr></table>
-</div>
-</div>
-<p>python の sample も、alpine ベースのコンテナなので、ash で接続してアプリのコードを見てみます。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">kubectl exec -it pythonapp-5d9649fccd-pv8x6 /bin/ash
+pythonapp-5d9649fccd-pv8x6   2/2     Running   0          42h
+</code></pre><p>python の sample も、alpine ベースのコンテナなので、ash で接続してアプリのコードを見てみます。</p>
+<pre><code>kubectl exec -it pythonapp-5d9649fccd-pv8x6 /bin/ash
 /app # cat app.py 
 # ------------------------------------------------------------
 # Copyright (c) Microsoft Corporation.
@@ -679,61 +453,29 @@ import time
 import requests
 import os
 
-dapr_port = os.getenv(&#34;DAPR_HTTP_PORT&#34;, 3500)
-dapr_url = &#34;http://localhost:{}/v1.0/invoke/nodeapp/method/neworder&#34;.format(dapr_port)
+dapr_port = os.getenv(&quot;DAPR_HTTP_PORT&quot;, 3500)
+dapr_url = &quot;http://localhost:{}/v1.0/invoke/nodeapp/method/neworder&quot;.format(dapr_port)
 
 n = 0
 while True:
     n += 1
-    message = {&#34;data&#34;: {&#34;orderId&#34;: n}}
+    message = {&quot;data&quot;: {&quot;orderId&quot;: n}}
 
     try:
         response = requests.post(dapr_url, json=message)
     except Exception as e:
         print(e)
 
-    time.sleep(1)</pre></td></tr></table>
-</div>
-</div>
-<p>このアプリは非常にシンプルです。1 秒毎にサイドカーの dapr のエンドポイント対して、次の HTTP REQUEST を POST しています。
+    time.sleep(1)
+</code></pre><p>このアプリは非常にシンプルです。1 秒毎にサイドカーの dapr のエンドポイント対して、次の HTTP REQUEST を POST しています。
 この時、Node.js の アプリケーションの ID と neworder のメソッドを指定することで、dapr 経由で nodeapp のサービスを call しているということになります。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">POST http://localhost:&lt;daprPort&gt;/v1.0/invoke/&lt;appId&gt;/method/&lt;method-name&gt;</pre></td></tr></table>
-</div>
-</div>
-<p><a href="https://github.com/dapr/docs/blob/master/reference/api/service_invocation.md">Service Invocation</a></p>
-
-<a class="post-dummy-target" id="5-メッセージログを確認する"></a><h3>5. メッセージログを確認する</h3>
-
+<pre><code>POST http://localhost:&lt;daprPort&gt;/v1.0/invoke/&lt;appId&gt;/method/&lt;method-name&gt;
+</code></pre><p><a href="https://github.com/dapr/docs/blob/master/reference/api/service_invocation.md">Service Invocation</a></p>
+<a class="post-dummy-target" id="5-"></a><h3>5. メッセージログを確認する</h3>
 <p>Node.js App のログを次のコマンドで確認してみます。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">kubectl logs --selector=app=node -c node</pre></td></tr></table>
-</div>
-</div>
-<p>そうすると、1 秒毎に Order 情報が更新されているメッセージが確認できるかと思います。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Got a new order! Order ID: 1
+<pre><code>kubectl logs --selector=app=node -c node
+</code></pre><p>そうすると、1 秒毎に Order 情報が更新されているメッセージが確認できるかと思います。</p>
+<pre><code>Got a new order! Order ID: 1
 Successfully persisted state.
 Got a new order! Order ID: 2
 Successfully persisted state.
@@ -742,45 +484,19 @@ Successfully persisted state.
 Got a new order! Order ID: 4
 Successfully persisted state.
 Got a new order! Order ID: 5
-Successfully persisted state.</pre></td></tr></table>
-</div>
-</div>
-<a class="post-dummy-target" id="6-アプリケーションからの応答を確認する"></a><h3>6. アプリケーションからの応答を確認する</h3>
-
+Successfully persisted state.
+</code></pre><a class="post-dummy-target" id="6-"></a><h3>6. アプリケーションからの応答を確認する</h3>
 <p>Node.js の GET エンドポイントに接続すると最新の order の状態（orderId）が確認できます。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ curl $NODE_APP/order
-{&#34;orderId&#34;:72}</pre></td></tr></table>
-</div>
-</div>
-<a class="post-dummy-target" id="7-あとしまつ"></a><h3>7. あとしまつ</h3>
-
+<pre><code>$ curl $NODE_APP/order
+{&quot;orderId&quot;:72}
+</code></pre><a class="post-dummy-target" id="7-"></a><h3>7. あとしまつ</h3>
 <p>/deploy のディレクトリに移動して次を実行することで、AKS 上のリソースを削除します。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">kubectl delete -f .</pre></td></tr></table>
-</div>
-</div>
-<a class="post-dummy-target" id="8-補足"></a><h3>8. 補足</h3>
-
-<p>手順 5, 6　で正常な値が取れない場合、dapr の設定などがおかしい可能性があります。
+<pre><code>kubectl delete -f .
+</code></pre><a class="post-dummy-target" id="8-"></a><h3>8. 補足</h3>
+<p>手順 5, 6 で正常な値が取れない場合、dapr の設定などがおかしい可能性があります。
 その際は、nodeapp の POD 内の daprd のログなどを見るとどのようなエラーが発生しているかわかると思います。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">kubectl logs nodeapp-5956c68964-wfnsh  -c daprd</pre></td></tr></table>
-</div>
-</div>
+<pre><code>kubectl logs nodeapp-5956c68964-wfnsh  -c daprd
+</code></pre>
         </div>
 
         <div class="post-footer" id="post-footer">

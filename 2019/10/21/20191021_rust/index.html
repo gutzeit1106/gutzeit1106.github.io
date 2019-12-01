@@ -166,16 +166,14 @@
                 
                 <div class="post-toc-content always-active">
                     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#手順">手順</a></li>
-<li><a href="#おまけ">おまけ</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#heading">手順</a></li>
+        <li><a href="#heading1">おまけ</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
                 </div>
             </div>
@@ -186,16 +184,14 @@
                         
                         
                         <nav id="TableOfContentsMobile">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#手順">手順</a></li>
-<li><a href="#おまけ">おまけ</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#heading">手順</a></li>
+        <li><a href="#heading1">おまけ</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
                     </div>
                 </details>
@@ -227,81 +223,75 @@
             
             
             
-            
-
-<p>Mac OSにRustをインストールして実行するまでのメモです。</p>
-
-<a class="post-dummy-target" id="手順"></a><h3>手順</h3>
-
+            <p>Mac OSにRustをインストールして実行するまでのメモです。</p>
+<a class="post-dummy-target" id="heading"></a><h3>手順</h3>
 <p>まずはターミナルで次のコマンドを実行する。（選択肢が出たら、1のdefaultで良いと思う）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">curl --proto <span class="s1">&#39;=https&#39;</span> --tlsv1.2 -sSf https://sh.rustup.rs <span class="p">|</span> sh</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">curl --proto <span class="s1">&#39;=https&#39;</span> --tlsv1.2 -sSf https://sh.rustup.rs <span class="p">|</span> sh
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>ターミナルを再起動するか、以下のコマンドを実行してパスを通す。</p>
+</div><p>ターミナルを再起動するか、以下のコマンドを実行してパスを通す。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">source</span> ~/.bash_profile</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">source</span> ~/.bash_profile
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>インストール後はrustcのバージョンを確認する。</p>
+</div><p>インストール後はrustcのバージョンを確認する。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">rustc --version
-rustc <span class="m">1</span>.38.0 <span class="o">(</span>625451e37 <span class="m">2019</span>-09-23<span class="o">)</span></code></pre></td></tr></table>
+rustc 1.38.0 <span class="o">(</span>625451e37 2019-09-23<span class="o">)</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>インストールが確認できたら適当なパスにhello.rsという名称でファイルを作り、エディタで内容を次の通りにして保存する。</p>
+</div><p>インストールが確認できたら適当なパスにhello.rsという名称でファイルを作り、エディタで内容を次の通りにして保存する。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-rust:hello.rs" data-lang="rust:hello.rs"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-rust:hello.rs" data-lang="rust:hello.rs"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="w">    </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Hello World!&#34;</span><span class="p">);</span><span class="w">
+<pre class="chroma"><code class="language-rust:hello.rs" data-lang="rust:hello.rs"><span class="k">fn</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w"></span><span class="w">    </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Hello World!&#34;</span><span class="p">)</span><span class="p">;</span><span class="w">
 </span><span class="w"></span><span class="p">}</span><span class="w">
 </span></code></pre></td></tr></table>
 </div>
-</div>
-<p>rustcでコンパイルするとhelloという実行ファイルが生成される。</p>
+</div><p>rustcでコンパイルするとhelloという実行ファイルが生成される。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">$ rustc hello.rs
 $ ls
-hello           hello.rs</code></pre></td></tr></table>
+hello           hello.rs
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>実行ファイルを実行するとHello Worldと表示されるのでこれで終わり。</p>
+</div><p>実行ファイルを実行するとHello Worldと表示されるのでこれで終わり。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">$ ./hello 
-Hello World!</code></pre></td></tr></table>
+Hello World!
+</code></pre></td></tr></table>
 </div>
-</div>
-<a class="post-dummy-target" id="おまけ"></a><h3>おまけ</h3>
-
+</div><a class="post-dummy-target" id="heading1"></a><h3>おまけ</h3>
 <p>公式のinstalationは<a href="https://www.rust-lang.org/tools/install">ここ</a></p>
 
         </div>

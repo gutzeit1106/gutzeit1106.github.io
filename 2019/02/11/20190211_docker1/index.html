@@ -193,16 +193,16 @@
             <p>・help 表示</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">docker --help </code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">docker --help 
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>・Dockerイメージの作成</p>
+</div><p>・Dockerイメージの作成</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -211,64 +211,65 @@
 <pre class="chroma"><code class="language-sh" data-lang="sh">docker build -t ImageName:TagName <span class="o">{</span>DockerFileのあるディレクトリ<span class="o">}</span> 
  
 <span class="c1">#example</span>
-docker build --tag sample/basic:1.0 . </code></pre></td></tr></table>
+docker build --tag sample/basic:1.0 . 
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>・Dockerイメージのリスト表示</p>
+</div><p>・Dockerイメージのリスト表示</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">docker images </code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">docker images 
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>・Dokcer コンテナの起動</p>
+</div><p>・Dokcer コンテナの起動</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">docker run  
 <span class="c1">#example</span>
-docker run -it -d -p <span class="m">8080</span>:80 --name basic sample/basic:1.0 </code></pre></td></tr></table>
+docker run -it -d -p 8080:80 --name basic sample/basic:1.0 
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>・Docker コンテナの一覧</p>
+</div><p>・Docker コンテナの一覧</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">docker ps </code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">docker ps 
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>・コンテナ内に入る</p>
+</div><p>・コンテナ内に入る</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">docker <span class="nb">exec</span> -it <span class="o">[</span>コンテナ名<span class="o">]</span> /bin/bash 
 <span class="c1">#example</span>
-docker <span class="nb">exec</span> -it basic /bin/bash </code></pre></td></tr></table>
+docker <span class="nb">exec</span> -it basic /bin/bash 
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>Docker コンテナの停止</p>
+</div><p>Docker コンテナの停止</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">docker stop 
 <span class="c1">#example</span>
-docker stop basic</code></pre></td></tr></table>
+docker stop basic
+</code></pre></td></tr></table>
 </div>
 </div>
         </div>

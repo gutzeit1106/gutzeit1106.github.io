@@ -38,7 +38,7 @@
     
         "keywords": "Azure, Database, CosmosDB",
     
-    "wordcount":  1946 ,
+    "wordcount":  1953 ,
     "url": "https:\/\/yonehub.y10e.com\/2019\/07\/07\/20190707_azure_sql\/",
     
         "datePublished": "2019-07-07T00:00:01\x2b09:00",
@@ -156,7 +156,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-07-07>2019-07-07</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1946 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1953 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>4 min&nbsp;</div>
         </div>
 
@@ -166,24 +166,23 @@
                 
                 <div class="post-toc-content always-active">
                     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#azure-sql-database-サーバ">Azure SQL Database サーバ</a></li>
-<li><a href="#azure-sql-database">Azure SQL Database</a>
-<ul>
-<li><a href="#単一データベース">単一データベース</a></li>
-<li><a href="#エラスティックプール">エラスティックプール</a></li>
-<li><a href="#マネージドインスタンス">マネージドインスタンス</a></li>
-<li><a href="#仮想コアベースとdtu-ベースの購入モデル">仮想コアベースとDTU ベースの購入モデル</a></li>
-</ul></li>
-<li><a href="#azure-cosmos-db">Azure Cosmos DB</a>
-<ul>
-<li><a href="#概要">概要</a></li>
-<li><a href="#移行">移行</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#azure-sql-database-">Azure SQL Database サーバ</a></li>
+    <li><a href="#azure-sql-database">Azure SQL Database</a>
+      <ul>
+        <li><a href="#heading">単一データベース</a></li>
+        <li><a href="#heading1">エラスティックプール</a></li>
+        <li><a href="#heading2">マネージドインスタンス</a></li>
+        <li><a href="#dtu-">仮想コアベースとDTU ベースの購入モデル</a></li>
+      </ul>
+    </li>
+    <li><a href="#azure-cosmos-db">Azure Cosmos DB</a>
+      <ul>
+        <li><a href="#heading3">概要</a></li>
+        <li><a href="#heading4">移行</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
                 </div>
             </div>
@@ -194,24 +193,23 @@
                         
                         
                         <nav id="TableOfContentsMobile">
-<ul>
-<li>
-<ul>
-<li><a href="#azure-sql-database-サーバ">Azure SQL Database サーバ</a></li>
-<li><a href="#azure-sql-database">Azure SQL Database</a>
-<ul>
-<li><a href="#単一データベース">単一データベース</a></li>
-<li><a href="#エラスティックプール">エラスティックプール</a></li>
-<li><a href="#マネージドインスタンス">マネージドインスタンス</a></li>
-<li><a href="#仮想コアベースとdtu-ベースの購入モデル">仮想コアベースとDTU ベースの購入モデル</a></li>
-</ul></li>
-<li><a href="#azure-cosmos-db">Azure Cosmos DB</a>
-<ul>
-<li><a href="#概要">概要</a></li>
-<li><a href="#移行">移行</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#azure-sql-database-">Azure SQL Database サーバ</a></li>
+    <li><a href="#azure-sql-database">Azure SQL Database</a>
+      <ul>
+        <li><a href="#heading">単一データベース</a></li>
+        <li><a href="#heading1">エラスティックプール</a></li>
+        <li><a href="#heading2">マネージドインスタンス</a></li>
+        <li><a href="#dtu-">仮想コアベースとDTU ベースの購入モデル</a></li>
+      </ul>
+    </li>
+    <li><a href="#azure-cosmos-db">Azure Cosmos DB</a>
+      <ul>
+        <li><a href="#heading3">概要</a></li>
+        <li><a href="#heading4">移行</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
                     </div>
                 </details>
@@ -243,74 +241,58 @@
             
             
             
-            
-
-<a class="post-dummy-target" id="azure-sql-database-サーバ"></a><h2>Azure SQL Database サーバ</h2>
-
+            <a class="post-dummy-target" id="azure-sql-database-"></a><h2>Azure SQL Database サーバ</h2>
 <p>Azure SQL Databaseサーバは、各種機能の中央管理をおこなう論理的リソースで、以下のような管理機能を提供している。</p>
-
 <ul>
-<li><p>データベースアクセス（ログイン）</p></li>
-
-<li><p>Firewall Rule</p></li>
-
-<li><p>監査規則</p></li>
-
-<li><p>脅威検出ポリシー（SQLインジェクション、ブルートフォース攻撃など）</p></li>
-
-<li><p>自動フェールオーバーグループ</p></li>
+<li>
+<p>データベースアクセス（ログイン）</p>
+</li>
+<li>
+<p>Firewall Rule</p>
+</li>
+<li>
+<p>監査規則</p>
+</li>
+<li>
+<p>脅威検出ポリシー（SQLインジェクション、ブルートフォース攻撃など）</p>
+</li>
+<li>
+<p>自動フェールオーバーグループ</p>
+</li>
 </ul>
-
 <p>Azure SQL Databaseサーバは、Database を作成するにあたって事前に存在している必要がある。</p>
-
 <a class="post-dummy-target" id="azure-sql-database"></a><h2>Azure SQL Database</h2>
-
 <p>Azure SQL Databaseには、次の3つのデプロイオプションがある。</p>
-
 <ul>
 <li>単一データベース</li>
 <li>エラスティックプール</li>
 <li>マネージドインスタンス</li>
 </ul>
-
-<a class="post-dummy-target" id="単一データベース"></a><h3>単一データベース</h3>
-
-<p>最も汎用性の高いオプション。プランのスケールアップやスケールインが可能で柔軟性が高い。<br>
+<a class="post-dummy-target" id="heading"></a><h3>単一データベース</h3>
+<p>最も汎用性の高いオプション。プランのスケールアップやスケールインが可能で柔軟性が高い。<!-- raw HTML omitted -->
 Database Migration Service(DMS)を使用することで、オンプレミスSQLサーバーからの移行も可能。DACパッケージ(dacpac)を使って移行することもできるが、bacpacファイルのエクスポートやAzure SQL Databaseへのインポートも発生するためダウンタイムは長い。</p>
-
-<a class="post-dummy-target" id="エラスティックプール"></a><h3>エラスティックプール</h3>
-
+<a class="post-dummy-target" id="heading1"></a><h3>エラスティックプール</h3>
 <p>エラスティックプールを使用することで複数のデータベースで共有されるプールのリソースを確保（購入）でき個々のデータベースの使用期間が予測しづらい場合にリソースを効率的に使用できる。エラスティックプール内のデータベースは単一のAzure SQL Database サーバ上に存在し設定されているリソースを共有している。
 そのためエラスティックプールは、テナント単位で個々のDatabaseを展開したい場合などに魅力的なプランとなる。また、単一データベースはエラスティックプールの内外に移動することができる。</p>
-
-<a class="post-dummy-target" id="マネージドインスタンス"></a><h3>マネージドインスタンス</h3>
-
+<a class="post-dummy-target" id="heading2"></a><h3>マネージドインスタンス</h3>
 <p>オンプレミスSQL Serverと互換性の高いデータベースが作成できるため、リフト&amp;シフトのケースで最初に検討されるオプション。
-仮想ネットワークにインタンスを展開できるので、プライベートIPアドレスを持つ。(VPNやExpressRouteの利用も選択肢にできる)<br>
+仮想ネットワークにインタンスを展開できるので、プライベートIPアドレスを持つ。(VPNやExpressRouteの利用も選択肢にできる)<!-- raw HTML omitted -->
 既存のSQL Serverからの移行には、Azure Database Migration Service(DMS)を使用することで、オフラインおよびオンライン移行できる。
 オフライン移行では、移行の開始からアプリケーションのダウンタイムが発生するが、オンライン移行では、増分的にマネージドインスタンスにプッシュするので最終的な切り替え時のみダウンタイムが発生する。ネイティブのRESTOREコマンドで移行することもできるが、バックアップファイルの取得、コピーなどで移行ダウンタイムは大きくなる。</p>
-
-<a class="post-dummy-target" id="仮想コアベースとdtu-ベースの購入モデル"></a><h3>仮想コアベースとDTU ベースの購入モデル</h3>
-
+<a class="post-dummy-target" id="dtu-"></a><h3>仮想コアベースとDTU ベースの購入モデル</h3>
 <p>仮想コアベースは、ハードウェアの世代とハードウェアの物理特性 (コア数、メモリ、ストレージ サイズなど) を選択して利用するスタイル
 DTU(Database Transaction Unit) は、SQL Database のデータベースの処理性能を表す単位。Microsoftがベンチマークテスト数値に基づく
 CPU、メモリの使用率、およびディスクの読み書き負荷の組み合わせた測定値に基づいて算出している。このDTUに基づいて購入するモデル。
 DTUベースの購入モデルは、現在マネージドインスタンスでは提供されていない。</p>
-
-<!--https://www.slideshare.net/ssuser12e741/15jssugazure-sql-database -->
-
-<hr />
-
+<!-- raw HTML omitted -->
+<hr>
 <a class="post-dummy-target" id="azure-cosmos-db"></a><h2>Azure Cosmos DB</h2>
-
-<a class="post-dummy-target" id="概要"></a><h3>概要</h3>
-
+<a class="post-dummy-target" id="heading3"></a><h3>概要</h3>
 <p>モダンアプリ向けの低レイテンシ、大規模なスケールを保証するために構築されたフルマネージドグローバル分散データベース
 Cosmos DBのユースケースとして、世界中に分散されたアプリケーションや、瞬間的かつ弾力的なスケールが必要なワークロードなどに対応できる
 （Cosmos DB では処理種類に応じて特定の処理待機時間を超える要求を失敗したリクエストとしてSLA対象にしている）
 「グローバル分散」と「マルチモデルのデータベース」が最大の特徴で、Document、Graph、Key-Value、Column-Familyをサポートしている。
 データモデルにはそれぞれ対応するAPIが存在している</p>
-
 <table>
 <thead>
 <tr>
@@ -319,26 +301,22 @@ Cosmos DBのユースケースとして、世界中に分散されたアプリ�
 <th>説明</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Documents</td>
 <td>SQL API, MongoDB API</td>
 <td>JSON形式のドキュメントを保存できるデータモデル</td>
 </tr>
-
 <tr>
 <td>Graph</td>
 <td>Gremlin API</td>
 <td>データとデータの繋がりをグラフ構造で保持するデータモデル</td>
 </tr>
-
 <tr>
 <td>Key-Value</td>
 <td>Table API, Etcd(Preview)</td>
 <td>スキーマレスなテーブル構造でデータを保持するデータモデル</td>
 </tr>
-
 <tr>
 <td>Column-Family</td>
 <td>Cassandra API</td>
@@ -346,11 +324,8 @@ Cosmos DBのユースケースとして、世界中に分散されたアプリ�
 </tr>
 </tbody>
 </table>
-
-<a class="post-dummy-target" id="移行"></a><h3>移行</h3>
-
+<a class="post-dummy-target" id="heading4"></a><h3>移行</h3>
 <p><a href="https://github.com/azure/azure-documentdb-datamigrationtool">Azure Cosmos DB Data Migration Tool</a>が用意されており、このツールを使ってDocumentとTableは移行が可能。</p>
-
 <table>
 <thead>
 <tr>
@@ -358,23 +333,19 @@ Cosmos DBのユースケースとして、世界中に分散されたアプリ�
 <th>移行</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>SQL API</td>
 <td>Data Migration Toolで提供される任意のソース オプションを使用してデータをインポートできる</td>
 </tr>
-
 <tr>
 <td>Table API</td>
 <td>Data Migration Toolか、Azcopyを使用してデータをインポートできる</td>
 </tr>
-
 <tr>
 <td>MongoDB API</td>
 <td>Data Migration Toolは現在対応していない。Azure Database Migration Service(DMS) を使ってローカルのMongoDBをCosmos DBに移行できる。<a href="https://docs.microsoft.com/ja-jp/azure/dms/tutorial-mongodb-cosmos-db?toc=/azure/cosmos-db/toc.json">MongoDBの接続情報か、Azure Storage上のbsondダンプを使ってインポートできる</a></td>
 </tr>
-
 <tr>
 <td>Gremlin API</td>
 <td>現在移行のサポートなし</td>

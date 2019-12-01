@@ -19,7 +19,7 @@
 <meta name="theme-color" content="#ffffff">
 
   <meta name="twitter:title" content="Microsoft Ignite 2019 で発表された新機能のまとめ(Network編)" />
-  <meta name="twitter:description" content="Microsoft Ignite 2019 の Network 系サービスの update まとめです。 4つのカテゴリに分けて各種サービスの update が紹介されていました。 ・Connect &amp; Extend ・Protect ・Deliver ・Monitoring ネットワークサービスは、難しいですね。機能ごとのセッションを追いきれなかったので、補足とかある人は twitter …">
+  <meta name="twitter:description" content="Microsoft Ignite 2019 の Network 系サービスの update まとめです。 4つのカテゴリに分けて各種サービスの update が紹介されていました。 ・Connect &amp; Extend・Protect・Deliver・Monitoringネットワークサービスは、難しいですね。機能ごとのセッションを追いきれなかったので、補足とかある人は twitter とかで …">
   <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
   
 <meta name="twitter:card" content="summary" />
@@ -38,7 +38,7 @@
     
         "keywords": "azure, Network, Microsoft Ignite 2019",
     
-    "wordcount":  2280 ,
+    "wordcount":  2416 ,
     "url": "https:\/\/yonehub.y10e.com\/2019\/11\/21\/20191121_ignite2019_network\/",
     
         "datePublished": "2019-11-21T06:48:00\x2b09:00",
@@ -156,7 +156,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-11-21>2019-11-21</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 2280 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 2416 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>5 min&nbsp;</div>
         </div>
 
@@ -166,38 +166,39 @@
                 
                 <div class="post-toc-content">
                     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#1-connect-extend">1. Connect &amp; Extend</a>
-<ul>
-<li><a href="#azure-peering-service-preview">Azure Peering Service (Preview)</a></li>
-<li><a href="#azure-virtual-wan">Azure Virtual WAN</a></li>
-<li><a href="#expressroute">ExpressRoute</a></li>
-<li><a href="#expressroute-for-satellites-ga">ExpressRoute for satellites (GA)</a></li>
-<li><a href="#vpn">VPN</a></li>
-<li><a href="#ipv6-in-azure-vnets">IPv6 in Azure VNETs</a></li>
-</ul></li>
-<li><a href="#2-protect">2. Protect</a>
-<ul>
-<li><a href="#azure-private-link-preview">Azure Private Link (Preview)</a></li>
-<li><a href="#azure-firewall-manager-preview">Azure Firewall Manager (Preview)</a></li>
-<li><a href="#azure-bastion">Azure Bastion</a></li>
-<li><a href="#azure-waf">Azure WAF</a></li>
-</ul></li>
-<li><a href="#3-deliver">3. Deliver</a>
-<ul>
-<li><a href="#application-gateway">Application Gateway</a></li>
-<li><a href="#azure-front-door">Azure Front Door</a></li>
-<li><a href="#azure-cdn">Azure CDN</a></li>
-</ul></li>
-<li><a href="#4-monitoring">4. Monitoring</a>
-<ul>
-<li><a href="#internet-analyzer-preview">Internet Analyzer(Preview)</a></li>
-<li><a href="#azure-monitor-for-networks">Azure Monitor for networks</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#1-connect--extend">1. Connect & Extend</a>
+      <ul>
+        <li><a href="#azure-peering-service-preview">Azure Peering Service (Preview)</a></li>
+        <li><a href="#azure-virtual-wan">Azure Virtual WAN</a></li>
+        <li><a href="#expressroute">ExpressRoute</a></li>
+        <li><a href="#expressroute-for-satellites-ga">ExpressRoute for satellites (GA)</a></li>
+        <li><a href="#vpn">VPN</a></li>
+        <li><a href="#ipv6-in-azure-vnets">IPv6 in Azure VNETs</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-protect">2. Protect</a>
+      <ul>
+        <li><a href="#azure-private-link-preview">Azure Private Link (Preview)</a></li>
+        <li><a href="#azure-firewall-manager-preview">Azure Firewall Manager (Preview)</a></li>
+        <li><a href="#azure-bastion">Azure Bastion</a></li>
+        <li><a href="#azure-waf">Azure WAF</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-deliver">3. Deliver</a>
+      <ul>
+        <li><a href="#application-gateway">Application Gateway</a></li>
+        <li><a href="#azure-front-door">Azure Front Door</a></li>
+        <li><a href="#azure-cdn">Azure CDN</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-monitoring">4. Monitoring</a>
+      <ul>
+        <li><a href="#internet-analyzerpreview">Internet Analyzer(Preview)</a></li>
+        <li><a href="#azure-monitor-for-networks">Azure Monitor for networks</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
                 </div>
             </div>
@@ -208,38 +209,39 @@
                         
                         
                         <nav id="TableOfContentsMobile">
-<ul>
-<li>
-<ul>
-<li><a href="#1-connect-extend">1. Connect &amp; Extend</a>
-<ul>
-<li><a href="#azure-peering-service-preview">Azure Peering Service (Preview)</a></li>
-<li><a href="#azure-virtual-wan">Azure Virtual WAN</a></li>
-<li><a href="#expressroute">ExpressRoute</a></li>
-<li><a href="#expressroute-for-satellites-ga">ExpressRoute for satellites (GA)</a></li>
-<li><a href="#vpn">VPN</a></li>
-<li><a href="#ipv6-in-azure-vnets">IPv6 in Azure VNETs</a></li>
-</ul></li>
-<li><a href="#2-protect">2. Protect</a>
-<ul>
-<li><a href="#azure-private-link-preview">Azure Private Link (Preview)</a></li>
-<li><a href="#azure-firewall-manager-preview">Azure Firewall Manager (Preview)</a></li>
-<li><a href="#azure-bastion">Azure Bastion</a></li>
-<li><a href="#azure-waf">Azure WAF</a></li>
-</ul></li>
-<li><a href="#3-deliver">3. Deliver</a>
-<ul>
-<li><a href="#application-gateway">Application Gateway</a></li>
-<li><a href="#azure-front-door">Azure Front Door</a></li>
-<li><a href="#azure-cdn">Azure CDN</a></li>
-</ul></li>
-<li><a href="#4-monitoring">4. Monitoring</a>
-<ul>
-<li><a href="#internet-analyzer-preview">Internet Analyzer(Preview)</a></li>
-<li><a href="#azure-monitor-for-networks">Azure Monitor for networks</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#1-connect--extend">1. Connect & Extend</a>
+      <ul>
+        <li><a href="#azure-peering-service-preview">Azure Peering Service (Preview)</a></li>
+        <li><a href="#azure-virtual-wan">Azure Virtual WAN</a></li>
+        <li><a href="#expressroute">ExpressRoute</a></li>
+        <li><a href="#expressroute-for-satellites-ga">ExpressRoute for satellites (GA)</a></li>
+        <li><a href="#vpn">VPN</a></li>
+        <li><a href="#ipv6-in-azure-vnets">IPv6 in Azure VNETs</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-protect">2. Protect</a>
+      <ul>
+        <li><a href="#azure-private-link-preview">Azure Private Link (Preview)</a></li>
+        <li><a href="#azure-firewall-manager-preview">Azure Firewall Manager (Preview)</a></li>
+        <li><a href="#azure-bastion">Azure Bastion</a></li>
+        <li><a href="#azure-waf">Azure WAF</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-deliver">3. Deliver</a>
+      <ul>
+        <li><a href="#application-gateway">Application Gateway</a></li>
+        <li><a href="#azure-front-door">Azure Front Door</a></li>
+        <li><a href="#azure-cdn">Azure CDN</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-monitoring">4. Monitoring</a>
+      <ul>
+        <li><a href="#internet-analyzerpreview">Internet Analyzer(Preview)</a></li>
+        <li><a href="#azure-monitor-for-networks">Azure Monitor for networks</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
                     </div>
                 </details>
@@ -271,146 +273,89 @@
             
             
             
-            
-
-<p>Microsoft Ignite 2019 の Network 系サービスの update まとめです。
+            <p>Microsoft Ignite 2019 の Network 系サービスの update まとめです。
 4つのカテゴリに分けて各種サービスの update が紹介されていました。</p>
-
-<p>・Connect &amp; Extend<br>
-・Protect<br>
-・Deliver<br>
-・Monitoring<br></p>
-
+<p>・Connect &amp; Extend<!-- raw HTML omitted -->
+・Protect<!-- raw HTML omitted -->
+・Deliver<!-- raw HTML omitted -->
+・Monitoring<!-- raw HTML omitted --></p>
 <p>ネットワークサービスは、難しいですね。機能ごとのセッションを追いきれなかったので、補足とかある人は <a href="https://twitter.com/y10exxx">twitter</a> とかでご教示いただきたいなぁ。</p>
-
-<a class="post-dummy-target" id="1-connect-extend"></a><h2>1. Connect &amp; Extend</h2>
-
+<a class="post-dummy-target" id="1-connect--extend"></a><h2>1. Connect &amp; Extend</h2>
 <a class="post-dummy-target" id="azure-peering-service-preview"></a><h3>Azure Peering Service (Preview)</h3>
-
 <p>ISP を介してパブリックネットワーク経由で Microsoftクラウド(Office 365、Dynamics 365、Azure など)に最適かつ信頼性の高いルーティングを提供するサービスです。
-専用接続を使用して、Microsoftクラウドにセキュアなネットワーク接続をおこなうサービスとしては、Azure ExpressRoute　がありましたが、Peering Service では、プライベート回線ではなくパブリックネットワークが利用されます。<br>
+専用接続を使用して、Microsoftクラウドにセキュアなネットワーク接続をおこなうサービスとしては、Azure ExpressRoute　がありましたが、Peering Service では、プライベート回線ではなくパブリックネットワークが利用されます。<!-- raw HTML omitted -->
 日本でも、NTT コミュニケーションズや IIJ が早くも対応サービスを公表していました。</p>
-
-<p>Azure Peering Service<br>
+<p>Azure Peering Service<!-- raw HTML omitted -->
 <a href="https://docs.microsoft.com/ja-jp/azure/peering-service/">https://docs.microsoft.com/ja-jp/azure/peering-service/</a></p>
-
 <a class="post-dummy-target" id="azure-virtual-wan"></a><h3>Azure Virtual WAN</h3>
-
 <p>Azure Virtual WAN は、Azureを介して拠点間接続を行うことができる大規模拠点間接続サービスです。
 Ignite 2019 では、プレビューだった　ExpressRoute と P2S VPN　接続との統合が一般提供となりました。</p>
-
 <p>Azure Firewall や Azure Virtual WAN に存在する各リージョンのハブとハブの間で接続させる機能についてのプレビュー開始が紹介されていました。</p>
-
 <p>それに伴い公式ドキュメントも更新されているようです。</p>
-
-<p>Azure Virtual WAN の概要<br>
+<p>Azure Virtual WAN の概要<!-- raw HTML omitted -->
 <a href="https://docs.microsoft.com/ja-jp/azure/virtual-wan/virtual-wan-about">https://docs.microsoft.com/ja-jp/azure/virtual-wan/virtual-wan-about</a></p>
-
 <a class="post-dummy-target" id="expressroute"></a><h3>ExpressRoute</h3>
-
 <p>オンプレミスからのネットワークトラフィックを Azure 上の仮想ネットワークゲートウェイをバイパスできる FastPath のオプションが GA になりました</p>
-
-<p>ExpressRoute 仮想ネットワーク ゲートウェイと FastPath<br>
+<p>ExpressRoute 仮想ネットワーク ゲートウェイと FastPath<!-- raw HTML omitted -->
 <a href="https://docs.microsoft.com/ja-jp/azure/expressroute/expressroute-about-virtual-network-gateways#fastpath">https://docs.microsoft.com/ja-jp/azure/expressroute/expressroute-about-virtual-network-gateways#fastpath</a></p>
-
 <p>また、ExpressRoute Direct で使用できる ExpressRoute Local が GA になったようです。
 ExpressRoute Local では、アクセス可能なリージョンが限定されていますが、データ転送料金などが追加で発生ない SKU らしいです。ただ、ExpressRoute Global Reachも使えないみたいですね。</p>
-
-<p>ExpressRoute Local<br>
+<p>ExpressRoute Local<!-- raw HTML omitted -->
 <a href="https://docs.microsoft.com/ja-jp/azure/expressroute/expressroute-faqs#expressroute-local">https://docs.microsoft.com/ja-jp/azure/expressroute/expressroute-faqs#expressroute-local</a></p>
-
 <p>ネットワークデバイスと Microsoft のネットワーク デバイスの間の物理リンクと MACSec(Media Access Control Security)で暗号化する機能がプレビューで紹介されていました。ExpressRoute Direct のみ利用可能のようです。</p>
-
-<p>MACsec によるポイントツーポイント暗号化に関する FAQ <br>
+<p>MACsec によるポイントツーポイント暗号化に関する FAQ <!-- raw HTML omitted -->
 <a href="https://docs.microsoft.com/ja-jp/azure/expressroute/expressroute-about-encryption#point-to-point-encryption-by-macsec-faq">https://docs.microsoft.com/ja-jp/azure/expressroute/expressroute-about-encryption#point-to-point-encryption-by-macsec-faq</a></p>
-
 <a class="post-dummy-target" id="expressroute-for-satellites-ga"></a><h3>ExpressRoute for satellites (GA)</h3>
-
 <p>衛星接続とExpressRouteを通じてMicrosoft サービスに接続できる<a href="https://azure.microsoft.com/de-de/updates/azure-expressroute-for-satellites-is-now-available/">Azure ExpressRoute for satellites</a> が GA となりました。</p>
-
-<p>Satellite connectivity expands reach of Azure ExpressRoute across the globe <br>
+<p>Satellite connectivity expands reach of Azure ExpressRoute across the globe <!-- raw HTML omitted -->
 <a href="https://azure.microsoft.com/en-us/blog/satellite-connectivity-expands-reach-of-azure-expressroute-across-the-globe/">https://azure.microsoft.com/en-us/blog/satellite-connectivity-expands-reach-of-azure-expressroute-across-the-globe/</a></p>
-
 <a class="post-dummy-target" id="vpn"></a><h3>VPN</h3>
-
 <p>S2S 接続では、10Gbpsの帯域の Gateway タイプと、全ての Gateway タイプでIKEv1とIKEv2のサポートがGAになったようです。
 VPN Gateway でのパケットパキャプチャ採取も開発しているらしいです。これは早く GA なってほしいですね。</p>
-
 <p>P2S 接続では、Azure ADと多要素認証のサポート、Windows アプリの Azure VPN Clinetを開発しているみたいです。</p>
-
 <a class="post-dummy-target" id="ipv6-in-azure-vnets"></a><h3>IPv6 in Azure VNETs</h3>
-
 <p>Azure の仮想ネットワーク内で、IPv4 と IPv6 の両方がサポートされるようになりました。GA らしいです。
 ただ、ドキュメントはまだ更新されていないので、今後反映されていくものと思われます。</p>
-
-<p>What is IPv6 for Azure Virtual Network? (Preview)<br>
+<p>What is IPv6 for Azure Virtual Network? (Preview)<!-- raw HTML omitted -->
 <a href="https://docs.microsoft.com/en-us/azure/virtual-network/ipv6-overview">https://docs.microsoft.com/en-us/azure/virtual-network/ipv6-overview</a></p>
-
 <a class="post-dummy-target" id="2-protect"></a><h2>2. Protect</h2>
-
 <a class="post-dummy-target" id="azure-private-link-preview"></a><h3>Azure Private Link (Preview)</h3>
-
 <p>Azure Private Link が、プレビューで公開されました。Azure Storage や SQL、Cosmos DB などの PaaS リソースに対して、仮想ネットワーク内のプライベート IP を経由して接続できる機能になります。</p>
-
-<p>Azure Private Link <br>
+<p>Azure Private Link <!-- raw HTML omitted -->
 <a href="https://docs.microsoft.com/ja-jp/azure/private-link/">https://docs.microsoft.com/ja-jp/azure/private-link/</a></p>
-
 <a class="post-dummy-target" id="azure-firewall-manager-preview"></a><h3>Azure Firewall Manager (Preview)</h3>
-
 <p>Azure Firewall Manager という機能がプレビューで公開されました。
 リージョンやサブスクリプションをまたがる複数のAzure Firewall インスタンスを一元的にセキュリティポリシーを展開、管理できるみたいです。</p>
-
-<p>Azure Firewall Manager is now in preview <br>
+<p>Azure Firewall Manager is now in preview <!-- raw HTML omitted -->
 <a href="https://azure.microsoft.com/ja-jp/updates/azure-firewall-manager-is-now-in-preview/">https://azure.microsoft.com/ja-jp/updates/azure-firewall-manager-is-now-in-preview/</a></p>
-
 <a class="post-dummy-target" id="azure-bastion"></a><h3>Azure Bastion</h3>
-
 <p>JumpBox の PaaS のような、サーバーをもたずに仮想ネットワークから Azure VM に RDP や SSH ができるようになる Azure Bastion が GA になりました。
 プレビューから GA まで早かったですね。　</p>
-
-<p>Azure Bastion とは<br>
+<p>Azure Bastion とは<!-- raw HTML omitted -->
 <a href="https://docs.microsoft.com/ja-jp/azure/bastion/bastion-overview">https://docs.microsoft.com/ja-jp/azure/bastion/bastion-overview</a></p>
-
 <a class="post-dummy-target" id="azure-waf"></a><h3>Azure WAF</h3>
-
 <p>Azure Front Door や Azure Application Gateway と統合した WAF サービスになったという話でした。(updateなのか？)URIなどで WAF ポリシーをカスタマイズできたり地理レベルでフィルタリングを適用したりするような機能が開発中らしいです。</p>
-
 <a class="post-dummy-target" id="3-deliver"></a><h2>3. Deliver</h2>
-
 <a class="post-dummy-target" id="application-gateway"></a><h3>Application Gateway</h3>
-
-<p>Application Gateway のところで発表するの？って感じでしたが、AKS の Application Gateway Ingres Controleer が GA しました。<br>
+<p>Application Gateway のところで発表するの？って感じでしたが、AKS の Application Gateway Ingres Controleer が GA しました。<!-- raw HTML omitted -->
 他には、Application GatewayとAzure Keyvaltが統合され、SSL 証明書を管理する機能がGAになりました。レイテンシやバックエンドのエラーコードなどメトリックも拡充したらしいです。</p>
-
 <p>Comming Soonとしては、リスナーにワイルドカードが許容されるようになりサブドメインごとにリスナー作成が不要になる Wildcard listener が開発中らしいです。</p>
-
 <a class="post-dummy-target" id="azure-front-door"></a><h3>Azure Front Door</h3>
-
 <p>内部動作の update のようでしたが、HTTPパフォーマンスが向上したり、DDos対策などでセキュリティ性も向上しているようです。</p>
-
 <a class="post-dummy-target" id="azure-cdn"></a><h3>Azure CDN</h3>
-
 <p>Azure Storage や VM、Media Serviceから Microsoftの Azure CDN　のエグレストラフィックは無料になりました。
 CDN ルールのカスタマイズ性や容易さを向上できるように開発を進めているとのこと。</p>
-
 <a class="post-dummy-target" id="4-monitoring"></a><h2>4. Monitoring</h2>
-
-<a class="post-dummy-target" id="internet-analyzer-preview"></a><h3>Internet Analyzer(Preview)</h3>
-
+<a class="post-dummy-target" id="internet-analyzerpreview"></a><h3>Internet Analyzer(Preview)</h3>
 <p>Azure Internet Analyzerがプレビューで公開されました。次のようなことができるらしい。</p>
-
-<p>・web アプリをクラウドに移行した時のインパクト計測<br>
-・Azure Front DoorやCDNを使用したときのパフォーマンス影響の計測<br>
-・2種類のweb appやマルチリージョンのアプリを配置したときのパフォーマンスなどを計測<br></p>
-
-<p>Internet Analyzer<br>
+<p>・web アプリをクラウドに移行した時のインパクト計測<!-- raw HTML omitted -->
+・Azure Front DoorやCDNを使用したときのパフォーマンス影響の計測<!-- raw HTML omitted -->
+・2種類のweb appやマルチリージョンのアプリを配置したときのパフォーマンスなどを計測<!-- raw HTML omitted --></p>
+<p>Internet Analyzer<!-- raw HTML omitted -->
 <a href="https://azure.microsoft.com/ja-jp/services/internet-analyzer/">https://azure.microsoft.com/ja-jp/services/internet-analyzer/</a></p>
-
 <a class="post-dummy-target" id="azure-monitor-for-networks"></a><h3>Azure Monitor for networks</h3>
-
 <p>ネットワーク周りのモニタリング、メトリック計測などが向上、拡充したそうです。
 Traffic 分析の処理速度向上やロードバランサーやグローバルピアリング、UDRなどの接続性チェックが向上が挙げられていました。</p>
-
 <p>今後としては、クラウドネットワーク全体の正常性を確認できるコンソールやエージェント、設定レスな機能の開発を進めているらしいです。　</p>
 
         </div>

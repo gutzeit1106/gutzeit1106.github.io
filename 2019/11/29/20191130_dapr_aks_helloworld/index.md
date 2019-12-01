@@ -7,7 +7,7 @@
 
 <img src="/img/20191130_aks_dapr/Architecture_Diagram.png" align="left"><br clear="left">
 
-dapr がインストールされた環境で、python と node.js の POD が動作します。python と node.js の POD　は、それぞれの POD 内でサイドカーとして動作する dapr API を経由して、state 情報の更新と取得が行われます。
+dapr がインストールされた環境で、python と node.js の POD が動作します。python と node.js の POD は、それぞれの POD 内でサイドカーとして動作する dapr API を経由して、state 情報の更新と取得が行われます。
 
 ### 0. ドキュメント
 Hello Kubernetes <br>
@@ -316,7 +316,7 @@ kubectl delete -f .
 ```
 
 ### 8. 補足
-手順 5, 6　で正常な値が取れない場合、dapr の設定などがおかしい可能性があります。
+手順 5, 6 で正常な値が取れない場合、dapr の設定などがおかしい可能性があります。
 その際は、nodeapp の POD 内の daprd のログなどを見るとどのようなエラーが発生しているかわかると思います。
 
 ```

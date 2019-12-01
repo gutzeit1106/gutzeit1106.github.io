@@ -193,84 +193,84 @@
             <p>停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">docker system prune</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">docker system prune
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>停止コンテナ一括削除</p>
+</div><p>停止コンテナ一括削除</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">docker container prune</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">docker container prune
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>全コンテナ一括削除</p>
+</div><p>全コンテナ一括削除</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">docker rm -f <span class="sb">`</span>docker ps -a -q<span class="sb">`</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">docker rm -f <span class="sb">`</span>docker ps -a -q<span class="sb">`</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>未使用イメージ一括削除</p>
+</div><p>未使用イメージ一括削除</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">docker image prune</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">docker image prune
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>タグ無しイメージ一括削除</p>
+</div><p>タグ無しイメージ一括削除</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">docker rmi <span class="sb">`</span>docker images -f <span class="s2">&#34;dangling=true&#34;</span> -q<span class="sb">`</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">docker rmi <span class="sb">`</span>docker images -f <span class="s2">&#34;dangling=true&#34;</span> -q<span class="sb">`</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>未使用ボリューム一括削除</p>
+</div><p>未使用ボリューム一括削除</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">docker volume rm docker volume ls -q</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">docker volume rm docker volume ls -q
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>未使用ネットワーク一括削除</p>
+</div><p>未使用ネットワーク一括削除</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">docker network prune</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">docker network prune
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>コンテナを動いているとイメージを削除できないので、本当に全部削除したい時は次の順序で実施する</p>
-
+</div><p>コンテナを動いているとイメージを削除できないので、本当に全部削除したい時は次の順序で実施する</p>
 <p>コンテナを全削除する</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">docker ps -aq <span class="p">|</span> xargs docker rm</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">docker ps -aq <span class="p">|</span> xargs docker rm
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>イメージを全削除する</p>
+</div><p>イメージを全削除する</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">docker images -aq <span class="p">|</span> xargs docker rmi</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">docker images -aq <span class="p">|</span> xargs docker rmi
+</code></pre></td></tr></table>
 </div>
 </div>
         </div>

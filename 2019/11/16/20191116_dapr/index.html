@@ -19,7 +19,7 @@
 <meta name="theme-color" content="#ffffff">
 
   <meta name="twitter:title" content="Microsoftのマイクロサービス構築フレームワーク Dapr を動かす" />
-  <meta name="twitter:description" content="2019年10月にマイクロサービスアプリケーションの開発を容易にするためのフレームワークとして&rdquo;Dapr&rdquo;がマイクロソフトから公開されました。現在α版となっています。 Daprは、プログラミング言語に依存せずマイクロサービス間の呼び出し機能やステート管理、サービス間のメッセージ機能、リソースのバインディング、 分散サービス間のトレーシングなどの機能を提供するソフトウェアで …">
+  <meta name="twitter:description" content="2019年10月にマイクロサービスアプリケーションの開発を容易にするためのフレームワークとして&quot;Dapr&quot;がマイクロソフトから公開されました。現在α版となっています。 Daprは、プログラミング言語に依存せずマイクロサービス間の呼び出し機能やステート管理、サービス間のメッセージ機能、リソースのバインディング、 分散サービス間のトレーシングなどの機能を提供するソフトウェアです。  …">
   <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
   
 <meta name="twitter:card" content="summary" />
@@ -38,13 +38,13 @@
     
         "keywords": "dapr, container, Microsoft",
     
-    "wordcount":  1278 ,
+    "wordcount":  1249 ,
     "url": "https:\/\/yonehub.y10e.com\/2019\/11\/16\/20191116_dapr\/",
     
         "datePublished": "2019-11-16T12:47:23\x2b09:00",
     
     
-        "dateModified": "2019-11-28T04:32:41\x2b09:00",
+        "dateModified": "2019-12-01T23:23:10\x2b09:00",
     
     
         "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
@@ -156,7 +156,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-11-16>2019-11-16</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1278 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1249 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
         </div>
 
@@ -166,21 +166,15 @@
                 
                 <div class="post-toc-content always-active">
                     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1-ドキュメント">1. ドキュメント</a></li>
-<li><a href="#2-インストール-mac">2. インストール(Mac)</a></li>
-<li><a href="#3-サンプルコード-hello-world">3. サンプルコード （Hello World）</a>
-<ul>
-<li><a href="#hello-world-の解説">Hello World の解説</a></li>
-<li><a href="#node-js-アプリを-dapr-と稼働させてみる">Node.js アプリを Dapr と稼働させてみる</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-">1. ドキュメント</a></li>
+        <li><a href="#2-mac">2. インストール(Mac)</a></li>
+        <li><a href="#3--hello-world">3. サンプルコード （Hello World）</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
                 </div>
             </div>
@@ -191,21 +185,15 @@
                         
                         
                         <nav id="TableOfContentsMobile">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1-ドキュメント">1. ドキュメント</a></li>
-<li><a href="#2-インストール-mac">2. インストール(Mac)</a></li>
-<li><a href="#3-サンプルコード-hello-world">3. サンプルコード （Hello World）</a>
-<ul>
-<li><a href="#hello-world-の解説">Hello World の解説</a></li>
-<li><a href="#node-js-アプリを-dapr-と稼働させてみる">Node.js アプリを Dapr と稼働させてみる</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-">1. ドキュメント</a></li>
+        <li><a href="#2-mac">2. インストール(Mac)</a></li>
+        <li><a href="#3--hello-world">3. サンプルコード （Hello World）</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
                     </div>
                 </details>
@@ -237,36 +225,25 @@
             
             
             
-            
-
-<p>2019年10月にマイクロサービスアプリケーションの開発を容易にするためのフレームワークとして&rdquo;Dapr&rdquo;がマイクロソフトから公開されました。現在α版となっています。
+            <p>2019年10月にマイクロサービスアプリケーションの開発を容易にするためのフレームワークとして&quot;Dapr&quot;がマイクロソフトから公開されました。現在α版となっています。
 Daprは、プログラミング言語に依存せずマイクロサービス間の呼び出し機能やステート管理、サービス間のメッセージ機能、リソースのバインディング、　分散サービス間のトレーシングなどの機能を提供するソフトウェアです。
 マイクロサービスに直接組み込むのではなく、HTTP/gRPC API経由で呼び出して利用することで、アプリケーションに依存せず利用できることを目指しています。</p>
-
-<p><img src="/img/20191116_dapr/dapr_conceptual_model.jpg" align="left"><br clear="left"></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>ローカルでインストールし動作を試して見ました。(動作検証時の)</p>
-
-<a class="post-dummy-target" id="1-ドキュメント"></a><h3>1. ドキュメント</h3>
-
-<p>Dapr 公式<br>
+<a class="post-dummy-target" id="1-"></a><h3>1. ドキュメント</h3>
+<p>Dapr 公式<!-- raw HTML omitted -->
 <a href="https://dapr.io/#">https://dapr.io/#</a></p>
-
-<p>Dapr github<br>
+<p>Dapr github<!-- raw HTML omitted -->
 <a href="https://github.com/dapr/docs">https://github.com/dapr/docs</a></p>
-
-<p>Roadmap<br>
+<p>Roadmap<!-- raw HTML omitted -->
 <a href="https://github.com/dapr/dapr/wiki/Roadmap">https://github.com/dapr/dapr/wiki/Roadmap</a></p>
-
-<p>0.2.0 Release Milestone<br>
+<p>0.2.0 Release Milestone<!-- raw HTML omitted -->
 <a href="https://github.com/orgs/dapr/projects/8">https://github.com/orgs/dapr/projects/8</a></p>
-
-<a class="post-dummy-target" id="2-インストール-mac"></a><h3>2. インストール(Mac)</h3>
-
+<a class="post-dummy-target" id="2-mac"></a><h3>2. インストール(Mac)</h3>
 <p>Dapr CLIをインストールする</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -283,15 +260,15 @@ Installing Dapr CLI...
 
 Downloading https://github.com/dapr/cli/releases/download/v0.1.0/dapr_darwin_amd64.tar.gz ...
 dapr installed into /usr/local/bin successfully.
-cli version: <span class="m">0</span>.1.0 
+cli version: 0.1.0 
 runtime version: n/a
-To get started with Dapr, please visit https://github.com/dapr/docs/tree/master/getting-started</code></pre></td></tr></table>
+To get started with Dapr, please visit https://github.com/dapr/docs/tree/master/getting-started
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>CLI を使って Dapr Runtime をインストールする。（事前にdockerを稼働させる）</p>
+</div><p>CLI を使って Dapr Runtime をインストールする。（事前にdockerを稼働させる）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -300,17 +277,16 @@ To get started with Dapr, please visit https://github.com/dapr/docs/tree/master/
 <pre class="chroma"><code class="language-sh" data-lang="sh">$ dapr init
 ⌛  Making the jump to hyperspace...
 ✅  Downloading binaries and setting up components...
-✅  Success! Dapr is up and running</code></pre></td></tr></table>
+✅  Success! Dapr is up and running
+</code></pre></td></tr></table>
 </div>
-</div>
-<blockquote>
+</div><blockquote>
 <p>To see that Dapr has been installed successful, from a command prompt run the docker ps command and check that the daprio/dapr:latest and redis &gt;container images are both running.</p>
 </blockquote>
-
 <p>Dapr が正常にインストールされていていれば、daprio/dapr:latest と redis のコンテナイメージが見えるらしい</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -318,205 +294,103 @@ To get started with Dapr, please visit https://github.com/dapr/docs/tree/master/
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">$ docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                      NAMES
-b5c379de74b6        daprio/dapr         <span class="s2">&#34;./placement&#34;</span>            <span class="m">59</span> seconds ago       Up <span class="m">57</span> seconds       <span class="m">0</span>.0.0.0:50005-&gt;50005/tcp   dapr_placement
-44a1d7cb8aff        redis               <span class="s2">&#34;docker-entrypoint.s…&#34;</span>   About a minute ago   Up <span class="m">58</span> seconds       <span class="m">0</span>.0.0.0:6379-&gt;6379/tcp     epic_golick</code></pre></td></tr></table>
+b5c379de74b6        daprio/dapr         <span class="s2">&#34;./placement&#34;</span>            <span class="m">59</span> seconds ago       Up <span class="m">57</span> seconds       0.0.0.0:50005-&gt;50005/tcp   dapr_placement
+44a1d7cb8aff        redis               <span class="s2">&#34;docker-entrypoint.s…&#34;</span>   About a minute ago   Up <span class="m">58</span> seconds       0.0.0.0:6379-&gt;6379/tcp     epic_golick
+</code></pre></td></tr></table>
 </div>
-</div>
-<a class="post-dummy-target" id="3-サンプルコード-hello-world"></a><h3>3. サンプルコード （Hello World）</h3>
-
-<a class="post-dummy-target" id="hello-world-の解説"></a><h4>Hello World の解説</h4>
-
+</div><a class="post-dummy-target" id="3--hello-world"></a><h3>3. サンプルコード （Hello World）</h3>
+<a class="post-dummy-target" id="hello-world-"></a><h4>Hello World の解説</h4>
 <p><a href="https://github.com/dapr/samples/tree/master/1.hello-world">https://github.com/dapr/samples/tree/master/1.hello-world</a>
-<img src="/img/20191116_dapr/Architecture_Diagram.png" align="left"><br clear="left">
-<br></p>
-
+<!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
 <p>まずは　git clone</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ git clone https://github.com/dapr/samples.git
+<pre><code>$ git clone https://github.com/dapr/samples.git
 $ cd samples/1.hello-world
 $ ls
-README.md               app.js                  img                     package-lock.json       package.json            sample.http             sample.json</pre></td></tr></table>
-</div>
-</div>
-<p>app.js を見ていく。<br></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-node" data-lang="node"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-node" data-lang="node">const stateUrl = `http://localhost:${daprPort}/v1.0/state`;</code></pre></td></tr></table>
-</div>
-</div>
-<p>Dapr CLI は、 Dapr port用の環境変数を作成し、デフォルトでポートは 3500 。
+README.md               app.js                  img                     package-lock.json       package.json            sample.http             sample.json
+</code></pre><p>app.js を見ていく。<!-- raw HTML omitted --></p>
+<pre><code class="language-node" data-lang="node">const stateUrl = `http://localhost:${daprPort}/v1.0/state`;
+</code></pre><p>Dapr CLI は、 Dapr port用の環境変数を作成し、デフォルトでポートは 3500 。
 次に neworder ハンドラを見ていく。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-node" data-lang="node"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-node" data-lang="node">app.post(&#39;/neworder&#39;, (req, res) =&gt; {
+<pre><code class="language-node" data-lang="node">app.post('/neworder', (req, res) =&gt; {
     const data = req.body.data;
     const orderId = data.orderId;
-    console.log(&#34;Got a new order! Order ID: &#34; + orderId);
+    console.log(&quot;Got a new order! Order ID: &quot; + orderId);
 
     const state = [{
-        key: &#34;order&#34;,
+        key: &quot;order&quot;,
         value: data
     }];
 
     fetch(stateUrl, {
-        method: &#34;POST&#34;,
+        method: &quot;POST&quot;,
         body: JSON.stringify(state),
         headers: {
-            &#34;Content-Type&#34;: &#34;application/json&#34;
+            &quot;Content-Type&quot;: &quot;application/json&quot;
         }
     }).then((response) =&gt; {
-        console.log((response.ok) ? &#34;Successfully persisted state&#34; : &#34;Failed to persist state&#34;);
+        console.log((response.ok) ? &quot;Successfully persisted state&quot; : &quot;Failed to persist state&quot;);
     });
 
     res.status(200).send();
-});</code></pre></td></tr></table>
-</div>
-</div>
-<p>ここでは neworder メッセージを受信して処理するエンドポイントを公開している。
+});
+</code></pre><p>ここでは neworder メッセージを受信して処理するエンドポイントを公開している。
 最初に受信したメッセージをコンソールログに記録して、次に stateUrl に state Key-Valueを POST することで　Redis にorder id を永続化する。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-node" data-lang="node"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-node" data-lang="node">app.get(&#39;/order&#39;, (_req, res) =&gt; {
+<pre><code class="language-node" data-lang="node">app.get('/order', (_req, res) =&gt; {
     fetch(`${stateUrl}/order`)
         .then((response) =&gt; {
             return response.json();
         }).then((orders) =&gt; {
             res.send(orders);
         });
-});</code></pre></td></tr></table>
-</div>
-</div>
-<p>この Get エンドポイントでは、Redis キャッシュが呼び出され、order keyの最新 value が取得でき、Node.js app がステートレスになる。</p>
-
-<a class="post-dummy-target" id="node-js-アプリを-dapr-と稼働させてみる"></a><h4>Node.js アプリを Dapr と稼働させてみる</h4>
-
+});
+</code></pre><p>この Get エンドポイントでは、Redis キャッシュが呼び出され、order keyの最新 value が取得でき、Node.js app がステートレスになる。</p>
+<a class="post-dummy-target" id="nodejs--dapr-"></a><h4>Node.js アプリを Dapr と稼働させてみる</h4>
 <p>まずは依存関係をインストールする</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">$ npm install</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ npm install
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>Node.js app を稼働させる。</p>
+</div><p>Node.js app を稼働させる。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">$ dapr run --app-id mynode --app-port <span class="m">3000</span> --port <span class="m">3500</span> node app.js
-ℹ️  Starting Dapr with id mynode. HTTP Port: <span class="m">3500</span>. gRPC Port: <span class="m">50880</span>
-✅  You<span class="err">&#39;</span>re up and running! Both Dapr and your app logs will appear here.</code></pre></td></tr></table>
+ℹ️  Starting Dapr with id mynode. HTTP Port: 3500. gRPC Port: <span class="m">50880</span>
+✅  You<span class="err">&#39;</span>re up and running! Both Dapr and your app logs will appear here.
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>フォアグラウンドで app が動くので別のターミナルなどで curl でエンドポイントに post する。
+</div><p>フォアグラウンドで app が動くので別のターミナルなどで curl でエンドポイントに post する。
 curl 実行は samples/1.hello-world に移動しておこなう。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">curl -XPOST -d @sample.json http://localhost:3500/v1.0/invoke/mynode/method/neworder</pre></td></tr></table>
-</div>
-</div>
-<p>dapr app が稼働しているターミナルでメッセージの受信が確認できる。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">== APP == Got a new order! Order ID: 42
-== APP == Successfully persisted state</pre></td></tr></table>
-</div>
-</div>
-<p>GET のエンドポイントにアクセスしてステートが正常に保存されていることを確認する。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ curl http://localhost:3500/v1.0/invoke/mynode/method/order
-{&#34;orderId&#34;:&#34;42&#34;}</pre></td></tr></table>
-</div>
-</div>
-<p>最後に次のコマンドでサービスを終了させる。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ dapr stop --app-id mynode
-✅  app stopped successfully</pre></td></tr></table>
-</div>
-</div>
-<p>dapr の状態は dapr list で確認できる。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ dapr list
-No dapr instances found.</pre></td></tr></table>
-</div>
-</div>
+<pre><code>curl -XPOST -d @sample.json http://localhost:3500/v1.0/invoke/mynode/method/neworder
+</code></pre><p>dapr app が稼働しているターミナルでメッセージの受信が確認できる。</p>
+<pre><code>== APP == Got a new order! Order ID: 42
+== APP == Successfully persisted state
+</code></pre><p>GET のエンドポイントにアクセスしてステートが正常に保存されていることを確認する。</p>
+<pre><code>$ curl http://localhost:3500/v1.0/invoke/mynode/method/order
+{&quot;orderId&quot;:&quot;42&quot;}
+</code></pre><p>最後に次のコマンドでサービスを終了させる。</p>
+<pre><code>$ dapr stop --app-id mynode
+✅  app stopped successfully
+</code></pre><p>dapr の状態は dapr list で確認できる。</p>
+<pre><code>$ dapr list
+No dapr instances found.
+</code></pre>
         </div>
 
         <div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>This article is updated with 2019-11-28</span>
+                <span>This article is updated with 2019-12-01</span>
             </div>
             <div class="post-info-license">
                 

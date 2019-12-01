@@ -1,261 +1,155 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on YONEHUB</title>
-    <link>https://yonehub.y10e.com/posts/</link>
-    <description>Recent content in Posts on YONEHUB</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
-    <managingEditor>y10exxx@gmail.com (Yusuke.Yoneda)</managingEditor>
-    <webMaster>y10exxx@gmail.com (Yusuke.Yoneda)</webMaster>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 29 Nov 2019 12:47:23 +0900</lastBuildDate>
-    
-	<atom:link href="https://yonehub.y10e.com/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Azure Kubernetes Service(AKS) で Dapr を動かす(HelloWord編)</title>
-      <link>https://yonehub.y10e.com/2019/11/29/20191130_dapr_aks_helloworld/</link>
-      <pubDate>Fri, 29 Nov 2019 12:47:23 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/11/29/20191130_dapr_aks_helloworld/</guid>
-      <description>前回は、AKS 上で Dapr をセットアップしました。 次は、Azure Kubernetes Service(AKS) 上で dapr のサンプルアプリケーションを動作させてみます。（前回と同様、動作検証時の dapr は v0.2 になります。）最終的なアーキテクチャは次の通りです。 dapr がインストールされた環境で、python と node.js の POD が動作します。python と node.js の POD は、それぞれの POD 内でサイドカーとして動作する dapr API を経由して、state 情報の更新と取得が行われます。 0. ドキュメント Hello</description>
-    </item>
-    
-    <item>
-      <title>Azure Kubernetes Service(AKS)で Dapr を動かす（Setup編）</title>
-      <link>https://yonehub.y10e.com/2019/11/27/20191127_dapr_aks_setup/</link>
-      <pubDate>Wed, 27 Nov 2019 12:47:23 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/11/27/20191127_dapr_aks_setup/</guid>
-      <description>先日、stand-alone な環境で dapr の動作を検証しました。 次は、Kubernetes cluster 上で dapr の動作を検証してみたいと思います。Minikube などのローカルな環境でも試すことができそうでしたが、折角なので Azure Kubernetes Service(AKS) で検証してみます。動作検証時の dapr は v0.2 になります。 0. ドキュメント Installing Dapr on a Kubernetes cluster https://github.com/dapr/docs/blob/master/getting-started/environment-setup.md#installing-dapr-on-a-kubernetes-cluster Set up an Azure Kubernetes Service cluster https://github.com/dapr/docs/blob/master/getting-started/cluster/setup-aks.md 1. Azure Kubernetes Service(AKS) Cluster の作成 前提条件として、次を作業端末にセットアップします。 ・Azure CLI ・kubectl</description>
-    </item>
-    
-    <item>
-      <title>Microsoft Ignite 2019 で発表された新機能のまとめ(Network編)</title>
-      <link>https://yonehub.y10e.com/2019/11/21/20191121_ignite2019_network/</link>
-      <pubDate>Thu, 21 Nov 2019 06:48:00 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/11/21/20191121_ignite2019_network/</guid>
-      <description>Microsoft Ignite 2019 の Network 系サービスの update まとめです。 4つのカテゴリに分けて各種サービスの update が紹介されていました。 ・Connect &amp;amp; Extend・Protect・Deliver・Monitoringネットワークサービスは、難しいですね。機能ごとのセッションを追いきれなかったので、補足とかある人は twitter とかでご教示いただきたいなぁ。 1. Connect &amp;amp; Extend Azure Peering Service (Preview) ISP を介してパブリックネットワーク経由で Microsoftクラウド(Offi</description>
-    </item>
-    
-    <item>
-      <title> Windows 7、Windows Server 2008/R2 の延長セキュリティ更新プログラムを入手する方法</title>
-      <link>https://yonehub.y10e.com/2019/11/20/20191120_windows_eos/</link>
-      <pubDate>Wed, 20 Nov 2019 20:47:23 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/11/20/20191120_windows_eos/</guid>
-      <description>Windows Server 2008 および 2008 R2 の延長サポートは、2020 年 1 月 14 日に終了しますが、オンプレミス環境で追加の料金を支払うことで 3 年間の延長セキュリティ更新プログラム(ESU)を利用できるオプションが昨年公開されました。また、Windows Server 2008 および 2008 R2のワークロードを Azure に移行すると、この ESU を無償で利用できるということで話題になりました。 このオプションについての概要や全体的な Azure への移行などについては、SQL Server 2008 お</description>
-    </item>
-    
-    <item>
-      <title>Microsoftのマイクロサービス構築フレームワーク Dapr を動かす</title>
-      <link>https://yonehub.y10e.com/2019/11/16/20191116_dapr/</link>
-      <pubDate>Sat, 16 Nov 2019 12:47:23 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/11/16/20191116_dapr/</guid>
-      <description>2019年10月にマイクロサービスアプリケーションの開発を容易にするためのフレームワークとして&amp;quot;Dapr&amp;quot;がマイクロソフトから公開されました。現在α版となっています。 Daprは、プログラミング言語に依存せずマイクロサービス間の呼び出し機能やステート管理、サービス間のメッセージ機能、リソースのバインディング、 分散サービス間のトレーシングなどの機能を提供するソフトウェアです。 マイク</description>
-    </item>
-    
-    <item>
-      <title>Raspberry Pi用にRaspbianのインストール(Mac)</title>
-      <link>https://yonehub.y10e.com/2019/11/11/20191111_raspberrypi_setup/</link>
-      <pubDate>Mon, 11 Nov 2019 21:47:23 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/11/11/20191111_raspberrypi_setup/</guid>
-      <description>Raspberry Pi 用の Micro SD カードに Raspbian をインストール手順を時間があくととすぐ忘れてしまうので手順をメモしておく。 1. SDカードの選別 基本的に SD カードのサイズは、マイクロSDカードが必要（ただし Raspberry Pi Model A およびRaspberry Pi Model B は、フル SD カード） NOOBS、Raspbianのイメージインストールは最小推奨で 8GB 以上なので、それ以上のサイズが必要。 カードのスループットに推奨値はないみたいだが、自分は大体 Class 10 以上を使っ</description>
-    </item>
-    
-    <item>
-      <title>Microsoft Ignite 2019 で発表された新機能のまとめ(Storage編)</title>
-      <link>https://yonehub.y10e.com/2019/11/11/20191110_ignite2019_storage/</link>
-      <pubDate>Mon, 11 Nov 2019 00:48:00 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/11/11/20191110_ignite2019_storage/</guid>
-      <description>Microsoft Ignite 2019 の Storage周りの update まとめです。 公開情報がまだ十分にない preview な機能の紹介が多かった印象でした。 1. Azure Disk ディスク関連の update は、 Azure VM とかぶっているのが多くあります。 SAP HANA Certification on Ultra Disk and M/E series VMs 8月に GA された Ultra Disk と M or E シリーズ VM の構成が、SAP HANA の認定を受けた。 参照:Azure Ultra Disk Storage の一般公開に関するお知らせ Shared Disk Support for Ultra and Premium SSD 複数の仮想マシンからディスクを共有する Azure Shared Disks のプレビューが開始されたそうです。プレ</description>
-    </item>
-    
-    <item>
-      <title>Microsoft Ignite 2019 で発表された新機能のまとめ(AKS/Container編)</title>
-      <link>https://yonehub.y10e.com/2019/11/08/20191108_ignite2019_aks/</link>
-      <pubDate>Fri, 08 Nov 2019 12:47:23 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/11/08/20191108_ignite2019_aks/</guid>
-      <description>Microsoft Ignite 2019 で AKS / Container 関連も多く update がありました。 画期的というよりは、実用的な機能が充実してきたと思える機能が多くありました。 1. Threat protection for Azure Kubernetes Service Azure Security Centerでの、AKS クラスタを対象とした保護機能が拡大しているようです。 次の項目が挙げられていました。 • Discovery &amp;amp; Visibility - サブスクリプション内のAKSインスタンスの継続的ディスカバリ• Recommendations - セキュリティベストプラクティスを実行を助ける項目提示• Threat Detection - ホストとクラスターベース</description>
-    </item>
-    
-    <item>
-      <title>Microsoft Ignite 2019 で発表された新機能のまとめ(VM/VMSS編)</title>
-      <link>https://yonehub.y10e.com/2019/11/07/20191107_ignite2019_iaas/</link>
-      <pubDate>Thu, 07 Nov 2019 17:47:23 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/11/07/20191107_ignite2019_iaas/</guid>
-      <description>今週は Microsoft Ignite 2019 で盛り上がった一週間でした。自分の周りでは、Keynote で取り上げられていた、Azure Arc や Azure Synapse が特に話題になっていた気がします。 それ以外にも、新機能の発表、プレビュー機能の GA ニュースが山盛りでした。 発表された項目は、Book of News Microsoft Ignite 2019に記載がありますが、index だけで7ページもあります。 しばらくキャッチアップに注力せねば&amp;hellip;そんな中、Azure の IaaS 系のサービスに</description>
-    </item>
-    
-    <item>
-      <title>VM ScalesetのOrchestration Modeについて</title>
-      <link>https://yonehub.y10e.com/2019/11/06/20191106_vmss_orchestrationmode/</link>
-      <pubDate>Wed, 06 Nov 2019 22:47:23 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/11/06/20191106_vmss_orchestrationmode/</guid>
-      <description>Microsoft Ignite 2019で触れられていた、VM Scaleset のOrchestration modeというプレビュー機能について調べてみました。 要約すると、VM Scalesetに通常の仮想マシンを追加できる機能でした。 ・2種類のOrchestration(ScaleSetVM or VM)を選択できる（VMSS作成時のみ） ・ScaleSetVMモードは以前のVMSS。VMSSの雛形にそったVMインスタンスをスケールさせるので、基本</description>
-    </item>
-    
-    <item>
-      <title>Github pages &#43; Hugoでブログ構築</title>
-      <link>https://yonehub.y10e.com/2019/10/22/20191022_hugo_githubio/</link>
-      <pubDate>Tue, 22 Oct 2019 22:03:28 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/10/22/20191022_hugo_githubio/</guid>
-      <description>クラウドのVM上でWordpressで公開していたブログをgithub pages + Hugoに移行してみた。 Hugoは静的サイトジェネレータの一つで、Go言語で作られています。MarkDown等の記述性の高い形式で書かれたファイルを指定したデザインテーマでHTML + CSSのWEBコンテンツに変換してくれます。 Why GitHub Pages? 第一の理由はコストです。クラウドとはいえ Web Server の稼働代金も1000円/月程度かかるので無料で使え</description>
-    </item>
-    
-    <item>
-      <title>MacにRustをインストールしてHelloWorldするまで</title>
-      <link>https://yonehub.y10e.com/2019/10/21/20191021_rust/</link>
-      <pubDate>Mon, 21 Oct 2019 21:26:08 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/10/21/20191021_rust/</guid>
-      <description>Mac OSにRustをインストールして実行するまでのメモです。 手順 まずはターミナルで次のコマンドを実行する。（選択肢が出たら、1のdefaultで良いと思う） 1 curl --proto &amp;#39;=https&amp;#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh ターミナルを再起動するか、以下のコマンドを実行してパスを通す。 1 source ~/.bash_profile インストール後はrustcのバージョンを確認する。 1 2 rustc --version rustc 1.38.0 (625451e37 2019-09-23) インストールが確認できたら適当なパスにhello.rsという名称でファイルを作り、エディタで内</description>
-    </item>
-    
-    <item>
-      <title>Azure SQL DatabaseとCosmosDBの要点整理(2019/7)</title>
-      <link>https://yonehub.y10e.com/2019/07/07/20190707_azure_sql/</link>
-      <pubDate>Sun, 07 Jul 2019 00:00:01 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/07/07/20190707_azure_sql/</guid>
-      <description>Azure SQL Database サーバ Azure SQL Databaseサーバは、各種機能の中央管理をおこなう論理的リソースで、以下のような管理機能を提供している。 データベースアクセス（ログイン） Firewall Rule 監査規則 脅威検出ポリシー（SQLインジェクション、ブルートフォース攻撃など） 自動フェールオーバーグループ Azure SQL Databaseサーバは、Database を作成するにあたって事前に存在している必要がある。 Azure SQL Database Azure SQL Databaseには、次の3つ</description>
-    </item>
-    
-    <item>
-      <title>Azure Active Directoryの要点整理(2019/07)</title>
-      <link>https://yonehub.y10e.com/2019/07/07/20190707_azure_ad/</link>
-      <pubDate>Sun, 07 Jul 2019 00:00:00 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/07/07/20190707_azure_ad/</guid>
-      <description>Azure AD の価格プランによる機能比較 FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は1008円/月 参考:Azure Active Directory のプラン機能対応表 ※PREMIUM P1以上が必要な主な機能 MFA(Multi-Factor Authentication)の有効化 Azure AD Connect Health 条件付きアクセス Cloud App Discovery(組織で利用しているクラウドアプリケーションの利用状況の可視化) ※PREMIUM P2以上が必</description>
-    </item>
-    
-    <item>
-      <title>Visual Studio CodeでMarkdownファイルをプレビューする</title>
-      <link>https://yonehub.y10e.com/2019/06/16/20190616_vscode_markdown/</link>
-      <pubDate>Sun, 16 Jun 2019 22:47:23 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/06/16/20190616_vscode_markdown/</guid>
-      <description>Visual Stadio CodeでMarkdownファイルを記載している時に、リアルタイムにプレビュー表示をする方法についてのメモです。 手順 View &amp;gt; Command Paletteを開く（Macだとshift + command + p） &amp;ldquo;Markdown:Open Preview to the Side&amp;quot;を選択する この通り</description>
-    </item>
-    
-    <item>
-      <title>NTLM認証の覚え書き</title>
-      <link>https://yonehub.y10e.com/2019/06/16/20190616_ntlm/</link>
-      <pubDate>Sun, 16 Jun 2019 22:03:28 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/06/16/20190616_ntlm/</guid>
-      <description>Windows環境では、NTLM（NT LAN Manager）とKerberosの２つの認証プロトコルが主に利用される。 Windows 2000以降はKerberos認証が推奨になっているが、未だによく見るNTLM認証の動きを整理する NTLMはいわゆるチャレンジ、レスポンス方式で、チャレンジといわれるランダムデータを元にパスワード値を組み合わせて計算し、クライアント側とサーバ側でその比較をおこなうことで認証要求の正当</description>
-    </item>
-    
-    <item>
-      <title>GitのCommitユーザを修正する方法</title>
-      <link>https://yonehub.y10e.com/2019/06/04/20190603_git_0/</link>
-      <pubDate>Tue, 04 Jun 2019 04:00:00 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/06/04/20190603_git_0/</guid>
-      <description>githubのcontributionsを見ていたら確かにリポジトリ更新したはずなのに草が生えてなかった。 contributions Activityを見ると、なぜか違うユーザでcommitしたことになっている。 どうやら、メインのPCはMacなのだがたまにサブのWindowsからおこなったcommitが別ユーザで実施したことになっているらしい。そこでgitのcommitユーザの確認と過去のcommitユーザの修正方法につい</description>
-    </item>
-    
-    <item>
-      <title>k8s Cheat Sheet #1 -基本</title>
-      <link>https://yonehub.y10e.com/2019/06/02/20190601_k8s_1/</link>
-      <pubDate>Sun, 02 Jun 2019 22:24:02 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/06/02/20190601_k8s_1/</guid>
-      <description>・help参照 1 kubectl --help ・version確認(Client と Server ) 1 kubectl version ・yaml minifestの適用 1 Kubectl -f FileName k8sクラスタのローカルcontext関連のコマンド ・Local Configの一覧表示 1 kubectl config view ・現在アクティブになっているcontextの表示 1 kubectl config current-context ・アクティブなcontextの切り替え 1 kubectl config use-context CONTEXT_NAME ・Contextの一覧表示 1 kubectl config get-contexts ・Local Configのクラスタ名だけ一覧表示 1 kubectl config get-clusters</description>
-    </item>
-    
-    <item>
-      <title>kubectl --help</title>
-      <link>https://yonehub.y10e.com/2019/06/01/20190601_k8s_0/</link>
-      <pubDate>Sat, 01 Jun 2019 04:10:00 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/06/01/20190601_k8s_0/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 kubectl --help kubectl controls the Kubernetes cluster manager. Find more information at: https://kubernetes.io/docs/reference/kubectl/overview/ Basic Commands (Beginner): create Create a resource from a file or from stdin. expose Take a replication controller, service, deployment or pod and expose it as a new Kubernetes Service run Run a particular image on the cluster set Set specific features on objects Basic Commands (Intermediate): explain Documentation of resources get Display one or many resources edit Edit a resource</description>
-    </item>
-    
-    <item>
-      <title>k8s Reference List</title>
-      <link>https://yonehub.y10e.com/2019/06/01/20190601_k8s_linklist/</link>
-      <pubDate>Sat, 01 Jun 2019 04:00:00 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/06/01/20190601_k8s_linklist/</guid>
-      <description>Kubernets Officialhttps://kubernetes.io/ k8s - Github reposittoryhttps://github.com/kubernetes k8sの概念とかアーキテクチャとかyamlの例とか https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/ Kubectlのリファレンス https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands Kubectl Cheat Sheet https://kubernetes.io/docs/reference/kubectl/cheatsheet/ Azure Kubernetes Service - Github reposittory https://github.com/Azure/AKS</description>
-    </item>
-    
-    <item>
-      <title>Cloud-init Reference List</title>
-      <link>https://yonehub.y10e.com/2019/05/01/20190501_cloudinit_linklist/</link>
-      <pubDate>Wed, 01 May 2019 21:00:00 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/05/01/20190501_cloudinit_linklist/</guid>
-      <description>Cloud-init 公式 https://cloudinit.readthedocs.io/en/latest/</description>
-    </item>
-    
-    <item>
-      <title>Docker Cheat Sheet #3 - 削除系コマンド</title>
-      <link>https://yonehub.y10e.com/2019/02/11/20190211_docker3/</link>
-      <pubDate>Mon, 11 Feb 2019 04:00:00 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/02/11/20190211_docker3/</guid>
-      <description>停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除 1 docker system prune 停止コンテナ一括削除 1 docker container prune 全コンテナ一括削除 1 docker rm -f `docker ps -a -q` 未使用イメージ一括削除 1 docker image prune タグ無しイメージ一括削除 1 docker rmi `docker images -f &amp;#34;dangling=true&amp;#34; -q` 未使用ボリューム一括削除 1 docker volume rm docker volume ls -q 未使用ネットワーク一括削除 1 docker network prune コンテナを動いているとイメージを削除できないので、本当に全部削除したい時は次の順序で実施する コンテナを全削除す</description>
-    </item>
-    
-    <item>
-      <title>Docker Cheat Sheet #2 - 表示系</title>
-      <link>https://yonehub.y10e.com/2019/02/11/20190211_docker2/</link>
-      <pubDate>Mon, 11 Feb 2019 03:00:33 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/02/11/20190211_docker2/</guid>
-      <description>・コンテナの一覧表示 1 2 3 4 dokcer ps // or docker container list #※defaultはrunningされたコンテナのみ表示 -a で全表示 dokcer ps -a ・コンテナイメージの一覧表示 1 docker images ・docker hubからのイメージ検索 1 2 3 4 docker search &amp;lt;ImageName&amp;gt; #Officalのイメージのみ検索 docker search --filter is-official=true &amp;lt;ImageName&amp;gt;</description>
-    </item>
-    
-    <item>
-      <title>Docker Cheat Sheet #1 - 基本系</title>
-      <link>https://yonehub.y10e.com/2019/02/11/20190211_docker1/</link>
-      <pubDate>Mon, 11 Feb 2019 02:00:33 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/02/11/20190211_docker1/</guid>
-      <description>・help 表示 1 docker --help ・Dockerイメージの作成 1 2 3 4 docker build -t ImageName:TagName {DockerFileのあるディレクトリ} #example docker build --tag sample/basic:1.0 . ・Dockerイメージのリスト表示 1 docker images ・Dokcer コンテナの起動 1 2 3 docker run #example docker run -it -d -p 8080:80 --name basic sample/basic:1.0 ・Docker コンテナの一覧 1 docker ps ・コンテナ内に入る 1 2 3 docker exec -it [コンテナ名] /bin/bash #example docker exec -it basic /bin/bash Docker コンテナの停止 1 2 3 docker stop #example docker stop basic</description>
-    </item>
-    
-    <item>
-      <title>Docker --help</title>
-      <link>https://yonehub.y10e.com/2019/02/11/20190211_docker0/</link>
-      <pubDate>Mon, 11 Feb 2019 01:00:00 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/02/11/20190211_docker0/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 docker --help Usage: docker [OPTIONS] COMMAND A self-sufficient runtime for containers Options: --config string Location of client config files (default &amp;#34;C:\\Users\\xxx\\.docker&amp;#34;) -D, --debug Enable debug mode -H, --host list Daemon socket(s) to connect to -l, --log-level string Set the logging level</description>
-    </item>
-    
-    <item>
-      <title>Docker Reference List</title>
-      <link>https://yonehub.y10e.com/2019/02/11/20190211_docker_linklist/</link>
-      <pubDate>Mon, 11 Feb 2019 00:00:00 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/02/11/20190211_docker_linklist/</guid>
-      <description>Docker のリファレンスhttps://docs.docker.com/reference/ Docker Samplehttps://docs.docker.com/samples/ Docker Cmd Referancehttps://docs.docker.com/engine/reference/commandline/cli/ Docker File Referencehttps://docs.docker.com/engine/reference/builder/ Dokcer Compose Cmd Referancehttps://docs.docker.com/compose/reference/overview/ Dokcer Compose Referancehttps://docs.docker.com/compose/compose-file/</description>
-    </item>
-    
-    <item>
-      <title>2019年に読みたい技術関連書籍（積読リスト）</title>
-      <link>https://yonehub.y10e.com/2019/01/02/20190102_books2019/</link>
-      <pubDate>Wed, 02 Jan 2019 00:00:00 +0900</pubDate>
-      <author>y10exxx@gmail.com (Yusuke.Yoneda)</author>
-      <guid>https://yonehub.y10e.com/2019/01/02/20190102_books2019/</guid>
-      <description>2019年に読んでおきたい書籍のまとめ。おそらく日々の中で色々と新しく読んでみたい本も増えると思うので7冊に厳選してみる。 #1 マスタリングWindows Server 2016 Hyper-V (マイクロソフト関連書) #2 Windows Sysinternals徹底解説 改訂新版 (マイクロソフト公式解説書) #3 インサイドWindows 第7版 上 システムアーキテクチャ、プロセス、スレッド、メモリ管理、他 (マイクロソフト公式解説書) #4Kubernetes完全</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title> YONEHUB | クラウドエンジニアの雑記 </title>
+        <link> https://yonehub.y10e.com/</link>
+        <description>Recent content in Posts  on YONEHUB</description>
+        <generator>Hugo -- gohugo.io</generator>
+        
+            <language>ja</language>
+        
+        
+        
+            <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+        
+        
+            <lastBuildDate>Fri, 29 Nov 2019 12:47:23 +0900</lastBuildDate>
+        
+        <atom:link href="https://yonehub.y10e.com/posts/" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>Azure Kubernetes Service(AKS) で Dapr を動かす(HelloWord編)</title>
+                <link>https://yonehub.y10e.com/2019/11/29/20191130_dapr_aks_helloworld/</link>
+                <pubDate>Fri, 29 Nov 2019 12:47:23 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/11/29/20191130_dapr_aks_helloworld/</guid>
+                <description>前回は、AKS 上で Dapr をセットアップしました。 次は、Azure Kubernetes Service(AKS) 上で dapr のサンプルアプリケーションを動作させてみます。（前回と同様、動作検証時の dapr は v0.2 になります。）最終的なアーキテクチャは次の通りです。 dapr がインストールされた環境で、python と node.js の POD が動作します。python と node.js の POD は、それぞれの POD 内でサイドカーとして動作する dapr API を経由して、state 情報の更新と取得が行われます。 0. ドキュメント Hello</description>
+            </item>
+        
+            <item>
+                <title>Azure Kubernetes Service(AKS)で Dapr を動かす（Setup編）</title>
+                <link>https://yonehub.y10e.com/2019/11/27/20191127_dapr_aks_setup/</link>
+                <pubDate>Wed, 27 Nov 2019 12:47:23 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/11/27/20191127_dapr_aks_setup/</guid>
+                <description>先日、stand-alone な環境で dapr の動作を検証しました。 次は、Kubernetes cluster 上で dapr の動作を検証してみたいと思います。Minikube などのローカルな環境でも試すことができそうでしたが、折角なので Azure Kubernetes Service(AKS) で検証してみます。動作検証時の dapr は v0.2 になります。 0. ドキュメント Installing Dapr on a Kubernetes cluster https://github.com/dapr/docs/blob/master/getting-started/environment-setup.md#installing-dapr-on-a-kubernetes-cluster Set up an Azure Kubernetes Service cluster https://github.com/dapr/docs/blob/master/getting-started/cluster/setup-aks.md 1. Azure Kubernetes Service(AKS) Cluster の作成 前提条件として、次を作業端末にセットアップします。 ・Azure CLI ・kubectl</description>
+            </item>
+        
+            <item>
+                <title>Microsoft Ignite 2019 で発表された新機能のまとめ(Network編)</title>
+                <link>https://yonehub.y10e.com/2019/11/21/20191121_ignite2019_network/</link>
+                <pubDate>Thu, 21 Nov 2019 06:48:00 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/11/21/20191121_ignite2019_network/</guid>
+                <description>Microsoft Ignite 2019 の Network 系サービスの update まとめです。 4つのカテゴリに分けて各種サービスの update が紹介されていました。 ・Connect &amp;amp; Extend・Protect・Deliver・Monitoringネットワークサービスは、難しいですね。機能ごとのセッションを追いきれなかったので、補足とかある人は twitter とかでご教示いただきたいなぁ。 1. Connect &amp;amp; Extend Azure Peering Service (Preview) ISP を介してパブリックネットワーク経由で Microsoftクラウド(Offi</description>
+            </item>
+        
+            <item>
+                <title> Windows 7、Windows Server 2008/R2 の延長セキュリティ更新プログラムを入手する方法</title>
+                <link>https://yonehub.y10e.com/2019/11/20/20191120_windows_eos/</link>
+                <pubDate>Wed, 20 Nov 2019 20:47:23 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/11/20/20191120_windows_eos/</guid>
+                <description>Windows Server 2008 および 2008 R2 の延長サポートは、2020 年 1 月 14 日に終了しますが、オンプレミス環境で追加の料金を支払うことで 3 年間の延長セキュリティ更新プログラム(ESU)を利用できるオプションが昨年公開されました。また、Windows Server 2008 および 2008 R2のワークロードを Azure に移行すると、この ESU を無償で利用できるということで話題になりました。 このオプションについての概要や全体的な Azure への移行などについては、SQL Server 2008 お</description>
+            </item>
+        
+            <item>
+                <title>Microsoftのマイクロサービス構築フレームワーク Dapr を動かす</title>
+                <link>https://yonehub.y10e.com/2019/11/16/20191116_dapr/</link>
+                <pubDate>Sat, 16 Nov 2019 12:47:23 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/11/16/20191116_dapr/</guid>
+                <description>2019年10月にマイクロサービスアプリケーションの開発を容易にするためのフレームワークとして&amp;quot;Dapr&amp;quot;がマイクロソフトから公開されました。現在α版となっています。 Daprは、プログラミング言語に依存せずマイクロサービス間の呼び出し機能やステート管理、サービス間のメッセージ機能、リソースのバインディング、 分散サービス間のトレーシングなどの機能を提供するソフトウェアです。 マイク</description>
+            </item>
+        
+            <item>
+                <title>Raspberry Pi用にRaspbianのインストール(Mac)</title>
+                <link>https://yonehub.y10e.com/2019/11/11/20191111_raspberrypi_setup/</link>
+                <pubDate>Mon, 11 Nov 2019 21:47:23 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/11/11/20191111_raspberrypi_setup/</guid>
+                <description>Raspberry Pi 用の Micro SD カードに Raspbian をインストール手順を時間があくととすぐ忘れてしまうので手順をメモしておく。 1. SDカードの選別 基本的に SD カードのサイズは、マイクロSDカードが必要（ただし Raspberry Pi Model A およびRaspberry Pi Model B は、フル SD カード） NOOBS、Raspbianのイメージインストールは最小推奨で 8GB 以上なので、それ以上のサイズが必要。 カードのスループットに推奨値はないみたいだが、自分は大体 Class 10 以上を使っ</description>
+            </item>
+        
+            <item>
+                <title>Microsoft Ignite 2019 で発表された新機能のまとめ(Storage編)</title>
+                <link>https://yonehub.y10e.com/2019/11/11/20191110_ignite2019_storage/</link>
+                <pubDate>Mon, 11 Nov 2019 00:48:00 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/11/11/20191110_ignite2019_storage/</guid>
+                <description>Microsoft Ignite 2019 の Storage周りの update まとめです。 公開情報がまだ十分にない preview な機能の紹介が多かった印象でした。 1. Azure Disk ディスク関連の update は、 Azure VM とかぶっているのが多くあります。 SAP HANA Certification on Ultra Disk and M/E series VMs 8月に GA された Ultra Disk と M or E シリーズ VM の構成が、SAP HANA の認定を受けた。 参照:Azure Ultra Disk Storage の一般公開に関するお知らせ Shared Disk Support for Ultra and Premium SSD 複数の仮想マシンからディスクを共有する Azure Shared Disks のプレビューが開始されたそうです。プレ</description>
+            </item>
+        
+            <item>
+                <title>Microsoft Ignite 2019 で発表された新機能のまとめ(AKS/Container編)</title>
+                <link>https://yonehub.y10e.com/2019/11/08/20191108_ignite2019_aks/</link>
+                <pubDate>Fri, 08 Nov 2019 12:47:23 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/11/08/20191108_ignite2019_aks/</guid>
+                <description>Microsoft Ignite 2019 で AKS / Container 関連も多く update がありました。 画期的というよりは、実用的な機能が充実してきたと思える機能が多くありました。 1. Threat protection for Azure Kubernetes Service Azure Security Centerでの、AKS クラスタを対象とした保護機能が拡大しているようです。 次の項目が挙げられていました。 • Discovery &amp;amp; Visibility - サブスクリプション内のAKSインスタンスの継続的ディスカバリ• Recommendations - セキュリティベストプラクティスを実行を助ける項目提示• Threat Detection - ホストとクラスターベース</description>
+            </item>
+        
+            <item>
+                <title>Microsoft Ignite 2019 で発表された新機能のまとめ(VM/VMSS編)</title>
+                <link>https://yonehub.y10e.com/2019/11/07/20191107_ignite2019_iaas/</link>
+                <pubDate>Thu, 07 Nov 2019 17:47:23 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/11/07/20191107_ignite2019_iaas/</guid>
+                <description>今週は Microsoft Ignite 2019 で盛り上がった一週間でした。自分の周りでは、Keynote で取り上げられていた、Azure Arc や Azure Synapse が特に話題になっていた気がします。 それ以外にも、新機能の発表、プレビュー機能の GA ニュースが山盛りでした。 発表された項目は、Book of News Microsoft Ignite 2019に記載がありますが、index だけで7ページもあります。 しばらくキャッチアップに注力せねば&amp;hellip;そんな中、Azure の IaaS 系のサービスに</description>
+            </item>
+        
+            <item>
+                <title>VM ScalesetのOrchestration Modeについて</title>
+                <link>https://yonehub.y10e.com/2019/11/06/20191106_vmss_orchestrationmode/</link>
+                <pubDate>Wed, 06 Nov 2019 22:47:23 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/11/06/20191106_vmss_orchestrationmode/</guid>
+                <description>Microsoft Ignite 2019で触れられていた、VM Scaleset のOrchestration modeというプレビュー機能について調べてみました。 要約すると、VM Scalesetに通常の仮想マシンを追加できる機能でした。 ・2種類のOrchestration(ScaleSetVM or VM)を選択できる（VMSS作成時のみ） ・ScaleSetVMモードは以前のVMSS。VMSSの雛形にそったVMインスタンスをスケールさせるので、基本</description>
+            </item>
+        
+            <item>
+                <title>Github pages &#43; Hugoでブログ構築</title>
+                <link>https://yonehub.y10e.com/2019/10/22/20191022_hugo_githubio/</link>
+                <pubDate>Tue, 22 Oct 2019 22:03:28 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/10/22/20191022_hugo_githubio/</guid>
+                <description>クラウドのVM上でWordpressで公開していたブログをgithub pages + Hugoに移行してみた。 Hugoは静的サイトジェネレータの一つで、Go言語で作られています。MarkDown等の記述性の高い形式で書かれたファイルを指定したデザインテーマでHTML + CSSのWEBコンテンツに変換してくれます。 Why GitHub Pages? 第一の理由はコストです。クラウドとはいえ Web Server の稼働代金も1000円/月程度かかるので無料で使え</description>
+            </item>
+        
+            <item>
+                <title>MacにRustをインストールしてHelloWorldするまで</title>
+                <link>https://yonehub.y10e.com/2019/10/21/20191021_rust/</link>
+                <pubDate>Mon, 21 Oct 2019 21:26:08 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/10/21/20191021_rust/</guid>
+                <description>Mac OSにRustをインストールして実行するまでのメモです。 手順 まずはターミナルで次のコマンドを実行する。（選択肢が出たら、1のdefaultで良いと思う） 1 curl --proto &amp;#39;=https&amp;#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh ターミナルを再起動するか、以下のコマンドを実行してパスを通す。 1 source ~/.bash_profile インストール後はrustcのバージョンを確認する。 1 2 rustc --version rustc 1.38.0 (625451e37 2019-09-23) インストールが確認できたら適当なパスにhello.rsという名称でファイルを作り、エディタで内</description>
+            </item>
+        
+            <item>
+                <title>Azure SQL DatabaseとCosmosDBの要点整理(2019/7)</title>
+                <link>https://yonehub.y10e.com/2019/07/07/20190707_azure_sql/</link>
+                <pubDate>Sun, 07 Jul 2019 00:00:01 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/07/07/20190707_azure_sql/</guid>
+                <description>Azure SQL Database サーバ Azure SQL Databaseサーバは、各種機能の中央管理をおこなう論理的リソースで、以下のような管理機能を提供している。 データベースアクセス（ログイン） Firewall Rule 監査規則 脅威検出ポリシー（SQLインジェクション、ブルートフォース攻撃など） 自動フェールオーバーグループ Azure SQL Databaseサーバは、Database を作成するにあたって事前に存在している必要がある。 Azure SQL Database Azure SQL Databaseには、次の3つ</description>
+            </item>
+        
+            <item>
+                <title>Azure Active Directoryの要点整理(2019/07)</title>
+                <link>https://yonehub.y10e.com/2019/07/07/20190707_azure_ad/</link>
+                <pubDate>Sun, 07 Jul 2019 00:00:00 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/07/07/20190707_azure_ad/</guid>
+                <description>Azure AD の価格プランによる機能比較 FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は1008円/月 参考:Azure Active Directory のプラン機能対応表 ※PREMIUM P1以上が必要な主な機能 MFA(Multi-Factor Authentication)の有効化 Azure AD Connect Health 条件付きアクセス Cloud App Discovery(組織で利用しているクラウドアプリケーションの利用状況の可視化) ※PREMIUM P2以上が必</description>
+            </item>
+        
+            <item>
+                <title>Visual Studio CodeでMarkdownファイルをプレビューする</title>
+                <link>https://yonehub.y10e.com/2019/06/16/20190616_vscode_markdown/</link>
+                <pubDate>Sun, 16 Jun 2019 22:47:23 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/06/16/20190616_vscode_markdown/</guid>
+                <description>Visual Stadio CodeでMarkdownファイルを記載している時に、リアルタイムにプレビュー表示をする方法についてのメモです。 手順 View &amp;gt; Command Paletteを開く（Macだとshift + command + p） &amp;ldquo;Markdown:Open Preview to the Side&amp;quot;を選択する この通り</description>
+            </item>
+        
+    </channel>
 </rss>

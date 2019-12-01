@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-	<meta name="generator" content="Hugo 0.59.1" />
+	<meta name="generator" content="Hugo 0.60.1" />
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -240,7 +240,7 @@
             
             
             
-            前回は、AKS 上で Dapr をセットアップしました。 次は、Azure Kubernetes Service(AKS) 上で dapr のサンプルアプリケーションを動作させてみます。（前回と同様、動作検証時の dapr は v0.2 になります。） 最終的なアーキテクチャは次の通りです。 dapr がインストールされた環境で、python と node.js の POD が動作します。python と node.js の POD は、それぞれの POD 内でサイドカーとして動作する dapr API を経由して、state 情報の更新と取得が行われます。 0. ドキュメント Hello
+            前回は、AKS 上で Dapr をセットアップしました。 次は、Azure Kubernetes Service(AKS) 上で dapr のサンプルアプリケーションを動作させてみます。（前回と同様、動作検証時の dapr は v0.2 になります。）最終的なアーキテクチャは次の通りです。 dapr がインストールされた環境で、python と node.js の POD が動作します。python と node.js の POD は、それぞれの POD 内でサイドカーとして動作する dapr API を経由して、state 情報の更新と取得が行われます。 0. ドキュメント Hello
         
     </div>
     <div class="post-footer">
@@ -342,7 +342,7 @@
             
             
             
-            Microsoft Ignite 2019 の Network 系サービスの update まとめです。 4つのカテゴリに分けて各種サービスの update が紹介されていました。 ・Connect &amp; Extend ・Protect ・Deliver ・Monitoring ネットワークサービスは、難しいですね。機能ごとのセッションを追いきれなかったので、補足とかある人は twitter とかでご教示いただきたいなぁ。 1. Connect &amp; Extend Azure Peering Service (Preview) ISP を介してパブリックネットワーク経由で Microsoftクラウド(Office 365
+            Microsoft Ignite 2019 の Network 系サービスの update まとめです。 4つのカテゴリに分けて各種サービスの update が紹介されていました。 ・Connect &amp; Extend・Protect・Deliver・Monitoringネットワークサービスは、難しいですね。機能ごとのセッションを追いきれなかったので、補足とかある人は twitter とかでご教示いただきたいなぁ。 1. Connect &amp; Extend Azure Peering Service (Preview) ISP を介してパブリックネットワーク経由で Microsoftクラウド(Offi
         
     </div>
     <div class="post-footer">
@@ -434,7 +434,7 @@
             
             
             
-            2019年10月にマイクロサービスアプリケーションの開発を容易にするためのフレームワークとして&rdquo;Dapr&rdquo;がマイクロソフトから公開されました。現在α版となっています。 Daprは、プログラミング言語に依存せずマイクロサービス間の呼び出し機能やステート管理、サービス間のメッセージ機能、リソースのバインディング、 分散サービス間のトレーシングなどの機能を提供するソフトウェアです。 マ
+            2019年10月にマイクロサービスアプリケーションの開発を容易にするためのフレームワークとして&quot;Dapr&quot;がマイクロソフトから公開されました。現在α版となっています。 Daprは、プログラミング言語に依存せずマイクロサービス間の呼び出し機能やステート管理、サービス間のメッセージ機能、リソースのバインディング、 分散サービス間のトレーシングなどの機能を提供するソフトウェアです。 マイク
         
     </div>
     <div class="post-footer">
@@ -528,7 +528,7 @@
             
             
             
-            Microsoft Ignite 2019 の Storage周りの update まとめです。 公開情報がまだ十分にない preview な機能の紹介が多かった印象でした。 1. Azure Disk ディスク関連の update は、 Azure VM とかぶっているのが多くあります。 SAP HANA Certification on Ultra Disk and M/E series VMs 8月に GA された Ultra Disk と M or E シリーズ VM の構成が、SAP HANA の認定を受けた。 参照:Azure Ultra Disk Storage の一般公開に関するお知らせ Shared Disk Support for Ultra and Premium SSD 複数の仮想マシンからディスクを共有する Azure Shared Disks のプレビューが開始されたそうです。 プレ
+            Microsoft Ignite 2019 の Storage周りの update まとめです。 公開情報がまだ十分にない preview な機能の紹介が多かった印象でした。 1. Azure Disk ディスク関連の update は、 Azure VM とかぶっているのが多くあります。 SAP HANA Certification on Ultra Disk and M/E series VMs 8月に GA された Ultra Disk と M or E シリーズ VM の構成が、SAP HANA の認定を受けた。 参照:Azure Ultra Disk Storage の一般公開に関するお知らせ Shared Disk Support for Ultra and Premium SSD 複数の仮想マシンからディスクを共有する Azure Shared Disks のプレビューが開始されたそうです。プレ
         
     </div>
     <div class="post-footer">
@@ -575,7 +575,7 @@
             
             
             
-            Microsoft Ignite 2019 で AKS / Container 関連も多く update がありました。 画期的というよりは、実用的な機能が充実してきたと思える機能が多くありました。 1. Threat protection for Azure Kubernetes Service Azure Security Centerでの、AKS クラスタを対象とした保護機能が拡大しているようです。 次の項目が挙げられていました。 • Discovery &amp; Visibility - サブスクリプション内のAKSインスタンスの継続的ディスカバリ • Recommendations - セキュリティベストプラクティスを実行を助ける項目提示 • Threat Detection - ホストとクラスターベース
+            Microsoft Ignite 2019 で AKS / Container 関連も多く update がありました。 画期的というよりは、実用的な機能が充実してきたと思える機能が多くありました。 1. Threat protection for Azure Kubernetes Service Azure Security Centerでの、AKS クラスタを対象とした保護機能が拡大しているようです。 次の項目が挙げられていました。 • Discovery &amp; Visibility - サブスクリプション内のAKSインスタンスの継続的ディスカバリ• Recommendations - セキュリティベストプラクティスを実行を助ける項目提示• Threat Detection - ホストとクラスターベース
         
     </div>
     <div class="post-footer">

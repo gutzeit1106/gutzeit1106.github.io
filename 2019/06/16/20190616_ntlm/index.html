@@ -192,28 +192,18 @@
             
             <p>Windows環境では、NTLM（NT LAN Manager）とKerberosの２つの認証プロトコルが主に利用される。
 Windows 2000以降はKerberos認証が推奨になっているが、未だによく見るNTLM認証の動きを整理する</p>
-
 <p>NTLMはいわゆるチャレンジ、レスポンス方式で、チャレンジといわれるランダムデータを元にパスワード値を組み合わせて計算し、クライアント側とサーバ側でその比較をおこなうことで認証要求の正当性を判断する。</p>
-
 <p>NTLM　Flow
-<figure><img src=/images/loading.svg data-sizes=auto data-src=/img/20190616_ntlm/NTLM_Flow.png alt=NTLM Flow class=lazyload><figcaption class=image-caption>NTLM Flow</figcaption></figure></p>
-
+<img src="/img/20190616_ntlm/NTLM_Flow.png" alt="NTLM Flow"></p>
 <p>1.クライアントからサーバ側へ認証をリクエストする</p>
-
 <p>2.認証リクエストを受けてチャレンジデータを生成、クライアントに送信する</p>
-
 <p>3.入力したパスワードとサーバから受けたチャレンジデータを掛け合わせてレスポンスを生成し、サーバ側に送信する</p>
-
 <p>4.一方、サーバ側でも生成したチャレンジデータと保存されたパスワードからレンスポンスを計算しておく</p>
-
 <p>5.サーバ側で計算したレスポンスと、クライアントから送付されたレスポンスを比較する</p>
-
 <p>6.5が一致している場合、認証の許可をクライアントに応答する</p>
-
 <p>7.ログオンを実行する</p>
-
 <p>なお、サーバサイドでNTLM認証でログインしたかどうかは、Windows EventのSecurity Logで判断できる。
-<figure><img src=/images/loading.svg data-sizes=auto data-src=/img/20190616_ntlm/NTLM.png alt=EventLog class=lazyload><figcaption class=image-caption>EventLog</figcaption></figure></p>
+<img src="/img/20190616_ntlm/NTLM.png" alt="EventLog"></p>
 
         </div>
 

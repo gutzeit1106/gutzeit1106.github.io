@@ -38,7 +38,7 @@
     
         "keywords": "Mac, Raspbian, RaspberryPi",
     
-    "wordcount":  1162 ,
+    "wordcount":  1158 ,
     "url": "https:\/\/yonehub.y10e.com\/2019\/11\/11\/20191111_raspberrypi_setup\/",
     
         "datePublished": "2019-11-11T21:47:23\x2b09:00",
@@ -156,7 +156,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-11-11>2019-11-11</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1162 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1158 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
         </div>
 
@@ -166,18 +166,16 @@
                 
                 <div class="post-toc-content">
                     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1-sdカードの選別">1. SDカードの選別</a></li>
-<li><a href="#2-インストール方法の選択">2. インストール方法の選択</a></li>
-<li><a href="#3-micro-sdカードのフォーマット">3. Micro SDカードのフォーマット</a></li>
-<li><a href="#4-raspbian-のダウンロードと書き込み">4. Raspbian のダウンロードと書き込み</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-sd">1. SDカードの選別</a></li>
+        <li><a href="#2-">2. インストール方法の選択</a></li>
+        <li><a href="#3-micro-sd">3. Micro SDカードのフォーマット</a></li>
+        <li><a href="#4-raspbian-">4. Raspbian のダウンロードと書き込み</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
                 </div>
             </div>
@@ -188,18 +186,16 @@
                         
                         
                         <nav id="TableOfContentsMobile">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1-sdカードの選別">1. SDカードの選別</a></li>
-<li><a href="#2-インストール方法の選択">2. インストール方法の選択</a></li>
-<li><a href="#3-micro-sdカードのフォーマット">3. Micro SDカードのフォーマット</a></li>
-<li><a href="#4-raspbian-のダウンロードと書き込み">4. Raspbian のダウンロードと書き込み</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-sd">1. SDカードの選別</a></li>
+        <li><a href="#2-">2. インストール方法の選択</a></li>
+        <li><a href="#3-micro-sd">3. Micro SDカードのフォーマット</a></li>
+        <li><a href="#4-raspbian-">4. Raspbian のダウンロードと書き込み</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
                     </div>
                 </details>
@@ -231,60 +227,44 @@
             
             
             
-            
-
-<p>Raspberry Pi 用の Micro SD カードに Raspbian をインストール手順を時間があくととすぐ忘れてしまうので手順をメモしておく。</p>
-
-<a class="post-dummy-target" id="1-sdカードの選別"></a><h3>1. SDカードの選別</h3>
-
+            <p>Raspberry Pi 用の Micro SD カードに Raspbian をインストール手順を時間があくととすぐ忘れてしまうので手順をメモしておく。</p>
+<a class="post-dummy-target" id="1-sd"></a><h3>1. SDカードの選別</h3>
 <p>基本的に SD カードのサイズは、マイクロSDカードが必要（ただし Raspberry Pi Model A およびRaspberry Pi Model B は、フル SD カード）
 NOOBS、Raspbianのイメージインストールは最小推奨で 8GB 以上なので、それ以上のサイズが必要。
 カードのスループットに推奨値はないみたいだが、自分は大体 Class 10 以上を使っている。</p>
-
 <p>SD Card
 <a href="https://www.raspberrypi.org/documentation/installation/sd-cards.md">https://www.raspberrypi.org/documentation/installation/sd-cards.md</a></p>
-
-<a class="post-dummy-target" id="2-インストール方法の選択"></a><h3>2. インストール方法の選択</h3>
-
+<a class="post-dummy-target" id="2-"></a><h3>2. インストール方法の選択</h3>
 <p>NOOBS を使う方法と、Raspbian を直接イメージとして焼く方法の２種類がある。
 NOOBS でも Raspbian はオフラインインストールできるみたいだが、若干 SD カードの容量を無題にするかなと思われる。
 NOOBS で Ubuntuなどの Raspbian 以外の OS をインストールすることもできるがネットワーク経由になる。</p>
-
 <p>Raspberry Pi - Downloads
 <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p>
-
-<a class="post-dummy-target" id="3-micro-sdカードのフォーマット"></a><h3>3. Micro SDカードのフォーマット</h3>
-
+<a class="post-dummy-target" id="3-micro-sd"></a><h3>3. Micro SDカードのフォーマット</h3>
 <p>PC に SD カードを接続して、ディスクユーティリティを起動する。
 Raspberry Pi は、FAT ファイルシステムのみサポートしているので、exFAT などは利用できません。</p>
-
 <p><a href="https://www.raspberrypi.org/documentation/installation/sdxc_formatting.md">https://www.raspberrypi.org/documentation/installation/sdxc_formatting.md</a></p>
-
-<p><img src="/img/20191111_raspbian/1_diskutility.png" align="left"><br clear="left"></p>
-
-<a class="post-dummy-target" id="4-raspbian-のダウンロードと書き込み"></a><h3>4. Raspbian のダウンロードと書き込み</h3>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<a class="post-dummy-target" id="4-raspbian-"></a><h3>4. Raspbian のダウンロードと書き込み</h3>
 <p>Raspbian のイメージを次からダウンロードします。デスクトップ版や推奨ソフトウェア込み版などがあるので好みに応じて選びます。</p>
-
 <p><a href="https://www.raspberrypi.org/downloads/raspbian/">https://www.raspberrypi.org/downloads/raspbian/</a></p>
-
 <p>ターミナルを起動し、まずはzipを解凍する。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">$ unzip <span class="m">2019</span>-09-26-raspbian-buster.zip 
-Archive:  <span class="m">2019</span>-09-26-raspbian-buster.zip
-  inflating: <span class="m">2019</span>-09-26-raspbian-buster.img </code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ unzip 2019-09-26-raspbian-buster.zip 
+Archive:  2019-09-26-raspbian-buster.zip
+  inflating: 2019-09-26-raspbian-buster.img 
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>SDカードのデバイス名を確認する。</p>
+</div><p>SDカードのデバイス名を確認する。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -310,58 +290,49 @@ Archive:  <span class="m">2019</span>-09-26-raspbian-buster.zip
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">$ df -h
-/dev/disk2s1    29Gi  <span class="m">1</span>.5Mi   29Gi     <span class="m">1</span>%       <span class="m">0</span>                   <span class="m">0</span>  <span class="m">100</span>%   /Volumes/RASPBIAN
+/dev/disk2s1    29Gi  1.5Mi   29Gi     1%       <span class="m">0</span>                   <span class="m">0</span>  100%   /Volumes/RASPBIAN
 
 $ diskutil list
 /dev/disk0 <span class="o">(</span>internal, physical<span class="o">)</span>:
    <span class="c1">#:                       TYPE NAME                    SIZE       IDENTIFIER</span>
-   <span class="m">0</span>:      GUID_partition_scheme                        *121.3 GB   disk0
-   <span class="m">1</span>:                        EFI EFI                     <span class="m">209</span>.7 MB   disk0s1
-   <span class="m">2</span>:                 Apple_APFS Container disk1         <span class="m">121</span>.1 GB   disk0s2
+   0:      GUID_partition_scheme                        *121.3 GB   disk0
+   1:                        EFI EFI                     209.7 MB   disk0s1
+   2:                 Apple_APFS Container disk1         121.1 GB   disk0s2
 
 /dev/disk1 <span class="o">(</span>synthesized<span class="o">)</span>:
    <span class="c1">#:                       TYPE NAME                    SIZE       IDENTIFIER</span>
-   <span class="m">0</span>:      APFS Container Scheme -                      +121.1 GB   disk1
+   0:      APFS Container Scheme -                      +121.1 GB   disk1
                                  Physical Store disk0s2
-   <span class="m">1</span>:                APFS Volume Macintosh HD            <span class="m">92</span>.2 GB    disk1s1
-   <span class="m">2</span>:                APFS Volume Preboot                 <span class="m">23</span>.6 MB    disk1s2
-   <span class="m">3</span>:                APFS Volume Recovery                <span class="m">519</span>.3 MB   disk1s3
-   <span class="m">4</span>:                APFS Volume VM                      <span class="m">3</span>.2 GB     disk1s4
+   1:                APFS Volume Macintosh HD            92.2 GB    disk1s1
+   2:                APFS Volume Preboot                 23.6 MB    disk1s2
+   3:                APFS Volume Recovery                519.3 MB   disk1s3
+   4:                APFS Volume VM                      3.2 GB     disk1s4
 
 /dev/disk2 <span class="o">(</span>external, physical<span class="o">)</span>:
    <span class="c1">#:                       TYPE NAME                    SIZE       IDENTIFIER</span>
-   <span class="m">0</span>:     FDisk_partition_scheme                        *31.0 GB    disk2
-   <span class="m">1</span>:                 DOS_FAT_32 RASPBIAN                <span class="m">31</span>.0 GB    disk2s1</code></pre></td></tr></table>
+   0:     FDisk_partition_scheme                        *31.0 GB    disk2
+   1:                 DOS_FAT_32 RASPBIAN                31.0 GB    disk2s1
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>MACでSDカードを接続すると、自動マウントされてイメージを書き込むタイミングでResource busyで怒られることになるので先にアンマウントしておく。</p>
+</div><p>MACでSDカードを接続すると、自動マウントされてイメージを書き込むタイミングでResource busyで怒られることになるので先にアンマウントしておく。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">sudo diskutil umount /Volumes/RASPBIAN</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">sudo diskutil umount /Volumes/RASPBIAN
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>dd コマンドでimgをdisk2のデバイスに書き込む。ここで disk でなく rdisk で指定した方が書き込みが早くなる点に注目。
+</div><p>dd コマンドでimgをdisk2のデバイスに書き込む。ここで disk でなく rdisk で指定した方が書き込みが早くなる点に注目。
 なにやら 20 倍ほど早くなるとのこと。<a href="https://superuser.com/questions/631592/why-is-dev-rdisk-about-20-times-faster-than-dev-disk-in-mac-os-x">Why is “/dev/rdisk” about 20 times faster than “/dev/disk” in Mac OS X</a>
 イメージ書き込み待ち中暇なので調べたところ、disk と rdisk もデバイスとしては同じものを指定しているが、disk はランダムアクセス可能なデバイス、rdisk はシーケンシャルアクセスされるデバイスを意味しているらしい。
 disk 指定の場合、 IO は 4KB に分割され、カーネル空間の Buffer Cache を経由してデバイスへ Read/Write されることになる。一方、rdiskはk基本的に Buffer Cache を経由せずに直接デバイスへIOとなる。
 なので、dd コマンドでの書き込みのようなシーケンシャルアクセスでは、余計なオーバヘッドが発生しない rdisk 指定のアクセスが圧倒的に早いという話。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ sudo dd bs=1m if=2019-09-26-raspbian-buster.img of=/dev/rdisk2
+<pre><code>$ sudo dd bs=1m if=2019-09-26-raspbian-buster.img of=/dev/rdisk2
 3652+0 records in
 3652+0 records out
-3829399552 bytes transferred in 274.894541 secs (13930431 bytes/sec)</pre></td></tr></table>
-</div>
-</div>
+3829399552 bytes transferred in 274.894541 secs (13930431 bytes/sec)
+</code></pre>
         </div>
 
         <div class="post-footer" id="post-footer">

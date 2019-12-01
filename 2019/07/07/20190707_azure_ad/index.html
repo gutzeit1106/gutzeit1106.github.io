@@ -19,7 +19,7 @@
 <meta name="theme-color" content="#ffffff">
 
   <meta name="twitter:title" content="Azure Active Directoryの要点整理(2019/07)" />
-  <meta name="twitter:description" content="Azure AD の価格プランによる機能比較 FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。 BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は1008円/月 参考:Azure Active Directory のプラン機能対応表 ※PREMIUM P1以上が必要な主な機能 MFA(Multi-Factor …">
+  <meta name="twitter:description" content="Azure AD の価格プランによる機能比較 FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は1008円/月 参考:Azure Active Directory のプラン機能対応表 ※PREMIUM P1以上が必要な主な機能 MFA(Multi-Factor …">
   <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
   
 <meta name="twitter:card" content="summary" />
@@ -38,7 +38,7 @@
     
         "keywords": "Azure, AD, Security",
     
-    "wordcount":  1362 ,
+    "wordcount":  1366 ,
     "url": "https:\/\/yonehub.y10e.com\/2019\/07\/07\/20190707_azure_ad\/",
     
         "datePublished": "2019-07-07T00:00:00\x2b09:00",
@@ -156,7 +156,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-07-07>2019-07-07</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1362 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1366 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
         </div>
 
@@ -166,20 +166,18 @@
                 
                 <div class="post-toc-content always-active">
                     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#azure-ad-の価格プランによる機能比較">Azure AD の価格プランによる機能比較</a></li>
-<li><a href="#azure-ad-connect-と-connect-health">Azure AD Connect と Connect Health</a>
-<ul>
-<li><a href="#クラウド認証-パスワードハッシュ同期">クラウド認証: パスワードハッシュ同期</a></li>
-<li><a href="#クラウド認証-パススルー認証">クラウド認証: パススルー認証</a></li>
-<li><a href="#フェデレーション認証">フェデレーション認証</a></li>
-</ul></li>
-<li><a href="#identity-protection">Identity Protection</a></li>
-<li><a href="#azure-ad-privileged-identity-management-pim">Azure AD Privileged Identity Management(PIM)</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#azure-ad-">Azure AD の価格プランによる機能比較</a></li>
+    <li><a href="#azure-ad-connect--connect-health">Azure AD Connect と Connect Health</a>
+      <ul>
+        <li><a href="#-">クラウド認証: パスワードハッシュ同期</a></li>
+        <li><a href="#-1">クラウド認証: パススルー認証</a></li>
+        <li><a href="#heading">フェデレーション認証</a></li>
+      </ul>
+    </li>
+    <li><a href="#identity-protection">Identity Protection</a></li>
+    <li><a href="#azure-ad-privileged-identity-managementpim">Azure AD Privileged Identity Management(PIM)</a></li>
+  </ul>
 </nav>
                 </div>
             </div>
@@ -190,20 +188,18 @@
                         
                         
                         <nav id="TableOfContentsMobile">
-<ul>
-<li>
-<ul>
-<li><a href="#azure-ad-の価格プランによる機能比較">Azure AD の価格プランによる機能比較</a></li>
-<li><a href="#azure-ad-connect-と-connect-health">Azure AD Connect と Connect Health</a>
-<ul>
-<li><a href="#クラウド認証-パスワードハッシュ同期">クラウド認証: パスワードハッシュ同期</a></li>
-<li><a href="#クラウド認証-パススルー認証">クラウド認証: パススルー認証</a></li>
-<li><a href="#フェデレーション認証">フェデレーション認証</a></li>
-</ul></li>
-<li><a href="#identity-protection">Identity Protection</a></li>
-<li><a href="#azure-ad-privileged-identity-management-pim">Azure AD Privileged Identity Management(PIM)</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#azure-ad-">Azure AD の価格プランによる機能比較</a></li>
+    <li><a href="#azure-ad-connect--connect-health">Azure AD Connect と Connect Health</a>
+      <ul>
+        <li><a href="#-">クラウド認証: パスワードハッシュ同期</a></li>
+        <li><a href="#-1">クラウド認証: パススルー認証</a></li>
+        <li><a href="#heading">フェデレーション認証</a></li>
+      </ul>
+    </li>
+    <li><a href="#identity-protection">Identity Protection</a></li>
+    <li><a href="#azure-ad-privileged-identity-managementpim">Azure AD Privileged Identity Management(PIM)</a></li>
+  </ul>
 </nav>
                     </div>
                 </details>
@@ -235,90 +231,82 @@
             
             
             
-            
-
-<a class="post-dummy-target" id="azure-ad-の価格プランによる機能比較"></a><h2>Azure AD の価格プランによる機能比較</h2>
-
-<p>FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。<br>
+            <a class="post-dummy-target" id="azure-ad-"></a><h2>Azure AD の価格プランによる機能比較</h2>
+<p>FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。<!-- raw HTML omitted -->
 BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は1008円/月</p>
-
 <p>参考:<a href="https://azure.microsoft.com/ja-jp/pricing/details/active-directory/">Azure Active Directory のプラン機能対応表</a></p>
-
 <p>※PREMIUM P1以上が必要な主な機能</p>
-
 <ul>
-<li><p>MFA(Multi-Factor Authentication)の有効化</p></li>
-
-<li><p>Azure AD Connect Health</p></li>
-
-<li><p>条件付きアクセス</p></li>
-
-<li><p>Cloud App Discovery(組織で利用しているクラウドアプリケーションの利用状況の可視化)</p></li>
+<li>
+<p>MFA(Multi-Factor Authentication)の有効化</p>
+</li>
+<li>
+<p>Azure AD Connect Health</p>
+</li>
+<li>
+<p>条件付きアクセス</p>
+</li>
+<li>
+<p>Cloud App Discovery(組織で利用しているクラウドアプリケーションの利用状況の可視化)</p>
+</li>
 </ul>
-
 <p>※PREMIUM P2以上が必要な主な機能</p>
-
 <ul>
-<li><p>Identity Protection</p></li>
-
-<li><p>Privileged Identity Management(PIM)</p></li>
-
-<li><p>アクセスレビュー</p></li>
+<li>
+<p>Identity Protection</p>
+</li>
+<li>
+<p>Privileged Identity Management(PIM)</p>
+</li>
+<li>
+<p>アクセスレビュー</p>
+</li>
 </ul>
-
-<a class="post-dummy-target" id="azure-ad-connect-と-connect-health"></a><h2>Azure AD Connect と Connect Health</h2>
-
-<p>Azure AD Connectは、オンプレミスとクラウドのハイブリット構成に用いるツールで、Azure AD Connect Healthは、オンプレミスのIDインフラについてログを収集し、統一環境下で監視や正常性を確認することができる機能。<br></p>
-
-<p><img src="/img/20190707_azure_Ad/arch.png" align="left"><br clear="left"></p>
-
+<a class="post-dummy-target" id="azure-ad-connect--connect-health"></a><h2>Azure AD Connect と Connect Health</h2>
+<p>Azure AD Connectは、オンプレミスとクラウドのハイブリット構成に用いるツールで、Azure AD Connect Healthは、オンプレミスのIDインフラについてログを収集し、統一環境下で監視や正常性を確認することができる機能。<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>Azure AD Connectを用いてオンプレ-クラウド間でのハイブリットを構成する際は適切な認証方式を選択していく。Azure ADがユーザのサインインプロセスを処理するクラウド認証と、別の信頼された認証システム（オンプレのADFSなど）にパスワード検証
 プロセスを引継ぐ方式の2種類に大別できる。</p>
-
-<a class="post-dummy-target" id="クラウド認証-パスワードハッシュ同期"></a><h3>クラウド認証: パスワードハッシュ同期</h3>
-
+<a class="post-dummy-target" id="-"></a><h3>クラウド認証: パスワードハッシュ同期</h3>
 <p>オンプレミスのADとクラウドベースのAzure AD間でユーザパスワードのハッシュ値を同期する。そのため認証が実施される場所はクラウド上になる。またアカウントの状態は同期が完了するまですぐには適用されない。</p>
-
-<a class="post-dummy-target" id="クラウド認証-パススルー認証"></a><h3>クラウド認証: パススルー認証</h3>
-
+<a class="post-dummy-target" id="-1"></a><h3>クラウド認証: パススルー認証</h3>
 <p>公開鍵で暗号化したユーザIDとパスワードをキューにいれ、オンプレミスのエージェントが暗号化情報を取得・復号し、認証情報の検証をおこなう認証形式。オンプレミスにあるパスワード情報がクラウドに保存されることはないことを謳っている。</p>
-
-<a class="post-dummy-target" id="フェデレーション認証"></a><h3>フェデレーション認証</h3>
-
+<a class="post-dummy-target" id="heading"></a><h3>フェデレーション認証</h3>
 <p>Azure ADとフェデレーションを構成したオンプレの認証基盤に認証プロセスを引き継ぐ。オンプレの認証基盤を構築する投資が必要。</p>
-
 <a class="post-dummy-target" id="identity-protection"></a><h2>Identity Protection</h2>
-
 <p>ユーザー ID に関連して検出された疑わしいアクションに対する自動応答を構成できる。匿名 IP アドレスからのサインインなどのリスクイベントを定義し、これに対応するイベントが発生した場合に多要素認証を要求するといったアクセスポリシーを設定することができる。</p>
-
-<a class="post-dummy-target" id="azure-ad-privileged-identity-management-pim"></a><h2>Azure AD Privileged Identity Management(PIM)</h2>
-
+<a class="post-dummy-target" id="azure-ad-privileged-identity-managementpim"></a><h2>Azure AD Privileged Identity Management(PIM)</h2>
 <p>組織内のリソース(AzureAD, Azure リソース、O365などの各種 Microsoft Online Service)へのアクセス管理や監視ができるサービス</p>
-
 <p>主な機能</p>
-
 <ul>
-<li><p>Azure ADとAzureリソースへのJIT(Just-In-Time)特権アクセスの付与</p></li>
-
-<li><p>開始日と終了日を使用した期限付きアクセス権のリソースへの付与</p></li>
-
-<li><p>特権ロールをアクティブ化するために承認を要求する</p></li>
-
-<li><p>ロールをアクティブ化するために多要素認証を強制する</p></li>
-
-<li><p>ユーザがアクティブ化された際の理由を把握する</p></li>
-
-<li><p>特権ロールがアクティブ化されたときに通知を受ける</p></li>
-
-<li><p>継続してユーザーにロールが必要であることを確認するためにアクセスレビューを実施する</p></li>
-
-<li><p>社内監査または外部監査に使用する監査履歴をダウンロードする</p></li>
+<li>
+<p>Azure ADとAzureリソースへのJIT(Just-In-Time)特権アクセスの付与</p>
+</li>
+<li>
+<p>開始日と終了日を使用した期限付きアクセス権のリソースへの付与</p>
+</li>
+<li>
+<p>特権ロールをアクティブ化するために承認を要求する</p>
+</li>
+<li>
+<p>ロールをアクティブ化するために多要素認証を強制する</p>
+</li>
+<li>
+<p>ユーザがアクティブ化された際の理由を把握する</p>
+</li>
+<li>
+<p>特権ロールがアクティブ化されたときに通知を受ける</p>
+</li>
+<li>
+<p>継続してユーザーにロールが必要であることを確認するためにアクセスレビューを実施する</p>
+</li>
+<li>
+<p>社内監査または外部監査に使用する監査履歴をダウンロードする</p>
+</li>
 </ul>
-
-<p>※Azure AD Premium P2のライセンスが必要<br>
-※アカウント管理者、サービス管理者、共同管理者などの従来のサブスクリプション管理者ロールは扱えない<br>
-※アクセスレビューでは、定期的に設定したレビューへレビューをトリガーし、レビューが拒否されたユーザのアクセスを自動的に削除することも可能<br></p>
-
+<p>※Azure AD Premium P2のライセンスが必要<!-- raw HTML omitted -->
+※アカウント管理者、サービス管理者、共同管理者などの従来のサブスクリプション管理者ロールは扱えない<!-- raw HTML omitted -->
+※アクセスレビューでは、定期的に設定したレビューへレビューをトリガーし、レビューが拒否されたユーザのアクセスを自動的に削除することも可能<!-- raw HTML omitted --></p>
 <p>参考:
 <a href="https://docs.microsoft.com/ja-jp/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management</a></p>
 

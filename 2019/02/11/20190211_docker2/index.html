@@ -193,7 +193,7 @@
             <p>・コンテナの一覧表示</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -202,22 +202,22 @@
 <pre class="chroma"><code class="language-sh" data-lang="sh">dokcer ps // or docker container list 
 
 <span class="c1">#※defaultはrunningされたコンテナのみ表示 -a で全表示</span> 
-dokcer ps -a</code></pre></td></tr></table>
+dokcer ps -a
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>・コンテナイメージの一覧表示</p>
+</div><p>・コンテナイメージの一覧表示</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">docker images </code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">docker images 
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>・docker hubからのイメージ検索</p>
+</div><p>・docker hubからのイメージ検索</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -226,7 +226,8 @@ dokcer ps -a</code></pre></td></tr></table>
 <pre class="chroma"><code class="language-sh" data-lang="sh">docker search &lt;ImageName&gt; 
 
 <span class="c1">#Officalのイメージのみ検索</span> 
-docker search --filter is-official<span class="o">=</span><span class="nb">true</span> &lt;ImageName&gt; </code></pre></td></tr></table>
+docker search --filter is-official<span class="o">=</span><span class="nb">true</span> &lt;ImageName&gt; 
+</code></pre></td></tr></table>
 </div>
 </div>
         </div>
