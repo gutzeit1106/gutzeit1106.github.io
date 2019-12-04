@@ -8,19 +8,19 @@ Microsoft Ignite 2019 で AKS / Container　関連も多く update がありま�
 Azure Security Centerでの、AKS クラスタを対象とした保護機能が拡大しているようです。
 次の項目が挙げられていました。
 
-• Discovery & Visibility - サブスクリプション内のAKSインスタンスの継続的ディスカバリ<br>
-• Recommendations - セキュリティベストプラクティスを実行を助ける項目提示<br>
-• Threat Detection - ホストとクラスターベースの分析<br>
+• Discovery & Visibility - サブスクリプション内のAKSインスタンスの継続的ディスカバリ  
+• Recommendations - セキュリティベストプラクティスを実行を助ける項目提示  
+• Threat Detection - ホストとクラスターベースの分析  
 
 ### 2. Streamlined developer experience for Azure Kubernetes Service
 Dev Spacesで、開発マシンとAKS Clusterを接続して、AKS - 開発マシン間のトラフィックをリダイレクトしてあたかも同一のAKSクラスターに開発マシンのコードがあるかのように開発できるらしい。すげー。
 
-Connect your development machine to an AKS cluster (preview) <br>
+Connect your development machine to an AKS cluster (preview)  
 https://docs.microsoft.com/en-us/azure/dev-spaces/how-to/connect
 
 Github Actionと連携してプルリクエストをメインブランチにマージする前に変更点をAKSクラスタで直接テストできるらしい。
 
-GitHub Actions & Azure Kubernetes Service (preview)<br>
+GitHub Actions & Azure Kubernetes Service (preview)  
 https://docs.microsoft.com/en-us/azure/dev-spaces/how-to/github-actions
 
 ### 3. Kubernetes clusters with Azure Availability Zone, Cluster autoscaler and multiple node pools
@@ -41,12 +41,12 @@ https://docs.microsoft.com/en-us/azure/aks/api-server-authorized-ip-ranges)
 運用中のAKS ClusterのトラブルシューティングをおこなうAKS　Diagnosticsというプレビュー機能が発表されました。
 派手な新機能に着目しがちだけどこういう実用的な機能めちゃくちゃ大事だと思う。
 
-Azure Kubernetes Service（AKS）診断の概要<br>
+Azure Kubernetes Service（AKS）診断の概要  
 https://docs.microsoft.com/en-us/azure/aks/concepts-diagnostics
 
 AKS Clusterのノードやpodの問題を診断して、Azureのblobストレージに結果を出力するaks-periscopeというツールも紹介されています。。
 
-aks-periscope<br>
+aks-periscope  
 https://github.com/Azure/aks-periscope
 
 ### 6. Open Container Initiative artifacts support in Azure Container Registry

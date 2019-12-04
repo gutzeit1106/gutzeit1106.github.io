@@ -5,21 +5,21 @@
 Daprは、プログラミング言語に依存せずマイクロサービス間の呼び出し機能やステート管理、サービス間のメッセージ機能、リソースのバインディング、　分散サービス間のトレーシングなどの機能を提供するソフトウェアです。
 マイクロサービスに直接組み込むのではなく、HTTP/gRPC API経由で呼び出して利用することで、アプリケーションに依存せず利用できることを目指しています。
 
-<img src="/img/20191116_dapr/dapr_conceptual_model.jpg" align="left"><br clear="left">
+![DaprConcept](/img/20191116_dapr/dapr_conceptual_model.jpg)
 
-ローカルでインストールし動作を試して見ました。(動作検証時の)
+ローカルでインストールし動作を試して見ました。
 
 ### 1. ドキュメント
-Dapr 公式<br>
+Dapr 公式  
 https://dapr.io/#
 
-Dapr github<br>
+Dapr github  
 https://github.com/dapr/docs
 
-Roadmap<br>
+Roadmap  
 https://github.com/dapr/dapr/wiki/Roadmap
 
-0.2.0 Release Milestone<br>
+0.2.0 Release Milestone  
 https://github.com/orgs/dapr/projects/8
 
 ### 2. インストール(Mac)
@@ -59,19 +59,19 @@ b5c379de74b6        daprio/dapr         "./placement"            59 seconds ago 
 
 #### Hello World の解説
 https://github.com/dapr/samples/tree/master/1.hello-world
-<img src="/img/20191116_dapr/Architecture_Diagram.png" align="left"><br clear="left">
+![20191116_dapr](/img/20191116_dapr/Architecture_Diagram.png)
 <br>
 
 まずは　git clone
 
-```
+```sh
 $ git clone https://github.com/dapr/samples.git
 $ cd samples/1.hello-world
 $ ls
 README.md               app.js                  img                     package-lock.json       package.json            sample.http             sample.json
 ```
 
-app.js を見ていく。<br>
+app.js を見ていく。  
 
 ```node
 const stateUrl = `http://localhost:${daprPort}/v1.0/state`;
@@ -80,7 +80,7 @@ const stateUrl = `http://localhost:${daprPort}/v1.0/state`;
 Dapr CLI は、 Dapr port用の環境変数を作成し、デフォルトでポートは 3500 。
 次に neworder ハンドラを見ていく。
 
-```node
+```js
 app.post('/neworder', (req, res) => {
     const data = req.body.data;
     const orderId = data.orderId;
@@ -108,7 +108,7 @@ app.post('/neworder', (req, res) => {
 最初に受信したメッセージをコンソールログに記録して、次に stateUrl に state Key-Valueを POST することで　Redis にorder id を永続化する。
 
 
-```node
+```js
 app.get('/order', (_req, res) => {
     fetch(`${stateUrl}/order`)
         .then((response) => {
@@ -138,33 +138,33 @@ $ dapr run --app-id mynode --app-port 3000 --port 3500 node app.js
 フォアグラウンドで app が動くので別のターミナルなどで curl でエンドポイントに post する。
 curl 実行は samples/1.hello-world に移動しておこなう。  
 
-```
+```sh
 curl -XPOST -d @sample.json http://localhost:3500/v1.0/invoke/mynode/method/neworder
 ```
 dapr app が稼働しているターミナルでメッセージの受信が確認できる。
 
-```
+```sh
 == APP == Got a new order! Order ID: 42
 == APP == Successfully persisted state
 ```
 
 GET のエンドポイントにアクセスしてステートが正常に保存されていることを確認する。
 
-```
+```sh
 $ curl http://localhost:3500/v1.0/invoke/mynode/method/order
 {"orderId":"42"}
 ```
 
 最後に次のコマンドでサービスを終了させる。
 
-```
+```sh
 $ dapr stop --app-id mynode
 ✅  app stopped successfully
 ```
 
 dapr の状態は dapr list で確認できる。
 
-```
+```sh
 $ dapr list
 No dapr instances found.
 ```

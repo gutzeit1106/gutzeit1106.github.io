@@ -25,8 +25,7 @@ Raspberry Pi は、FAT ファイルシステムのみサポートしているの
 
 https://www.raspberrypi.org/documentation/installation/sdxc_formatting.md
 
-<img src="/img/20191111_raspbian/1_diskutility.png" align="left"><br clear="left">
-
+![20191111_raspbian](/img/20191111_raspbian/1_diskutility.png)
 
 ### 4. Raspbian のダウンロードと書き込み
 Raspbian のイメージを次からダウンロードします。デスクトップ版や推奨ソフトウェア込み版などがあるので好みに応じて選びます。
@@ -81,7 +80,7 @@ dd コマンドでimgをdisk2のデバイスに書き込む。ここで disk で
 disk 指定の場合、 IO は 4KB に分割され、カーネル空間の Buffer Cache を経由してデバイスへ Read/Write されることになる。一方、rdiskはk基本的に Buffer Cache を経由せずに直接デバイスへIOとなる。
 なので、dd コマンドでの書き込みのようなシーケンシャルアクセスでは、余計なオーバヘッドが発生しない rdisk 指定のアクセスが圧倒的に早いという話。
 
-```
+```sh
 $ sudo dd bs=1m if=2019-09-26-raspbian-buster.img of=/dev/rdisk2
 3652+0 records in
 3652+0 records out

@@ -38,7 +38,7 @@
     
         "keywords": "Mac, Raspbian, RaspberryPi",
     
-    "wordcount":  1158 ,
+    "wordcount":  1162 ,
     "url": "https:\/\/yonehub.y10e.com\/2019\/11\/11\/20191111_raspberrypi_setup\/",
     
         "datePublished": "2019-11-11T21:47:23\x2b09:00",
@@ -156,7 +156,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-11-11>2019-11-11</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1158 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1162 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
         </div>
 
@@ -244,7 +244,7 @@ NOOBS で Ubuntuなどの Raspbian 以外の OS をインストールするこ�
 <p>PC に SD カードを接続して、ディスクユーティリティを起動する。
 Raspberry Pi は、FAT ファイルシステムのみサポートしているので、exFAT などは利用できません。</p>
 <p><a href="https://www.raspberrypi.org/documentation/installation/sdxc_formatting.md">https://www.raspberrypi.org/documentation/installation/sdxc_formatting.md</a></p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><img src="/img/20191111_raspbian/1_diskutility.png" alt="20191111_raspbian"></p>
 <a class="post-dummy-target" id="4-raspbian-"></a><h3>4. Raspbian のダウンロードと書き込み</h3>
 <p>Raspbian のイメージを次からダウンロードします。デスクトップ版や推奨ソフトウェア込み版などがあるので好みに応じて選びます。</p>
 <p><a href="https://www.raspberrypi.org/downloads/raspbian/">https://www.raspberrypi.org/downloads/raspbian/</a></p>
@@ -328,11 +328,21 @@ $ diskutil list
 イメージ書き込み待ち中暇なので調べたところ、disk と rdisk もデバイスとしては同じものを指定しているが、disk はランダムアクセス可能なデバイス、rdisk はシーケンシャルアクセスされるデバイスを意味しているらしい。
 disk 指定の場合、 IO は 4KB に分割され、カーネル空間の Buffer Cache を経由してデバイスへ Read/Write されることになる。一方、rdiskはk基本的に Buffer Cache を経由せずに直接デバイスへIOとなる。
 なので、dd コマンドでの書き込みのようなシーケンシャルアクセスでは、余計なオーバヘッドが発生しない rdisk 指定のアクセスが圧倒的に早いという話。</p>
-<pre><code>$ sudo dd bs=1m if=2019-09-26-raspbian-buster.img of=/dev/rdisk2
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ sudo dd <span class="nv">bs</span><span class="o">=</span>1m <span class="k">if</span><span class="o">=</span>2019-09-26-raspbian-buster.img <span class="nv">of</span><span class="o">=</span>/dev/rdisk2
 3652+0 records in
 3652+0 records out
-3829399552 bytes transferred in 274.894541 secs (13930431 bytes/sec)
-</code></pre>
+<span class="m">3829399552</span> bytes transferred in 274.894541 secs <span class="o">(</span><span class="m">13930431</span> bytes/sec<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div>
         </div>
 
         <div class="post-footer" id="post-footer">

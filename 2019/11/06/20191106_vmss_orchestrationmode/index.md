@@ -15,7 +15,7 @@ VMモードの追加できるのは通常の仮想マシンになるので、Azu
 最終的には、VMモードでオートスケールなども対応するのかなと思いますが、プレビューの現段階だとサポートされないようです。今の段階だと通常の仮想マシンを可用性セットで構築するのとの差があんまり感じられないので、おそらく今後は仮想マシンスケールセット特有の機能がVMモードでも使えるようになっていくのかなと予想されます。
 
 Azure Portalからだと、VMモードでScalesetを作成することはできましたが、VMをScalesetに参加させることはまだできないようでした。
-調べたところAzure CLIは、2019/11/04のリリース　[Version 2.0.76](https://github.com/MicrosoftDocs/azure-docs-cli/blob/master/docs-ref-conceptual/release-notes-azure-cli.md#november-4-2019)から対応しているようで、現在の動作を確認するにはCLIを使用するのが勝手がよさそうです。<br>
+調べたところAzure CLIは、2019/11/04のリリース　[Version 2.0.76](https://github.com/MicrosoftDocs/azure-docs-cli/blob/master/docs-ref-conceptual/release-notes-azure-cli.md#november-4-2019)から対応しているようで、現在の動作を確認するにはCLIを使用するのが勝手がよさそうです。  
 こんな感じで作成することができます。
 
 

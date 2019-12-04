@@ -2,18 +2,18 @@
 
 
 前回は、[AKS 上で Dapr をセットアップ](https://yonehub.y10e.com/2019/11/27/20191127_dapr_aks_setup/)しました。
-次は、Azure Kubernetes Service(AKS) 上で dapr のサンプルアプリケーションを動作させてみます。（前回と同様、動作検証時の dapr は v0.2 になります。）<br>
+次は、Azure Kubernetes Service(AKS) 上で dapr のサンプルアプリケーションを動作させてみます。（前回と同様、動作検証時の dapr は v0.2 になります。）  
 最終的なアーキテクチャは次の通りです。
 
-<img src="/img/20191130_aks_dapr/Architecture_Diagram.png" align="left"><br clear="left">
+![20191130_aks_dapr](/img/20191130_aks_dapr/Architecture_Diagram.png)
 
 dapr がインストールされた環境で、python と node.js の POD が動作します。python と node.js の POD は、それぞれの POD 内でサイドカーとして動作する dapr API を経由して、state 情報の更新と取得が行われます。
 
 ### 0. ドキュメント
-Hello Kubernetes <br>
+Hello Kubernetes  
 https://github.com/dapr/samples/tree/master/2.hello-kubernetes
 
-Redis and Dapr  <br>
+Redis and Dapr  
 https://github.com/dapr/docs/blob/master/concepts/components/redis.md#configuration
 
 ### 1. 前提条件
@@ -37,14 +37,14 @@ helm installed into /usr/local/bin/helm
 
 helm のコマンドがインストールできたら chart repository を登録しておきます。
 
-```
+```sh
 $helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 "stable" has been added to your repositories
 ```
 
 repository が参照できることを確認します。
 
-```
+```sh
 $helm search repo stable
 NAME                                    CHART VERSION   APP VERSION                     DESCRIPTION                                       
 stable/acs-engine-autoscaler            2.2.2           2.1.1                           DEPRECATED Scales worker nodes within agent pools 
@@ -55,13 +55,13 @@ stable/airflow                          5.1.0           1.10.4                  
 
 今回、redis は defaultの namespace に作成しようと思います。次のコマンドで redis をインストールします。
 
-```
+```sh
 $ helm install redis stable/redis 
 ```
 
 redis がインストールされていることが確認できます。
 
-```
+```sh
 $ helm list
 NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
 redis   default         1               2019-11-28 17:49:09.405349951 +0000 UTC deployed        redis-10.0.2    5.0.7    
@@ -75,7 +75,7 @@ redis-slave-1    1/1     Running             0          5m21s
 
 redis が作成できたら、次の deploy/redis.yaml を使用して redis の設定を実行します。
 
-dapr/samples <br>
+dapr/samples  
 https://github.com/dapr/samples/tree/master/2.hello-kubernetes/deploy
 
 YOUR_REDIS_HOST_HERE, YOUR_REDIS_KEY_HERE の箇所を編集します。
@@ -96,14 +96,14 @@ spec:
 
 YOUR_REDIS_KEY_HERE については、次のコマンドで確認した値を指定します。
 
-```
+```sh
 $ kubectl get secret redis -o jsonpath="{.data.redis-password}" | base64 --decode
 ```
 
 ファイルを修正したら構成を apply します。これで一旦、redis の作業は完了です。
 ちなみに redis の key は、kubernetes の Secrets にも保存できます。Sample は [こちら](https://github.com/dapr/docs/blob/master/concepts/components/secrets.md) で紹介されていました。
 
-```
+```sh
 $ kubectl apply -f ./deploy/redis.yaml
 component.dapr.io/statestore created
 ```
@@ -123,7 +123,7 @@ annotations:
 
 デプロイします。
 
-```
+```sh
 $ kubectl apply -f ./deploy/node.yaml
 service/nodeapp created
 deployment.apps/nodeapp created
@@ -131,7 +131,7 @@ deployment.apps/nodeapp created
 
 デプロイ後、kubectl get pod で nodeapp からはじまる pod が確認できます。
 
-```
+```sh
 $ kubectl get pods --selector=app=node
 NAME                       READY   STATUS    RESTARTS   AGE
 nodeapp-5956c68964-wfnsh   2/2     Running   0          41h
@@ -140,7 +140,7 @@ $ kubectl exec -it nodeapp-5956c68964-wfnsh /bin/ash
 
 サンプルは、alpine ベースのコンテナなので、ash で接続して、node.js のコードを確認することも可能です。
 
-```
+```sh
 $ kubectl exec -it nodeapp-5956c68964-wfnsh /bin/ash
 Defaulting container name to node.
 Use 'kubectl describe pod/nodeapp-5956c68964-wfnsh -n default' to see all of the containers in this pod.
@@ -214,7 +214,7 @@ GET /order と POST /neworder の 2つのメソッドがあり、neworder では
 
 以降の作業のために、node.yaml で同じくデプロイされている service の IP を確認して環境変数にセットしておきます。 
 
-```
+```sh
 $ kubectl get svc nodeapp
 NAME      TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)        AGE
 nodeapp   LoadBalancer   10.0.42.100   xx.xxx.xxx.xxx   80:32133/TCP   9m55s
@@ -224,14 +224,14 @@ $ export NODE_APP=$(kubectl get svc nodeapp --output 'jsonpath={.status.loadBala
 ### 4. python App を dapr とデプロイする
 今度は sample の /deploy/python.yaml を使用します。
 
-```
+```sh
 $ kubectl apply -f ./deploy/python.yaml
 deployment.apps/pythonapp created
 ```
 
 デプロイ後、kubectl get pod で pythonapp からはじまる pod が確認できます。
 
-```
+```sh
 $ kubectl get pods --selector=app=python
 NAME                         READY   STATUS    RESTARTS   AGE
 pythonapp-5d9649fccd-pv8x6   2/2     Running   0          42h
@@ -239,7 +239,7 @@ pythonapp-5d9649fccd-pv8x6   2/2     Running   0          42h
 
 python の sample も、alpine ベースのコンテナなので、ash で接続してアプリのコードを見てみます。
 
-```
+```sh
 kubectl exec -it pythonapp-5d9649fccd-pv8x6 /bin/ash
 /app # cat app.py 
 # ------------------------------------------------------------
@@ -270,7 +270,7 @@ while True:
 このアプリは非常にシンプルです。1 秒毎にサイドカーの dapr のエンドポイント対して、次の HTTP REQUEST を POST しています。
 この時、Node.js の アプリケーションの ID と neworder のメソッドを指定することで、dapr 経由で nodeapp のサービスを call しているということになります。
 
-```
+```sh
 POST http://localhost:<daprPort>/v1.0/invoke/<appId>/method/<method-name>
 ```
 [Service Invocation](https://github.com/dapr/docs/blob/master/reference/api/service_invocation.md)
@@ -303,7 +303,7 @@ Successfully persisted state.
 ### 6. アプリケーションからの応答を確認する
 Node.js の GET エンドポイントに接続すると最新の order の状態（orderId）が確認できます。
 
-```
+```sh
 $ curl $NODE_APP/order
 {"orderId":72}
 ```
@@ -311,7 +311,7 @@ $ curl $NODE_APP/order
 ### 7. あとしまつ
 /deploy のディレクトリに移動して次を実行することで、AKS 上のリソースを削除します。
 
-```
+```sh
 kubectl delete -f .
 ```
 
@@ -319,6 +319,6 @@ kubectl delete -f .
 手順 5, 6 で正常な値が取れない場合、dapr の設定などがおかしい可能性があります。
 その際は、nodeapp の POD 内の daprd のログなどを見るとどのようなエラーが発生しているかわかると思います。
 
-```
+```sh
 kubectl logs nodeapp-5956c68964-wfnsh  -c daprd
 ```

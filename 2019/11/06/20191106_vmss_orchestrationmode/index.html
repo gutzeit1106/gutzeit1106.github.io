@@ -200,7 +200,7 @@
 VMモードの追加できるのは通常の仮想マシンになるので、Azure Backup、Azure Site Recoveryなどの個別の仮想マシンにて適用可能な機能は、そのまま利用することができるようです。
 最終的には、VMモードでオートスケールなども対応するのかなと思いますが、プレビューの現段階だとサポートされないようです。今の段階だと通常の仮想マシンを可用性セットで構築するのとの差があんまり感じられないので、おそらく今後は仮想マシンスケールセット特有の機能がVMモードでも使えるようになっていくのかなと予想されます。</p>
 <p>Azure Portalからだと、VMモードでScalesetを作成することはできましたが、VMをScalesetに参加させることはまだできないようでした。
-調べたところAzure CLIは、2019/11/04のリリース　<a href="https://github.com/MicrosoftDocs/azure-docs-cli/blob/master/docs-ref-conceptual/release-notes-azure-cli.md#november-4-2019">Version 2.0.76</a>から対応しているようで、現在の動作を確認するにはCLIを使用するのが勝手がよさそうです。<!-- raw HTML omitted -->
+調べたところAzure CLIは、2019/11/04のリリース　<a href="https://github.com/MicrosoftDocs/azure-docs-cli/blob/master/docs-ref-conceptual/release-notes-azure-cli.md#november-4-2019">Version 2.0.76</a>から対応しているようで、現在の動作を確認するにはCLIを使用するのが勝手がよさそうです。<br>
 こんな感じで作成することができます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

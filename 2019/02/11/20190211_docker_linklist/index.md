@@ -1,19 +1,19 @@
 # Docker Reference List
 
-Docker のリファレンス<br>
+Docker のリファレンス  
 https://docs.docker.com/reference/ 
 
-Docker Sample<br>
+Docker Sample  
 https://docs.docker.com/samples/ 
 
-Docker Cmd Referance<br>
+Docker Cmd Referance  
 https://docs.docker.com/engine/reference/commandline/cli/ 
 
-Docker File Reference<br>
+Docker File Reference  
 https://docs.docker.com/engine/reference/builder/ 
 
-Dokcer Compose Cmd Referance<br>
+Dokcer Compose Cmd Referance  
 https://docs.docker.com/compose/reference/overview/ 
 
-Dokcer Compose Referance<br>
+Dokcer Compose Referance  
 https://docs.docker.com/compose/compose-file/ 

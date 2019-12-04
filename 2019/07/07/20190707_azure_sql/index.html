@@ -38,7 +38,7 @@
     
         "keywords": "Azure, Database, CosmosDB",
     
-    "wordcount":  1953 ,
+    "wordcount":  1946 ,
     "url": "https:\/\/yonehub.y10e.com\/2019\/07\/07\/20190707_azure_sql\/",
     
         "datePublished": "2019-07-07T00:00:01\x2b09:00",
@@ -156,7 +156,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-07-07>2019-07-07</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1953 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1946 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>4 min&nbsp;</div>
         </div>
 
@@ -269,14 +269,14 @@
 <li>マネージドインスタンス</li>
 </ul>
 <a class="post-dummy-target" id="heading"></a><h3>単一データベース</h3>
-<p>最も汎用性の高いオプション。プランのスケールアップやスケールインが可能で柔軟性が高い。<!-- raw HTML omitted -->
+<p>最も汎用性の高いオプション。プランのスケールアップやスケールインが可能で柔軟性が高い。<br>
 Database Migration Service(DMS)を使用することで、オンプレミスSQLサーバーからの移行も可能。DACパッケージ(dacpac)を使って移行することもできるが、bacpacファイルのエクスポートやAzure SQL Databaseへのインポートも発生するためダウンタイムは長い。</p>
 <a class="post-dummy-target" id="heading1"></a><h3>エラスティックプール</h3>
 <p>エラスティックプールを使用することで複数のデータベースで共有されるプールのリソースを確保（購入）でき個々のデータベースの使用期間が予測しづらい場合にリソースを効率的に使用できる。エラスティックプール内のデータベースは単一のAzure SQL Database サーバ上に存在し設定されているリソースを共有している。
 そのためエラスティックプールは、テナント単位で個々のDatabaseを展開したい場合などに魅力的なプランとなる。また、単一データベースはエラスティックプールの内外に移動することができる。</p>
 <a class="post-dummy-target" id="heading2"></a><h3>マネージドインスタンス</h3>
 <p>オンプレミスSQL Serverと互換性の高いデータベースが作成できるため、リフト&amp;シフトのケースで最初に検討されるオプション。
-仮想ネットワークにインタンスを展開できるので、プライベートIPアドレスを持つ。(VPNやExpressRouteの利用も選択肢にできる)<!-- raw HTML omitted -->
+仮想ネットワークにインタンスを展開できるので、プライベートIPアドレスを持つ。(VPNやExpressRouteの利用も選択肢にできる)<br>
 既存のSQL Serverからの移行には、Azure Database Migration Service(DMS)を使用することで、オフラインおよびオンライン移行できる。
 オフライン移行では、移行の開始からアプリケーションのダウンタイムが発生するが、オンライン移行では、増分的にマネージドインスタンスにプッシュするので最終的な切り替え時のみダウンタイムが発生する。ネイティブのRESTOREコマンドで移行することもできるが、バックアップファイルの取得、コピーなどで移行ダウンタイムは大きくなる。</p>
 <a class="post-dummy-target" id="dtu-"></a><h3>仮想コアベースとDTU ベースの購入モデル</h3>
@@ -284,7 +284,7 @@ Database Migration Service(DMS)を使用することで、オンプレミスSQL�
 DTU(Database Transaction Unit) は、SQL Database のデータベースの処理性能を表す単位。Microsoftがベンチマークテスト数値に基づく
 CPU、メモリの使用率、およびディスクの読み書き負荷の組み合わせた測定値に基づいて算出している。このDTUに基づいて購入するモデル。
 DTUベースの購入モデルは、現在マネージドインスタンスでは提供されていない。</p>
-<!-- raw HTML omitted -->
+<!--https://www.slideshare.net/ssuser12e741/15jssugazure-sql-database -->
 <hr>
 <a class="post-dummy-target" id="azure-cosmos-db"></a><h2>Azure Cosmos DB</h2>
 <a class="post-dummy-target" id="heading3"></a><h3>概要</h3>

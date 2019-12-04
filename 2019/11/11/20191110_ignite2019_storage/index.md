@@ -13,7 +13,7 @@ Microsoft Ignite 2019 の Storage周りの update まとめです。
 参照:[Azure Ultra Disk Storage の一般公開に関するお知らせ](https://azure.microsoft.com/ja-jp/blog/announcing-the-general-availability-of-azure-ultra-disk-storage/)
 
 ### Shared Disk Support for Ultra and Premium SSD
-複数の仮想マシンからディスクを共有する Azure Shared Disks のプレビューが開始されたそうです。<br>
+複数の仮想マシンからディスクを共有する Azure Shared Disks のプレビューが開始されたそうです。  
 プレビュー申し込みは次の Forms から。http://aka.ms/SharedDiskSignUp
 
 ### Direct uplocad to Managed Disk
@@ -48,8 +48,8 @@ Managed Diskのスナップショットは、今まで差分コピーでなく�
 従来のSMB 2.1, 3.0, REST　でのアクセスに加えて、NFS v4.1　でのアクセスがサポートされる機能が開発中とのこと。
 
 ### Active Directory Authentication (Preview)
-2019年8月に [Azure AD DSとAzure Filesの認証統合のGAがアナウンス](https://azure.microsoft.com/en-us/blog/better-security-with-enhanced-access-control-experience-in-azure-files/)されましたが、ユーザ管理の AD にジョインして認証統合させる機能が Limited Preview で開発されているみたいです。<br>
-Survey Form　は次にあります。
+2019年8月に [Azure AD DSとAzure Filesの認証統合のGAがアナウンス](https://azure.microsoft.com/en-us/blog/better-security-with-enhanced-access-control-experience-in-azure-files/)されましたが、ユーザ管理の AD にジョインして認証統合させる機能が Limited Preview で開発されているみたいです。  
+Survey Form　は次にあります。  
 http://aka.ms/azurefilesADAuthPreviewSurvey
 
 ### Cost-effective tiers for secoundary data (Preview)

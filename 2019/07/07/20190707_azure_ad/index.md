@@ -2,7 +2,7 @@
 
 
 ## Azure AD の価格プランによる機能比較
-FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。<br>
+FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。  
 BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は1008円/月
 
 参考:[Azure Active Directory のプラン機能対応表](https://azure.microsoft.com/ja-jp/pricing/details/active-directory/)
@@ -30,7 +30,7 @@ BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は100
 ## Azure AD Connect と Connect Health
 Azure AD Connectは、オンプレミスとクラウドのハイブリット構成に用いるツールで、Azure AD Connect Healthは、オンプレミスのIDインフラについてログを収集し、統一環境下で監視や正常性を確認することができる機能。<br>
 
-<img src="/img/20190707_azure_Ad/arch.png" align="left"><br clear="left">
+![20190707_azure_Ad](/img/20190707_azure_Ad/arch.png)
 
 Azure AD Connectを用いてオンプレ-クラウド間でのハイブリットを構成する際は適切な認証方式を選択していく。Azure ADがユーザのサインインプロセスを処理するクラウド認証と、別の信頼された認証システム（オンプレのADFSなど）にパスワード検証
 プロセスを引継ぐ方式の2種類に大別できる。

@@ -11,4 +11,4 @@ Visual Stadio CodeでMarkdownファイルを記載している時に、リアル
 
 3. この通り
 
-<img src="/img/20190616_vscode_markdown/result.png" align="left"><br clear="left">
+![20190616_vscode_markdown](/img/20190616_vscode_markdown/result.png)

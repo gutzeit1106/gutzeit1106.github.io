@@ -22,7 +22,7 @@
                 <pubDate>Fri, 29 Nov 2019 12:47:23 +0900</pubDate>
                 
                 <guid>https://yonehub.y10e.com/2019/11/29/20191130_dapr_aks_helloworld/</guid>
-                <description>前回は、AKS 上で Dapr をセットアップしました。 次は、Azure Kubernetes Service(AKS) 上で dapr のサンプルアプリケーションを動作させてみます。（前回と同様、動作検証時の dapr は v0.2 になります。）最終的なアーキテクチャは次の通りです。 dapr がインストールされた環境で、python と node.js の POD が動作します。python と node.js の POD は、それぞれの POD 内でサイドカーとして動作する dapr API を経由して、state 情報の更新と取得が行われます。 0. ドキュメント Hello</description>
+                <description>前回は、AKS 上で Dapr をセットアップしました。 次は、Azure Kubernetes Service(AKS) 上で dapr のサンプルアプリケーションを動作させてみます。（前回と同様、動作検証時の dapr は v0.2 になります。） 最終的なアーキテクチャは次の通りです。 dapr がインストールされた環境で、python と node.js の POD が動作します。python と node.js の POD は、それぞれの POD 内でサイドカーとして動作する dapr API を経由して、state 情報の更新と取得が行われます。 0. ドキュメント Hello</description>
             </item>
         
             <item>
@@ -40,7 +40,7 @@
                 <pubDate>Thu, 21 Nov 2019 06:48:00 +0900</pubDate>
                 
                 <guid>https://yonehub.y10e.com/2019/11/21/20191121_ignite2019_network/</guid>
-                <description>Microsoft Ignite 2019 の Network 系サービスの update まとめです。 4つのカテゴリに分けて各種サービスの update が紹介されていました。 ・Connect &amp;amp; Extend・Protect・Deliver・Monitoringネットワークサービスは、難しいですね。機能ごとのセッションを追いきれなかったので、補足とかある人は twitter とかでご教示いただきたいなぁ。 1. Connect &amp;amp; Extend Azure Peering Service (Preview) ISP を介してパブリックネットワーク経由で Microsoftクラウド(Offi</description>
+                <description>Microsoft Ignite 2019 の Network 系サービスの update まとめです。 4つのカテゴリに分けて各種サービスの update が紹介されていました。 ・Connect &amp;amp; Extend ・Protect ・Deliver ・Monitoring ネットワークサービスは、難しいですね。機能ごとのセッションを追いきれなかったので、補足とかある人は twitter とかでご教示いただきたいなぁ。 1. Connect &amp;amp; Extend Azure Peering Service (Preview) ISP を介してパブリックネットワーク経由で Microsoftクラウド(Office 365</description>
             </item>
         
             <item>
@@ -76,7 +76,7 @@
                 <pubDate>Mon, 11 Nov 2019 00:48:00 +0900</pubDate>
                 
                 <guid>https://yonehub.y10e.com/2019/11/11/20191110_ignite2019_storage/</guid>
-                <description>Microsoft Ignite 2019 の Storage周りの update まとめです。 公開情報がまだ十分にない preview な機能の紹介が多かった印象でした。 1. Azure Disk ディスク関連の update は、 Azure VM とかぶっているのが多くあります。 SAP HANA Certification on Ultra Disk and M/E series VMs 8月に GA された Ultra Disk と M or E シリーズ VM の構成が、SAP HANA の認定を受けた。 参照:Azure Ultra Disk Storage の一般公開に関するお知らせ Shared Disk Support for Ultra and Premium SSD 複数の仮想マシンからディスクを共有する Azure Shared Disks のプレビューが開始されたそうです。プレ</description>
+                <description>Microsoft Ignite 2019 の Storage周りの update まとめです。 公開情報がまだ十分にない preview な機能の紹介が多かった印象でした。 1. Azure Disk ディスク関連の update は、 Azure VM とかぶっているのが多くあります。 SAP HANA Certification on Ultra Disk and M/E series VMs 8月に GA された Ultra Disk と M or E シリーズ VM の構成が、SAP HANA の認定を受けた。 参照:Azure Ultra Disk Storage の一般公開に関するお知らせ Shared Disk Support for Ultra and Premium SSD 複数の仮想マシンからディスクを共有する Azure Shared Disks のプレビューが開始されたそうです。 プレ</description>
             </item>
         
             <item>
@@ -85,7 +85,7 @@
                 <pubDate>Fri, 08 Nov 2019 12:47:23 +0900</pubDate>
                 
                 <guid>https://yonehub.y10e.com/2019/11/08/20191108_ignite2019_aks/</guid>
-                <description>Microsoft Ignite 2019 で AKS / Container 関連も多く update がありました。 画期的というよりは、実用的な機能が充実してきたと思える機能が多くありました。 1. Threat protection for Azure Kubernetes Service Azure Security Centerでの、AKS クラスタを対象とした保護機能が拡大しているようです。 次の項目が挙げられていました。 • Discovery &amp;amp; Visibility - サブスクリプション内のAKSインスタンスの継続的ディスカバリ• Recommendations - セキュリティベストプラクティスを実行を助ける項目提示• Threat Detection - ホストとクラスターベース</description>
+                <description>Microsoft Ignite 2019 で AKS / Container 関連も多く update がありました。 画期的というよりは、実用的な機能が充実してきたと思える機能が多くありました。 1. Threat protection for Azure Kubernetes Service Azure Security Centerでの、AKS クラスタを対象とした保護機能が拡大しているようです。 次の項目が挙げられていました。 • Discovery &amp;amp; Visibility - サブスクリプション内のAKSインスタンスの継続的ディスカバリ • Recommendations - セキュリティベストプラクティスを実行を助ける項目提示 • Threat Detection - ホストとクラスターベース</description>
             </item>
         
             <item>
@@ -94,7 +94,7 @@
                 <pubDate>Thu, 07 Nov 2019 17:47:23 +0900</pubDate>
                 
                 <guid>https://yonehub.y10e.com/2019/11/07/20191107_ignite2019_iaas/</guid>
-                <description>今週は Microsoft Ignite 2019 で盛り上がった一週間でした。自分の周りでは、Keynote で取り上げられていた、Azure Arc や Azure Synapse が特に話題になっていた気がします。 それ以外にも、新機能の発表、プレビュー機能の GA ニュースが山盛りでした。 発表された項目は、Book of News Microsoft Ignite 2019に記載がありますが、index だけで7ページもあります。 しばらくキャッチアップに注力せねば&amp;hellip;そんな中、Azure の IaaS 系のサービスに</description>
+                <description>今週は Microsoft Ignite 2019 で盛り上がった一週間でした。 自分の周りでは、Keynote で取り上げられていた、Azure Arc や Azure Synapse が特に話題になっていた気がします。 それ以外にも、新機能の発表、プレビュー機能の GA ニュースが山盛りでした。 発表された項目は、Book of News Microsoft Ignite 2019に記載がありますが、index だけで7ページもあります。 しばらくキャッチアップに注力せねば&amp;hellip; そんな中、Azure の IaaS 系のサービスに</description>
             </item>
         
             <item>
@@ -139,7 +139,7 @@
                 <pubDate>Sun, 07 Jul 2019 00:00:00 +0900</pubDate>
                 
                 <guid>https://yonehub.y10e.com/2019/07/07/20190707_azure_ad/</guid>
-                <description>Azure AD の価格プランによる機能比較 FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は1008円/月 参考:Azure Active Directory のプラン機能対応表 ※PREMIUM P1以上が必要な主な機能 MFA(Multi-Factor Authentication)の有効化 Azure AD Connect Health 条件付きアクセス Cloud App Discovery(組織で利用しているクラウドアプリケーションの利用状況の可視化) ※PREMIUM P2以上が必</description>
+                <description>Azure AD の価格プランによる機能比較 FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。 BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は1008円/月 参考:Azure Active Directory のプラン機能対応表 ※PREMIUM P1以上が必要な主な機能 MFA(Multi-Factor Authentication)の有効化 Azure AD Connect Health 条件付きアクセス Cloud App Discovery(組織で利用しているクラウドアプリケーションの利用状況の可視化) ※PREMIUM P2以上が必</description>
             </item>
         
             <item>

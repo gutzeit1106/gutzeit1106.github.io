@@ -38,7 +38,7 @@
     
         "keywords": "dapr, container, Microsoft",
     
-    "wordcount":  1249 ,
+    "wordcount":  1267 ,
     "url": "https:\/\/yonehub.y10e.com\/2019\/11\/16\/20191116_dapr\/",
     
         "datePublished": "2019-11-16T12:47:23\x2b09:00",
@@ -156,7 +156,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-11-16>2019-11-16</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1249 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1267 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
         </div>
 
@@ -228,16 +228,16 @@
             <p>2019年10月にマイクロサービスアプリケーションの開発を容易にするためのフレームワークとして&quot;Dapr&quot;がマイクロソフトから公開されました。現在α版となっています。
 Daprは、プログラミング言語に依存せずマイクロサービス間の呼び出し機能やステート管理、サービス間のメッセージ機能、リソースのバインディング、　分散サービス間のトレーシングなどの機能を提供するソフトウェアです。
 マイクロサービスに直接組み込むのではなく、HTTP/gRPC API経由で呼び出して利用することで、アプリケーションに依存せず利用できることを目指しています。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<p>ローカルでインストールし動作を試して見ました。(動作検証時の)</p>
+<p><img src="/img/20191116_dapr/dapr_conceptual_model.jpg" alt="DaprConcept"></p>
+<p>ローカルでインストールし動作を試して見ました。</p>
 <a class="post-dummy-target" id="1-"></a><h3>1. ドキュメント</h3>
-<p>Dapr 公式<!-- raw HTML omitted -->
+<p>Dapr 公式<br>
 <a href="https://dapr.io/#">https://dapr.io/#</a></p>
-<p>Dapr github<!-- raw HTML omitted -->
+<p>Dapr github<br>
 <a href="https://github.com/dapr/docs">https://github.com/dapr/docs</a></p>
-<p>Roadmap<!-- raw HTML omitted -->
+<p>Roadmap<br>
 <a href="https://github.com/dapr/dapr/wiki/Roadmap">https://github.com/dapr/dapr/wiki/Roadmap</a></p>
-<p>0.2.0 Release Milestone<!-- raw HTML omitted -->
+<p>0.2.0 Release Milestone<br>
 <a href="https://github.com/orgs/dapr/projects/8">https://github.com/orgs/dapr/projects/8</a></p>
 <a class="post-dummy-target" id="2-mac"></a><h3>2. インストール(Mac)</h3>
 <p>Dapr CLIをインストールする</p>
@@ -301,50 +301,102 @@ b5c379de74b6        daprio/dapr         <span class="s2">&#34;./placement&#34;</
 </div><a class="post-dummy-target" id="3--hello-world"></a><h3>3. サンプルコード （Hello World）</h3>
 <a class="post-dummy-target" id="hello-world-"></a><h4>Hello World の解説</h4>
 <p><a href="https://github.com/dapr/samples/tree/master/1.hello-world">https://github.com/dapr/samples/tree/master/1.hello-world</a>
-<!-- raw HTML omitted --><!-- raw HTML omitted -->
-<!-- raw HTML omitted --></p>
+<img src="/img/20191116_dapr/Architecture_Diagram.png" alt="20191116_dapr">
+<br></p>
 <p>まずは　git clone</p>
-<pre><code>$ git clone https://github.com/dapr/samples.git
-$ cd samples/1.hello-world
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ git clone https://github.com/dapr/samples.git
+$ <span class="nb">cd</span> samples/1.hello-world
 $ ls
 README.md               app.js                  img                     package-lock.json       package.json            sample.http             sample.json
-</code></pre><p>app.js を見ていく。<!-- raw HTML omitted --></p>
+</code></pre></td></tr></table>
+</div>
+</div><p>app.js を見ていく。</p>
 <pre><code class="language-node" data-lang="node">const stateUrl = `http://localhost:${daprPort}/v1.0/state`;
 </code></pre><p>Dapr CLI は、 Dapr port用の環境変数を作成し、デフォルトでポートは 3500 。
 次に neworder ハンドラを見ていく。</p>
-<pre><code class="language-node" data-lang="node">app.post('/neworder', (req, res) =&gt; {
-    const data = req.body.data;
-    const orderId = data.orderId;
-    console.log(&quot;Got a new order! Order ID: &quot; + orderId);
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/neworder&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">orderId</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">orderId</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Got a new order! Order ID: &#34;</span> <span class="o">+</span> <span class="nx">orderId</span><span class="p">)</span><span class="p">;</span>
 
-    const state = [{
-        key: &quot;order&quot;,
-        value: data
-    }];
+    <span class="kr">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="p">[</span><span class="p">{</span>
+        <span class="nx">key</span><span class="o">:</span> <span class="s2">&#34;order&#34;</span><span class="p">,</span>
+        <span class="nx">value</span><span class="o">:</span> <span class="nx">data</span>
+    <span class="p">}</span><span class="p">]</span><span class="p">;</span>
 
-    fetch(stateUrl, {
-        method: &quot;POST&quot;,
-        body: JSON.stringify(state),
-        headers: {
-            &quot;Content-Type&quot;: &quot;application/json&quot;
-        }
-    }).then((response) =&gt; {
-        console.log((response.ok) ? &quot;Successfully persisted state&quot; : &quot;Failed to persist state&quot;);
-    });
+    <span class="nx">fetch</span><span class="p">(</span><span class="nx">stateUrl</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">method</span><span class="o">:</span> <span class="s2">&#34;POST&#34;</span><span class="p">,</span>
+        <span class="nx">body</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span><span class="p">,</span>
+        <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&#34;Content-Type&#34;</span><span class="o">:</span> <span class="s2">&#34;application/json&#34;</span>
+        <span class="p">}</span>
+    <span class="p">}</span><span class="p">)</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="o">?</span> <span class="s2">&#34;Successfully persisted state&#34;</span> <span class="o">:</span> <span class="s2">&#34;Failed to persist state&#34;</span><span class="p">)</span><span class="p">;</span>
+    <span class="p">}</span><span class="p">)</span><span class="p">;</span>
 
-    res.status(200).send();
-});
-</code></pre><p>ここでは neworder メッセージを受信して処理するエンドポイントを公開している。
+    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>ここでは neworder メッセージを受信して処理するエンドポイントを公開している。
 最初に受信したメッセージをコンソールログに記録して、次に stateUrl に state Key-Valueを POST することで　Redis にorder id を永続化する。</p>
-<pre><code class="language-node" data-lang="node">app.get('/order', (_req, res) =&gt; {
-    fetch(`${stateUrl}/order`)
-        .then((response) =&gt; {
-            return response.json();
-        }).then((orders) =&gt; {
-            res.send(orders);
-        });
-});
-</code></pre><p>この Get エンドポイントでは、Redis キャッシュが呼び出され、order keyの最新 value が取得でき、Node.js app がステートレスになる。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/order&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">_req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">stateUrl</span><span class="si">}</span><span class="sb">/order</span><span class="sb">`</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+        <span class="p">}</span><span class="p">)</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="p">(</span><span class="nx">orders</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">orders</span><span class="p">)</span><span class="p">;</span>
+        <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>この Get エンドポイントでは、Redis キャッシュが呼び出され、order keyの最新 value が取得でき、Node.js app がステートレスになる。</p>
 <a class="post-dummy-target" id="nodejs--dapr-"></a><h4>Node.js アプリを Dapr と稼働させてみる</h4>
 <p>まずは依存関係をインストールする</p>
 <div class="highlight"><div class="chroma">
@@ -370,20 +422,59 @@ README.md               app.js                  img                     package-
 </div>
 </div><p>フォアグラウンドで app が動くので別のターミナルなどで curl でエンドポイントに post する。
 curl 実行は samples/1.hello-world に移動しておこなう。</p>
-<pre><code>curl -XPOST -d @sample.json http://localhost:3500/v1.0/invoke/mynode/method/neworder
-</code></pre><p>dapr app が稼働しているターミナルでメッセージの受信が確認できる。</p>
-<pre><code>== APP == Got a new order! Order ID: 42
-== APP == Successfully persisted state
-</code></pre><p>GET のエンドポイントにアクセスしてステートが正常に保存されていることを確認する。</p>
-<pre><code>$ curl http://localhost:3500/v1.0/invoke/mynode/method/order
-{&quot;orderId&quot;:&quot;42&quot;}
-</code></pre><p>最後に次のコマンドでサービスを終了させる。</p>
-<pre><code>$ dapr stop --app-id mynode
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">curl -XPOST -d @sample.json http://localhost:3500/v1.0/invoke/mynode/method/neworder
+</code></pre></td></tr></table>
+</div>
+</div><p>dapr app が稼働しているターミナルでメッセージの受信が確認できる。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">=</span><span class="o">=</span> <span class="nv">APP</span> <span class="o">=</span><span class="o">=</span> Got a new order! Order ID: <span class="nv">42</span>
+<span class="o">=</span><span class="o">=</span> <span class="nv">APP</span> <span class="o">=</span><span class="o">=</span> Successfully persisted state
+</code></pre></td></tr></table>
+</div>
+</div><p>GET のエンドポイントにアクセスしてステートが正常に保存されていることを確認する。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ curl http://localhost:3500/v1.0/invoke/mynode/method/order
+<span class="o">{</span><span class="s2">&#34;orderId&#34;</span>:<span class="s2">&#34;42&#34;</span><span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>最後に次のコマンドでサービスを終了させる。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ dapr stop --app-id mynode
 ✅  app stopped successfully
-</code></pre><p>dapr の状態は dapr list で確認できる。</p>
-<pre><code>$ dapr list
+</code></pre></td></tr></table>
+</div>
+</div><p>dapr の状態は dapr list で確認できる。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ dapr list
 No dapr instances found.
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
         </div>
 
         <div class="post-footer" id="post-footer">

@@ -1,11 +1,11 @@
 # Microsoft Ignite 2019 で発表された新機能のまとめ(VM/VMSS編)
 
 
-今週は Microsoft Ignite 2019 で盛り上がった一週間でした。<br>
+今週は Microsoft Ignite 2019 で盛り上がった一週間でした。  
 自分の周りでは、Keynote で取り上げられていた、Azure Arc や Azure Synapse が特に話題になっていた気がします。
 それ以外にも、新機能の発表、プレビュー機能の GA ニュースが山盛りでした。
 発表された項目は、[Book of News Microsoft Ignite 2019](https://news.microsoft.com/wp-content/uploads/prod/sites/563/2019/11/Ignite-2019-Book-of-News.pdf)に記載がありますが、index だけで7ページもあります。
-しばらくキャッチアップに注力せねば...<br>
+しばらくキャッチアップに注力せねば...  
 そんな中、Azure の IaaS 系のサービスについては最新状況をだいたい把握しているつもりでしたが、VM Scaleset(VMSS) で初めて認識した機能があったので、その機能の検証と、ついでに Ignite 2019 で触れていた VM/VMSS の機能についてまとめてみました。
 
 ### 1. Azure Da_v4 and Das_v4 virtual machines 
@@ -39,7 +39,7 @@ Azure 上で hyper-V 第2世代の仮想マシンが利用できる機能が GA 
 2の scale-in policies は、スケールインする際に削除されるインスタンスを選ぶ戦略を選択できるオプションです。
 3はユーザが作ったイメージをいろいろと共有できる Shared Image Galleries と VMSS の統合です。
 4 Terminate notification は、スケールインの際にインスタンス削除開始までの時間を制御できるオプションです。終了処理をしてからスケールインしたい時などに有用かと思います。
-5の Instance Protection は、特定のインスタンスを自動スケールなどの操作から保護できるオプションです。<br>
+5の Instance Protection は、特定のインスタンスを自動スケールなどの操作から保護できるオプションです。  
 
 ### 5. Azure HBv2 virtual machines coming soon
 AMD EPYCが搭載されたHPC向け（RDMA使用可）の仮想マシンサイズ HBv2 の紹介です。このサイズはまだGAではないみたいです。
