@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>2019年に読みたい技術関連書籍（積読リスト） | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ターミナルから Visual Studio Code を呼び出す方法 | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noodp" />
 <meta name="Description" content="Cloud Engineer&#39;s blog">
-<link rel="next" href="https://yonehub.y10e.com/2019/02/11/20190211_docker_linklist/" />
-<link rel="canonical" href="https://yonehub.y10e.com/2019/01/02/20190102_books2019/" />
+<link rel="prev" href="https://yonehub.y10e.com/2019/11/29/20191130_dapr_aks_helloworld/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2019/12/05/20191205_vscode_terminal/" />
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -17,8 +17,8 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-  <meta name="twitter:title" content="2019年に読みたい技術関連書籍（積読リスト）" />
-  <meta name="twitter:description" content="2019年に読んでおきたい書籍のまとめ。おそらく日々の中で色々と新しく読んでみたい本も増えると思うので7冊に厳選してみる。 #1 マスタリングWindows Server 2016 Hyper-V (マイクロソフト関連書) #2 Windows Sysinternals徹底解説 改訂新版 (マイクロソフト公式解説書) #3 インサイドWindows 第7版 上 システムアーキテクチャ、プロセス、ス …">
+  <meta name="twitter:title" content="ターミナルから Visual Studio Code を呼び出す方法" />
+  <meta name="twitter:description" content="Mac や SSH で接続した Linux サーバ上でターミナルから操作している時に、既存ファイルをエディタで編集したり、ファイル名を指定して新規にファイルを作成、内容の編集をしたいみたいなことは日常的にあると思います。 そんな時、今までは vi や emacs を使いがちだったのですが、Visual Studio Code で開いて編集する方法をメモしておきます。 もちろん Visual …">
   <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
   
 <meta name="twitter:card" content="summary" />
@@ -27,20 +27,20 @@
     {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "2019年に読みたい技術関連書籍（積読リスト）",
+    "headline": "ターミナルから Visual Studio Code を呼び出す方法",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/yonehub.y10e.com\/2019\/01\/02\/20190102_books2019\/"
+        "@id": "https:\/\/yonehub.y10e.com\/2019\/12\/05\/20191205_vscode_terminal\/"
     },
     
     "genre": "posts",
     
-        "keywords": "Book, Tech",
+        "keywords": "Visual Studio Code, Tips, Mac",
     
-    "wordcount":  270 ,
-    "url": "https:\/\/yonehub.y10e.com\/2019\/01\/02\/20190102_books2019\/",
+    "wordcount":  512 ,
+    "url": "https:\/\/yonehub.y10e.com\/2019\/12\/05\/20191205_vscode_terminal\/",
     
-        "datePublished": "2019-01-02T00:00:00\x2b09:00",
+        "datePublished": "2019-12-05T22:47:23\x2b09:00",
     
     
         "dateModified": "2019-12-04T20:49:50\x2b09:00",
@@ -142,28 +142,28 @@
     
 
     <article class="post-warp">
-        <h1 class="post-title animated flipInX">2019年に読みたい技術関連書籍（積読リスト）</h1>
+        <h1 class="post-title animated flipInX">ターミナルから Visual Studio Code を呼び出す方法</h1>
 
         <div class="post-meta">
             <div class="post-meta-main">
                 <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
                 <span class="post-category">
                         included in
-                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/tech/">Tech</a>
+                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/development/">Development</a>
                             
                     </span>
             </div>
             <div class="post-meta-other">
-                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-01-02>2019-01-02</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 270 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>1 min&nbsp;</div>
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-05>2019-12-05</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 512 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
         </div>
 
         
 
         <div class="post-toc" id="post-toc">
                 
-                <div class="post-toc-content">
+                <div class="post-toc-content always-active">
                     <nav id="TableOfContents"></nav>
                 </div>
             </div>
@@ -204,21 +204,17 @@
             
             
             
-            <p>2019年に読んでおきたい書籍のまとめ。おそらく日々の中で色々と新しく読んでみたい本も増えると思うので7冊に厳選してみる。</p>
-<p>#1 <a href="https://www.amazon.co.jp/gp/product/4822253538/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4822253538&amp;linkCode=as2&amp;tag=gutzeit1106-22&amp;linkId=041539f8bed273f23ad3d19e4557fcf2">マスタリングWindows Server 2016 Hyper-V (マイクロソフト関連書)</a><br>
-<img src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=4822253538&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=gutzeit1106-22" align="left"><br clear="left"></p>
-<p>#2 <a href="https://www.amazon.co.jp/gp/product/4822298965/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4822298965&amp;linkCode=as2&amp;tag=gutzeit1106-22&amp;linkId=26d2197e5e8578206f4794dad0b4ba3f">Windows Sysinternals徹底解説 改訂新版 (マイクロソフト公式解説書)</a><br>
-<img src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=4822298965&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=gutzeit1106-22" align="left"><br clear="left"></p>
-<p>#3 <a href="https://www.amazon.co.jp/gp/product/4822253570/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4822253570&amp;linkCode=as2&amp;tag=gutzeit1106-22&amp;linkId=d8bc43770121ea373cb5ec81c7197bc7">インサイドWindows 第7版 上 システムアーキテクチャ、プロセス、スレッド、メモリ管理、他 (マイクロソフト公式解説書) </a><br>
-<img src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=4822253570&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=gutzeit1106-22" align="left"><br clear="left"></p>
-<p>#4<a href="https://www.amazon.co.jp/gp/product/4295004804/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4295004804&amp;linkCode=as2&amp;tag=gutzeit1106-22&amp;linkId=68e6efa086c702ded2a066917ab26889">Kubernetes完全ガイド (impress top gear)</a><br>
-<img src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=4295004804&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=gutzeit1106-22" align="left"><br clear="left"></p>
-<p>#5<a href="https://www.amazon.co.jp/gp/product/B079S4STTV/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B079S4STTV&amp;linkCode=as2&amp;tag=gutzeit1106-22&amp;linkId=d7d689a9bfd9f385d6cf9e1c0940a746">CODE マイクロソフト公式解説</a><br>
-<img src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B079S4STTV&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=gutzeit1106-22" align="left"><br clear="left"></p>
-<p>#6<a href="https://www.amazon.co.jp/gp/product/B01M5FMGDL/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B01M5FMGDL&amp;linkCode=as2&amp;tag=gutzeit1106-22&amp;linkId=08b57f47d365e116a9c746a58ffa815a">コンピュータの構成と設計 第5版 上・下電子合本版</a><br>
-<img src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B01M5FMGDL&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=gutzeit1106-22" align="left"><br clear="left"></p>
-<p>#7<a href="https://www.amazon.co.jp/gp/product/B00BWJX1OK/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00BWJX1OK&amp;linkCode=as2&amp;tag=gutzeit1106-22&amp;linkId=1740fa054d9fb5cd6ab5129199787777">IT技術者なら知っておきたい ストレージの原則と技術</a><br>
-<img src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B00BWJX1OK&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=gutzeit1106-22" align="left"><br clear="left"></p>
+            <p>Mac や SSH で接続した Linux サーバ上でターミナルから操作している時に、既存ファイルをエディタで編集したり、ファイル名を指定して新規にファイルを作成、内容の編集をしたいみたいなことは日常的にあると思います。<br>
+そんな時、今までは vi や emacs を使いがちだったのですが、Visual Studio Code で開いて編集する方法をメモしておきます。
+もちろん Visual Studio  Code のワークスペースにフォルダ追加していけば同じことはできますが、ワークスペースがごちゃごちゃするし、定期的に編集するコードとかじゃなく滅多に編集しない os やミドルウェアの設定ファイルとかだと、どこにファイルあったっけなぁとターミナルで探しながら作業することが多いので、そんな時ターミナルからコマンドで開いて編集できると便利です。</p>
+<ol>
+<li>Visual Studio Code を開いている状態で Command Palette (command + shift + p) を開きます</li>
+<li>Shell Command : Install &lsquo;code&rsquo; command in PATH を選択します</li>
+</ol>
+<p><img src="/img/20191205_vscode_terminal/ShellCommand.png" alt="20191205_vscode_terminal"></p>
+<p>上の手順で、ターミナルで code コマンドから VS code を起動させることが可能です。<br>
+特に使っていて良い点は、Visual Studio Code の Remote Deployment でリモートサーバに SSH 接続している際に、ファイルを編集する時です。
+Remote Deployment でも　code コマンドを有効化しておけば、Desktop を有効化していない Linux でも  VS Code のターミナルから code <FileName> で VS Code でファイル編集ができます。</p>
 
         </div>
 
@@ -236,7 +232,7 @@
             <div class="post-info-md">
                 
                     
-                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2019/01/02/20190102_books2019/index.md" target="_blank"></a></span>
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2019/12/05/20191205_vscode_terminal/index.md" target="_blank"></a></span>
                     
                 
             </div>
@@ -244,18 +240,18 @@
                 
                     <span>
     
-        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f01%2f02%2f20190102_books2019%2f&amp;text=2019%e5%b9%b4%e3%81%ab%e8%aa%ad%e3%81%bf%e3%81%9f%e3%81%84%e6%8a%80%e8%a1%93%e9%96%a2%e9%80%a3%e6%9b%b8%e7%b1%8d%ef%bc%88%e7%a9%8d%e8%aa%ad%e3%83%aa%e3%82%b9%e3%83%88%ef%bc%89&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f05%2f20191205_vscode_terminal%2f&amp;text=%e3%82%bf%e3%83%bc%e3%83%9f%e3%83%8a%e3%83%ab%e3%81%8b%e3%82%89%20Visual%20Studio%20Code%20%e3%82%92%e5%91%bc%e3%81%b3%e5%87%ba%e3%81%99%e6%96%b9%e6%b3%95&amp;via=y10exxx" target="_blank" title="Share on Twitter">
             <i class="fab fa-twitter fa-fw"></i>
         </a>
     
     
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2019%2f01%2f02%2f20190102_books2019%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f05%2f20191205_vscode_terminal%2f" target="_blank" title="Share on Facebook">
             <i class="fab fa-facebook-square fa-fw"></i>
         </a>
     
     
     
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f01%2f02%2f20190102_books2019%2f&amp;title=2019%e5%b9%b4%e3%81%ab%e8%aa%ad%e3%81%bf%e3%81%9f%e3%81%84%e6%8a%80%e8%a1%93%e9%96%a2%e9%80%a3%e6%9b%b8%e7%b1%8d%ef%bc%88%e7%a9%8d%e8%aa%ad%e3%83%aa%e3%82%b9%e3%83%88%ef%bc%89" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f05%2f20191205_vscode_terminal%2f&amp;title=%e3%82%bf%e3%83%bc%e3%83%9f%e3%83%8a%e3%83%ab%e3%81%8b%e3%82%89%20Visual%20Studio%20Code%20%e3%82%92%e5%91%bc%e3%81%b3%e5%87%ba%e3%81%99%e6%96%b9%e6%b3%95" target="_blank" title="Share on LinkedIn">
             <i class="fab fa-linkedin fa-fw"></i>
         </a>
     
@@ -276,11 +272,15 @@
             
                 
                     <span class="tag">
-                        <a href="https://yonehub.y10e.com/tags/book/"><i class="fas fa-tag fa-fw"></i>Book</a>
+                        <a href="https://yonehub.y10e.com/tags/visual-studio-code/"><i class="fas fa-tag fa-fw"></i>Visual Studio Code</a>
                     </span>
                 
                     <span class="tag">
-                        <a href="https://yonehub.y10e.com/tags/tech/"><i class="fas fa-tag fa-fw"></i>Tech</a>
+                        <a href="https://yonehub.y10e.com/tags/tips/"><i class="fas fa-tag fa-fw"></i>Tips</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/mac/"><i class="fas fa-tag fa-fw"></i>Mac</a>
                     </span>
                 
             
@@ -292,8 +292,8 @@
 
     <div class="post-nav">
         
+            <a href="https://yonehub.y10e.com/2019/11/29/20191130_dapr_aks_helloworld/" class="prev" rel="prev" title="Azure Kubernetes Service(AKS) で Dapr を動かす(HelloWord編)"><i class="fas fa-angle-left fa-fw"></i>Azure Kubernetes Service(AKS) で Dapr を動かす(HelloWord編)</a>
         
-            <a href="https://yonehub.y10e.com/2019/02/11/20190211_docker_linklist/" class="next" rel="next" title="Docker Reference List">Docker Reference List<i class="fas fa-angle-right fa-fw"></i></a>
         
     </div>
 </div>
