@@ -12,9 +12,18 @@
             <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
         
         
-            <lastBuildDate>Thu, 05 Dec 2019 22:47:23 +0900</lastBuildDate>
+            <lastBuildDate>Thu, 12 Dec 2019 12:47:23 +0900</lastBuildDate>
         
         <atom:link href="https://yonehub.y10e.com/posts/" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>Git での Tag 管理</title>
+                <link>https://yonehub.y10e.com/2019/12/12/20191207_github_release/</link>
+                <pubDate>Thu, 12 Dec 2019 12:47:23 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/12/12/20191207_github_release/</guid>
+                <description>はじめに git における tag はコミットの別名（alias）である。なので、tag はコミット単位で設定される。 tag はコミットに対してわかりやすいように、例えば version などの意味を持った値が設定される。(v0.1, v0.2など) よくある操作を次にまとめる。 作成（CREATE） コメントなしでシンプルな tag を作成する場合は次の通りになる。 1 git tag &amp;lt;tag&amp;gt; コメント付きで tag を作成する場合は以下となる。 1 git tag -a &amp;lt;tag&amp;gt; -m &amp;#39;&amp;lt;Comment&amp;gt;&amp;#39; この時、コミットを指</description>
+            </item>
         
             <item>
                 <title>ターミナルから Visual Studio Code を呼び出す方法</title>
@@ -140,15 +149,6 @@
                 
                 <guid>https://yonehub.y10e.com/2019/07/07/20190707_azure_sql/</guid>
                 <description>Azure SQL Database サーバ Azure SQL Databaseサーバは、各種機能の中央管理をおこなう論理的リソースで、以下のような管理機能を提供している。 データベースアクセス（ログイン） Firewall Rule 監査規則 脅威検出ポリシー（SQLインジェクション、ブルートフォース攻撃など） 自動フェールオーバーグループ Azure SQL Databaseサーバは、Database を作成するにあたって事前に存在している必要がある。 Azure SQL Database Azure SQL Databaseには、次の3つ</description>
-            </item>
-        
-            <item>
-                <title>Azure Active Directoryの要点整理(2019/07)</title>
-                <link>https://yonehub.y10e.com/2019/07/07/20190707_azure_ad/</link>
-                <pubDate>Sun, 07 Jul 2019 00:00:00 +0900</pubDate>
-                
-                <guid>https://yonehub.y10e.com/2019/07/07/20190707_azure_ad/</guid>
-                <description>Azure AD の価格プランによる機能比較 FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。 BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は1008円/月 参考:Azure Active Directory のプラン機能対応表 ※PREMIUM P1以上が必要な主な機能 MFA(Multi-Factor Authentication)の有効化 Azure AD Connect Health 条件付きアクセス Cloud App Discovery(組織で利用しているクラウドアプリケーションの利用状況の可視化) ※PREMIUM P2以上が必</description>
             </item>
         
     </channel>

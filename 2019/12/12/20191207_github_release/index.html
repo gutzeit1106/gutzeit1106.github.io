@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Git での Tag 管理 | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="Cloud Engineer&#39;s blog">
+<link rel="prev" href="https://yonehub.y10e.com/2019/12/05/20191205_vscode_terminal/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2019/12/12/20191207_github_release/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+  <meta name="twitter:title" content="Git での Tag 管理" />
+  <meta name="twitter:description" content="はじめに git における tag はコミットの別名（alias）である。なので、tag はコミット単位で設定される。 tag はコミットに対してわかりやすいように、例えば version などの意味を持った値が設定される。(v0.1, v0.2など) よくある操作を次にまとめる。 作成（CREATE） コメントなしでシンプルな tag を作成する場合は次の通りになる。 1 git tag …">
+  <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
+  
+<meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y10exxx" />
+  <meta name="twitter:creator" content="@y10exxx" /><script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Git での Tag 管理",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/yonehub.y10e.com\/2019\/12\/12\/20191207_github_release\/"
+    },
+    
+    "genre": "posts",
+    
+        "keywords": "Git, github",
+    
+    "wordcount":  771 ,
+    "url": "https:\/\/yonehub.y10e.com\/2019\/12\/12\/20191207_github_release\/",
+    
+        "datePublished": "2019-12-12T12:47:23\x2b09:00",
+    
+    
+        "dateModified": "2019-12-12T12:47:23\x2b09:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Yusuke.Yoneda",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/yonehub.y10e.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            if (!window.localStorage.getItem('theme')){
+                var current = new Date();
+                if (current.getHours() >= 23 || current.getHours() <= 4){
+                    window.localStorage.setItem('theme', 'dark');
+                    location.reload();
+                }else{
+                    window.localStorage.setItem('theme', 'light');
+                }
+            }
+
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://yonehub.y10e.com/">YONEHUB</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://yonehub.y10e.com/">YONEHUB</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Git での Tag 管理</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/tech/">Tech</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-12>2019-12-12</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 771 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                
+                <div class="post-toc-content always-active">
+                    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#heading">はじめに</a></li>
+        <li><a href="#create">作成（CREATE）</a></li>
+        <li><a href="#read">参照（READ）</a></li>
+        <li><a href="#update">更新（UPDATE）</a></li>
+        <li><a href="#delete">削除（DELETE）</a></li>
+        <li><a href="#-sync">リモートリポジトリとの Sync</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Index</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#heading">はじめに</a></li>
+        <li><a href="#create">作成（CREATE）</a></li>
+        <li><a href="#read">参照（READ）</a></li>
+        <li><a href="#update">更新（UPDATE）</a></li>
+        <li><a href="#delete">削除（DELETE）</a></li>
+        <li><a href="#-sync">リモートリポジトリとの Sync</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <a class="post-dummy-target" id="heading"></a><h3>はじめに</h3>
+<p>git における tag はコミットの別名（alias）である。なので、tag はコミット単位で設定される。
+tag はコミットに対してわかりやすいように、例えば version などの意味を持った値が設定される。(v0.1, v0.2など)
+よくある操作を次にまとめる。</p>
+<a class="post-dummy-target" id="create"></a><h3>作成（CREATE）</h3>
+<p>コメントなしでシンプルな tag を作成する場合は次の通りになる。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git tag &lt;tag&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>コメント付きで tag を作成する場合は以下となる。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git tag -a &lt;tag&gt; -m <span class="s1">&#39;&lt;Comment&gt;&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>この時、コミットを指定しなかった場合は、現在のブランチの最新のコミットに対して設定される。
+後から特定のコミットに対して tag を設定したい場合は、git log などで commit の id を確認し指定すれば良い。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git tag -a &lt;tag&gt; -m -m <span class="s1">&#39;&lt;Comment&gt;&#39;</span> Commit
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="read"></a><h3>参照（READ）</h3>
+<p>tagの一覧を表示する。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git tag
+</code></pre></td></tr></table>
+</div>
+</div><p>特定の tag の内容を確認する　</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git show &lt;tag&gt;
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="update"></a><h3>更新（UPDATE）</h3>
+<p>1 コミットに対して、tag を複数設定することができる。なので一時的に tag を追加し、その後古い tag を削除することで更新できる。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ git tag &lt;newtag&gt; &lt;oldtag&gt;
+$ git tag -d &lt;oldtag&gt;
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="delete"></a><h3>削除（DELETE）</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git tag -d &lt;tag&gt;
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="-sync"></a><h3>リモートリポジトリとの Sync</h3>
+<p>上の状態では tag はあくまでローカルの情報に過ぎないため、github などのリモートリボジトリと tag 情報を共有するためには、push or pull する必要がある。
+また注意したい点として、通常のファイルの push / pull とは異なるコマンドの実行が必要となる。
+ローカルの tag をリモートリポジトリに共有するためには次のコマンドを実行する。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git push &lt;RemoteRepository&gt; &lt;tag&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>なので、デフォルトの origin へ push する場合は次のコマンドを実行することになる。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git push origin &lt;tag&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>特定の tag でなく全ての tag を push したいときもある。そういうときは、 &ndash;tags をつける。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git push origin --tags
+</code></pre></td></tr></table>
+</div>
+</div><p>逆にリモートリポジトリから pull するときは、次のコマンドで良い。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git pull &lt;RemoteRepository&gt; --tags
+</code></pre></td></tr></table>
+</div>
+</div><p>また、リモートリポジトリから tag の情報を削除するときにも注意が必要。git tag -d <tag>で削除した後、次の方法で push する。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git push &lt;RemoteRepository&gt; :&lt;DeletedTag&gt;
+</code></pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2019-12-12</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2019/12/12/20191207_github_release/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f12%2f20191207_github_release%2f&amp;text=Git%20%e3%81%a7%e3%81%ae%20Tag%20%e7%ae%a1%e7%90%86&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f12%2f20191207_github_release%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+    
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f12%2f20191207_github_release%2f&amp;title=Git%20%e3%81%a7%e3%81%ae%20Tag%20%e7%ae%a1%e7%90%86" target="_blank" title="Share on LinkedIn">
+            <i class="fab fa-linkedin fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/git/"><i class="fas fa-tag fa-fw"></i>Git</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/github/"><i class="fas fa-tag fa-fw"></i>github</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://yonehub.y10e.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://yonehub.y10e.com/2019/12/05/20191205_vscode_terminal/" class="prev" rel="prev" title="ターミナルから Visual Studio Code を呼び出す方法"><i class="fas fa-angle-left fa-fw"></i>ターミナルから Visual Studio Code を呼び出す方法</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            　　<div id="disqus_thread"></div>
+        <script>
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yonehub.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2019</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://yonehub.y10e.com/">Yusuke.Yoneda</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133674179-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>

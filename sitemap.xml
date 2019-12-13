@@ -3,7 +3,7 @@
         <url>
             <loc>https://yonehub.y10e.com/categories/</loc>
             
-                <lastmod>2019-12-04T20:49:50+09:00</lastmod>
+                <lastmod>2019-12-12T12:47:23+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -15,9 +15,9 @@
         </url>
     
         <url>
-            <loc>https://yonehub.y10e.com/categories/development/</loc>
+            <loc>https://yonehub.y10e.com/tags/git/</loc>
             
-                <lastmod>2019-12-04T20:49:50+09:00</lastmod>
+                <lastmod>2019-12-12T12:47:23+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -29,9 +29,23 @@
         </url>
     
         <url>
-            <loc>https://yonehub.y10e.com/tags/mac/</loc>
+            <loc>https://yonehub.y10e.com/2019/12/12/20191207_github_release/</loc>
             
-                <lastmod>2019-12-04T20:49:50+09:00</lastmod>
+                <lastmod>2019-12-12T12:47:23+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/tags/github/</loc>
+            
+                <lastmod>2019-12-12T12:47:23+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -45,7 +59,7 @@
         <url>
             <loc>https://yonehub.y10e.com/posts/</loc>
             
-                <lastmod>2019-12-04T20:49:50+09:00</lastmod>
+                <lastmod>2019-12-12T12:47:23+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -59,7 +73,7 @@
         <url>
             <loc>https://yonehub.y10e.com/tags/</loc>
             
-                <lastmod>2019-12-04T20:49:50+09:00</lastmod>
+                <lastmod>2019-12-12T12:47:23+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -71,23 +85,9 @@
         </url>
     
         <url>
-            <loc>https://yonehub.y10e.com/tags/tips/</loc>
+            <loc>https://yonehub.y10e.com/categories/tech/</loc>
             
-                <lastmod>2019-12-04T20:49:50+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://yonehub.y10e.com/tags/visual-studio-code/</loc>
-            
-                <lastmod>2019-12-04T20:49:50+09:00</lastmod>
+                <lastmod>2019-12-12T12:47:23+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -101,7 +101,63 @@
         <url>
             <loc>https://yonehub.y10e.com/</loc>
             
-                <lastmod>2019-12-04T20:49:50+09:00</lastmod>
+                <lastmod>2019-12-12T12:47:23+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/categories/development/</loc>
+            
+                <lastmod>2019-12-07T21:36:35+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/tags/mac/</loc>
+            
+                <lastmod>2019-12-07T21:36:35+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/tags/tips/</loc>
+            
+                <lastmod>2019-12-07T21:36:35+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/tags/visual-studio-code/</loc>
+            
+                <lastmod>2019-12-07T21:36:35+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -115,7 +171,7 @@
         <url>
             <loc>https://yonehub.y10e.com/2019/12/05/20191205_vscode_terminal/</loc>
             
-                <lastmod>2019-12-04T20:49:50+09:00</lastmod>
+                <lastmod>2019-12-07T21:36:35+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -491,20 +547,6 @@
         </url>
     
         <url>
-            <loc>https://yonehub.y10e.com/tags/git/</loc>
-            
-                <lastmod>2019-11-28T04:32:41+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>https://yonehub.y10e.com/2019/10/22/20191022_hugo_githubio/</loc>
             
                 <lastmod>2019-11-28T04:32:41+09:00</lastmod>
@@ -688,34 +730,6 @@
     
         <url>
             <loc>https://yonehub.y10e.com/2019/06/16/20190616_ntlm/</loc>
-            
-                <lastmod>2019-11-28T00:32:08+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://yonehub.y10e.com/categories/tech/</loc>
-            
-                <lastmod>2019-12-04T20:49:50+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://yonehub.y10e.com/tags/github/</loc>
             
                 <lastmod>2019-11-28T00:32:08+09:00</lastmod>
             
