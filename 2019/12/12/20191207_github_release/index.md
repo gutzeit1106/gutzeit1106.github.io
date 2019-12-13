@@ -23,7 +23,7 @@ git tag -a <tag> -m '<Comment>'
 後から特定のコミットに対して tag を設定したい場合は、git log などで commit の id を確認し指定すれば良い。
 
 ```sh
-git tag -a <tag> -m -m '<Comment>' Commit
+git tag -a <tag> -m '<Comment>' Commit
 ```
 
 ### 参照（READ）
