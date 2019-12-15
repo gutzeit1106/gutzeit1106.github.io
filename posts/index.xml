@@ -12,9 +12,18 @@
             <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
         
         
-            <lastBuildDate>Thu, 12 Dec 2019 12:47:23 +0900</lastBuildDate>
+            <lastBuildDate>Sat, 14 Dec 2019 12:47:23 +0900</lastBuildDate>
         
         <atom:link href="https://yonehub.y10e.com/posts/" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>Azure Container Instances の起動・停止・再起動 by Azure Powershell</title>
+                <link>https://yonehub.y10e.com/2019/12/14/20191214_azure_aci_cmd/</link>
+                <pubDate>Sat, 14 Dec 2019 12:47:23 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/12/14/20191214_azure_aci_cmd/</guid>
+                <description>はじめに Azure Container Instances を Azure Powershell で操作しようとコマンド一覧を確認していたが、次の通り Get（参照）, New（作成）, Remove（削除）などしか用意されていない。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 PS Azure:\&amp;gt; gcm *Az*ContainerGroup* CommandType Name Version Source ----------- ---- ------- ------ Alias Get-AzureRmContainerGroup Alias New-AzureRmContainerGroup Alias Remove-AzureRmContainerGroup Cmdlet Get-AzContainerGroup 1.0.1 Az.ContainerInstance Cmdlet New-AzContainerGroup 1.0.1 Az.ContainerInstance Cmdlet Remove-AzContainerGroup 1.0.1 Az.ContainerInstance Azure:/ PS Azure:\&amp;gt; gcm *Az*ContainerInstance* CommandType Name Version Source ----------- ---- ------- ------ Alias Get-AzureRmContainerInstanceLog Cmdlet Get-AzContainerInstanceLog 1.0.1 Az.ContainerInstance REST API では、start、stop、restart も用意されているけど、Azure Powershell のコマンドとしては提供されていないみ</description>
+            </item>
         
             <item>
                 <title>Git での Tag 管理</title>
@@ -140,15 +149,6 @@
                 
                 <guid>https://yonehub.y10e.com/2019/10/21/20191021_rust/</guid>
                 <description>Mac OSにRustをインストールして実行するまでのメモです。 手順 まずはターミナルで次のコマンドを実行する。（選択肢が出たら、1のdefaultで良いと思う） 1 curl --proto &amp;#39;=https&amp;#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh ターミナルを再起動するか、以下のコマンドを実行してパスを通す。 1 source ~/.bash_profile インストール後はrustcのバージョンを確認する。 1 2 rustc --version rustc 1.38.0 (625451e37 2019-09-23) インストールが確認できたら適当なパスにhello.rsという名称でファイルを作り、エディタで内</description>
-            </item>
-        
-            <item>
-                <title>Azure SQL DatabaseとCosmosDBの要点整理(2019/7)</title>
-                <link>https://yonehub.y10e.com/2019/07/07/20190707_azure_sql/</link>
-                <pubDate>Sun, 07 Jul 2019 00:00:01 +0900</pubDate>
-                
-                <guid>https://yonehub.y10e.com/2019/07/07/20190707_azure_sql/</guid>
-                <description>Azure SQL Database サーバ Azure SQL Databaseサーバは、各種機能の中央管理をおこなう論理的リソースで、以下のような管理機能を提供している。 データベースアクセス（ログイン） Firewall Rule 監査規則 脅威検出ポリシー（SQLインジェクション、ブルートフォース攻撃など） 自動フェールオーバーグループ Azure SQL Databaseサーバは、Database を作成するにあたって事前に存在している必要がある。 Azure SQL Database Azure SQL Databaseには、次の3つ</description>
             </item>
         
     </channel>

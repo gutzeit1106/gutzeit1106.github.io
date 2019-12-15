@@ -219,6 +219,51 @@
     
     
     <h1 class="post-title post-list-title" itemprop="name headline">
+        <a href="https://yonehub.y10e.com/2019/12/14/20191214_azure_aci_cmd/">Azure Container Instances の起動・停止・再起動 by Azure Powershell</a>
+    </h1>
+
+    <div class="post-meta">
+        <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+        published on&nbsp;<time datetime=2019-12-14>2019-12-14</time>&nbsp;
+        <span class="post-category">
+                included in
+                <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/cloud/">Cloud</a>
+                    
+            </span>
+    </div>
+    <div class="post-content">
+        
+            
+            
+            
+            
+            
+            
+            
+            はじめに Azure Container Instances を Azure Powershell で操作しようとコマンド一覧を確認していたが、次の通り Get（参照）, New（作成）, Remove（削除）などしか用意されていない。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 PS Azure:\&gt; gcm *Az*ContainerGroup* CommandType Name Version Source ----------- ---- ------- ------ Alias Get-AzureRmContainerGroup Alias New-AzureRmContainerGroup Alias Remove-AzureRmContainerGroup Cmdlet Get-AzContainerGroup 1.0.1 Az.ContainerInstance Cmdlet New-AzContainerGroup 1.0.1 Az.ContainerInstance Cmdlet Remove-AzContainerGroup 1.0.1 Az.ContainerInstance Azure:/ PS Azure:\&gt; gcm *Az*ContainerInstance* CommandType Name Version Source ----------- ---- ------- ------ Alias Get-AzureRmContainerInstanceLog Cmdlet Get-AzContainerInstanceLog 1.0.1 Az.ContainerInstance REST API では、start、stop、restart も用意されているけど、Azure Powershell のコマンドとしては提供されていないみ
+        
+    </div>
+    <div class="post-footer">
+        <a href="https://yonehub.y10e.com/2019/12/14/20191214_azure_aci_cmd/">Read More</a>
+        
+            <div class="post-tags">
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/azure/"><i class="fas fa-tag fa-fw"></i>azure</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/container/"><i class="fas fa-tag fa-fw"></i>container</a></span>
+                
+            </div>
+        
+    </div>
+</article><article class="post" itemscope itemtype="http://schema.org/Article">
+    
+    
+    
+
+    
+    
+    
+    <h1 class="post-title post-list-title" itemprop="name headline">
         <a href="https://yonehub.y10e.com/2019/12/12/20191207_github_release/">Git での Tag 管理</a>
     </h1>
 
@@ -227,7 +272,7 @@
         published on&nbsp;<time datetime=2019-12-12>2019-12-12</time>&nbsp;
         <span class="post-category">
                 included in
-                <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/tech/">Tech</a>
+                <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/development/">Development</a>
                     
             </span>
     </div>
@@ -539,53 +584,6 @@
                     &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/container/"><i class="fas fa-tag fa-fw"></i>container</a></span>
                 
                     &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/microsoft/"><i class="fas fa-tag fa-fw"></i>Microsoft</a></span>
-                
-            </div>
-        
-    </div>
-</article><article class="post" itemscope itemtype="http://schema.org/Article">
-    
-    
-    
-
-    
-    
-    
-    <h1 class="post-title post-list-title" itemprop="name headline">
-        <a href="https://yonehub.y10e.com/2019/11/11/20191111_raspberrypi_setup/">Raspberry Pi用にRaspbianのインストール(Mac)</a>
-    </h1>
-
-    <div class="post-meta">
-        <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
-        published on&nbsp;<time datetime=2019-11-11>2019-11-11</time>&nbsp;
-        <span class="post-category">
-                included in
-                <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/iot/">IoT</a>
-                    
-            </span>
-    </div>
-    <div class="post-content">
-        
-            
-            
-            
-            
-            
-            
-            
-            Raspberry Pi 用の Micro SD カードに Raspbian をインストール手順を時間があくととすぐ忘れてしまうので手順をメモしておく。 1. SDカードの選別 基本的に SD カードのサイズは、マイクロSDカードが必要（ただし Raspberry Pi Model A およびRaspberry Pi Model B は、フル SD カード） NOOBS、Raspbianのイメージインストールは最小推奨で 8GB 以上なので、それ以上のサイズが必要。 カードのスループットに推奨値はないみたいだが、自分は大体 Class 10 以上を使っ
-        
-    </div>
-    <div class="post-footer">
-        <a href="https://yonehub.y10e.com/2019/11/11/20191111_raspberrypi_setup/">Read More</a>
-        
-            <div class="post-tags">
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/mac/"><i class="fas fa-tag fa-fw"></i>Mac</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/raspbian/"><i class="fas fa-tag fa-fw"></i>Raspbian</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/raspberrypi/"><i class="fas fa-tag fa-fw"></i>RaspberryPi</a></span>
                 
             </div>
         
