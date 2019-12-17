@@ -12,9 +12,18 @@
             <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
         
         
-            <lastBuildDate>Sat, 14 Dec 2019 12:47:23 +0900</lastBuildDate>
+            <lastBuildDate>Tue, 17 Dec 2019 12:47:23 +0900</lastBuildDate>
         
         <atom:link href="https://yonehub.y10e.com/posts/" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>Azure の自動スケール操作を webhook で Microsoft Teams / Slack に通知する</title>
+                <link>https://yonehub.y10e.com/2019/12/17/20191217_azure_webhook/</link>
+                <pubDate>Tue, 17 Dec 2019 12:47:23 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/12/17/20191217_azure_webhook/</guid>
+                <description>はじめに Azure では、 Cloud Service や Webapp、VM Scaleset などの各種リソースであ事前に設定した条件に応じて自動でインスタンス数を増減させる自動スケールの機能が用意されています。 システムの CPU 負荷などに応じて自動でリソース体制をアジャストできるためとてもクラウドらしい機能かと思いますが、運用を考えると、自動スケールが動作した際に e-mail や Slack、Microsoft Teams などに自動通知したいなどの要望も自然と出てきます。 e-mail は</description>
+            </item>
         
             <item>
                 <title>Azure Container Instances の起動・停止・再起動 by Azure Powershell</title>
@@ -140,15 +149,6 @@
                 
                 <guid>https://yonehub.y10e.com/2019/10/22/20191022_hugo_githubio/</guid>
                 <description>クラウドのVM上でWordpressで公開していたブログをgithub pages + Hugoに移行してみた。 Hugoは静的サイトジェネレータの一つで、Go言語で作られています。MarkDown等の記述性の高い形式で書かれたファイルを指定したデザインテーマでHTML + CSSのWEBコンテンツに変換してくれます。 Why GitHub Pages? 第一の理由はコストです。クラウドとはいえ Web Server の稼働代金も1000円/月程度かかるので無料で使え</description>
-            </item>
-        
-            <item>
-                <title>MacにRustをインストールしてHelloWorldするまで</title>
-                <link>https://yonehub.y10e.com/2019/10/21/20191021_rust/</link>
-                <pubDate>Mon, 21 Oct 2019 21:26:08 +0900</pubDate>
-                
-                <guid>https://yonehub.y10e.com/2019/10/21/20191021_rust/</guid>
-                <description>Mac OSにRustをインストールして実行するまでのメモです。 手順 まずはターミナルで次のコマンドを実行する。（選択肢が出たら、1のdefaultで良いと思う） 1 curl --proto &amp;#39;=https&amp;#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh ターミナルを再起動するか、以下のコマンドを実行してパスを通す。 1 source ~/.bash_profile インストール後はrustcのバージョンを確認する。 1 2 rustc --version rustc 1.38.0 (625451e37 2019-09-23) インストールが確認できたら適当なパスにhello.rsという名称でファイルを作り、エディタで内</description>
             </item>
         
     </channel>
