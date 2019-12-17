@@ -22,7 +22,7 @@
                 <pubDate>Tue, 17 Dec 2019 12:47:23 +0900</pubDate>
                 
                 <guid>https://yonehub.y10e.com/2019/12/17/20191217_azure_webhook/</guid>
-                <description>はじめに Azure では、 Cloud Service や Webapp、VM Scaleset などの各種リソースであ事前に設定した条件に応じて自動でインスタンス数を増減させる自動スケールの機能が用意されています。 システムの CPU 負荷などに応じて自動でリソース体制をアジャストできるためとてもクラウドらしい機能かと思いますが、運用を考えると、自動スケールが動作した際に e-mail や Slack、Microsoft Teams などに自動通知したいなどの要望も自然と出てきます。 e-mail は</description>
+                <description>はじめに Azure では、 Cloud Service や Webapp、VM Scaleset などの各種リソースで事前に設定した条件に応じて自動でインスタンス数を増減させる自動スケールの機能が用意されています。 システムの CPU 負荷などに応じて自動でリソース体制をアジャストできるためとてもクラウドらしい機能かと思いますが、運用を考えると、自動スケールが動作した際に e-mail や Slack、Microsoft Teams などに自動通知したいなどの要望も自然と出てきます。 e-mail は比</description>
             </item>
         
             <item>
