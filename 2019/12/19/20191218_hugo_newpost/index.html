@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>hugo new 実行時に生成されるデフォルトテンプレートをカスタマイズする | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="Cloud Engineer&#39;s blog">
+<link rel="prev" href="https://yonehub.y10e.com/2019/12/17/20191217_azure_webhook/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2019/12/19/20191218_hugo_newpost/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+  <meta name="twitter:title" content="hugo new 実行時に生成されるデフォルトテンプレートをカスタマイズする" />
+  <meta name="twitter:description" content="はじめに hugo で、ブログ post を追加する時は、次のコマンドで新しい markdown ファイルを生成することができる。 1 hugo new posts/20191218_hugo_newpost.md この時、デフォルトだとこんな感じのシンプルな内容が含まれるが、これを任意にカスタマイズする方法を考える。 1 2 3 4 5 --- title: &#34;hugo new 時に生成 …">
+  <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
+  
+<meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y10exxx" />
+  <meta name="twitter:creator" content="@y10exxx" /><script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "hugo new 実行時に生成されるデフォルトテンプレートをカスタマイズする",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/yonehub.y10e.com\/2019\/12\/19\/20191218_hugo_newpost\/"
+    },
+    
+    "genre": "posts",
+    
+        "keywords": "go, hugo, markdown, blog",
+    
+    "wordcount":  937 ,
+    "url": "https:\/\/yonehub.y10e.com\/2019\/12\/19\/20191218_hugo_newpost\/",
+    
+        "datePublished": "2019-12-19T18:05:54\x2b09:00",
+    
+    
+        "dateModified": "2019-12-19T18:05:54\x2b09:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Yusuke.Yoneda",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/yonehub.y10e.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            if (!window.localStorage.getItem('theme')){
+                var current = new Date();
+                if (current.getHours() >= 23 || current.getHours() <= 4){
+                    window.localStorage.setItem('theme', 'dark');
+                    location.reload();
+                }else{
+                    window.localStorage.setItem('theme', 'light');
+                }
+            }
+
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://yonehub.y10e.com/">YONEHUB</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://yonehub.y10e.com/">YONEHUB</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">hugo new 実行時に生成されるデフォルトテンプレートをカスタマイズする</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/development/">Development</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-19>2019-12-19</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 937 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                
+                <div class="post-toc-content always-active">
+                    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#heading">はじめに</a></li>
+        <li><a href="#heading1">方法</a></li>
+        <li><a href="#heading2">適用</a></li>
+        <li><a href="#x-markdown-cheetsheet">x. Markdown CheetSheet</a></li>
+        <li><a href="#list">List</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Index</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#heading">はじめに</a></li>
+        <li><a href="#heading1">方法</a></li>
+        <li><a href="#heading2">適用</a></li>
+        <li><a href="#x-markdown-cheetsheet">x. Markdown CheetSheet</a></li>
+        <li><a href="#list">List</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <a class="post-dummy-target" id="heading"></a><h3>はじめに</h3>
+<p>hugo で、ブログ post を追加する時は、次のコマンドで新しい markdown ファイルを生成することができる。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">hugo new posts/20191218_hugo_newpost.md
+</code></pre></td></tr></table>
+</div>
+</div><p>この時、デフォルトだとこんな感じのシンプルな内容が含まれるが、これを任意にカスタマイズする方法を考える。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">---
+title: &#34;hugo new 時に生成されるデフォルトテンプレートをカスタマイズする&#34;
+date: 2019-12-19T18:05:54+09:00
+draft: true
+---
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="heading1"></a><h3>方法</h3>
+<p>hugo 公式に詳細な説明があった。</p>
+<p>Archetypes<br>
+<a href="https://gohugo.io/content-management/archetypes/">https://gohugo.io/content-management/archetypes/</a></p>
+<p>次の 4 つのファイルを上から参照し、最初に見つかったファイルの設定に応じて新しい md ファイルが生成される。</p>
+<ol>
+<li>archetypes/posts.md</li>
+<li>archetypes/default.md</li>
+<li>themes/my-theme/archetypes/posts.md</li>
+<li>themes/my-theme/archetypes/default.md</li>
+</ol>
+<p>というわけで 1 の archetypes/posts.md に好みのテンプレートを設定してみる。</p>
+<a class="post-dummy-target" id="heading2"></a><h3>適用</h3>
+<p>post するときの設定に加えて、markdown のチートシートも記載しておく。これで生成される md に最初から cheet cheet が含まれるので新しい記事を書こうとするたびに忘れた markdown 記法を調べる時間が削減できる。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-md" data-lang="md">---
+title: &#34;xxx&#34;
+date: {{ .Date }}
+draft: true
+categories: [&#34;&#34;]
+tags: [&#34;&#34;,&#34;&#34;,&#34;&#34;]
+Authors: &#34;Yusuke Yoneda&#34;
+comment: true
+toc: true
+autoCollapseToc: false
+math: true
+---
+
+<span class="gu">### 1. はじめに
+</span><span class="gu"></span>xxxx
+
+<span class="gu">### x. Markdown CheetSheet
+</span><span class="gu"></span>
+<span class="gu">#### Text Format
+</span><span class="gu"></span>
+<span class="ge">_Italic（斜体）_</span>
+*Italic（斜体）*
+
+<span class="gs">__Emphasis（強調）</span><span class="gs">__</span>
+<span class="gs">**Emphasis（強調）</span><span class="gs">**</span>
+
+<span class="gd">~~Strikethrough（取り消し線）~~</span>
+
+&lt;details&gt;&lt;summary&gt;これは詳細表示の例です。&lt;/summary&gt;詳細をこっちに書きます。&lt;/details&gt;
+
+This is <span class="sb">`inline`</span>.
+
+<span class="gu">### List
+</span><span class="gu"></span><span class="k">*</span> text
+    <span class="k">*</span> test
+    <span class="k">*</span> test
+
+<span class="k">-</span> text
+    <span class="k">-</span> test
+    <span class="k">-</span> test
+
+<span class="k">1.</span> text
+<span class="k">1.</span> test
+    <span class="k">1.</span> test
+
+<span class="gu">#### Horizontal rules
+</span><span class="gu"></span><span class="k">*</span> * *
+***
+<span class="gs">**</span><span class="gs">**</span>*
+<span class="k">-</span> - -
+---------------------------------------
+
+<span class="gu">#### Blockquotes（引用）
+</span><span class="gu"></span><span class="k">&gt; </span><span class="ge">This is Blockquotes
+</span><span class="ge"></span>
+<span class="gu">#### Links（参照）
+</span><span class="gu"></span>[<span class="nt">yonehub blog</span>](<span class="na">https://yonehub.y10e.com/</span>)
+
+<span class="gu">#### Images（画像）
+</span><span class="gu"></span>![<span class="nt">sample</span>](<span class="na">/img/sample/sample.png</span>)
+
+<span class="gu">#### Tables（表）
+</span><span class="gu"></span>| id     | name    | date       |
+| ------ | ------- | ---------- |
+| 1      | test    | 2019-01-01 |
+| 2      | test    | 2019-01-02 |
+| 3      | test    | 2019-01-03 |
+</code></pre></td></tr></table>
+</div>
+</div><p>ちなみに 上の markdown が実際に html として適用されると以下の感じになる。</p>
+<a class="post-dummy-target" id="x-markdown-cheetsheet"></a><h3>x. Markdown CheetSheet</h3>
+<a class="post-dummy-target" id="text-format"></a><h4>Text Format</h4>
+<p><em>Italic（斜体）</em>
+<em>Italic（斜体）</em></p>
+<p><strong>Emphasis（強調）</strong>
+<strong>Emphasis（強調）</strong></p>
+<p><del>Strikethrough（取り消し線）</del></p>
+<details><summary>これは詳細表示の例です。</summary>詳細をこっちに書きます。</details>
+<p>This is <code>inline</code>.</p>
+<a class="post-dummy-target" id="list"></a><h3>List</h3>
+<ul>
+<li>text
+<ul>
+<li>test</li>
+<li>test</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>text
+<ul>
+<li>test</li>
+<li>test</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>text</li>
+<li>test
+<ol>
+<li>test</li>
+</ol>
+</li>
+</ol>
+<a class="post-dummy-target" id="horizontal-rules"></a><h4>Horizontal rules</h4>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<a class="post-dummy-target" id="blockquotes"></a><h4>Blockquotes（引用）</h4>
+<blockquote>
+<p>This is Blockquotes</p>
+</blockquote>
+<a class="post-dummy-target" id="links"></a><h4>Links（参照）</h4>
+<p><a href="https://yonehub.y10e.com/">yonehub blog</a></p>
+<a class="post-dummy-target" id="images"></a><h4>Images（画像）</h4>
+<p><img src="/img/sample/sample.png" alt="sample"></p>
+<a class="post-dummy-target" id="tables"></a><h4>Tables（表）</h4>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>test</td>
+<td>2019-01-01</td>
+</tr>
+<tr>
+<td>2</td>
+<td>test</td>
+<td>2019-01-02</td>
+</tr>
+<tr>
+<td>3</td>
+<td>test</td>
+<td>2019-01-03</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2019-12-19</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2019/12/19/20191218_hugo_newpost/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f19%2f20191218_hugo_newpost%2f&amp;text=hugo%20new%20%e5%ae%9f%e8%a1%8c%e6%99%82%e3%81%ab%e7%94%9f%e6%88%90%e3%81%95%e3%82%8c%e3%82%8b%e3%83%87%e3%83%95%e3%82%a9%e3%83%ab%e3%83%88%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88%e3%82%92%e3%82%ab%e3%82%b9%e3%82%bf%e3%83%9e%e3%82%a4%e3%82%ba%e3%81%99%e3%82%8b&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f19%2f20191218_hugo_newpost%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+    
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f19%2f20191218_hugo_newpost%2f&amp;title=hugo%20new%20%e5%ae%9f%e8%a1%8c%e6%99%82%e3%81%ab%e7%94%9f%e6%88%90%e3%81%95%e3%82%8c%e3%82%8b%e3%83%87%e3%83%95%e3%82%a9%e3%83%ab%e3%83%88%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88%e3%82%92%e3%82%ab%e3%82%b9%e3%82%bf%e3%83%9e%e3%82%a4%e3%82%ba%e3%81%99%e3%82%8b" target="_blank" title="Share on LinkedIn">
+            <i class="fab fa-linkedin fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/go/"><i class="fas fa-tag fa-fw"></i>go</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/hugo/"><i class="fas fa-tag fa-fw"></i>hugo</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/markdown/"><i class="fas fa-tag fa-fw"></i>markdown</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/blog/"><i class="fas fa-tag fa-fw"></i>blog</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://yonehub.y10e.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://yonehub.y10e.com/2019/12/17/20191217_azure_webhook/" class="prev" rel="prev" title="Azure の自動スケール操作を webhook で Microsoft Teams / Slack に通知する"><i class="fas fa-angle-left fa-fw"></i>Azure の自動スケール操作を webhook で Microsoft Teams / Slack に通知する</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            　　<div id="disqus_thread"></div>
+        <script>
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yonehub.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2019</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://yonehub.y10e.com/">Yusuke.Yoneda</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133674179-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>
