@@ -3,12 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>k8s Cheat Sheet #1 -基本 | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Visual Studio Code を Source から build する | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noodp" />
 <meta name="Description" content="Cloud Engineer&#39;s blog">
-<link rel="prev" href="https://yonehub.y10e.com/2019/06/01/20190601_k8s_0/" />
-<link rel="next" href="https://yonehub.y10e.com/2019/06/04/20190603_git_0/" />
-<link rel="canonical" href="https://yonehub.y10e.com/2019/06/02/20190601_k8s_1/" />
+<link rel="prev" href="https://yonehub.y10e.com/2019/12/19/20191218_hugo_newpost/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/" />
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -18,8 +17,8 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-  <meta name="twitter:title" content="k8s Cheat Sheet #1 -基本" />
-  <meta name="twitter:description" content="・help参照 1 kubectl --help ・version確認(Client と Server ) 1 kubectl version ・yaml minifestの適用 1 Kubectl -f FileName k8sクラスタのローカルcontext関連のコマンド ・Local Configの一覧表示 1 kubectl config view ・現在アクティブになってい …">
+  <meta name="twitter:title" content="Visual Studio Code を Source から build する" />
+  <meta name="twitter:description" content="1. はじめに 2019/12/18 に Visual Studio Code Meetup #1 に参加しました。 LT で、VS Code のアイコンの種類についてのお話があり、生 Source Code からビルドすると VS Code のアイコンが違うとのことで、興味湧いたので試してみました。環境は macOS Mojave(10.14.6)です。 アイコンはこんな感じです。 2. 前提条 …">
   <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
   
 <meta name="twitter:card" content="summary" />
@@ -28,23 +27,23 @@
     {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "k8s Cheat Sheet #1 -基本",
+    "headline": "Visual Studio Code を Source から build する",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/yonehub.y10e.com\/2019\/06\/02\/20190601_k8s_1\/"
+        "@id": "https:\/\/yonehub.y10e.com\/2019\/12\/21\/20191221_vscode_sourcebuild\/"
     },
     
     "genre": "posts",
     
-        "keywords": "kubernetes, Docker",
+        "keywords": "Visual Studio Code, Tips, Mac",
     
-    "wordcount":  197 ,
-    "url": "https:\/\/yonehub.y10e.com\/2019\/06\/02\/20190601_k8s_1\/",
+    "wordcount":  707 ,
+    "url": "https:\/\/yonehub.y10e.com\/2019\/12\/21\/20191221_vscode_sourcebuild\/",
     
-        "datePublished": "2019-06-02T22:24:02\x2b09:00",
+        "datePublished": "2019-12-21T01:34:51\x2b09:00",
     
     
-        "dateModified": "2019-11-28T04:32:41\x2b09:00",
+        "dateModified": "2019-12-21T01:34:51\x2b09:00",
     
     
         "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
@@ -143,26 +142,65 @@
     
 
     <article class="post-warp">
-        <h1 class="post-title animated flipInX">k8s Cheat Sheet #1 -基本</h1>
+        <h1 class="post-title animated flipInX">Visual Studio Code を Source から build する</h1>
 
         <div class="post-meta">
             <div class="post-meta-main">
                 <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
                 <span class="post-category">
                         included in
-                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/cloud/">Cloud</a>
+                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/development/">Development</a>
                             
                     </span>
             </div>
             <div class="post-meta-other">
-                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-06-02>2019-06-02</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 197 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>1 min&nbsp;</div>
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-21>2019-12-21</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 707 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
         </div>
 
         
 
-        
+        <div class="post-toc" id="post-toc">
+                
+                <div class="post-toc-content always-active">
+                    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-">1. はじめに</a></li>
+        <li><a href="#2-">2. 前提条件</a></li>
+        <li><a href="#3-build--">3. Build と 実行</a></li>
+        <li><a href="#3-">3. 確認</a></li>
+        <li><a href="#4-">4. 補足</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Index</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-">1. はじめに</a></li>
+        <li><a href="#2-">2. 前提条件</a></li>
+        <li><a href="#3-build--">3. Build と 実行</a></li>
+        <li><a href="#3-">3. 確認</a></li>
+        <li><a href="#4-">4. 補足</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
 
         <div class="post-content">
             
@@ -190,87 +228,118 @@
             
             
             
-            <p>・help参照</p>
+            <a class="post-dummy-target" id="1-"></a><h3>1. はじめに</h3>
+<p>2019/12/18 に <a href="https://vscode.connpass.com/event/155068/">Visual Studio Code Meetup #1</a> に参加しました。<br>
+LT で、VS Code のアイコンの種類についてのお話があり、生 Source Code からビルドすると VS Code のアイコンが違うとのことで、興味湧いたので試してみました。環境は macOS Mojave(10.14.6)です。
+アイコンはこんな感じです。</p>
+<img src="/img/20191221_vscode_build/vscode.png" width="200px">
+<a class="post-dummy-target" id="2-"></a><h3>2. 前提条件</h3>
+<p>mac だと最低限 次を事前にインストールしておく必要がありました。</p>
+<ul>
+<li>Git</li>
+<li>Node.js(version 10.x 以上 12.x 以下)</li>
+<li>Yarn</li>
+<li>python 2.7</li>
+<li>Xcode</li>
+</ul>
+<p>私が実際に build した環境は次の通りです。</p>
+<ul>
+<li>git version 2.20.1</li>
+<li>node v12.4.0</li>
+<li>python 2.7.17</li>
+<li>yarn version v1.21.1</li>
+<li>Xcode Version 11.3</li>
+</ul>
+<p>あと、特に version 指定はないみたいですが、npm や typescript も必要です。</p>
+<a class="post-dummy-target" id="3-build--"></a><h3>3. Build と 実行</h3>
+<p>とりあえず、vs code のリポジトリを fork しておきます。</p>
+<p><a href="https://github.com/microsoft/vscode">https://github.com/microsoft/vscode</a></p>
+<p>fork したリポジトリを local に clone します。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">kubectl --help 
+<pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://github.com/&lt;YourAccount&gt;/vscode.git
 </code></pre></td></tr></table>
 </div>
-</div><p>・version確認(Client と Server )</p>
+</div><p>作業に時間が空いた場合などは、念の為、本家リポジトリから pull しておきます。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> vscode
+git checkout master
+git pull https://github.com/microsoft/vscode.git master
+</code></pre></td></tr></table>
+</div>
+</div><p>あとは、yarn で build します。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> vscode
+yarn watch
+</code></pre></td></tr></table>
+</div>
+</div><p>module not found で怒られるので、npm install でインストールしていきます。
+とくに vscode-node-sqlite3 という module のインストールが必要なのですが、python 2.7 じゃないとエラーになるので注意です。
+Build が完了すると scripts のディレクトリが生成されるので、scripts/code.sh を実行します。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">kubectl version 
+<pre class="chroma"><code class="language-sh" data-lang="sh">./scripts/code.sh
 </code></pre></td></tr></table>
 </div>
-</div><p>・yaml minifestの適用</p>
+</div><a class="post-dummy-target" id="3-"></a><h3>3. 確認</h3>
+<p>問題なく build できて、実行ができれば次のように表示されます。</p>
+<p><img src="/img/20191221_vscode_build/run.png" alt="run"></p>
+<p><img src="/img/20191221_vscode_build/oss-code.png" alt="Code-OSS"></p>
+<a class="post-dummy-target" id="4-"></a><h3>4. 補足</h3>
+<p>実行時に次のエラーでうまく動作しなかったけど、どうやら module を build　した時に node.js のバージョンが違うかったみたい。
+nodebrew 経由以外の node.js もインストールされていたので、どこかの作業でその node.js を使用したのかもしれない。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">Error: The module <span class="s1">&#39;/Users/xxx/WorkSpace/github-repo/vscode/node_modules/spdlog/build/Release/spdlog.node&#39;</span>
+was compiled against a different Node.js version using
+NODE_MODULE_VERSION 72. This version of Node.js requires
+NODE_MODULE_VERSION 73. Please try re-compiling or re-installing
+the module <span class="o">(</span><span class="k">for</span> instance, using <span class="sb">`</span>npm rebuild<span class="sb">`</span> or <span class="sb">`</span>npm install<span class="sb">`</span><span class="o">)</span>.
+</code></pre></td></tr></table>
+</div>
+</div><p>nodebrew だけに統一した上で、electron-rebuild したら正常に動作するようになりました。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">Kubectl -f FileName 
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="k">$(</span>npm bin<span class="k">)</span>/electron-rebuild
 </code></pre></td></tr></table>
 </div>
-</div><p>k8sクラスタのローカルcontext関連のコマンド</p>
-<p>・Local Configの一覧表示</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">kubectl config view 
-</code></pre></td></tr></table>
-</div>
-</div><p>・現在アクティブになっているcontextの表示</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">kubectl config current-context 
-</code></pre></td></tr></table>
-</div>
-</div><p>・アクティブなcontextの切り替え</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">kubectl config use-context CONTEXT_NAME  
-</code></pre></td></tr></table>
-</div>
-</div><p>・Contextの一覧表示</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">kubectl config get-contexts 
-</code></pre></td></tr></table>
-</div>
-</div><p>・Local Configのクラスタ名だけ一覧表示</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">kubectl config get-clusters
-</code></pre></td></tr></table>
-</div>
-</div>
+</div><p>参考:Electron Rebuild<br>
+<a href="https://github.com/electron/electron-rebuild">https://github.com/electron/electron-rebuild</a></p>
+
         </div>
 
         <div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>This article is updated with 2019-11-28</span>
+                <span>This article is updated with 2019-12-21</span>
             </div>
             <div class="post-info-license">
                 
@@ -280,7 +349,7 @@
             <div class="post-info-md">
                 
                     
-                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2019/06/02/20190601_k8s_1/index.md" target="_blank"></a></span>
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/index.md" target="_blank"></a></span>
                     
                 
             </div>
@@ -288,18 +357,18 @@
                 
                     <span>
     
-        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f06%2f02%2f20190601_k8s_1%2f&amp;text=k8s%20Cheat%20Sheet%20%231%20-%e5%9f%ba%e6%9c%ac&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f21%2f20191221_vscode_sourcebuild%2f&amp;text=Visual%20Studio%20Code%20%e3%82%92%20Source%20%e3%81%8b%e3%82%89%20build%20%e3%81%99%e3%82%8b&amp;via=y10exxx" target="_blank" title="Share on Twitter">
             <i class="fab fa-twitter fa-fw"></i>
         </a>
     
     
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2019%2f06%2f02%2f20190601_k8s_1%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f21%2f20191221_vscode_sourcebuild%2f" target="_blank" title="Share on Facebook">
             <i class="fab fa-facebook-square fa-fw"></i>
         </a>
     
     
     
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f06%2f02%2f20190601_k8s_1%2f&amp;title=k8s%20Cheat%20Sheet%20%231%20-%e5%9f%ba%e6%9c%ac" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f21%2f20191221_vscode_sourcebuild%2f&amp;title=Visual%20Studio%20Code%20%e3%82%92%20Source%20%e3%81%8b%e3%82%89%20build%20%e3%81%99%e3%82%8b" target="_blank" title="Share on LinkedIn">
             <i class="fab fa-linkedin fa-fw"></i>
         </a>
     
@@ -320,11 +389,15 @@
             
                 
                     <span class="tag">
-                        <a href="https://yonehub.y10e.com/tags/kubernetes/"><i class="fas fa-tag fa-fw"></i>kubernetes</a>
+                        <a href="https://yonehub.y10e.com/tags/visual-studio-code/"><i class="fas fa-tag fa-fw"></i>Visual Studio Code</a>
                     </span>
                 
                     <span class="tag">
-                        <a href="https://yonehub.y10e.com/tags/docker/"><i class="fas fa-tag fa-fw"></i>Docker</a>
+                        <a href="https://yonehub.y10e.com/tags/tips/"><i class="fas fa-tag fa-fw"></i>Tips</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/mac/"><i class="fas fa-tag fa-fw"></i>Mac</a>
                     </span>
                 
             
@@ -336,10 +409,8 @@
 
     <div class="post-nav">
         
-            <a href="https://yonehub.y10e.com/2019/06/01/20190601_k8s_0/" class="prev" rel="prev" title="kubectl --help"><i class="fas fa-angle-left fa-fw"></i>kubectl --help</a>
+            <a href="https://yonehub.y10e.com/2019/12/19/20191218_hugo_newpost/" class="prev" rel="prev" title="hugo new 実行時に生成されるデフォルトテンプレートをカスタマイズする"><i class="fas fa-angle-left fa-fw"></i>hugo new 実行時に生成されるデフォルトテンプレートをカスタマイズする</a>
         
-        
-            <a href="https://yonehub.y10e.com/2019/06/04/20190603_git_0/" class="next" rel="next" title="GitのCommitユーザを修正する方法">GitのCommitユーザを修正する方法<i class="fas fa-angle-right fa-fw"></i></a>
         
     </div>
 </div>

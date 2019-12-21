@@ -12,9 +12,18 @@
             <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
         
         
-            <lastBuildDate>Thu, 19 Dec 2019 18:05:54 +0900</lastBuildDate>
+            <lastBuildDate>Sat, 21 Dec 2019 01:34:51 +0900</lastBuildDate>
         
         <atom:link href="https://yonehub.y10e.com/posts/" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>Visual Studio Code を Source から build する</title>
+                <link>https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/</link>
+                <pubDate>Sat, 21 Dec 2019 01:34:51 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/</guid>
+                <description>1. はじめに 2019/12/18 に Visual Studio Code Meetup #1 に参加しました。 LT で、VS Code のアイコンの種類についてのお話があり、生 Source Code からビルドすると VS Code のアイコンが違うとのことで、興味湧いたので試してみました。環境は macOS Mojave(10.14.6)です。 アイコンはこんな感じです。 2. 前提条件 mac だと最低限 次を事前にインストールしておく必要がありました。 Git Node.js(version 10.x 以上 12.x 以下) Yarn python 2.7 Xcode 私が実際に build した環境は次の通りです。 git version 2.20.1 node v12.4.0 python 2.7.17 yarn version v1.21.1 Xcode Version</description>
+            </item>
         
             <item>
                 <title>hugo new 実行時に生成されるデフォルトテンプレートをカスタマイズする</title>
@@ -140,15 +149,6 @@
                 
                 <guid>https://yonehub.y10e.com/2019/11/07/20191107_ignite2019_iaas/</guid>
                 <description>今週は Microsoft Ignite 2019 で盛り上がった一週間でした。 自分の周りでは、Keynote で取り上げられていた、Azure Arc や Azure Synapse が特に話題になっていた気がします。 それ以外にも、新機能の発表、プレビュー機能の GA ニュースが山盛りでした。 発表された項目は、Book of News Microsoft Ignite 2019に記載がありますが、index だけで7ページもあります。 しばらくキャッチアップに注力せねば&amp;hellip; そんな中、Azure の IaaS 系のサービスに</description>
-            </item>
-        
-            <item>
-                <title>VM ScalesetのOrchestration Modeについて</title>
-                <link>https://yonehub.y10e.com/2019/11/06/20191106_vmss_orchestrationmode/</link>
-                <pubDate>Wed, 06 Nov 2019 22:47:23 +0900</pubDate>
-                
-                <guid>https://yonehub.y10e.com/2019/11/06/20191106_vmss_orchestrationmode/</guid>
-                <description>Microsoft Ignite 2019で触れられていた、VM Scaleset のOrchestration modeというプレビュー機能について調べてみました。 要約すると、VM Scalesetに通常の仮想マシンを追加できる機能でした。 ・2種類のOrchestration(ScaleSetVM or VM)を選択できる（VMSS作成時のみ） ・ScaleSetVMモードは以前のVMSS。VMSSの雛形にそったVMインスタンスをスケールさせるので、基本</description>
             </item>
         
     </channel>
