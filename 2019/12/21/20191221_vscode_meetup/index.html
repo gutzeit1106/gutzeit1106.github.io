@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Visual Studio Code Meetup #1 の参加メモ | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="Cloud Engineer&#39;s blog">
+<link rel="prev" href="https://yonehub.y10e.com/2019/12/19/20191218_hugo_newpost/" />
+<link rel="next" href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_meetup/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+  <meta name="twitter:title" content="Visual Studio Code Meetup #1 の参加メモ" />
+  <meta name="twitter:description" content="別記事でも書いたけど、2019/12/18 に Visual Studio Code Meetup #1 に参加しました。 日々の vs code 生活に役立ちそうな情報があったので備忘録として記録しておきます。 WorkSpace に追加したフォルダを削除するコマンドほしい&hellip; 基本機能 基本機能では、次の 2 つが気になりました。 Task Snippets Task task を …">
+  <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
+  
+<meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y10exxx" />
+  <meta name="twitter:creator" content="@y10exxx" /><script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Visual Studio Code Meetup #1 の参加メモ",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/yonehub.y10e.com\/2019\/12\/21\/20191221_vscode_meetup\/"
+    },
+    
+    "genre": "posts",
+    
+        "keywords": "Visual Studio Code, Tips",
+    
+    "wordcount":  1141 ,
+    "url": "https:\/\/yonehub.y10e.com\/2019\/12\/21\/20191221_vscode_meetup\/",
+    
+        "datePublished": "2019-12-21T01:08:08\x2b09:00",
+    
+    
+        "dateModified": "2019-12-22T03:57:52\x2b09:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Yusuke.Yoneda",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/yonehub.y10e.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            if (!window.localStorage.getItem('theme')){
+                var current = new Date();
+                if (current.getHours() >= 23 || current.getHours() <= 4){
+                    window.localStorage.setItem('theme', 'dark');
+                    location.reload();
+                }else{
+                    window.localStorage.setItem('theme', 'light');
+                }
+            }
+
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://yonehub.y10e.com/">YONEHUB</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://yonehub.y10e.com/">YONEHUB</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Visual Studio Code Meetup #1 の参加メモ</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/development/">Development</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-21>2019-12-21</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1141 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                
+                <div class="post-toc-content always-active">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading">基本機能</a>
+      <ul>
+        <li><a href="#task">Task</a></li>
+        <li><a href="#snippets">Snippets</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading1">拡張機能</a>
+      <ul>
+        <li><a href="#gitlens">GitLens</a></li>
+        <li><a href="#git-history">Git History</a></li>
+        <li><a href="#github-pull-requests">GitHub Pull Requests</a></li>
+        <li><a href="#settings-sync">Settings Sync</a></li>
+        <li><a href="#rainbow-csv">Rainbow CSV</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading2">コマンドオプション</a>
+      <ul>
+        <li><a href="#g--goto-filelinecharacter">-g / goto </a></li>
+        <li><a href="#d--diff-file-file">-d / diff  </a></li>
+        <li><a href="#a--addfolder">-a / add　</a></li>
+        <li><a href="#n--newwindow">-n / new-window</a></li>
+        <li><a href="#r--reusewindow">-r / reuse-window</a></li>
+        <li><a href="#w--wait">-w / wait</a></li>
+        <li><a href="#h--help">-h / help</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Index</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li><a href="#heading">基本機能</a>
+      <ul>
+        <li><a href="#task">Task</a></li>
+        <li><a href="#snippets">Snippets</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading1">拡張機能</a>
+      <ul>
+        <li><a href="#gitlens">GitLens</a></li>
+        <li><a href="#git-history">Git History</a></li>
+        <li><a href="#github-pull-requests">GitHub Pull Requests</a></li>
+        <li><a href="#settings-sync">Settings Sync</a></li>
+        <li><a href="#rainbow-csv">Rainbow CSV</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading2">コマンドオプション</a>
+      <ul>
+        <li><a href="#g--goto-filelinecharacter">-g / goto </a></li>
+        <li><a href="#d--diff-file-file">-d / diff  </a></li>
+        <li><a href="#a--addfolder">-a / add　</a></li>
+        <li><a href="#n--newwindow">-n / new-window</a></li>
+        <li><a href="#r--reusewindow">-r / reuse-window</a></li>
+        <li><a href="#w--wait">-w / wait</a></li>
+        <li><a href="#h--help">-h / help</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <p>別記事でも書いたけど、2019/12/18 に <a href="https://vscode.connpass.com/event/155068/">Visual Studio Code Meetup #1</a> に参加しました。<br>
+日々の vs code 生活に役立ちそうな情報があったので備忘録として記録しておきます。<br>
+WorkSpace に追加したフォルダを削除するコマンドほしい&hellip;</p>
+<a class="post-dummy-target" id="heading"></a><h2>基本機能</h2>
+<p>基本機能では、次の 2 つが気になりました。</p>
+<ul>
+<li>Task</li>
+<li>Snippets</li>
+</ul>
+<a class="post-dummy-target" id="task"></a><h3>Task</h3>
+<p>task を登録して自動実行できる機能。build などの定型作業を登録しておくことで、容易に task を実行できる。
+早速 hugo のコンテンツ生成や git push とかの作業を登録してみたが快適。</p>
+<p>Integrate with External Tools via Tasks<br>
+<a href="https://code.visualstudio.com/docs/editor/tasks">https://code.visualstudio.com/docs/editor/tasks</a></p>
+<a class="post-dummy-target" id="snippets"></a><h3>Snippets</h3>
+<p>エディタの補完をユーザが定義できる機能。メール文面とかの snippets 登録しておくと便利な気がする。</p>
+<p>Snippets in Visual Studio Code<br>
+<a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">https://code.visualstudio.com/docs/editor/userdefinedsnippets</a></p>
+<a class="post-dummy-target" id="heading1"></a><h2>拡張機能</h2>
+<p>良さげな拡張機能がいくつかあったので早速インストールしてみた。</p>
+<a class="post-dummy-target" id="gitlens"></a><h3>GitLens</h3>
+<p>git リポジトリの管理を超絶分かりやすくしてくれる<br>
+<a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens">https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens</a></p>
+<a class="post-dummy-target" id="git-history"></a><h3>Git History</h3>
+<p>git のリポジトリ履歴を見やすく表示してくれる<br>
+<a href="https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory">https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory</a></p>
+<a class="post-dummy-target" id="github-pull-requests"></a><h3>GitHub Pull Requests</h3>
+<p>github 公式の Pull Requests 拡張機能。
+<a href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github">https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github</a></p>
+<a class="post-dummy-target" id="settings-sync"></a><h3>Settings Sync</h3>
+<p>vs code の設定ファイルを gist 経由で同期する。<br>
+<a href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync">https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync</a></p>
+<a class="post-dummy-target" id="rainbow-csv"></a><h3>Rainbow CSV</h3>
+<p>csvファイルをみやすく表示してくれる。<br>
+<a href="https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv">https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv</a></p>
+<a class="post-dummy-target" id="heading2"></a><h2>コマンドオプション</h2>
+<p>ターミナルから code コマンドを使って, vscode を操作することができるが、結構便利そうなオプションがあった。</p>
+<a class="post-dummy-target" id="g--goto-filelinecharacter"></a><h3>-g / &ndash;goto <a href="file:line%5B:character%5D">file:line[:character]</a></h3>
+<p>ファイル、行数、何文字目かを指定してファイルを開く。</p>
+<p>例：指定したファイルの9行目、40文字を active にしてファイルを開く</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ code -g logstats.log:9:40
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="d--diff-file-file"></a><h3>-d / &ndash;diff <file> <file></h3>
+<p>ファイルの diff を表示する</p>
+<p>例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ code -d logstats.log logstats2.log
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="a--addfolder"></a><h3>-a / &ndash;add　<folder></h3>
+<p>指定したファルダをアクティブウィンドウのワークスペースに追加</p>
+<p>例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">code -a .
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="n--newwindow"></a><h3>-n / &ndash;new-window</h3>
+<p>新規ウィンドウで開く。*.code-workspace を指定した場合は workspcae が開く。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">code logstats.log -n
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="r--reusewindow"></a><h3>-r / &ndash;reuse-window</h3>
+<p>現在のウィンドウを再利用してファイルを開く。*.code-workspace を指定した場合は現在のウィンドウで指定した workspcae が開く。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">code logstats.log -r
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="w--wait"></a><h3>-w / &ndash;wait</h3>
+<p>指定したファイルが閉じられたタイミングで code コマンドの応答が返る。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">code logstats.log -w
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="h--help"></a><h3>-h / &ndash;help</h3>
+<p>ヘルプの表示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ code -h
+Visual Studio Code 1.41.0
+
+Usage: code <span class="o">[</span>options<span class="o">]</span><span class="o">[</span>paths...<span class="o">]</span>
+
+To <span class="nb">read</span> from stdin, append <span class="s1">&#39;-&#39;</span> <span class="o">(</span>e.g. <span class="s1">&#39;ps aux | grep code | code -&#39;</span><span class="o">)</span>
+
+Options
+  -d --diff &lt;file&gt; &lt;file&gt;           Compare two files with each other.
+  -a --add &lt;folder&gt;                 Add folder<span class="o">(</span>s<span class="o">)</span> to the last active window.
+  -g --goto &lt;file:line<span class="o">[</span>:character<span class="o">]</span>&gt; Open a file at the path on the specified line and character position.
+  -n --new-window                   Force to open a new window.
+  -r --reuse-window                 Force to open a file or folder in an already opened window.
+  -w --wait                         Wait <span class="k">for</span> the files to be closed before returning.
+  --locale &lt;locale&gt;                 The locale to use <span class="o">(</span>e.g. en-US or zh-TW<span class="o">)</span>.
+  --user-data-dir &lt;dir&gt;             Specifies the directory that user data is kept in. Can be used to open multiple distinct instances of Code.
+  -v --version                      Print version.
+  -h --help                         Print usage.
+  --telemetry                       Shows all telemetry events which VS code collects.
+  --folder-uri &lt;uri&gt;                Opens a window with given folder uri<span class="o">(</span>s<span class="o">)</span>
+  --file-uri &lt;uri&gt;                  Opens a window with given file uri<span class="o">(</span>s<span class="o">)</span>
+
+Extensions Management
+  --extensions-dir &lt;dir&gt;                            Set the root path <span class="k">for</span> extensions.
+  --list-extensions                                 List the installed extensions.
+  --show-versions                                   Show versions of installed extensions, when using --list-extension.
+  --category                                        Filters installed extensions by provided category, when using --list-extension.
+  --install-extension &lt;extension-id <span class="p">|</span> path-to-vsix&gt; Installs or updates the extension. Use <span class="sb">`</span>--force<span class="sb">`</span> argument to avoid prompts.
+  --uninstall-extension &lt;extension-id&gt;              Uninstalls an extension.
+  --enable-proposed-api &lt;extension-id&gt;              Enables proposed API features <span class="k">for</span> extensions. Can receive one or more extension IDs to <span class="nb">enable</span> individually.
+
+Troubleshooting
+  --verbose                          Print verbose output <span class="o">(</span>implies --wait<span class="o">)</span>.
+  --log &lt;level&gt;                      Log level to use. Default is <span class="s1">&#39;info&#39;</span>. Allowed values are <span class="s1">&#39;critical&#39;</span>, <span class="s1">&#39;error&#39;</span>, <span class="s1">&#39;warn&#39;</span>, <span class="s1">&#39;info&#39;</span>, <span class="s1">&#39;debug&#39;</span>, <span class="s1">&#39;trace&#39;</span>, <span class="s1">&#39;off&#39;</span>.
+  -s --status                        Print process usage and diagnostics information.
+  --prof-startup                     Run CPU profiler during startup
+  --disable-extensions               Disable all installed extensions.
+  --disable-extension &lt;extension-id&gt; Disable an extension.
+  --inspect-extensions &lt;port&gt;        Allow debugging and profiling of extensions. Check the developer tools <span class="k">for</span> the connection URI.
+  --inspect-brk-extensions &lt;port&gt;    Allow debugging and profiling of extensions with the extension host being paused after start. Check the developer tools <span class="k">for</span> the connection URI.
+  --disable-gpu                      Disable GPU hardware acceleration.
+  --max-memory                       Max memory size <span class="k">for</span> a window <span class="o">(</span>in Mbytes<span class="o">)</span>.
+
+</code></pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2019-12-22</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_meetup/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f21%2f20191221_vscode_meetup%2f&amp;text=Visual%20Studio%20Code%20Meetup%20%231%20%e3%81%ae%e5%8f%82%e5%8a%a0%e3%83%a1%e3%83%a2&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f21%2f20191221_vscode_meetup%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+    
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f21%2f20191221_vscode_meetup%2f&amp;title=Visual%20Studio%20Code%20Meetup%20%231%20%e3%81%ae%e5%8f%82%e5%8a%a0%e3%83%a1%e3%83%a2" target="_blank" title="Share on LinkedIn">
+            <i class="fab fa-linkedin fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/visual-studio-code/"><i class="fas fa-tag fa-fw"></i>Visual Studio Code</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/tips/"><i class="fas fa-tag fa-fw"></i>Tips</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://yonehub.y10e.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://yonehub.y10e.com/2019/12/19/20191218_hugo_newpost/" class="prev" rel="prev" title="hugo new 実行時に生成されるデフォルトテンプレートをカスタマイズする"><i class="fas fa-angle-left fa-fw"></i>hugo new 実行時に生成されるデフォルトテンプレートをカスタマイズする</a>
+        
+        
+            <a href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/" class="next" rel="next" title="Visual Studio Code を Source から build する">Visual Studio Code を Source から build する<i class="fas fa-angle-right fa-fw"></i></a>
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            　　<div id="disqus_thread"></div>
+        <script>
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yonehub.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2019</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://yonehub.y10e.com/">Yusuke.Yoneda</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133674179-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>
