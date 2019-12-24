@@ -3,12 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Azure Active Directoryの要点整理(2019/07) | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>git 管理から特定のファイル、ディレクトリを除外する(.gitignore) | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noodp" />
 <meta name="Description" content="Cloud Engineer&#39;s blog">
-<link rel="prev" href="https://yonehub.y10e.com/2019/06/16/20190616_vscode_markdown/" />
-<link rel="next" href="https://yonehub.y10e.com/2019/07/07/20190707_azure_sql/" />
-<link rel="canonical" href="https://yonehub.y10e.com/2019/07/07/20190707_azure_ad/" />
+<link rel="prev" href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2019/12/24/20191223_git_gitignore/" />
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -18,8 +17,8 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-  <meta name="twitter:title" content="Azure Active Directoryの要点整理(2019/07)" />
-  <meta name="twitter:description" content="Azure AD の価格プランによる機能比較 FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。 BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は1008円/月 参考:Azure Active Directory のプラン機能対応表 ※PREMIUM P1以上が必要な主な機能 MFA(Multi-Factor …">
+  <meta name="twitter:title" content="git 管理から特定のファイル、ディレクトリを除外する(.gitignore)" />
+  <meta name="twitter:description" content="秘匿性のあるファイルやキャッシュなどの一時ファイルなど git リポジトリのバージョン管理から特定のファイルやフォルダを除外したいときには .gitignore ファイルを作成します。 Mac だと, finder のメタ情報を持つ .DS_store がディレクトリの至るところに作成されるので, git を使う場合、除外設定しておかないと面倒です。 基本ルール 最も基本的な設定方法は, リポジト …">
   <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
   
 <meta name="twitter:card" content="summary" />
@@ -28,23 +27,23 @@
     {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "Azure Active Directoryの要点整理(2019\/07)",
+    "headline": "git 管理から特定のファイル、ディレクトリを除外する(.gitignore)",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/yonehub.y10e.com\/2019\/07\/07\/20190707_azure_ad\/"
+        "@id": "https:\/\/yonehub.y10e.com\/2019\/12\/24\/20191223_git_gitignore\/"
     },
     
     "genre": "posts",
     
-        "keywords": "Azure, AD, Security",
+        "keywords": "git, github",
     
-    "wordcount":  1362 ,
-    "url": "https:\/\/yonehub.y10e.com\/2019\/07\/07\/20190707_azure_ad\/",
+    "wordcount":  1141 ,
+    "url": "https:\/\/yonehub.y10e.com\/2019\/12\/24\/20191223_git_gitignore\/",
     
-        "datePublished": "2019-07-07T00:00:00\x2b09:00",
+        "datePublished": "2019-12-24T23:05:15\x2b09:00",
     
     
-        "dateModified": "2019-12-22T04:05:21\x2b09:00",
+        "dateModified": "2019-12-24T23:05:15\x2b09:00",
     
     
         "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
@@ -143,20 +142,20 @@
     
 
     <article class="post-warp">
-        <h1 class="post-title animated flipInX">Azure Active Directoryの要点整理(2019/07)</h1>
+        <h1 class="post-title animated flipInX">git 管理から特定のファイル、ディレクトリを除外する(.gitignore)</h1>
 
         <div class="post-meta">
             <div class="post-meta-main">
                 <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
                 <span class="post-category">
                         included in
-                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/cloud/">Cloud</a>
+                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/tech/">Tech</a>
                             
                     </span>
             </div>
             <div class="post-meta-other">
-                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-07-07>2019-07-07</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1362 words&nbsp;
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-24>2019-12-24</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1141 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
         </div>
 
@@ -167,16 +166,15 @@
                 <div class="post-toc-content always-active">
                     <nav id="TableOfContents">
   <ul>
-    <li><a href="#azure-ad-">Azure AD の価格プランによる機能比較</a></li>
-    <li><a href="#azure-ad-connect--connect-health">Azure AD Connect と Connect Health</a>
+    <li>
       <ul>
-        <li><a href="#-">クラウド認証: パスワードハッシュ同期</a></li>
-        <li><a href="#-1">クラウド認証: パススルー認証</a></li>
-        <li><a href="#heading">フェデレーション認証</a></li>
+        <li><a href="#heading">基本ルール</a></li>
+        <li><a href="#heading1">文法</a></li>
+        <li><a href="#heading2">参考ファイル</a></li>
+        <li><a href="#heading3">補足</a></li>
+        <li><a href="#heading4">関連</a></li>
       </ul>
     </li>
-    <li><a href="#identity-protection">Identity Protection</a></li>
-    <li><a href="#azure-ad-privileged-identity-managementpim">Azure AD Privileged Identity Management(PIM)</a></li>
   </ul>
 </nav>
                 </div>
@@ -189,16 +187,15 @@
                         
                         <nav id="TableOfContentsMobile">
   <ul>
-    <li><a href="#azure-ad-">Azure AD の価格プランによる機能比較</a></li>
-    <li><a href="#azure-ad-connect--connect-health">Azure AD Connect と Connect Health</a>
+    <li>
       <ul>
-        <li><a href="#-">クラウド認証: パスワードハッシュ同期</a></li>
-        <li><a href="#-1">クラウド認証: パススルー認証</a></li>
-        <li><a href="#heading">フェデレーション認証</a></li>
+        <li><a href="#heading">基本ルール</a></li>
+        <li><a href="#heading1">文法</a></li>
+        <li><a href="#heading2">参考ファイル</a></li>
+        <li><a href="#heading3">補足</a></li>
+        <li><a href="#heading4">関連</a></li>
       </ul>
     </li>
-    <li><a href="#identity-protection">Identity Protection</a></li>
-    <li><a href="#azure-ad-privileged-identity-managementpim">Azure AD Privileged Identity Management(PIM)</a></li>
   </ul>
 </nav>
                     </div>
@@ -231,84 +228,95 @@
             
             
             
-            <a class="post-dummy-target" id="azure-ad-"></a><h2>Azure AD の価格プランによる機能比較</h2>
-<p>FREE, BASIC, PREMIUM P1, PREMIUM P2のプランがある。<br>
-BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は1008円/月</p>
-<p>参考:<a href="https://azure.microsoft.com/ja-jp/pricing/details/active-directory/">Azure Active Directory のプラン機能対応表</a></p>
-<p>※PREMIUM P1以上が必要な主な機能</p>
+            <p>秘匿性のあるファイルやキャッシュなどの一時ファイルなど git リポジトリのバージョン管理から特定のファイルやフォルダを除外したいときには .gitignore ファイルを作成します。<br>
+Mac だと, finder のメタ情報を持つ .DS_store がディレクトリの至るところに作成されるので, git を使う場合、除外設定しておかないと面倒です。</p>
+<a class="post-dummy-target" id="heading"></a><h3>基本ルール</h3>
+<p>最も基本的な設定方法は, リポジトリのルートの直下に 1 つの .gitignore ファイルを配置することです。これによってリポジトリ配下のディレクトリに再帰的に .gitignore の設定が適用されます。<br>
+サブディレクトリにも .gitignore を配置することも可能です。サブディレクトリに配置された .gitignore は、配置したディレクトリ以下にのみ適用され、また上位の .gitignore のルールは優先度は低くなり、同じルールがあった場合はより深い階層のルールが優先されます。</p>
+<a class="post-dummy-target" id="heading1"></a><h3>文法</h3>
+<p>原則は以下の通りです。</p>
 <ul>
-<li>
-<p>MFA(Multi-Factor Authentication)の有効化</p>
-</li>
-<li>
-<p>Azure AD Connect Health</p>
-</li>
-<li>
-<p>条件付きアクセス</p>
-</li>
-<li>
-<p>Cloud App Discovery(組織で利用しているクラウドアプリケーションの利用状況の可視化)</p>
-</li>
+<li>空白行, # で開始される行は無視されます</li>
+<li>.gitignore が配置されたパスから再帰的に下位ディレクトリに適応されます</li>
+<li>/からパターンを記載することで再帰性を無効にしたパターンを指定できます</li>
+<li>パターンの最後に/を置くことでディレクトリを指定することができます</li>
+<li>! で開始することで gitignore の設定を無視します</li>
 </ul>
-<p>※PREMIUM P2以上が必要な主な機能</p>
+<p>また、正規表現のような指定も可能です。</p>
 <ul>
-<li>
-<p>Identity Protection</p>
-</li>
-<li>
-<p>Privileged Identity Management(PIM)</p>
-</li>
-<li>
-<p>アクセスレビュー</p>
-</li>
+<li>アスタリスク（*）: 0 個以上の文字</li>
+<li>[abc] : 括弧内の任意の文字</li>
+<li>? : 単一の文字</li>
+<li>[0-9] : 0 から 9 までのいづれかの文字</li>
+<li>**  : 0 個以上のファイルあるいはディレクトリ</li>
 </ul>
-<a class="post-dummy-target" id="azure-ad-connect--connect-health"></a><h2>Azure AD Connect と Connect Health</h2>
-<p>Azure AD Connectは、オンプレミスとクラウドのハイブリット構成に用いるツールで、Azure AD Connect Healthは、オンプレミスのIDインフラについてログを収集し、統一環境下で監視や正常性を確認することができる機能。<br></p>
-<p><img src="/img/20190707_azure_Ad/arch.png" alt="20190707_azure_Ad"></p>
-<p>Azure AD Connectを用いてオンプレ-クラウド間でのハイブリットを構成する際は適切な認証方式を選択していく。Azure ADがユーザのサインインプロセスを処理するクラウド認証と、別の信頼された認証システム（オンプレのADFSなど）にパスワード検証
-プロセスを引継ぐ方式の2種類に大別できる。</p>
-<a class="post-dummy-target" id="-"></a><h3>クラウド認証: パスワードハッシュ同期</h3>
-<p>オンプレミスのADとクラウドベースのAzure AD間でユーザパスワードのハッシュ値を同期する。そのため認証が実施される場所はクラウド上になる。またアカウントの状態は同期が完了するまですぐには適用されない。</p>
-<a class="post-dummy-target" id="-1"></a><h3>クラウド認証: パススルー認証</h3>
-<p>公開鍵で暗号化したユーザIDとパスワードをキューにいれ、オンプレミスのエージェントが暗号化情報を取得・復号し、認証情報の検証をおこなう認証形式。オンプレミスにあるパスワード情報がクラウドに保存されることはないことを謳っている。</p>
-<a class="post-dummy-target" id="heading"></a><h3>フェデレーション認証</h3>
-<p>Azure ADとフェデレーションを構成したオンプレの認証基盤に認証プロセスを引き継ぐ。オンプレの認証基盤を構築する投資が必要。</p>
-<a class="post-dummy-target" id="identity-protection"></a><h2>Identity Protection</h2>
-<p>ユーザー ID に関連して検出された疑わしいアクションに対する自動応答を構成できる。匿名 IP アドレスからのサインインなどのリスクイベントを定義し、これに対応するイベントが発生した場合に多要素認証を要求するといったアクセスポリシーを設定することができる。</p>
-<a class="post-dummy-target" id="azure-ad-privileged-identity-managementpim"></a><h2>Azure AD Privileged Identity Management(PIM)</h2>
-<p>組織内のリソース(AzureAD, Azure リソース、O365などの各種 Microsoft Online Service)へのアクセス管理や監視ができるサービス</p>
-<p>主な機能</p>
-<ul>
-<li>
-<p>Azure ADとAzureリソースへのJIT(Just-In-Time)特権アクセスの付与</p>
-</li>
-<li>
-<p>開始日と終了日を使用した期限付きアクセス権のリソースへの付与</p>
-</li>
-<li>
-<p>特権ロールをアクティブ化するために承認を要求する</p>
-</li>
-<li>
-<p>ロールをアクティブ化するために多要素認証を強制する</p>
-</li>
-<li>
-<p>ユーザがアクティブ化された際の理由を把握する</p>
-</li>
-<li>
-<p>特権ロールがアクティブ化されたときに通知を受ける</p>
-</li>
-<li>
-<p>継続してユーザーにロールが必要であることを確認するためにアクセスレビューを実施する</p>
-</li>
-<li>
-<p>社内監査または外部監査に使用する監査履歴をダウンロードする</p>
-</li>
-</ul>
-<p>※Azure AD Premium P2のライセンスが必要<br>
-※アカウント管理者、サービス管理者、共同管理者などの従来のサブスクリプション管理者ロールは扱えない<br>
-※アクセスレビューでは、定期的に設定したレビューへレビューをトリガーし、レビューが拒否されたユーザのアクセスを自動的に削除することも可能<br></p>
-<p>参考:
-<a href="https://docs.microsoft.com/ja-jp/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management</a></p>
+<p>具体的なサンプルも記載します。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">#拡張子 .a の全てのファイルを除外</span>
+*.a
+
+<span class="c1">#上の設定の例外として lib.a は管理に含める。</span>
+!lib.a
+
+<span class="c1">#カレントディレクトリの TODO のみ除外。サブディレクトリ配下の TODO は除外されない</span>
+/TODO
+
+<span class="c1">#ディレクトリ build 配下の全てのファイルを除外</span>
+build/
+
+<span class="c1">#例えば、doc/notes.txt を除外するが, doc/server/arch.txt は除外しない</span>
+doc/*.txt
+
+<span class="c1">#doc/配下の全ての .pdf ファイルを除外する doc/a.pdf, doc/a/a.pdf なども含む</span>
+doc/**/*.pdf
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="heading2"></a><h3>参考ファイル</h3>
+<p>自分で文法を理解することも大切だと思いますが、既に出来合いのものを利用することもできます。<br>
+<a href="https://www.gitignore.io/">gitignore.io</a>では、プログラミング言語などから一般的な .gitignore ファイルを生成することができて非常に便利です。</p>
+<p>また、github も主な .gitignore ファイルをコレクションしています。</p>
+<p>github/gitignore<br>
+<a href="https://github.com/github/gitignore">https://github.com/github/gitignore</a></p>
+<p>もっと小規模なものだと、octocat くんが、汎用的な.gitignore設定のサンプルをgistで公開してくれているので、とりあえずこれを設定してみるのも良いかと思います。</p>
+<script src="https://gist.github.com/octocat/9257657.js"></script>
+<a class="post-dummy-target" id="heading3"></a><h3>補足</h3>
+<p>特定のリポジトリだけでなく、ユーザが全ての状況で git 管理から除外する設定を行いたい場合もあります。(global)
+この場合は ~/.gitignore_global に .gitignore ファイルを作成して次のコマンドを実行します。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ git config --global core.excludesfile ~/.gitignore_global
+</code></pre></td></tr></table>
+</div>
+</div><p>また、 .gitigonore 自体をリポジトリ管理したくない場合は、リポジトリ配下にある .git/info/exclude にルールを追加します。</p>
+<a class="post-dummy-target" id="heading4"></a><h3>関連</h3>
+<p>Git<br>
+<a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring">https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring</a><br>
+<a href="https://git-scm.com/docs/gitignore">https://git-scm.com/docs/gitignore</a></p>
+<p>Github Help - Ignoring files<br>
+<a href="https://help.github.com/en/github/using-git/ignoring-files">https://help.github.com/en/github/using-git/ignoring-files</a></p>
 
         </div>
 
@@ -316,7 +324,7 @@ BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は100
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>This article is updated with 2019-12-22</span>
+                <span>This article is updated with 2019-12-24</span>
             </div>
             <div class="post-info-license">
                 
@@ -326,7 +334,7 @@ BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は100
             <div class="post-info-md">
                 
                     
-                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2019/07/07/20190707_azure_ad/index.md" target="_blank"></a></span>
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2019/12/24/20191223_git_gitignore/index.md" target="_blank"></a></span>
                     
                 
             </div>
@@ -334,18 +342,18 @@ BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は100
                 
                     <span>
     
-        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f07%2f07%2f20190707_azure_ad%2f&amp;text=Azure%20Active%20Directory%e3%81%ae%e8%a6%81%e7%82%b9%e6%95%b4%e7%90%86%282019%2f07%29&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f24%2f20191223_git_gitignore%2f&amp;text=git%20%e7%ae%a1%e7%90%86%e3%81%8b%e3%82%89%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%80%81%e3%83%87%e3%82%a3%e3%83%ac%e3%82%af%e3%83%88%e3%83%aa%e3%82%92%e9%99%a4%e5%a4%96%e3%81%99%e3%82%8b%28.gitignore%29&amp;via=y10exxx" target="_blank" title="Share on Twitter">
             <i class="fab fa-twitter fa-fw"></i>
         </a>
     
     
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2019%2f07%2f07%2f20190707_azure_ad%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f24%2f20191223_git_gitignore%2f" target="_blank" title="Share on Facebook">
             <i class="fab fa-facebook-square fa-fw"></i>
         </a>
     
     
     
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f07%2f07%2f20190707_azure_ad%2f&amp;title=Azure%20Active%20Directory%e3%81%ae%e8%a6%81%e7%82%b9%e6%95%b4%e7%90%86%282019%2f07%29" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f24%2f20191223_git_gitignore%2f&amp;title=git%20%e7%ae%a1%e7%90%86%e3%81%8b%e3%82%89%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%80%81%e3%83%87%e3%82%a3%e3%83%ac%e3%82%af%e3%83%88%e3%83%aa%e3%82%92%e9%99%a4%e5%a4%96%e3%81%99%e3%82%8b%28.gitignore%29" target="_blank" title="Share on LinkedIn">
             <i class="fab fa-linkedin fa-fw"></i>
         </a>
     
@@ -366,15 +374,11 @@ BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は100
             
                 
                     <span class="tag">
-                        <a href="https://yonehub.y10e.com/tags/azure/"><i class="fas fa-tag fa-fw"></i>Azure</a>
+                        <a href="https://yonehub.y10e.com/tags/git/"><i class="fas fa-tag fa-fw"></i>git</a>
                     </span>
                 
                     <span class="tag">
-                        <a href="https://yonehub.y10e.com/tags/ad/"><i class="fas fa-tag fa-fw"></i>AD</a>
-                    </span>
-                
-                    <span class="tag">
-                        <a href="https://yonehub.y10e.com/tags/security/"><i class="fas fa-tag fa-fw"></i>Security</a>
+                        <a href="https://yonehub.y10e.com/tags/github/"><i class="fas fa-tag fa-fw"></i>github</a>
                     </span>
                 
             
@@ -386,10 +390,8 @@ BASICは1ユーザあたり112円/月, PREMIUM P1は672円/月, PREMIUM P2は100
 
     <div class="post-nav">
         
-            <a href="https://yonehub.y10e.com/2019/06/16/20190616_vscode_markdown/" class="prev" rel="prev" title="Visual Studio CodeでMarkdownファイルをプレビューする"><i class="fas fa-angle-left fa-fw"></i>Visual Studio CodeでMarkdownファイルをプレビューする</a>
+            <a href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/" class="prev" rel="prev" title="Visual Studio Code を Source から build する"><i class="fas fa-angle-left fa-fw"></i>Visual Studio Code を Source から build する</a>
         
-        
-            <a href="https://yonehub.y10e.com/2019/07/07/20190707_azure_sql/" class="next" rel="next" title="Azure SQL DatabaseとCosmosDBの要点整理(2019/7)">Azure SQL DatabaseとCosmosDBの要点整理(2019/7)<i class="fas fa-angle-right fa-fw"></i></a>
         
     </div>
 </div>

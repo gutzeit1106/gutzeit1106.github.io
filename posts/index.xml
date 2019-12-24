@@ -12,9 +12,18 @@
             <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
         
         
-            <lastBuildDate>Sat, 21 Dec 2019 01:34:51 +0900</lastBuildDate>
+            <lastBuildDate>Tue, 24 Dec 2019 23:05:15 +0900</lastBuildDate>
         
         <atom:link href="https://yonehub.y10e.com/posts/" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>git 管理から特定のファイル、ディレクトリを除外する(.gitignore)</title>
+                <link>https://yonehub.y10e.com/2019/12/24/20191223_git_gitignore/</link>
+                <pubDate>Tue, 24 Dec 2019 23:05:15 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2019/12/24/20191223_git_gitignore/</guid>
+                <description>秘匿性のあるファイルやキャッシュなどの一時ファイルなど git リポジトリのバージョン管理から特定のファイルやフォルダを除外したいときには .gitignore ファイルを作成します。 Mac だと, finder のメタ情報を持つ .DS_store がディレクトリの至るところに作成されるので, git を使う場合、除外設定しておかないと面倒です。 基本ルール 最も基本的な設定方法は, リポジトリのルートの直下に 1 つの .gitignore ファイルを配置することです。これによってリポジトリ配下のディ</description>
+            </item>
         
             <item>
                 <title>Visual Studio Code を Source から build する</title>
@@ -140,15 +149,6 @@
                 
                 <guid>https://yonehub.y10e.com/2019/11/08/20191108_ignite2019_aks/</guid>
                 <description>Microsoft Ignite 2019 で AKS / Container 関連も多く update がありました。 画期的というよりは、実用的な機能が充実してきたと思える機能が多くありました。 1. Threat protection for Azure Kubernetes Service Azure Security Centerでの、AKS クラスタを対象とした保護機能が拡大しているようです。 次の項目が挙げられていました。 • Discovery &amp;amp; Visibility - サブスクリプション内のAKSインスタンスの継続的ディスカバリ • Recommendations - セキュリティベストプラクティスを実行を助ける項目提示 • Threat Detection - ホストとクラスターベース</description>
-            </item>
-        
-            <item>
-                <title>Microsoft Ignite 2019 で発表された新機能のまとめ(VM/VMSS編)</title>
-                <link>https://yonehub.y10e.com/2019/11/07/20191107_ignite2019_iaas/</link>
-                <pubDate>Thu, 07 Nov 2019 17:47:23 +0900</pubDate>
-                
-                <guid>https://yonehub.y10e.com/2019/11/07/20191107_ignite2019_iaas/</guid>
-                <description>今週は Microsoft Ignite 2019 で盛り上がった一週間でした。 自分の周りでは、Keynote で取り上げられていた、Azure Arc や Azure Synapse が特に話題になっていた気がします。 それ以外にも、新機能の発表、プレビュー機能の GA ニュースが山盛りでした。 発表された項目は、Book of News Microsoft Ignite 2019に記載がありますが、index だけで7ページもあります。 しばらくキャッチアップに注力せねば&amp;hellip; そんな中、Azure の IaaS 系のサービスに</description>
             </item>
         
     </channel>
