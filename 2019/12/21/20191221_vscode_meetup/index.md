@@ -42,7 +42,7 @@ https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory
 
 ### GitHub Pull Requests
 
-github 公式の Pull Requests 拡張機能。
+github 公式の Pull Requests 拡張機能。  
 https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github
 
 ### Settings Sync
@@ -59,7 +59,7 @@ https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv
 
 ターミナルから code コマンドを使って, vscode を操作することができるが、結構便利そうなオプションがあった。
 
-### -g / --goto <file:line[:character]>
+### -g / --goto file:line[:character]
 
 ファイル、行数、何文字目かを指定してファイルを開く。
 
@@ -69,7 +69,7 @@ https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv
 $ code -g logstats.log:9:40
 ```
 
-### -d / --diff <file> <file>
+### -d / --diff file file
 
 ファイルの diff を表示する
 
@@ -79,7 +79,7 @@ $ code -g logstats.log:9:40
 $ code -d logstats.log logstats2.log
 ```
 
-### -a / --add　<folder>
+### -a / --add　folder
 
 指定したファルダをアクティブウィンドウのワークスペースに追加
 

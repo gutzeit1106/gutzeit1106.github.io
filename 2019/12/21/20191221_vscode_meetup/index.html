@@ -38,7 +38,7 @@
     
         "keywords": "Visual Studio Code, Tips",
     
-    "wordcount":  1141 ,
+    "wordcount":  1144 ,
     "url": "https:\/\/yonehub.y10e.com\/2019\/12\/21\/20191221_vscode_meetup\/",
     
         "datePublished": "2019-12-21T01:08:08\x2b09:00",
@@ -156,7 +156,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-21>2019-12-21</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1141 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1144 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
         </div>
 
@@ -184,9 +184,9 @@
     </li>
     <li><a href="#heading2">コマンドオプション</a>
       <ul>
-        <li><a href="#g--goto-filelinecharacter">-g / goto </a></li>
-        <li><a href="#d--diff-file-file">-d / diff  </a></li>
-        <li><a href="#a--addfolder">-a / add　</a></li>
+        <li><a href="#g--goto-filelinecharacter">-g / goto file:line[:character]</a></li>
+        <li><a href="#d--diff-file-file">-d / diff file file</a></li>
+        <li><a href="#a--addfolder">-a / add　folder</a></li>
         <li><a href="#n--newwindow">-n / new-window</a></li>
         <li><a href="#r--reusewindow">-r / reuse-window</a></li>
         <li><a href="#w--wait">-w / wait</a></li>
@@ -222,9 +222,9 @@
     </li>
     <li><a href="#heading2">コマンドオプション</a>
       <ul>
-        <li><a href="#g--goto-filelinecharacter">-g / goto </a></li>
-        <li><a href="#d--diff-file-file">-d / diff  </a></li>
-        <li><a href="#a--addfolder">-a / add　</a></li>
+        <li><a href="#g--goto-filelinecharacter">-g / goto file:line[:character]</a></li>
+        <li><a href="#d--diff-file-file">-d / diff file file</a></li>
+        <li><a href="#a--addfolder">-a / add　folder</a></li>
         <li><a href="#n--newwindow">-n / new-window</a></li>
         <li><a href="#r--reusewindow">-r / reuse-window</a></li>
         <li><a href="#w--wait">-w / wait</a></li>
@@ -290,7 +290,7 @@ WorkSpace に追加したフォルダを削除するコマンドほしい&hellip
 <p>git のリポジトリ履歴を見やすく表示してくれる<br>
 <a href="https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory">https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory</a></p>
 <a class="post-dummy-target" id="github-pull-requests"></a><h3>GitHub Pull Requests</h3>
-<p>github 公式の Pull Requests 拡張機能。
+<p>github 公式の Pull Requests 拡張機能。<br>
 <a href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github">https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github</a></p>
 <a class="post-dummy-target" id="settings-sync"></a><h3>Settings Sync</h3>
 <p>vs code の設定ファイルを gist 経由で同期する。<br>
@@ -300,7 +300,7 @@ WorkSpace に追加したフォルダを削除するコマンドほしい&hellip
 <a href="https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv">https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv</a></p>
 <a class="post-dummy-target" id="heading2"></a><h2>コマンドオプション</h2>
 <p>ターミナルから code コマンドを使って, vscode を操作することができるが、結構便利そうなオプションがあった。</p>
-<a class="post-dummy-target" id="g--goto-filelinecharacter"></a><h3>-g / &ndash;goto <a href="file:line%5B:character%5D">file:line[:character]</a></h3>
+<a class="post-dummy-target" id="g--goto-filelinecharacter"></a><h3>-g / &ndash;goto file:line[:character]</h3>
 <p>ファイル、行数、何文字目かを指定してファイルを開く。</p>
 <p>例：指定したファイルの9行目、40文字を active にしてファイルを開く</p>
 <div class="highlight"><div class="chroma">
@@ -311,7 +311,7 @@ WorkSpace に追加したフォルダを削除するコマンドほしい&hellip
 <pre class="chroma"><code class="language-sh" data-lang="sh">$ code -g logstats.log:9:40
 </code></pre></td></tr></table>
 </div>
-</div><a class="post-dummy-target" id="d--diff-file-file"></a><h3>-d / &ndash;diff <file> <file></h3>
+</div><a class="post-dummy-target" id="d--diff-file-file"></a><h3>-d / &ndash;diff file file</h3>
 <p>ファイルの diff を表示する</p>
 <p>例：</p>
 <div class="highlight"><div class="chroma">
@@ -322,7 +322,7 @@ WorkSpace に追加したフォルダを削除するコマンドほしい&hellip
 <pre class="chroma"><code class="language-sh" data-lang="sh">$ code -d logstats.log logstats2.log
 </code></pre></td></tr></table>
 </div>
-</div><a class="post-dummy-target" id="a--addfolder"></a><h3>-a / &ndash;add　<folder></h3>
+</div><a class="post-dummy-target" id="a--addfolder"></a><h3>-a / &ndash;add　folder</h3>
 <p>指定したファルダをアクティブウィンドウのワークスペースに追加</p>
 <p>例：</p>
 <div class="highlight"><div class="chroma">
