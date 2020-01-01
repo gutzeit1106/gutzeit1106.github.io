@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>2019年の振り返り・雑感 | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="Cloud Engineer&#39;s blog">
+<link rel="prev" href="https://yonehub.y10e.com/2019/12/24/20191223_git_gitignore/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2019/12/31/20191231_summary2019/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+  <meta name="twitter:title" content="2019年の振り返り・雑感" />
+  <meta name="twitter:description" content="せっかくの大晦日ということで、2019 年を振り返ってみる。何気に Tech じゃない記事は初めてな気がする。 仕事周り 個人レベルのエンジニアとしての仕事は当然として、それ以外の組織・チームを主眼とした仕事が特に必要になった一年だった。 列挙するとポイントは次のところ。 ベンダーマネジメント チームマネジメント ハイアリング 後進育成 2019 年からベンダー管理のとりまとめをするようになり、組 …">
+  <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
+  
+<meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y10exxx" />
+  <meta name="twitter:creator" content="@y10exxx" /><script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "2019年の振り返り・雑感",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/yonehub.y10e.com\/2019\/12\/31\/20191231_summary2019\/"
+    },
+    
+    "genre": "posts",
+    
+        "keywords": "NonTech",
+    
+    "wordcount":  2276 ,
+    "url": "https:\/\/yonehub.y10e.com\/2019\/12\/31\/20191231_summary2019\/",
+    
+        "datePublished": "2019-12-31T23:15:15\x2b09:00",
+    
+    
+        "dateModified": "2020-01-01T18:58:10\x2b09:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Yusuke.Yoneda",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/yonehub.y10e.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            if (!window.localStorage.getItem('theme')){
+                var current = new Date();
+                if (current.getHours() >= 23 || current.getHours() <= 4){
+                    window.localStorage.setItem('theme', 'dark');
+                    location.reload();
+                }else{
+                    window.localStorage.setItem('theme', 'light');
+                }
+            }
+
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://yonehub.y10e.com/">YONEHUB</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://yonehub.y10e.com/">YONEHUB</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">2019年の振り返り・雑感</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/nontech/">NonTech</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-31>2019-12-31</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 2276 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>5 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                
+                <div class="post-toc-content always-active">
+                    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#heading">仕事周り</a></li>
+        <li><a href="#heading1">プライベート</a></li>
+        <li><a href="#2020">2020年に向けて</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Index</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#heading">仕事周り</a></li>
+        <li><a href="#heading1">プライベート</a></li>
+        <li><a href="#2020">2020年に向けて</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <p>せっかくの大晦日ということで、2019 年を振り返ってみる。何気に Tech じゃない記事は初めてな気がする。</p>
+<a class="post-dummy-target" id="heading"></a><h3>仕事周り</h3>
+<p>個人レベルのエンジニアとしての仕事は当然として、それ以外の組織・チームを主眼とした仕事が特に必要になった一年だった。
+列挙するとポイントは次のところ。</p>
+<ul>
+<li>ベンダーマネジメント</li>
+<li>チームマネジメント</li>
+<li>ハイアリング</li>
+<li>後進育成</li>
+</ul>
+<p>2019 年からベンダー管理のとりまとめをするようになり、組織・個人のモチベーションが違う対象と共にどうやって期待する成果を引き出すかということに試行錯誤した。客観的に見て前半は自身のスキルをうまく活用でき良い結果を導くことができた感じる。事実として数値的な指標でも差異はなかった。しかしその順調な裏返しとして規模が早すぎるスピードで拡大し、より組織的でソリッドな方法を模索するところに注力してもよかったと反省が残る。自分はマネジメント的なキャリアは志向していないが、組織規模が大きくなっていくほど、また管理対象が自律できる状態に成長していない（能力・モチベーションが不足している、カルチャーが成熟していないなど）ときほど管理方法はソリッドにしておくのが良いという学びを実感できた。もし将来完全な新規組織の立ち上げを経験することがあれば応用できる知見に思う。</p>
+<p>次に昨年からの引き続きでもあるが、2019年もチームリーダーの役割を多様なメンバーの組み合わせで経験することができた。規模は5人弱だったが、年齢・性別・経験的なバックボーンも様々なメンバーと仕事することができた。当たり前ながら人はそれぞれ違うベクトルを向いて生きていることを実感した。学生時代、中島敦の山月記が好きで、”人間は誰でも猛獣使いである”という言葉を胸に自分自身を律しようと心がけて生きてきたが、人は一人一人違う猛獣を飼っているという学びを得た。なので、自分という猛獣で使えたメソッドがそのまま他人に使えるわけがなく、もっと知識を抽象化して各個人のアナロジーを考えることが大切なんじゃないかと思うに至った。ベンダー管理のことを思うと人数規模が 10 人以下で組織体制的に近接した人が相手の場合に限ると思うけども。</p>
+<p>採用イベントや中途採用選考にも携わる経験を多々することができた。前職の企業でいたら下手したら一生経験することがなく人生終えることもあり得た。それを思うに大変貴重な経験だったと思う限り。採用で重要なのは限定された時間の中でチームに必要に足る人物か判断に至る情報を得ることだということを学んだ。採用側の目線に立った経験は様々なポイントで活用できるだろう。（そしてその意識のないまま選考に挑む人は思いの外多い&hellip;）</p>
+<p>また、来年から他の技術エリアを担当することになったため後進の育成にも努めた年だった。幸いにもモチベーション、能力ともに優秀な方に引き継ぐことができたので安心して次の仕事に移れる。</p>
+<p>マネジメント的な話が多く出たが、技術的にも多くの新たなチャレンジがあった。エリアとしては仕事に直接関わることの多かった、container, container orchestration, linux os などがキーワードとしてはあがるが、雑感としては自分の知識の隙間と周辺を埋めることに一番時間を割いた年だった気がする。ネットワークや、PaaS、AWS、GCP などにも少しずつではあるが足場を固めることができた。
+転職して以来、インフラ系の仕事の割合が増えていたが、2020 年はまた開発寄りの仕事が増える見込みなので、そこを加味して自分のスキルセットを再構築していきたいところ。</p>
+<a class="post-dummy-target" id="heading1"></a><h3>プライベート</h3>
+<p>今年は 3 月に結婚式をあげたので 2019 年の前半はその準備で追われていた。海外挙式だったので、昨年の年末年始は家族のパスポート申請などの雑務が多く、その中でも結婚式のイベントサイトを普段使わないクラウドサービスを組み合わせて作ったりして遊んでいたのが懐かしい。その甲斐あってとても自分達らしい納得度の高いイベントにすることができたと思う。振り返るとよく結婚式の準備で喧嘩したりする夫婦が多いというが、妻とは意見の対立があっても楽しく生産的な結論を出して乗り越えることができた。<br>
+2020 年も引き続き家庭の重要イベントが続く予定なので、家庭と仕事どちらも順調に推移させることが最重要ミッション。また、細々したところでは、ずっといつかやりたいと考えていたバンジージャンプとスカイダイビングにチャレンジできた。スカイダイビングはインドアだったが良い経験だった。</p>
+<a class="post-dummy-target" id="2020"></a><h3>2020年に向けて</h3>
+<p>仕事に関しては大きな変化が決まっているのでまずはそれにきちんと適応することがもっとも肝要。ここで適応することで自分の価値と、その先の選択肢が生まれてくる。マネジメントよりはエンジニアとしての経験を高める比重が大きくなると捉えているので、今まで以上に学習に貪欲に取り組んでくみたい。仕事以外に技術周りだと、アウトプットの比率向上と組織外のコミュニティとの関わりを増やしていきたい。これらの具体的なマイルストーン設定は年始に煮詰めよう。</p>
+<p>プライベートもチャレンジが多い 1 年になりそうだが、自分だけで決定できないものが多く、また一人だけで決める必要もないので、妻と協力しつつ、また助けつつ、周囲にも助けられつつ頑張っていくしかないだろうな。ただ、自分の意見がないと将来後悔する結果になることが多いし、自分の意見を持つには客観的に知識が必要になるため、過度になりすぎない程度に何冊か関連書籍をピックアップしてまずは知識吸収に努めよう。<br>
+あとは健全な食生活と生活習慣を長期間維持してもう少し健康になる。</p>
+
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2020-01-01</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2019/12/31/20191231_summary2019/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f31%2f20191231_summary2019%2f&amp;text=2019%e5%b9%b4%e3%81%ae%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a%e3%83%bb%e9%9b%91%e6%84%9f&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f31%2f20191231_summary2019%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+    
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f31%2f20191231_summary2019%2f&amp;title=2019%e5%b9%b4%e3%81%ae%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a%e3%83%bb%e9%9b%91%e6%84%9f" target="_blank" title="Share on LinkedIn">
+            <i class="fab fa-linkedin fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/nontech/"><i class="fas fa-tag fa-fw"></i>NonTech</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://yonehub.y10e.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://yonehub.y10e.com/2019/12/24/20191223_git_gitignore/" class="prev" rel="prev" title="git 管理から特定のファイル、ディレクトリを除外する(.gitignore)"><i class="fas fa-angle-left fa-fw"></i>git 管理から特定のファイル、ディレクトリを除外する(.gitignore)</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            　　<div id="disqus_thread"></div>
+        <script>
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yonehub.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://yonehub.y10e.com/">Yusuke.Yoneda</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133674179-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>
