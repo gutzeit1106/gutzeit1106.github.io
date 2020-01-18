@@ -18,9 +18,10 @@
 
 *****
 
-#### 3. 実践ドメイン駆動設計
-名著でよく上がるので読んどこう。  
-<a target="_blank"  href="https://www.amazon.co.jp/gp/product/479813161X/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=479813161X&linkCode=as2&tag=gutzeit110608-22&linkId=b08fdc2a091bed3fcb13a9a1ea26ad02"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=479813161X&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=gutzeit110608-22" align="left"></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=gutzeit110608-22&l=am2&o=9&a=479813161X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+#### 3. マスタリングTCP/IP 応用編
+リファレンス的な利用になると思うが持っていて損はない気がする。
+
+<a target="_blank"  href="https://www.amazon.co.jp/gp/product/4274062562/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4274062562&linkCode=as2&tag=gutzeit110608-22&linkId=c9e4e63a85aae4763bd19fdc1ebc11b8"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=4274062562&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=gutzeit110608-22" align="left">></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=gutzeit110608-22&l=am2&o=9&a=4274062562" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 <br clear="left">
 
 *****
@@ -43,4 +44,13 @@
 #### 6. それがぼくには楽しかったから 全世界を巻き込んだリナックス革命の真実
 技術書ではなさそうだけど、面白そうなので。  
 <a target="_blank"  href="https://www.amazon.co.jp/gp/product/4796880011/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4796880011&linkCode=as2&tag=gutzeit110608-22&linkId=9d9503ea9f3f24482783df2e17b285af"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=4796880011&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=gutzeit110608-22" align="left"></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=gutzeit110608-22&l=am2&o=9&a=4796880011" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<br clear="left">
+
+*****
+
+#### 7. わかる！ 電子工作の基本 100
+完全なる趣味。
+
+<a target="_blank"  href="https://www.amazon.co.jp/gp/product/4798027979/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4798027979&linkCode=as2&tag=gutzeit110608-22&linkId=870e7cd07b6e7b3cc71e0d398ceb2e0e"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=4798027979&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=gutzeit110608-22" align="left"></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=gutzeit110608-22&l=am2&o=9&a=4798027979" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+
 <br clear="left">
