@@ -8,7 +8,7 @@ Raspberry Pi 用の Micro SD カードに Raspbian をインストール手順�
 NOOBS、Raspbianのイメージインストールは最小推奨で 8GB 以上なので、それ以上のサイズが必要。
 カードのスループットに推奨値はないみたいだが、自分は大体 Class 10 以上を使っている。
 
-SD Card
+SD Card  
 https://www.raspberrypi.org/documentation/installation/sd-cards.md
 
 ### 2. インストール方法の選択 
@@ -16,7 +16,7 @@ NOOBS を使う方法と、Raspbian を直接イメージとして焼く方法�
 NOOBS でも Raspbian はオフラインインストールできるみたいだが、若干 SD カードの容量を無題にするかなと思われる。
 NOOBS で Ubuntuなどの Raspbian 以外の OS をインストールすることもできるがネットワーク経由になる。
 
-Raspberry Pi - Downloads
+Raspberry Pi - Downloads  
 https://www.raspberrypi.org/downloads/
 
 ### 3. Micro SDカードのフォーマット
