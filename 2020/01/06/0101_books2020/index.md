@@ -21,7 +21,7 @@
 #### 3. マスタリングTCP/IP 応用編
 リファレンス的な利用になると思うが持っていて損はない気がする。
 
-<a target="_blank"  href="https://www.amazon.co.jp/gp/product/4274062562/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4274062562&linkCode=as2&tag=gutzeit110608-22&linkId=c9e4e63a85aae4763bd19fdc1ebc11b8"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=4274062562&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=gutzeit110608-22" align="left">></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=gutzeit110608-22&l=am2&o=9&a=4274062562" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<a target="_blank"  href="https://www.amazon.co.jp/gp/product/4274062562/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4274062562&linkCode=as2&tag=gutzeit110608-22&linkId=c9e4e63a85aae4763bd19fdc1ebc11b8"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=4274062562&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=gutzeit110608-22" align="left"></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=gutzeit110608-22&l=am2&o=9&a=4274062562" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 <br clear="left">
 
 *****
