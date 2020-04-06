@@ -32,7 +32,7 @@ curl -X POST -d 'grant_type=client_credentials&client_id=[APP_ID]&client_secret=
 2 のレスポンスに含まれる access_token を リクエストのヘッダー（Authorization）に付加して、Azure REST API を Call する。以下はサブスクリプション内のリソース一覧を取得する例。
 
 ```sh
-curl -X GET -H "Authorization: Bearer [TOKEN]" -H "Content-Type: application/json" https://management.azure.com/subscriptions/xxxresources?api-version=2019-10-01
+curl -X GET -H "Authorization: Bearer [TOKEN]" -H "Content-Type: application/json" https://management.azure.com/subscriptions/xxx/resources?api-version=2019-10-01
 ```
 
 ### 補足
