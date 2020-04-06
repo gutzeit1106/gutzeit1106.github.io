@@ -12,9 +12,18 @@
             <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
         
         
-            <lastBuildDate>Mon, 06 Jan 2020 04:03:39 +0900</lastBuildDate>
+            <lastBuildDate>Mon, 06 Apr 2020 04:03:39 +0900</lastBuildDate>
         
         <atom:link href="https://yonehub.y10e.com/posts/" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>Shell で Azure REST API を Call する</title>
+                <link>https://yonehub.y10e.com/2020/04/06/0406_shell_azurerest/</link>
+                <pubDate>Mon, 06 Apr 2020 04:03:39 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2020/04/06/0406_shell_azurerest/</guid>
+                <description>Azure には リソースの管理用の REST API が用意されている。ポータルや Azure Powershell、CLI、Management SDKといったツール群は、この REST-API を Call して操作を実現している。 大体の場合はポータルやツール群を使用することで事足りるけども、新機能の操作やREST-APIのリクエストを自由に指定して操作を試したい場合に REST を直接呼び出したい場合があり、シェルからさくっと呼び出したいという声をわりとよく聞く。 自分</description>
+            </item>
         
             <item>
                 <title>git 管理から特定のファイル、ディレクトリを除外する(.gitignore)</title>
@@ -140,15 +149,6 @@
                 
                 <guid>https://yonehub.y10e.com/2019/11/11/20191110_ignite2019_storage/</guid>
                 <description>Microsoft Ignite 2019 の Storage周りの update まとめです。 公開情報がまだ十分にない preview な機能の紹介が多かった印象でした。 1. Azure Disk ディスク関連の update は、 Azure VM とかぶっているのが多くあります。 SAP HANA Certification on Ultra Disk and M/E series VMs 8月に GA された Ultra Disk と M or E シリーズ VM の構成が、SAP HANA の認定を受けた。 参照:Azure Ultra Disk Storage の一般公開に関するお知らせ Shared Disk Support for Ultra and Premium SSD 複数の仮想マシンからディスクを共有する Azure Shared Disks のプレビューが開始されたそうです。 プレ</description>
-            </item>
-        
-            <item>
-                <title>Microsoft Ignite 2019 で発表された新機能のまとめ(AKS/Container編)</title>
-                <link>https://yonehub.y10e.com/2019/11/08/20191108_ignite2019_aks/</link>
-                <pubDate>Fri, 08 Nov 2019 12:47:23 +0900</pubDate>
-                
-                <guid>https://yonehub.y10e.com/2019/11/08/20191108_ignite2019_aks/</guid>
-                <description>Microsoft Ignite 2019 で AKS / Container 関連も多く update がありました。 画期的というよりは、実用的な機能が充実してきたと思える機能が多くありました。 1. Threat protection for Azure Kubernetes Service Azure Security Centerでの、AKS クラスタを対象とした保護機能が拡大しているようです。 次の項目が挙げられていました。 • Discovery &amp;amp; Visibility - サブスクリプション内のAKSインスタンスの継続的ディスカバリ • Recommendations - セキュリティベストプラクティスを実行を助ける項目提示 • Threat Detection - ホストとクラスターベース</description>
             </item>
         
     </channel>
