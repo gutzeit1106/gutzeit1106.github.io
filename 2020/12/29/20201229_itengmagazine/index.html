@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>ITエンジニア向けの雑誌 | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="Cloud Engineer&#39;s blog">
+<link rel="prev" href="https://yonehub.y10e.com/2020/11/30/1129_windowstips/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2020/12/29/20201229_itengmagazine/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+  <meta name="twitter:title" content="ITエンジニア向けの雑誌" />
+  <meta name="twitter:description" content="IT エンジニア向けの雑誌を網羅的に調べたことなかったのでリストアップしてみる。 Software Design は琴線に触れること多かったけど、やっぱそれ以外にそんなにドンピシャな雑誌はなかった。 Software Design 出版社：技術評論者 発売日：毎月18日 コンセプト：OSとネットワーク，IT環境を支えるエンジニアの総合誌 備考：OS以上で低レイヤーな記事が多めな印象。ハードウェア的 …">
+  <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
+  
+<meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y10exxx" />
+  <meta name="twitter:creator" content="@y10exxx" /><script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "ITエンジニア向けの雑誌",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/yonehub.y10e.com\/2020\/12\/29\/20201229_itengmagazine\/"
+    },
+    
+    "genre": "posts",
+    
+        "keywords": "NonTech",
+    
+    "wordcount":  832 ,
+    "url": "https:\/\/yonehub.y10e.com\/2020\/12\/29\/20201229_itengmagazine\/",
+    
+        "datePublished": "2020-12-29T21:43:17\x2b09:00",
+    
+    
+        "dateModified": "2020-12-29T21:43:17\x2b09:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Yusuke.Yoneda",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/yonehub.y10e.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            if (!window.localStorage.getItem('theme')){
+                var current = new Date();
+                if (current.getHours() >= 23 || current.getHours() <= 4){
+                    window.localStorage.setItem('theme', 'dark');
+                    location.reload();
+                }else{
+                    window.localStorage.setItem('theme', 'light');
+                }
+            }
+
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://yonehub.y10e.com/">YONEHUB</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://yonehub.y10e.com/">YONEHUB</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">ITエンジニア向けの雑誌</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/tips/">Tips</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-12-29>2020-12-29</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 832 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                
+                <div class="post-toc-content always-active">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#software-design">Software Design</a></li>
+    <li><a href="#webdb-press">WEB+DB PRESS</a></li>
+    <li><a href="#interface">Interface</a></li>
+    <li><a href="#heading">日経ソフトウエア</a></li>
+    <li><a href="#linux">日経Linux</a></li>
+    <li><a href="#network">日経NETWORK</a></li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Index</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li><a href="#software-design">Software Design</a></li>
+    <li><a href="#webdb-press">WEB+DB PRESS</a></li>
+    <li><a href="#interface">Interface</a></li>
+    <li><a href="#heading">日経ソフトウエア</a></li>
+    <li><a href="#linux">日経Linux</a></li>
+    <li><a href="#network">日経NETWORK</a></li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <p>IT エンジニア向けの雑誌を網羅的に調べたことなかったのでリストアップしてみる。<br>
+Software Design は琴線に触れること多かったけど、やっぱそれ以外にそんなにドンピシャな雑誌はなかった。</p>
+<a class="post-dummy-target" id="software-design"></a><h2>Software Design</h2>
+<hr>
+<p>出版社：技術評論者<br>
+発売日：毎月18日<br>
+コンセプト：OSとネットワーク，IT環境を支えるエンジニアの総合誌<br>
+備考：OS以上で低レイヤーな記事が多めな印象。ハードウェア的な要素はあまり見ない。<br>
+HP：<a href="https://gihyo.jp/magazine/SD"><a href="https://gihyo.jp/magazine/SD">https://gihyo.jp/magazine/SD</a></a></p>
+<p><a target="_blank"  href="https://www.amazon.co.jp/gp/product/B08Q82B3Y5/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B08Q82B3Y5&linkCode=as2&tag=gutzeit110608-22&linkId=0993bbcfe7d03e5e69ae3d76af7ba430"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B08Q82B3Y5&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL160_&tag=gutzeit110608-22" align="left"></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=gutzeit110608-22&l=am2&o=9&a=B08Q82B3Y5" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<br clear="left"></p>
+<a class="post-dummy-target" id="webdb-press"></a><h2>WEB+DB PRESS</h2>
+<hr>
+<p>出版社：技術評論者<br>
+発売日：偶数月24日<br>
+コンセプト：Webアプリケーション開発のためのプログラミング技術情報誌<br>
+備考：いうほどwebに特化していないような気がする<br>
+HP：<a href="https://gihyo.jp/magazine/wdpress"><a href="https://gihyo.jp/magazine/wdpress">https://gihyo.jp/magazine/wdpress</a></a></p>
+<p><a target="_blank"  href="https://www.amazon.co.jp/gp/product/B08Q764JKR/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B08Q764JKR&linkCode=as2&tag=gutzeit110608-22&linkId=c15b28b1de1208e8aee28a3adb10630b"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B08Q764JKR&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL160_&tag=gutzeit110608-22" align="left"></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=gutzeit110608-22&l=am2&o=9&a=B08Q764JKR" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<br clear="left"></p>
+<a class="post-dummy-target" id="interface"></a><h2>Interface</h2>
+<hr>
+<p>出版社：CQ出版社<br>
+発売日：毎月25日<br>
+コンセプト：これから期待のコンピュータ技術を，その道のプロの技術者/研究者が解説する，コンピュータ・サイエンス＆テクノロジ月刊誌<br>
+備考：ハードウェア寄り。<br>
+HP：<a href="https://interface.cqpub.co.jp/"><a href="https://interface.cqpub.co.jp/">https://interface.cqpub.co.jp/</a></a></p>
+<p><a target="_blank"  href="https://www.amazon.co.jp/gp/product/B08PXB988P/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B08PXB988P&linkCode=as2&tag=gutzeit110608-22&linkId=c8a2414140bfa24a5202925633c9d5a8"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B08PXB988P&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL160_&tag=gutzeit110608-22" align="left"></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=gutzeit110608-22&l=am2&o=9&a=B08PXB988P" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<br clear="left"></p>
+<a class="post-dummy-target" id="heading"></a><h2>日経ソフトウエア</h2>
+<hr>
+<p>発売日：日経BP社<br>
+発売日：奇数月24日<br>
+コンセプト：プログラミングおよびソフトウエア開発の技術と喜びをお伝えします<br>
+備考：ハードウェアも低レイヤーもweb系も扱うけどあんまりディープな特集がない印象<br>
+HP：<a href="https://info.nikkeibp.co.jp/media/NSW/"><a href="https://info.nikkeibp.co.jp/media/NSW/">https://info.nikkeibp.co.jp/media/NSW/</a></a></p>
+<p><a target="_blank"  href="https://www.amazon.co.jp/gp/product/B08NWKPKWR/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B08NWKPKWR&linkCode=as2&tag=gutzeit110608-22&linkId=979683979b966e11df56b93eb750601d"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B08NWKPKWR&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL160_&tag=gutzeit110608-22" align="left"></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=gutzeit110608-22&l=am2&o=9&a=B08NWKPKWR" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<br clear="left"></p>
+<a class="post-dummy-target" id="linux"></a><h2>日経Linux</h2>
+<hr>
+<p>発売日：日経BP社<br>
+発売日：奇数月8日<br>
+コンセプト：Linux活用のための実用情報誌<br>
+備考：ユーザ目線の内容が多くそこまで高度ではない印象<br>
+HP：<a href="https://info.nikkeibp.co.jp/media/LIN/"><a href="https://info.nikkeibp.co.jp/media/LIN/">https://info.nikkeibp.co.jp/media/LIN/</a></a></p>
+<p><a target="_blank"  href="https://www.amazon.co.jp/gp/product/B08PTMGSD6/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B08PTMGSD6&linkCode=as2&tag=gutzeit110608-22&linkId=4c18a092cbb380808905e6ac0cb8b18a"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B08PTMGSD6&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL160_&tag=gutzeit110608-22" align="left"></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=gutzeit110608-22&l=am2&o=9&a=B08PTMGSD6" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<br clear="left"></p>
+<a class="post-dummy-target" id="network"></a><h2>日経NETWORK</h2>
+<hr>
+<p>発売日：日経BP社<br>
+発売日：毎月28日<br>
+コンセプト：ネットワーク技術が基礎から身につく情報誌<br>
+備考：ネットワークエンジニア向けの雑誌これしか見たことない<br>
+HP：<a href="https://xtech.nikkei.com/media/NNW/"><a href="https://xtech.nikkei.com/media/NNW/">https://xtech.nikkei.com/media/NNW/</a></a></p>
+
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2020-12-29</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2020/12/29/20201229_itengmagazine/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2020%2f12%2f29%2f20201229_itengmagazine%2f&amp;text=IT%e3%82%a8%e3%83%b3%e3%82%b8%e3%83%8b%e3%82%a2%e5%90%91%e3%81%91%e3%81%ae%e9%9b%91%e8%aa%8c&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2020%2f12%2f29%2f20201229_itengmagazine%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+    
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2020%2f12%2f29%2f20201229_itengmagazine%2f&amp;title=IT%e3%82%a8%e3%83%b3%e3%82%b8%e3%83%8b%e3%82%a2%e5%90%91%e3%81%91%e3%81%ae%e9%9b%91%e8%aa%8c" target="_blank" title="Share on LinkedIn">
+            <i class="fab fa-linkedin fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/nontech/"><i class="fas fa-tag fa-fw"></i>NonTech</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://yonehub.y10e.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://yonehub.y10e.com/2020/11/30/1129_windowstips/" class="prev" rel="prev" title="Event Viewer の履歴を一括削除する方法"><i class="fas fa-angle-left fa-fw"></i>Event Viewer の履歴を一括削除する方法</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            　　<div id="disqus_thread"></div>
+        <script>
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yonehub.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://yonehub.y10e.com/">Yusuke.Yoneda</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133674179-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>
