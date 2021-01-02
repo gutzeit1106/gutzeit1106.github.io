@@ -56,3 +56,9 @@ Software Designで昔連載されてたコンテンツらしいんだけど、�
 
 <a target="_blank"  href="https://www.amazon.co.jp/gp/product/B08NDBW5SR/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B08NDBW5SR&linkCode=as2&tag=gutzeit110608-22&linkId=5fd54caf4479e58634af5bb1a370d3d6"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B08NDBW5SR&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL160_&tag=gutzeit110608-22" align="left"></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=gutzeit110608-22&l=am2&o=9&a=B08NDBW5SR" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 <br clear="left">
+
+#### マスタリングビットコイン
+そろそろブロックチェーンの技術面をキャッチアップしとかないと世の中に取り残される。
+
+<a target="_blank"  href="https://www.amazon.co.jp/gp/product/4757103670/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4757103670&linkCode=as2&tag=gutzeit110608-22&linkId=1326ec8c2a36af01cd2c97e83e5ad250"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=4757103670&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL160_&tag=gutzeit110608-22" align="left"></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=gutzeit110608-22&l=am2&o=9&a=4757103670" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<br clear="left">
