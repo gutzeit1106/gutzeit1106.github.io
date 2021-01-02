@@ -219,6 +219,53 @@
     
     
     <h1 class="post-title post-list-title" itemprop="name headline">
+        <a href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/">Visual Studio Code を Source から build する</a>
+    </h1>
+
+    <div class="post-meta">
+        <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+        published on&nbsp;<time datetime=2019-12-21>2019-12-21</time>&nbsp;
+        <span class="post-category">
+                included in
+                <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/development/">Development</a>
+                    
+            </span>
+    </div>
+    <div class="post-content">
+        
+            
+            
+            
+            
+            
+            
+            
+            1. はじめに 2019/12/18 に Visual Studio Code Meetup #1 に参加しました。 LT で、VS Code のアイコンの種類についてのお話があり、生 Source Code からビルドすると VS Code のアイコンが違うとのことで、興味湧いたので試してみました。環境は macOS Mojave(10.14.6)です。 アイコンはこんな感じです。 2. 前提条件 mac だと最低限 次を事前にインストールしておく必要がありました。 Git Node.js(version 10.x 以上 12.x 以下) Yarn python 2.7 Xcode 私が実際に build した環境は次の通りです。 git version 2.20.1 node v12.4.0 python 2.7.17 yarn version v1.21.1 Xcode Version
+        
+    </div>
+    <div class="post-footer">
+        <a href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/">Read More</a>
+        
+            <div class="post-tags">
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/visual-studio-code/"><i class="fas fa-tag fa-fw"></i>Visual Studio Code</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/tips/"><i class="fas fa-tag fa-fw"></i>Tips</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/mac/"><i class="fas fa-tag fa-fw"></i>Mac</a></span>
+                
+            </div>
+        
+    </div>
+</article><article class="post" itemscope itemtype="http://schema.org/Article">
+    
+    
+    
+
+    
+    
+    
+    <h1 class="post-title post-list-title" itemprop="name headline">
         <a href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_meetup/">Visual Studio Code Meetup #1 の参加メモ</a>
     </h1>
 
@@ -529,57 +576,6 @@
                     &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/dapr/"><i class="fas fa-tag fa-fw"></i>dapr</a></span>
                 
                     &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/container/"><i class="fas fa-tag fa-fw"></i>Container</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/aks/"><i class="fas fa-tag fa-fw"></i>AKS</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/kubernetes/"><i class="fas fa-tag fa-fw"></i>kubernetes</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/microsoft/"><i class="fas fa-tag fa-fw"></i>Microsoft</a></span>
-                
-            </div>
-        
-    </div>
-</article><article class="post" itemscope itemtype="http://schema.org/Article">
-    
-    
-    
-
-    
-    
-    
-    <h1 class="post-title post-list-title" itemprop="name headline">
-        <a href="https://yonehub.y10e.com/2019/11/27/20191127_dapr_aks_setup/">Azure Kubernetes Service(AKS)で Dapr を動かす（Setup編）</a>
-    </h1>
-
-    <div class="post-meta">
-        <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
-        published on&nbsp;<time datetime=2019-11-27>2019-11-27</time>&nbsp;
-        <span class="post-category">
-                included in
-                <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/development/">Development</a>
-                    
-            </span>
-    </div>
-    <div class="post-content">
-        
-            
-            
-            
-            
-            
-            
-            
-            先日、stand-alone な環境で dapr の動作を検証しました。 次は、Kubernetes cluster 上で dapr の動作を検証してみたいと思います。Minikube などのローカルな環境でも試すことができそうでしたが、折角なので Azure Kubernetes Service(AKS) で検証してみます。動作検証時の dapr は v0.2 になります。 0. ドキュメント Installing Dapr on a Kubernetes cluster https://github.com/dapr/docs/blob/master/getting-started/environment-setup.md#installing-dapr-on-a-kubernetes-cluster Set up an Azure Kubernetes Service cluster https://github.com/dapr/docs/blob/master/getting-started/cluster/setup-aks.md 1. Azure Kubernetes Service(AKS) Cluster の作成 前提条件として、次を作業端末にセットアップします。 ・Azure CLI ・kubectl
-        
-    </div>
-    <div class="post-footer">
-        <a href="https://yonehub.y10e.com/2019/11/27/20191127_dapr_aks_setup/">Read More</a>
-        
-            <div class="post-tags">
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/dapr/"><i class="fas fa-tag fa-fw"></i>dapr</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/container/"><i class="fas fa-tag fa-fw"></i>container</a></span>
                 
                     &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/aks/"><i class="fas fa-tag fa-fw"></i>AKS</a></span>
                 

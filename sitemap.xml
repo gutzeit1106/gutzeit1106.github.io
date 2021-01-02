@@ -1,9 +1,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
         <url>
-            <loc>https://yonehub.y10e.com/2020/12/31/20201231_summary2020/</loc>
+            <loc>https://yonehub.y10e.com/2021/01/02/books2021/</loc>
             
-                <lastmod>2021-01-01T00:12:49+09:00</lastmod>
+                <lastmod>2021-01-02T23:09:16+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/tags/book/</loc>
+            
+                <lastmod>2021-01-02T23:09:16+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -17,7 +31,7 @@
         <url>
             <loc>https://yonehub.y10e.com/categories/</loc>
             
-                <lastmod>2021-01-01T00:12:49+09:00</lastmod>
+                <lastmod>2021-01-02T23:09:16+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -29,7 +43,63 @@
         </url>
     
         <url>
-            <loc>https://yonehub.y10e.com/tags/nontech/</loc>
+            <loc>https://yonehub.y10e.com/posts/</loc>
+            
+                <lastmod>2021-01-02T23:09:16+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/tags/</loc>
+            
+                <lastmod>2021-01-02T23:09:16+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/categories/tech/</loc>
+            
+                <lastmod>2021-01-02T23:09:16+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/</loc>
+            
+                <lastmod>2021-01-02T23:09:16+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/2020/12/31/20201231_summary2020/</loc>
             
                 <lastmod>2021-01-01T00:12:49+09:00</lastmod>
             
@@ -57,35 +127,7 @@
         </url>
     
         <url>
-            <loc>https://yonehub.y10e.com/posts/</loc>
-            
-                <lastmod>2021-01-01T00:12:49+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://yonehub.y10e.com/tags/</loc>
-            
-                <lastmod>2021-01-01T00:12:49+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://yonehub.y10e.com/</loc>
+            <loc>https://yonehub.y10e.com/tags/nontech/</loc>
             
                 <lastmod>2021-01-01T00:12:49+09:00</lastmod>
             
@@ -128,20 +170,6 @@
     
         <url>
             <loc>https://yonehub.y10e.com/2020/11/30/1129_windowstips/</loc>
-            
-                <lastmod>2020-11-30T22:24:31+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://yonehub.y10e.com/categories/tech/</loc>
             
                 <lastmod>2020-11-30T22:24:31+09:00</lastmod>
             
@@ -226,20 +254,6 @@
     
         <url>
             <loc>https://yonehub.y10e.com/2020/01/06/0101_books2020/</loc>
-            
-                <lastmod>2020-01-19T02:13:23+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://yonehub.y10e.com/tags/book/</loc>
             
                 <lastmod>2020-01-19T02:13:23+09:00</lastmod>
             
