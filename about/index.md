@@ -7,13 +7,27 @@
 ![Yoneda Yusuke](/images/avatar.png)
 
 ### Profile
-米田有佑 (Yoneda Yusuke)。1987年奈良県生まれ。  
+米田有佑 (Yoneda Yusuke)。
+2012年に日本の家電メーカーに新卒入社しクラウド家電の開発プロジェクトを担当。B2C 家電や B2B 用のデバイスから双方向接続するサーバーサイドアプリケーションやクラウドベースのシステム基盤の設計・開発をしていました。2015 年からはパブリッククラウドをサービス提供している米国企業に転職し、東京で IT エンジニアとして働いています。<br>
+Computer 関連のテーマでプライベートで調査、検証したメモなどをポストしていくつもりです。[Qiita](https://qiita.com/y10exxx) でもたまに投稿していますが、このブログは完全に自分の備忘録も兼ねています。<br>
+
+### Recent Focus of Interest
+* 低レイヤー（CPU, OS, Compiler） 
+* C, C++, Rust, Go, C# , Python
+* 量子コンピューティング
+* Blockchain
+* IoT
+
+<!--
+1987年奈良県生まれ。  
 2012年に日本の家電メーカー（大阪）に入社し、主にクラウド家電の開発プロジェクトを担当。B2C 家電や B2B 用のデバイスから双方向接続するサーバーサイドアプリケーションやクラウドベースのシステム基盤の設計・開発をおこなっていました。<br>
 2015 年にパブリッククラウドをサービス提供している米国企業に転職し、東京で IT エンジニアとして働いています。
 大学・大学院は京都だったため, 2x年のほとんどを近鉄と京阪を使って京阪奈を徘徊する関西ネイティブな人生でした。関東の一般常識や道路、路線に弱い自覚があります。<br>
 Computer Science との戯れは仕事であり趣味なので自身の興味のあることを調査、検証したメモなどをポストしていくつもりです。フロントエンドよりは、OS、仮想化、クラウドなどのインフラや Dev, OSS などの話が多くなりそうな気がします。<br>
 [Qiita](https://qiita.com/y10exxx) でもたまに書いてます。来るもの拒まずなので、興味ある方がおられましたら [twitter](https://twitter.com/y10exxx) で繋がってもらえると嬉しいです。
+-->
 
+<!-- 
 ### Favorite
 * Coding (Python, C#, Go) :(fas fa-code):
 * Cloud Platdorm & Cloud Native Technology :(fas fa-cloud):
@@ -42,6 +56,7 @@ Computer Science との戯れは仕事であり趣味なので自身の興味の
 ### Activity
 * [Webiner:今ならまだ間に合う。オンプレミスの Windows Server 2008 環境を Azure に移行しよう！](https://info.microsoft.com/JA-AzureMig-WBNR-FY19-04Apr-11-Infrastructuredataestate-MCW0012323_02OnDemandRegistration-ForminBody.html)
 * Serveless Days Tokyo 2019
+-->
 
 ### Link
 * [Twitter](https://twitter.com/y10exxx)
