@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Service Fabric Managed Cluster (Preview)  を試してみた #1 | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="Cloud Engineer&#39;s blog">
+<link rel="prev" href="https://yonehub.y10e.com/2021/01/09/gitinitcancel/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2021/01/10/managedservicefabric/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+  <meta name="twitter:title" content="Service Fabric Managed Cluster (Preview)  を試してみた #1" />
+  <meta name="twitter:description" content="はじめに Azure Service Fabric は、Azure SQL DB, Event Hub, Microsoft Teamsなどの Azure のコアインフラストラクチャやミッションクリティカルなサービスを提供する基盤テクノロジとしても利用されている Azure サービスになります。 2020/9/28 に Azure Service Fabric Managed Cluster …">
+  <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
+  
+<meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y10exxx" />
+  <meta name="twitter:creator" content="@y10exxx" /><script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Service Fabric Managed Cluster (Preview)  を試してみた #1",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/yonehub.y10e.com\/2021\/01\/10\/managedservicefabric\/"
+    },
+    
+    "genre": "posts",
+    
+        "keywords": "Azure, ServiceFabric",
+    
+    "wordcount":  2642 ,
+    "url": "https:\/\/yonehub.y10e.com\/2021\/01\/10\/managedservicefabric\/",
+    
+        "datePublished": "2021-01-10T21:23:19\x2b09:00",
+    
+    
+        "dateModified": "2021-01-10T21:52:35\x2b09:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Yusuke.Yoneda",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/yonehub.y10e.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            if (!window.localStorage.getItem('theme')){
+                var current = new Date();
+                if (current.getHours() >= 23 || current.getHours() <= 4){
+                    window.localStorage.setItem('theme', 'dark');
+                    location.reload();
+                }else{
+                    window.localStorage.setItem('theme', 'light');
+                }
+            }
+
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://yonehub.y10e.com/">YONEHUB</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://yonehub.y10e.com/">YONEHUB</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Service Fabric Managed Cluster (Preview)  を試してみた #1</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/tech/">Tech</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-01-10>2021-01-10</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 2642 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>6 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                
+                <div class="post-toc-content always-active">
+                    <nav id="TableOfContents"></nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Index</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile"></nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <a class="post-dummy-target" id="heading"></a><h1>はじめに</h1>
+<p>Azure Service Fabric は、Azure SQL DB, Event Hub, Microsoft Teamsなどの Azure のコアインフラストラクチャやミッションクリティカルなサービスを提供する基盤テクノロジとしても利用されている Azure サービスになります。<br>
+2020/9/28 に <a href="https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-managed-clusters-are-now-in-public-preview/ba-p/1721572">Azure Service Fabric Managed Cluster</a>が Public Previewとなりました。<br>
+今回は実際にリソースを作成して既存の Service Fabricとの違いなどを整理していきたいと思います。</p>
+<a class="post-dummy-target" id="service-fabric-managed-cluster-"></a><h1>Service Fabric Managed Cluster とは</h1>
+<p>Service Fabric は VM Scaleset を中心にディスクや仮想ネットワークやロードバランサーといった各種 Azure リソースが組み合わされて提供されるサービスです。<br>
+そのため従来では、そういった関連リソースの管理についてもユーザが担う必要があり、例えば Azure Resource Manager テンプレートなどで Service Fabric をデプロイし、構成更新などをおこなう場合、全ての関連リソースの定義を矛盾なく定義する必要があり、かなりのコストが必要でした。 <br>
+Service Fabric Managed Cluster では、ユーザは&quot;Managed Cluster&quot;という単一のリソースに集約して管理することで関連する各 Azure リソース をユーザが管理する必要がなくなりました。<br>
+従来の Service Fabric では、関連リソースを含めるとシンプルな構成でも 1000 行近い定義を記述する必要がありましたが、Managed Cluster では 100 行ほどに圧縮されます。<br>
+Service Fabric のトラブルの多くが関連リソースに対する不適切な構成や操作を起因したもので&quot;Managed Cluster&quot;という抽象化レイヤーを挟むことで管理を簡潔化し不要なトラブルを軽減できることを見込んでいます。<br>
+以下は概念図となります。従来は各種 Resource Provider (RP) 毎の操作をユーザが管理する必要がありましたが、Managed Cluster では Service Fabric RP を経由した操作になり直接構成リソースを操作することがないため不適切な構成や操作のリスクを軽減できます。</p>
+<p>** 従来の Service Fabric Cluster  **
+<img src="/img/2021/Jan/ManagedServiceFabric/751df155-c525-be4f-7ae3-45dba3cf027c.png" alt="sfrp-composition-resource.png"></p>
+<p>** Service Fabric Managed Cluster **
+<img src="/img/2021/Jan/ManagedServiceFabric/e1b3e820-6b5b-dd6d-09b4-7326dfd9e6a3.png" alt="sfrp-encapsulated-resource.png"></p>
+<p>Service Fabric の Tech Community では次のようなポイントが Managed Cluster の特徴として挙げられていました。クラスター証明書の更新が完全 Managed になったのもうれしいですね。</p>
+<ol>
+<li>
+<p>Encapsulated Resource Model<br>
+クラスターを構成する個別のリソース (VM、ストレージ、ネットワーク構成など) をすべて定義しなくてもクラスターを作成できます。</p>
+</li>
+<li>
+<p>Storage backed by managed disks<br>
+VM に付属する一時記憶域のサイズに制限されなくなりました。これで、アプリケーションのニーズを満たすストレージの量を簡単に選択できるようになりました。</p>
+</li>
+<li>
+<p>Fully managed cluster certificates<br>
+クラスター証明書は Azure によって完全に管理されるようになったので、期限切れのクラスター証明書などの心配が必要ありません。</p>
+</li>
+<li>
+<p>Single step cluster operations<br>
+以前に複数のステップが必要なノード・タイプの除去などの操作を、単一ステップで完了できるようになりました。Service Fabric の管理対象クラスターは、要求を満たすために必要な変更を自動的に行い、プロセス中のエラーをより適切に処理します。</p>
+</li>
+<li>
+<p>Enhanced cluster safety<br>
+クラスター操作は、Service Fabric リソース プロバイダーによって検証され、安全に実行できることを確認します。</p>
+</li>
+<li>
+<p>Simplified Cluster SKUs<br>
+テスト環境と実稼働環境の作成に役立つ 2 つの新しいクラスター SKU (基本、標準)。標準 SKU を使用する場合、クラスター内の使用可能なリソースを最大限に活用するために、耐久性と信頼性の値が自動的に調整されます。</p>
+</li>
+</ol>
+<a class="post-dummy-target" id="heading1"></a><h1>テンプレート</h1>
+<p>Azure Powershell などからもデプロイが可能ですが、今回はリソース構成を正確に把握したいので ARM Template を使ってデプロイしようと思います。<a href="https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/SF-Managed-Basic-SKU-1-NT">サンプルテンプレート</a>が提供されているのでこちらを使いますが、ちょっとazuredeploy.json の中身を見てみます。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-SF-Managed-Basic-SKU-1-NT/azuredeploy.json" data-lang="SF-Managed-Basic-SKU-1-NT/azuredeploy.json"><span class="s2">&#34;resources&#34;</span><span class="err">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&#34;apiVersion&#34;</span><span class="p">:</span> <span class="s2">&#34;[variables(&#39;sfApiVersion&#39;)]&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Microsoft.ServiceFabric/managedclusters&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;[parameters(&#39;clusterName&#39;)]&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;location&#34;</span><span class="p">:</span> <span class="s2">&#34;[resourcegroup().location]&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;sku&#34;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&#34;name&#34;</span> <span class="p">:</span> <span class="s2">&#34;[parameters(&#39;clusterSku&#39;)]&#34;</span>
+            <span class="p">}</span><span class="p">,</span>
+            <span class="nt">&#34;properties&#34;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&#34;dnsName&#34;</span><span class="p">:</span> <span class="s2">&#34;[toLower(parameters(&#39;clusterName&#39;))]&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;adminUserName&#34;</span><span class="p">:</span> <span class="s2">&#34;[parameters(&#39;adminUserName&#39;)]&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;adminPassword&#34;</span><span class="p">:</span> <span class="s2">&#34;[parameters(&#39;adminPassword&#39;)]&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;clientConnectionPort&#34;</span><span class="p">:</span> <span class="mi">19000</span><span class="p">,</span>
+                <span class="nt">&#34;httpGatewayConnectionPort&#34;</span><span class="p">:</span> <span class="mi">19080</span><span class="p">,</span>
+                <span class="nt">&#34;clients&#34;</span> <span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&#34;isAdmin&#34;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                        <span class="nt">&#34;thumbprint&#34;</span> <span class="p">:</span> <span class="s2">&#34;[parameters(&#39;clientCertificateThumbprint&#39;)]&#34;</span>
+                    <span class="p">}</span>
+                <span class="p">]</span><span class="p">,</span>
+                <span class="nt">&#34;loadBalancingRules&#34;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&#34;frontendPort&#34;</span><span class="p">:</span> <span class="mi">8080</span><span class="p">,</span> 
+                        <span class="nt">&#34;backendPort&#34;</span><span class="p">:</span> <span class="mi">8080</span><span class="p">,</span>
+                        <span class="nt">&#34;protocol&#34;</span><span class="p">:</span> <span class="s2">&#34;tcp&#34;</span><span class="p">,</span>
+                        <span class="nt">&#34;probeProtocol&#34;</span><span class="p">:</span> <span class="s2">&#34;tcp&#34;</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">}</span><span class="p">,</span>
+        <span class="p">{</span>
+            <span class="nt">&#34;apiVersion&#34;</span><span class="p">:</span> <span class="s2">&#34;[variables(&#39;sfApiVersion&#39;)]&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Microsoft.ServiceFabric/managedclusters/nodetypes&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;[concat(parameters(&#39;clusterName&#39;), &#39;/&#39;, parameters(&#39;nodeTypeName&#39;))]&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;location&#34;</span><span class="p">:</span> <span class="s2">&#34;[resourcegroup().location]&#34;</span><span class="p">,</span>
+            <span class="nt">&#34;dependsOn&#34;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="s2">&#34;[concat(&#39;Microsoft.ServiceFabric/managedclusters/&#39;, parameters(&#39;clusterName&#39;))]&#34;</span>
+            <span class="p">]</span><span class="p">,</span>
+            <span class="nt">&#34;properties&#34;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&#34;isPrimary&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nt">&#34;vmImagePublisher&#34;</span><span class="p">:</span> <span class="s2">&#34;[parameters(&#39;vmImagePublisher&#39;)]&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;vmImageOffer&#34;</span><span class="p">:</span> <span class="s2">&#34;[parameters(&#39;vmImageOffer&#39;)]&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;vmImageSku&#34;</span><span class="p">:</span> <span class="s2">&#34;[parameters(&#39;vmImageSku&#39;)]&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;vmImageVersion&#34;</span><span class="p">:</span> <span class="s2">&#34;[parameters(&#39;vmImageVersion&#39;)]&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;vmSize&#34;</span><span class="p">:</span> <span class="s2">&#34;[parameters(&#39;vmSize&#39;)]&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;vmInstanceCount&#34;</span><span class="p">:</span> <span class="s2">&#34;[parameters(&#39;vmInstanceCount&#39;)]&#34;</span><span class="p">,</span>
+                <span class="nt">&#34;dataDiskSizeGB&#34;</span><span class="p">:</span> <span class="s2">&#34;[parameters(&#39;dataDiskSizeGB&#39;)]&#34;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Microsoft.ServiceFabric/managedclusters と Microsoft.ServiceFabric/managedclusters/nodetypes のリソースをデプロイするだけのテンプレートとなっており非常にシンプルです。全体でも130行程度しかありません。<br>
+なお、この2つのリソース定義については、こちらに<a href="https://docs.microsoft.com/ja-jp/azure/templates/microsoft.servicefabric/managedclusters">リファレンス</a>があります。<br>
+ちなみに nodetypes は、Service Fabric に関連付けられた仮想マシンのコレクション（VM Scaleset）を表します。なので OS Imageの種別や VM サイズやディスクサイズなど VM に関するパラメータを持っているんですね。
+Microsoft.ServiceFabric/managedclusters では従来 NRP (Network Resource Provider) や CRP (Compute  Resource Provider)で定義されていたロードバランサーの設定や各ノードの管理者アカウント情報の設定が含まれているところが特徴的です。これらの設定を元にユーザが定義する必要なくロードバランサーや VM リソースが作成されていきます。</p>
+<a class="post-dummy-target" id="heading2"></a><h1>リソース構成</h1>
+<p><a href="https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/SF-Managed-Basic-SKU-1-NT">このテンプレート</a>を使って実際に Managed Cluster をデプロイしてみました。<br>
+※デプロイ時には Service Fabric Explorer などに接続する際に利用するクライアント証明書が必要です。今回は検証用にCN=&lt;デプロイするクラスタ名&gt;.&lt;リージョン&gt;.cloudapp.azure.comの自己証明書を作成しておきthumprintをデプロイパラメータに指定しました。</p>
+<p>デプロイしたリソースグループを見てみると、マネージド Service Fabric クラスターという見慣れない種類のリソースが作成されています。※keyvaultは証明書用に別途作成したリソースでテンプレートとは無関係
+<img src="/img/2021/Jan/ManagedServiceFabric/7f36c94a-d820-ddee-7e5b-066f0fe944e9.png" alt="image.png"></p>
+<p>この managedsf というリソースを選択してみましょう。&hellip;まだポータルからはデプロイ時に指定した細かな構成などは確認できず最低限の情報しか見れないようですね。
+<img src="/img/2021/Jan/ManagedServiceFabric/d97e7b2c-f640-be69-2293-a105c2bd9f14.png" alt="image.png"></p>
+<p><a href="https://resources.azure.com/">Resource Explorer</a>だと細かい構成値が見えるようです。ここらへんは一般提供時には拡充されているでしょう。
+<img src="/img/2021/Jan/ManagedServiceFabric/7b21cf5f-343b-fa39-2a1e-ace5f905a992.png" alt="image.png"></p>
+<p>次に Service Fabric Cluster の本体となるロードバランサーや VM Scaleset です。これまでの Service Fabric だと Service Fabric Clusterと同一のリソースグループにすべてのリソースが共存していましたが、Managed Cluster ではどうやらSFC_<ClusterID>のリソースグループ配下に配置されるようです。</p>
+<p><img src="/img/2021/Jan/ManagedServiceFabric/377cefff-b163-cc96-dcc6-e4442a0e94cb.png" alt="image.png"></p>
+<p>配下のリソースなどを確認すると Microsoft.ServiceFabric/managedclusters と Microsoft.ServiceFabric/managedclusters/nodetypes で設定した値に沿って関連リソースが作成されていることがわかります。
+<img src="/img/2021/Jan/ManagedServiceFabric/46f3716b-6a76-8950-5e95-132b0b4ce608.png" alt="image.png"></p>
+<a class="post-dummy-target" id="heading3"></a><h1>おわりに</h1>
+<p>実際に Service Fabric Managed Cluster をデプロイしてみましたが、まだまだポータル操作などは制限が多いようですので実際にノードのスケール操作などを試すのであれば Powershell などコマンドラインからとなりそうです。
+ノードのディスク構成周りも既存の Service Fabric と変わっているみたいなので、機会があればそちらもまとめてみたいと思います。</p>
+<a class="post-dummy-target" id="heading4"></a><h1>参考資料</h1>
+<p><a href="https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-managed-clusters-are-now-in-public-preview/ba-p/1721572">Azure Service Fabric managed clusters are now in public preview</a></p>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/service-fabric/quickstart-managed-cluster-template">Azure Resource Manager テンプレートを使用して Service Fabric マネージド クラスター (プレビュー) をデプロイする</a></p>
+
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2021-01-10</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2021/01/10/managedservicefabric/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f01%2f10%2fmanagedservicefabric%2f&amp;text=Service%20Fabric%20Managed%20Cluster%20%28Preview%29%20%20%e3%82%92%e8%a9%a6%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%231&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2021%2f01%2f10%2fmanagedservicefabric%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+    
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f01%2f10%2fmanagedservicefabric%2f&amp;title=Service%20Fabric%20Managed%20Cluster%20%28Preview%29%20%20%e3%82%92%e8%a9%a6%e3%81%97%e3%81%a6%e3%81%bf%e3%81%9f%20%231" target="_blank" title="Share on LinkedIn">
+            <i class="fab fa-linkedin fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/azure/"><i class="fas fa-tag fa-fw"></i>Azure</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/servicefabric/"><i class="fas fa-tag fa-fw"></i>ServiceFabric</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://yonehub.y10e.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://yonehub.y10e.com/2021/01/09/gitinitcancel/" class="prev" rel="prev" title="git init の取り消し方法"><i class="fas fa-angle-left fa-fw"></i>git init の取り消し方法</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            　　<div id="disqus_thread"></div>
+        <script>
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yonehub.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://yonehub.y10e.com/">Yusuke.Yoneda</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133674179-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>
