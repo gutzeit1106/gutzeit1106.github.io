@@ -17,6 +17,15 @@
         <atom:link href="https://yonehub.y10e.com/posts/" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Service Fabric Managed Cluster (Preview)  を試してみた #1</title>
+                <link>https://yonehub.y10e.com/2021/01/10/managedservicefabric/</link>
+                <pubDate>Sun, 10 Jan 2021 21:23:19 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2021/01/10/managedservicefabric/</guid>
+                <description>はじめに Azure Service Fabric は、Azure SQL DB, Event Hub, Microsoft Teamsなどの Azure のコアインフラストラクチャやミッションクリティカルなサービスを提供する基盤テクノロジとしても利用されている Azure サービスになります。 2020/9/28 に Azure Service Fabric Managed Clusterが Public Previewとなりました。 今回は実際にリソースを作成して既存の Service Fabricとの違いなどを整理していきたいと思います。 Service Fabric Managed Cluster とは Service Fabric は VM Scaleset を中心にディスクや仮想ネットワークやロードバ</description>
+            </item>
+        
+            <item>
                 <title>Shell で Azure REST API を Call する</title>
                 <link>https://yonehub.y10e.com/2020/04/06/0406_shell_azurerest/</link>
                 <pubDate>Mon, 06 Apr 2020 04:03:39 +0900</pubDate>
@@ -140,15 +149,6 @@
                 
                 <guid>https://yonehub.y10e.com/2019/11/11/20191111_raspberrypi_setup/</guid>
                 <description>Raspberry Pi 用の Micro SD カードに Raspbian をインストール手順を時間があくととすぐ忘れてしまうので手順をメモしておく。 1. SDカードの選別 基本的に SD カードのサイズは、マイクロSDカードが必要（ただし Raspberry Pi Model A およびRaspberry Pi Model B は、フル SD カード） NOOBS、Raspbianのイメージインストールは最小推奨で 8GB 以上なので、それ以上のサイズが必要。 カードのスループットに推奨値はないみたいだが、自分は大体 Class 10 以上を使っ</description>
-            </item>
-        
-            <item>
-                <title>Microsoft Ignite 2019 で発表された新機能のまとめ(Storage編)</title>
-                <link>https://yonehub.y10e.com/2019/11/11/20191110_ignite2019_storage/</link>
-                <pubDate>Mon, 11 Nov 2019 00:48:00 +0900</pubDate>
-                
-                <guid>https://yonehub.y10e.com/2019/11/11/20191110_ignite2019_storage/</guid>
-                <description>Microsoft Ignite 2019 の Storage周りの update まとめです。 公開情報がまだ十分にない preview な機能の紹介が多かった印象でした。 1. Azure Disk ディスク関連の update は、 Azure VM とかぶっているのが多くあります。 SAP HANA Certification on Ultra Disk and M/E series VMs 8月に GA された Ultra Disk と M or E シリーズ VM の構成が、SAP HANA の認定を受けた。 参照:Azure Ultra Disk Storage の一般公開に関するお知らせ Shared Disk Support for Ultra and Premium SSD 複数の仮想マシンからディスクを共有する Azure Shared Disks のプレビューが開始されたそうです。 プレ</description>
             </item>
         
     </channel>
