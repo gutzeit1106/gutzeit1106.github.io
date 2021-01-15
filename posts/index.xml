@@ -12,9 +12,18 @@
             <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
         
         
-            <lastBuildDate>Sun, 10 Jan 2021 21:23:19 +0900</lastBuildDate>
+            <lastBuildDate>Fri, 15 Jan 2021 20:25:57 +0900</lastBuildDate>
         
         <atom:link href="https://yonehub.y10e.com/posts/" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>Azure Update - 2021.Jan</title>
+                <link>https://yonehub.y10e.com/2021/01/15/azureupdate2011jan/</link>
+                <pubDate>Fri, 15 Jan 2021 20:25:57 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2021/01/15/azureupdate2011jan/</guid>
+                <description>定期的に Azure 関係の update をまとめてポストしていこうかと思います。内容が膨大になりそうなのでおそらく特に興味ないやつはあっさり or ばっさり。Azure Monitor 関係の更新が多い。 Compute NCas_T4_v3-Series VMs are now generally available NVIDIA T4 GPU搭載のNCas_T4_v3 サイズが West US2, West Europe, Korea Central リージョンで GA。 Upgrade Azure Service Fabric Clusters* on Unsupported Versions Below 6.3.63.* By January 19, 2021 もうサポートされないような古い Service Fabric のクラスタバージョンを使用している場合は、1/19 に破壊的変更があるので早く更新しなさいと</description>
+            </item>
         
             <item>
                 <title>Service Fabric Managed Cluster (Preview)  を試してみた #1</title>
@@ -140,15 +149,6 @@
                 
                 <guid>https://yonehub.y10e.com/2019/11/16/20191116_dapr/</guid>
                 <description>2019年10月にマイクロサービスアプリケーションの開発を容易にするためのフレームワークとして&amp;quot;Dapr&amp;quot;がマイクロソフトから公開されました。現在α版となっています。 Daprは、プログラミング言語に依存せずマイクロサービス間の呼び出し機能やステート管理、サービス間のメッセージ機能、リソースのバインディング、 分散サービス間のトレーシングなどの機能を提供するソフトウェアです。 マイク</description>
-            </item>
-        
-            <item>
-                <title>Raspberry Pi用にRaspbianのインストール(Mac)</title>
-                <link>https://yonehub.y10e.com/2019/11/11/20191111_raspberrypi_setup/</link>
-                <pubDate>Mon, 11 Nov 2019 21:47:23 +0900</pubDate>
-                
-                <guid>https://yonehub.y10e.com/2019/11/11/20191111_raspberrypi_setup/</guid>
-                <description>Raspberry Pi 用の Micro SD カードに Raspbian をインストール手順を時間があくととすぐ忘れてしまうので手順をメモしておく。 1. SDカードの選別 基本的に SD カードのサイズは、マイクロSDカードが必要（ただし Raspberry Pi Model A およびRaspberry Pi Model B は、フル SD カード） NOOBS、Raspbianのイメージインストールは最小推奨で 8GB 以上なので、それ以上のサイズが必要。 カードのスループットに推奨値はないみたいだが、自分は大体 Class 10 以上を使っ</description>
             </item>
         
     </channel>
