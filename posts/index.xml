@@ -17,6 +17,15 @@
         <atom:link href="https://yonehub.y10e.com/posts/" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Azure Redis Timeouts - Server Side Issues</title>
+                <link>https://yonehub.y10e.com/2021/01/20/redistimeoutserversideissue/</link>
+                <pubDate>Wed, 20 Jan 2021 22:03:09 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2021/01/20/redistimeoutserversideissue/</guid>
+                <description>Tech Community で投稿されていた Azure Redis Timeouts - Server Side Issues が Azure Redis を使う際に注意すべきポイントなどをよくまとめてくれているなと思ったのでの日本語翻訳してみた。 概要 クライアント、ネットワーク、サーバーサイドの要因など、Redis クライアント側でタイムアウトが発生する理由は多数あります。 また、使用するクライアントライブラリによってエラーメッセージが異なる場合もあります。 クライアントアプリケーションが Redis サーバー側からの応答をタイ</description>
+            </item>
+        
+            <item>
                 <title>Azure Update - 2021.Jan</title>
                 <link>https://yonehub.y10e.com/2021/01/15/azureupdate2011jan/</link>
                 <pubDate>Fri, 15 Jan 2021 20:25:57 +0900</pubDate>
@@ -140,15 +149,6 @@
                 
                 <guid>https://yonehub.y10e.com/2019/11/20/20191120_windows_eos/</guid>
                 <description>Windows Server 2008 および 2008 R2 の延長サポートは、2020 年 1 月 14 日に終了しますが、オンプレミス環境で追加の料金を支払うことで 3 年間の延長セキュリティ更新プログラム(ESU)を利用できるオプションが昨年公開されました。また、Windows Server 2008 および 2008 R2のワークロードを Azure に移行すると、この ESU を無償で利用できるということで話題になりました。 このオプションについての概要や全体的な Azure への移行などについては、SQL Server 2008 お</description>
-            </item>
-        
-            <item>
-                <title>Microsoftのマイクロサービス構築フレームワーク Dapr を動かす</title>
-                <link>https://yonehub.y10e.com/2019/11/16/20191116_dapr/</link>
-                <pubDate>Sat, 16 Nov 2019 12:47:23 +0900</pubDate>
-                
-                <guid>https://yonehub.y10e.com/2019/11/16/20191116_dapr/</guid>
-                <description>2019年10月にマイクロサービスアプリケーションの開発を容易にするためのフレームワークとして&amp;quot;Dapr&amp;quot;がマイクロソフトから公開されました。現在α版となっています。 Daprは、プログラミング言語に依存せずマイクロサービス間の呼び出し機能やステート管理、サービス間のメッセージ機能、リソースのバインディング、 分散サービス間のトレーシングなどの機能を提供するソフトウェアです。 マイク</description>
             </item>
         
     </channel>
