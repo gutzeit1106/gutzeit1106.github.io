@@ -21,14 +21,14 @@ https://www.raspberrypi.org/downloads/
 
 ### 3. Micro SDカードのフォーマット
 PC に SD カードを接続して、ディスクユーティリティを起動する。
-Raspberry Pi は、FAT ファイルシステムのみサポートしているので、exFAT などは利用できません。
+Raspberry Pi は、FAT ファイルシステムのみサポートしているので、exFAT などは利用できない。
 
 https://www.raspberrypi.org/documentation/installation/sdxc_formatting.md
 
 ![20191111_raspbian](/img/20191111_raspbian/1_diskutility.png)
 
 ### 4. Raspbian のダウンロードと書き込み
-Raspbian のイメージを次からダウンロードします。デスクトップ版や推奨ソフトウェア込み版などがあるので好みに応じて選びます。
+Raspbian のイメージを次からダウンロードする。デスクトップ版や推奨ソフトウェア込み版などがあるので好みに応じて選択する。
 
 https://www.raspberrypi.org/downloads/raspbian/
 
@@ -77,7 +77,7 @@ sudo diskutil umount /Volumes/RASPBIAN
 dd コマンドでimgをdisk2のデバイスに書き込む。ここで disk でなく rdisk で指定した方が書き込みが早くなる点に注目。
 なにやら 20 倍ほど早くなるとのこと。[Why is “/dev/rdisk” about 20 times faster than “/dev/disk” in Mac OS X](https://superuser.com/questions/631592/why-is-dev-rdisk-about-20-times-faster-than-dev-disk-in-mac-os-x)
 イメージ書き込み待ち中暇なので調べたところ、disk と rdisk もデバイスとしては同じものを指定しているが、disk はランダムアクセス可能なデバイス、rdisk はシーケンシャルアクセスされるデバイスを意味しているらしい。
-disk 指定の場合、 IO は 4KB に分割され、カーネル空間の Buffer Cache を経由してデバイスへ Read/Write されることになる。一方、rdiskはk基本的に Buffer Cache を経由せずに直接デバイスへIOとなる。
+disk 指定の場合、 IO は 4KB に分割され、カーネル空間の Buffer Cache を経由してデバイスへ Read/Write されることになる。一方、rdiskは基本的に Buffer Cache を経由せずに直接デバイスへIOとなる。
 なので、dd コマンドでの書き込みのようなシーケンシャルアクセスでは、余計なオーバヘッドが発生しない rdisk 指定のアクセスが圧倒的に早いという話。
 
 ```sh
