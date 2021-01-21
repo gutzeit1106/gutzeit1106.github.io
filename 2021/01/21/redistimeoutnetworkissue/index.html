@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Azure Redis Timeouts - Network Issues | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="Cloud Engineer&#39;s blog">
+<link rel="prev" href="https://yonehub.y10e.com/2021/01/20/redistimeoutserversideissue/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2021/01/21/redistimeoutnetworkissue/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+  <meta name="twitter:title" content="Azure Redis Timeouts - Network Issues" />
+  <meta name="twitter:description" content="先日のServer Side Issuesに引き続き、Azure Redis Timeouts - Network Issues も日本語翻訳してみました。 概要 クライアント、ネットワーク、サーバーサイドの要因など、Redis クライアント側でタイムアウトが発生する理由は多数あります。 また、使用するクライアントライブラリによってエラーメッセージが異なる場合もあります。 クライアントアプリケーシ …">
+  <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
+  
+<meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y10exxx" />
+  <meta name="twitter:creator" content="@y10exxx" /><script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Azure Redis Timeouts - Network Issues",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/yonehub.y10e.com\/2021\/01\/21\/redistimeoutnetworkissue\/"
+    },
+    
+    "genre": "posts",
+    
+        "keywords": "Azure, Redis",
+    
+    "wordcount":  2746 ,
+    "url": "https:\/\/yonehub.y10e.com\/2021\/01\/21\/redistimeoutnetworkissue\/",
+    
+        "datePublished": "2021-01-21T23:03:09\x2b09:00",
+    
+    
+        "dateModified": "2021-01-21T22:57:23\x2b09:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Yusuke.Yoneda",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/yonehub.y10e.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            if (!window.localStorage.getItem('theme')){
+                var current = new Date();
+                if (current.getHours() >= 23 || current.getHours() <= 4){
+                    window.localStorage.setItem('theme', 'dark');
+                    location.reload();
+                }else{
+                    window.localStorage.setItem('theme', 'light');
+                }
+            }
+
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://yonehub.y10e.com/">YONEHUB</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://yonehub.y10e.com/">YONEHUB</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Azure Redis Timeouts - Network Issues</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/cloud/">Cloud</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-01-21>2021-01-21</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 2746 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>6 min&nbsp;</div>
+        </div>
+
+        
+
+        
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <p>先日の<a href="../redistimeoutserversideissue/">Server Side Issues</a>に引き続き、<a href="https://techcommunity.microsoft.com/t5/azure-paas-blog/azure-redis-timeouts-network-issues/ba-p/2022222">Azure Redis Timeouts - Network Issues</a> も日本語翻訳してみました。</p>
+<a class="post-dummy-target" id="heading"></a><h3>概要</h3>
+<p>クライアント、ネットワーク、サーバーサイドの要因など、Redis クライアント側でタイムアウトが発生する理由は多数あります。
+また、使用するクライアントライブラリによってエラーメッセージが異なる場合もあります。
+クライアントアプリケーションが Redis サーバー側からの応答をタイムリーに受信できない場合、Azure Cache for Redis のタイムアウトがクライアント側で発生します。
+タイムアウト値が期限切れになるより前に、クライアントアプリケーションがレスポンスを受信しなかった場合は、いかなる場合もタイムアウトが発生し、Redisタイムアウトエラーメッセージとしてクライアントアプリケーションログに記録されます。<br>
+ネットワークでは、connection failure（接続障害）、network blips(瞬断)、network failures（通信障害）、クライアントまたはサーバーサイドのネットワーク帯域幅制限の超過、その他の問題により、Redis タイムアウトが発生する可能性があります。<br>
+以下は、一般的なネットワークの要因によりタイムアウトが発生する一般的な要因です。</p>
+<ol>
+<li>Network blips</li>
+<li>Client Network bandwidth limit exceeded（クライアントサイドのネットワーク帯域制限の超過）</li>
+<li>Server Network bandwidth limit exceeded（サーバーサイドのネットワーク帯域制限の超過）</li>
+</ol>
+<p>クライアント、またはサーバー起因の Redis タイムアウトの原因については、次の TechCommunity の記事を参照してください 。<br>
+<a href="https://techcommunity.microsoft.com/t5/azure-paas-blog/azure-redis-timeouts-client-side-issues/ba-p/2022203">Azure Redis Timeouts - Client Side Issues</a><br>
+<a href="https://techcommunity.microsoft.com/t5/azure-paas-blog/azure-redis-timeouts-server-side-issues/ba-p/2022202">Azure Redis Timeouts - Server Side Issues</a></p>
+<p><em><strong>Microsoftの推奨事項：</strong></em> <br>
+Microsoft は、Redis クライアントアプリケーションと同じ Azure リージョンで Azure Cache for Redis を使用することを推奨しています。
+その主な理由は、各 Azure リージョンのバックボーンネットワークで使用されている巨大な帯域幅を低レイテンシで利用することができるので、より小さい帯域幅のパブリックネットワークの使用を回避できることです。Azure ネットワークバックボーンには、あらゆる障害に対する回復力を高めるためにさまざまな手段を講じています。 各 Azure リージョンのネットワークバックボーンで最終的に障害が発生すると、Azure Cache for Redis の接続だけでなく、すべての Azure サービスとすべての顧客が影響を受けます。これがクライアントアプリケーションとは異なる Azure リージョンで　Azure Cache for Redis サービスを使用しないようにする主な理由です。</p>
+<a class="post-dummy-target" id="1-network-blips"></a><h3>1- Network blips</h3>
+<p>Network blips は、Azure Load Balancer の操作、Redis または ホストのアップデート/パッチによるフェイルオーバー、またはその他の理由によって発生する可能性があります。
+Network blips は一過性であるため、常にクライアント側で発生した Network blips の原因を特定できるとは限りません。
+Network blips 自体は想定されたことであるため、Microsoft は、これらの一時的な Network blips に対処するために、クライアント側アプリケーションで再試行ポリシーを使用することをお勧めします。
+これにより、クライアントアプリケーションの再試行によって Network blips から回復し、エンドユーザーがダウンタイムに遭遇することを回避することができます。</p>
+<p>StackExchange.Redis クライアントライブラリには、このような接続エラーの処理方法を制御する AbortConnect という名前の設定があります。この設定のデフォルト値は「True」です。これは状況によっては自動的に再接続されないことを意味します。Microsoft の推奨事項は、AbortConnect を false に設定して、ConnectionMultiplexer が自動的に再接続できるようにすることです。</p>
+<a class="post-dummy-target" id="2-client-network-bandwidth-limit-exceeded"></a><h3>2- Client Network bandwidth limit exceeded</h3>
+<p>Redis タイムアウトの理由がクライアントネットワークの帯域幅制限の超過によるものかを特定するには、Redis クライアントアプリケーションで使用されるクライアント環境（AppService、VM、VMSS、AKSなど）上のネットワーク使用状況を調査して、ネットワークインターフェイスの制限やネットワーク帯域幅の制限（インバウンドまたはアウトバウンド）に達しているかどうかを確認する必要があります。
+Redis クライアントアプリケーションだけでなく、クライアント環境のすべてのアプリケーションがネットワークの使用率の上昇に影響する可能性があることに注意してください。また、Redis タイムアウトは、ネットワーク帯域幅の使用率が100％の場合のみに引き起こされるわけではなく、値が100％に近くづくほど、ネットワークレイテンシの上昇や Redis タイムアウトの発生する可能性が高くなります。
+これをトラブルシューティングするには、クライアント（AppService、VM、VMSS、AKSなど）に応じて、クライアントに適したネットワークツールが必要になります。</p>
+<a class="post-dummy-target" id="3-server-network-bandwidth-limit-exceeded"></a><h3>3- Server Network bandwidth limit exceeded</h3>
+<p>Redis タイムアウトの理由がサーバーネットワークの帯域幅制限の超過によるものかを特定するために、Azure ポータルには Redis もしくは Azure Monitor ブレード上に 2 つの重要なメトリックがあります。「Cache Read」と「Cache Write」です。これらは、指定されたレポート間隔に、キャッシュとの間で読み書きされたデータの量をメガバイト/秒（MB/s）で示します:<a href="https://docs.microsoft.com/ja-jp/azure/azure-cache-for-redis/cache-how-to-monitor#available-metrics-and-reporting-intervals">使用可能なメトリックとレポート期間</a> <br>
+Redisクラスター化インスタンスの場合、「Cache Read」と「Cache Write」メトリックは、Redis インスタンス、またはシャードごとに使用できます。 ネットワーク帯域幅制限を超過したシャードを特定できるように、各シャードのネットワークの使用状況の調査が必要な場合があります。
+このメトリックを使用して、使用中の Redis Tier の Azure Redis cache ネットワークパフォーマンス上限値と比較できます。<a href="https://docs.microsoft.com/ja-jp/azure/azure-cache-for-redis/cache-planning-faq#azure-cache-for-redis-performance">Azure Cache for Redis のパフォーマンス</a></p>
+<p><img src="/img/2021/Jan/RedisNetworkTimeout/ReadWrite.png" alt="ReadWrite.png"></p>
+<p>その他のネットワークの原因は、問題の発生原因がどこにあるかをより詳しく把握するために、ネットワークトレースを使用してクライアントサイドを調査する必要があります。
+クライアントでのネットワークパケットトレースは、ネットワークチームが問題の原因を特定するのに役立つ場合があります。
+また、特にネットワーク接続に関するトラブルシューティングが必要な場合は、<a href="https://techcommunity.microsoft.com/t5/azure-paas-blog/troubleshooting-azure-redis-connectivity-issues/ba-p/1450361">Azure Redis接続の問題のトラブルシューティング方法</a> （Tech Communityの記事）を参照してください。</p>
+<a class="post-dummy-target" id="heading1"></a><h3>おわりに</h3>
+<p>クライアント、サーバー、またはネットワーク側でなんらかの問題が発生すると Azure Cache for Redis への接続でタイムアウトが発生する可能性があります。
+クライアント、またはサーバーサイド起因の Redis タイムアウトの原因については、次の TechCommunity の記事を参照してください 。</p>
+<p><a href="https://techcommunity.microsoft.com/t5/azure-paas-blog/azure-redis-timeouts-client-side-issues/ba-p/2022203">Azure Redis Timeouts - Client Side Issues</a><br>
+<a href="https://techcommunity.microsoft.com/t5/azure-paas-blog/azure-redis-timeouts-server-side-issues/ba-p/2022202">Azure Redis Timeouts - Server Side Issues</a></p>
+<a class="post-dummy-target" id="heading2"></a><h3>関連ドキュメント</h3>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/azure-cache-for-redis/cache-troubleshoot-timeouts">Timeout issues</a><br>
+<a href="https://redis.io/topics/clients#tcp-keepalive">Redis Client handling - TCP keepalive</a><br>
+<a href="https://docs.microsoft.com/ja-jp/azure/azure-cache-for-redis/cache-best-practices">Best practices for Azure Cache for Redis (general and client library specific)</a><br>
+<a href="https://gist.github.com/JonCole/925630df72be1351b21440625ff2671f#file-redis-bestpractices-stackexchange-redis-md">StackExchange.Redis best practices</a><br>
+<a href="https://docs.microsoft.com/ja-jp/azure/azure-cache-for-redis/cache-how-to-monitor#available-metrics-and-reporting-intervals">Available metrics and reporting intervals</a><br>
+<a href="https://docs.microsoft.com/ja-jp/azure/azure-cache-for-redis/cache-planning-faq#azure-cache-for-redis-performance">Azure Cache for Redis performance</a><br>
+<a href="https://techcommunity.microsoft.com/t5/azure-paas-blog/troubleshooting-azure-redis-connectivity-issues/ba-p/1450361">Troubleshooting Azure Redis Connectivity Issues (Tech Community article)</a><br></p>
+
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2021-01-21</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2021/01/21/redistimeoutnetworkissue/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f01%2f21%2fredistimeoutnetworkissue%2f&amp;text=Azure%20Redis%20Timeouts%20-%20Network%20Issues&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2021%2f01%2f21%2fredistimeoutnetworkissue%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+    
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f01%2f21%2fredistimeoutnetworkissue%2f&amp;title=Azure%20Redis%20Timeouts%20-%20Network%20Issues" target="_blank" title="Share on LinkedIn">
+            <i class="fab fa-linkedin fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/azure/"><i class="fas fa-tag fa-fw"></i>Azure</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/redis/"><i class="fas fa-tag fa-fw"></i>Redis</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://yonehub.y10e.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://yonehub.y10e.com/2021/01/20/redistimeoutserversideissue/" class="prev" rel="prev" title="Azure Redis Timeouts - Server Side Issues"><i class="fas fa-angle-left fa-fw"></i>Azure Redis Timeouts - Server Side Issues</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            　　<div id="disqus_thread"></div>
+        <script>
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yonehub.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://yonehub.y10e.com/">Yusuke.Yoneda</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133674179-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>
