@@ -17,6 +17,15 @@
         <atom:link href="https://yonehub.y10e.com/posts/" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Azure Redis Timeouts - Network Issues</title>
+                <link>https://yonehub.y10e.com/2021/01/21/redistimeoutnetworkissue/</link>
+                <pubDate>Thu, 21 Jan 2021 23:03:09 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2021/01/21/redistimeoutnetworkissue/</guid>
+                <description>先日のServer Side Issuesに引き続き、Azure Redis Timeouts - Network Issues も日本語翻訳してみました。 概要 クライアント、ネットワーク、サーバーサイドの要因など、Redis クライアント側でタイムアウトが発生する理由は多数あります。 また、使用するクライアントライブラリによってエラーメッセージが異なる場合もあります。 クライアントアプリケーションが Redis サーバー側からの応答をタイムリーに受信できない場合、Azure Cache for Redis</description>
+            </item>
+        
+            <item>
                 <title>Azure Redis Timeouts - Server Side Issues</title>
                 <link>https://yonehub.y10e.com/2021/01/20/redistimeoutserversideissue/</link>
                 <pubDate>Wed, 20 Jan 2021 22:03:09 +0900</pubDate>
@@ -140,15 +149,6 @@
                 
                 <guid>https://yonehub.y10e.com/2019/11/21/20191121_ignite2019_network/</guid>
                 <description>Microsoft Ignite 2019 の Network 系サービスの update まとめです。 4つのカテゴリに分けて各種サービスの update が紹介されていました。 ・Connect &amp;amp; Extend ・Protect ・Deliver ・Monitoring ネットワークサービスは、難しいですね。機能ごとのセッションを追いきれなかったので、補足とかある人は twitter とかでご教示いただきたいなぁ。 1. Connect &amp;amp; Extend Azure Peering Service (Preview) ISP を介してパブリックネットワーク経由で Microsoftクラウド(Office 365</description>
-            </item>
-        
-            <item>
-                <title> Windows 7、Windows Server 2008/R2 の延長セキュリティ更新プログラムを入手する方法</title>
-                <link>https://yonehub.y10e.com/2019/11/20/20191120_windows_eos/</link>
-                <pubDate>Wed, 20 Nov 2019 20:47:23 +0900</pubDate>
-                
-                <guid>https://yonehub.y10e.com/2019/11/20/20191120_windows_eos/</guid>
-                <description>Windows Server 2008 および 2008 R2 の延長サポートは、2020 年 1 月 14 日に終了しますが、オンプレミス環境で追加の料金を支払うことで 3 年間の延長セキュリティ更新プログラム(ESU)を利用できるオプションが昨年公開されました。また、Windows Server 2008 および 2008 R2のワークロードを Azure に移行すると、この ESU を無償で利用できるということで話題になりました。 このオプションについての概要や全体的な Azure への移行などについては、SQL Server 2008 お</description>
             </item>
         
     </channel>
