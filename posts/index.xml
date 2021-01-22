@@ -22,7 +22,7 @@
                 <pubDate>Thu, 21 Jan 2021 23:03:09 +0900</pubDate>
                 
                 <guid>https://yonehub.y10e.com/2021/01/21/redistimeoutnetworkissue/</guid>
-                <description>先日のServer Side Issuesに引き続き、Azure Redis Timeouts - Network Issues も日本語翻訳してみました。 概要 クライアント、ネットワーク、サーバーサイドの要因など、Redis クライアント側でタイムアウトが発生する理由は多数あります。 また、使用するクライアントライブラリによってエラーメッセージが異なる場合もあります。 クライアントアプリケーションが Redis サーバー側からの応答をタイムリーに受信できない場合、Azure Cache for Redis</description>
+                <description>先日の Server Side Issues に引き続き、Azure Redis Timeouts - Network Issues も日本語翻訳してみました。 概要 クライアント、ネットワーク、サーバーサイドの要因など、Redis クライアント側でタイムアウトが発生する理由は多数あります。 また、使用するクライアントライブラリによってエラーメッセージが異なる場合もあります。 クライアントアプリケーションが Redis サーバー側からの応答をタイムリーに受信できない場合、Azure Cache for Redis のタイムアウトがクラ</description>
             </item>
         
             <item>

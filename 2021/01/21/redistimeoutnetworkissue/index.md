@@ -1,7 +1,7 @@
 # Azure Redis Timeouts - Network Issues
 
 
-先日の[Server Side Issues](https://yonehub.y10e.com/2021/01/20/redistimeoutserversideissue/)に引き続き、[Azure Redis Timeouts - Network Issues](https://techcommunity.microsoft.com/t5/azure-paas-blog/azure-redis-timeouts-network-issues/ba-p/2022222) も日本語翻訳してみました。
+先日の [Server Side Issues](https://yonehub.y10e.com/2021/01/20/redistimeoutserversideissue/) に引き続き、[Azure Redis Timeouts - Network Issues](https://techcommunity.microsoft.com/t5/azure-paas-blog/azure-redis-timeouts-network-issues/ba-p/2022222) も日本語翻訳してみました。
 ### 概要
 クライアント、ネットワーク、サーバーサイドの要因など、Redis クライアント側でタイムアウトが発生する理由は多数あります。
 また、使用するクライアントライブラリによってエラーメッセージが異なる場合もあります。
