@@ -12,9 +12,18 @@
             <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
         
         
-            <lastBuildDate>Sat, 23 Jan 2021 22:03:09 +0900</lastBuildDate>
+            <lastBuildDate>Sun, 31 Jan 2021 20:25:57 +0900</lastBuildDate>
         
         <atom:link href="https://yonehub.y10e.com/posts/" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>Azure Update - 2021.Jan 2H</title>
+                <link>https://yonehub.y10e.com/2021/01/31/azureupdate2021jan2h/</link>
+                <pubDate>Sun, 31 Jan 2021 20:25:57 +0900</pubDate>
+                
+                <guid>https://yonehub.y10e.com/2021/01/31/azureupdate2021jan2h/</guid>
+                <description>月に 2 回くらい更新をまとめるかと思っていたけど半月分だけでもなかなかの量だなぁ。 リージョンの追加とかの更新は省いた。 Azure AD 99.99% uptime for Azure Active Directory Premium customers is coming April 1st, 2021 Azure AD Premium の SLA が 4/1 から従来の 99.9% から 99.99％ に引き上げられる。 SAP KSAP and Microsoft expand partnership and integrate Microsoft Teams across solutions Microsoft Teams と SAP を統合していくという話と、Azure 上での SAP HANA 利用の拡大のために戦略的パートナーシップを拡張したというアナウンス。 Storage Generally available: Copy Blob support over private endpoints in Azure Storage プライベートエンドポイン</description>
+            </item>
         
             <item>
                 <title>Azure Redis Timeouts - Client Side Issues</title>
@@ -45,10 +54,10 @@
         
             <item>
                 <title>Azure Update - 2021.Jan</title>
-                <link>https://yonehub.y10e.com/2021/01/15/azureupdate2011jan/</link>
+                <link>https://yonehub.y10e.com/2021/01/15/azureupdate2021jan/</link>
                 <pubDate>Fri, 15 Jan 2021 20:25:57 +0900</pubDate>
                 
-                <guid>https://yonehub.y10e.com/2021/01/15/azureupdate2011jan/</guid>
+                <guid>https://yonehub.y10e.com/2021/01/15/azureupdate2021jan/</guid>
                 <description>定期的に Azure 関係の update をまとめてポストしていこうかと思います。内容が膨大になりそうなのでおそらく特に興味ないやつはあっさり or ばっさり。Azure Monitor 関係の更新が多い。 Compute NCas_T4_v3-Series VMs are now generally available NVIDIA T4 GPU搭載のNCas_T4_v3 サイズが West US2, West Europe, Korea Central リージョンで GA。 Upgrade Azure Service Fabric Clusters* on Unsupported Versions Below 6.3.63.* By January 19, 2021 もうサポートされないような古い Service Fabric のクラスタバージョンを使用している場合は、1/19 に破壊的変更があるので早く更新しなさいと</description>
             </item>
         
@@ -140,15 +149,6 @@
                 
                 <guid>https://yonehub.y10e.com/2019/11/29/20191130_dapr_aks_helloworld/</guid>
                 <description>前回は、AKS 上で Dapr をセットアップしました。 次は、Azure Kubernetes Service(AKS) 上で dapr のサンプルアプリケーションを動作させてみます。（前回と同様、動作検証時の dapr は v0.2 になります。） 最終的なアーキテクチャは次の通りです。 dapr がインストールされた環境で、python と node.js の POD が動作します。python と node.js の POD は、それぞれの POD 内でサイドカーとして動作する dapr API を経由して、state 情報の更新と取得が行われます。 0. ドキュメント Hello</description>
-            </item>
-        
-            <item>
-                <title>Azure Kubernetes Service(AKS)で Dapr を動かす（Setup編）</title>
-                <link>https://yonehub.y10e.com/2019/11/27/20191127_dapr_aks_setup/</link>
-                <pubDate>Wed, 27 Nov 2019 12:47:23 +0900</pubDate>
-                
-                <guid>https://yonehub.y10e.com/2019/11/27/20191127_dapr_aks_setup/</guid>
-                <description>先日、stand-alone な環境で dapr の動作を検証しました。 次は、Kubernetes cluster 上で dapr の動作を検証してみたいと思います。Minikube などのローカルな環境でも試すことができそうでしたが、折角なので Azure Kubernetes Service(AKS) で検証してみます。動作検証時の dapr は v0.2 になります。 0. ドキュメント Installing Dapr on a Kubernetes cluster https://github.com/dapr/docs/blob/master/getting-started/environment-setup.md#installing-dapr-on-a-kubernetes-cluster Set up an Azure Kubernetes Service cluster https://github.com/dapr/docs/blob/master/getting-started/cluster/setup-aks.md 1. Azure Kubernetes Service(AKS) Cluster の作成 前提条件として、次を作業端末にセットアップします。 ・Azure CLI ・kubectl</description>
             </item>
         
     </channel>
