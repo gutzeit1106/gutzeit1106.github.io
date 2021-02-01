@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Go の基本的なあれこれ #1 | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="Cloud Engineer&#39;s blog">
+<link rel="prev" href="https://yonehub.y10e.com/2021/01/31/azureupdate2021jan2h/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2021/02/01/gobasic/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+  <meta name="twitter:title" content="Go の基本的なあれこれ #1" />
+  <meta name="twitter:description" content="package Go では、全てのプログラムがいづれかのパッケージに所属している。パッケージは NameSpace 的なもの。 原則として以下のルールが存在する。 1つのファイルに複数のパッケージを設定しない 1つのディレクトリに複数のパッケージを配置しない package main にある main 関数がプログラムのエントリーポイントとなる（処理の開始点） 1 2 3 4 5 6 7 …">
+  <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
+  
+<meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y10exxx" />
+  <meta name="twitter:creator" content="@y10exxx" /><script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Go の基本的なあれこれ #1",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/yonehub.y10e.com\/2021\/02\/01\/gobasic\/"
+    },
+    
+    "genre": "posts",
+    
+        "keywords": "go, golang",
+    
+    "wordcount":  712 ,
+    "url": "https:\/\/yonehub.y10e.com\/2021\/02\/01\/gobasic\/",
+    
+        "datePublished": "2021-02-01T21:43:31\x2b09:00",
+    
+    
+        "dateModified": "2021-01-31T22:40:06\x2b09:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Yusuke.Yoneda",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/yonehub.y10e.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            if (!window.localStorage.getItem('theme')){
+                var current = new Date();
+                if (current.getHours() >= 23 || current.getHours() <= 4){
+                    window.localStorage.setItem('theme', 'dark');
+                    location.reload();
+                }else{
+                    window.localStorage.setItem('theme', 'light');
+                }
+            }
+
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://yonehub.y10e.com/">YONEHUB</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Archive</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tools" title=""><i class="fas fa-tools"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://yonehub.y10e.com/">YONEHUB</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Archive</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tools" title=""><i class="fas fa-tools"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Go の基本的なあれこれ #1</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/development/">Development</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-02-01>2021-02-01</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 712 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                
+                <div class="post-toc-content always-active">
+                    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#package">package</a></li>
+        <li><a href="#import">import</a></li>
+        <li><a href="#heading">プログラムの実行</a></li>
+        <li><a href="#heading1">参考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Index</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#package">package</a></li>
+        <li><a href="#import">import</a></li>
+        <li><a href="#heading">プログラムの実行</a></li>
+        <li><a href="#heading1">参考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <a class="post-dummy-target" id="package"></a><h3>package</h3>
+<p>Go では、全てのプログラムがいづれかのパッケージに所属している。パッケージは NameSpace 的なもの。
+原則として以下のルールが存在する。</p>
+<ul>
+<li>1つのファイルに複数のパッケージを設定しない</li>
+<li>1つのディレクトリに複数のパッケージを配置しない</li>
+<li>package main にある main 関数がプログラムのエントリーポイントとなる（処理の開始点）</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go:hello.go" data-lang="go:hello.go"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;hello world!&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="import"></a><h3>import</h3>
+<p>Go プログラムで読み込む必要のあるパッケージを宣言する。Go では未使用のパッケージはコンパイル時にエラーとなる。
+スキップする場合は、パッケージ名の左に _ をつけることができる。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="p">(</span>
+  <span class="s">&#34;fmt&#34;</span>
+  <span class="s">&#34;time&#34;</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="heading"></a><h3>プログラムの実行</h3>
+<p><code>go run</code> もしくは　<code>go build</code> で実行ファイルをコンパイルしてから、実行ファイルを使って実行することができる。</p>
+<a class="post-dummy-target" id="go-run"></a><h4>go run</h4>
+<p><code>go run hoge.go</code> とするだけで指定された名前の go プログラムから main パッケージをコンパイルして実行することができる。
+go プログラムは .go 拡張子のファイルと定義されている。</p>
+<pre><code>go run [build flags] [-exec xprog] package [arguments...]
+</code></pre><p>ただし、<code>go build</code>　とは異なり、既定でカレントディレクトリ配下のファイルを全て読み込むわけではない。
+そのため main package が複数ファイル存在するときなどに、main関数のファイルだけを指定してもコンパイルエラーとなる。
+その場合、明示的に複数ファイルを指定するか、* で複数ファイルを指定したり . (カレントディレクトリ) を指定する。</p>
+<pre><code>go run hoge.go fuga.go
+</code></pre><p>あるいは、</p>
+<pre><code>go run *.go
+</code></pre><p>あるいは、</p>
+<pre><code>go run .
+</code></pre><a class="post-dummy-target" id="go-build"></a><h4>go build</h4>
+<p><code>go build</code> は指定されたパッケージについて依存関係も含めてコンパイルをする。なお、オプション無し <code>go build</code> を実行した場合は、
+main パッケージを読み込み、main 関数があるファイルを特定し、そのファイル名を使ったバイナリ実行ファイルが生成される。</p>
+<pre><code>go build [-o output] [-i] [build flags] [packages]
+</code></pre><a class="post-dummy-target" id="heading1"></a><h3>参考</h3>
+<p><a href="https://golang.org/cmd/go/#hdr-Compile_and_run_Go_program">Compile and run Go program: go run</a><br>
+<a href="https://golang.org/cmd/go/#hdr-Compile_packages_and_dependencies">Compile packages and dependencies</a><br>
+<a href="https://godoc.org/github.com/gophersjp/go/src/cmd/go">Command go</a><br></p>
+
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2021-01-31</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2021/02/01/gobasic/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f01%2fgobasic%2f&amp;text=Go%20%e3%81%ae%e5%9f%ba%e6%9c%ac%e7%9a%84%e3%81%aa%e3%81%82%e3%82%8c%e3%81%93%e3%82%8c%20%231&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f01%2fgobasic%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+    
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f01%2fgobasic%2f&amp;title=Go%20%e3%81%ae%e5%9f%ba%e6%9c%ac%e7%9a%84%e3%81%aa%e3%81%82%e3%82%8c%e3%81%93%e3%82%8c%20%231" target="_blank" title="Share on LinkedIn">
+            <i class="fab fa-linkedin fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/go/"><i class="fas fa-tag fa-fw"></i>go</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/golang/"><i class="fas fa-tag fa-fw"></i>golang</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://yonehub.y10e.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://yonehub.y10e.com/2021/01/31/azureupdate2021jan2h/" class="prev" rel="prev" title="Azure Update - 2021.Jan 2H"><i class="fas fa-angle-left fa-fw"></i>Azure Update - 2021.Jan 2H</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            　　<div id="disqus_thread"></div>
+        <script>
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yonehub.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://yonehub.y10e.com/">Yusuke.Yoneda</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133674179-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>
