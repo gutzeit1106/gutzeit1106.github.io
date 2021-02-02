@@ -71,7 +71,7 @@ Build が完了すると scripts のディレクトリが生成されるので�
 ![Code-OSS](/img/20191221_vscode_build/oss-code.png)
 
 ### 4. 補足
-実行時に次のエラーでうまく動作しなかったけど、どうやら module を build　した時に node.js のバージョンが違うかったみたい。
+実行時に次のエラーでうまく動作しなかったけど、どうやら module を build した時に node.js のバージョンが違うかったみたい。
 nodebrew 経由以外の node.js もインストールされていたので、どこかの作業でその node.js を使用したのかもしれない。 
 
 ```sh

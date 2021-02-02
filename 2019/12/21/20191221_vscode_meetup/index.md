@@ -79,7 +79,7 @@ $ code -g logstats.log:9:40
 $ code -d logstats.log logstats2.log
 ```
 
-### -a / --add　folder
+### -a / --add folder
 
 指定したファルダをアクティブウィンドウのワークスペースに追加
 
