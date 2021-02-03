@@ -97,7 +97,7 @@ require (
 ```
 
 - go.sum
-```
+```sh
 github.com/gdamore/encoding v1.0.0 h1:+7OoQ1Bc6eTm5niUzBa0Ctsh6JbMW6Ra+YNuAtDBdko=
 github.com/gdamore/encoding v1.0.0/go.mod h1:alR0ol34c49FCSBLjhosxzcPHQbf2trDkoo5dl+VrEg=
 github.com/gdamore/tcell v1.4.0 h1:vUnHwJRvcPQa3tzi+0QI4U9JINXYJlOz9yiaiPQ2wMU=
@@ -116,7 +116,7 @@ golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 ### 使用していないモジュールを削除
 `go mod tidy` で使用していないモジュールを削除する。glog が削除されていることがわかる。
 
-```
+```sh
 $ go mod tidy
 $ go list -m all
 github.com/y10e/go-life
