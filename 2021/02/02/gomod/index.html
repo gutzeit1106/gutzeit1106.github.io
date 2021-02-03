@@ -3,12 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Visual Studio Code を Source から build する | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Go Modules の基本的なこと  | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noodp" />
 <meta name="Description" content="Cloud Engineer&#39;s blog">
-<link rel="prev" href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_meetup/" />
-<link rel="next" href="https://yonehub.y10e.com/2019/12/24/20191223_git_gitignore/" />
-<link rel="canonical" href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/" />
+<link rel="prev" href="https://yonehub.y10e.com/2021/02/01/gobasic/" />
+<link rel="next" href="https://yonehub.y10e.com/2021/02/03/gobasic2/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2021/02/02/gomod/" />
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -18,8 +18,8 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-  <meta name="twitter:title" content="Visual Studio Code を Source から build する" />
-  <meta name="twitter:description" content="1. はじめに 2019/12/18 に Visual Studio Code Meetup #1 に参加しました。 LT で、VS Code のアイコンの種類についてのお話があり、生 Source Code からビルドすると VS Code のアイコンが違うとのことで、興味湧いたので試してみました。環境は macOS Mojave(10.14.6)です。 アイコンはこんな感じです。 2. 前提条 …">
+  <meta name="twitter:title" content="Go Modules の基本的なこと " />
+  <meta name="twitter:description" content="Modules は Go の依存モジュール管理ツール。 Go言語 1.11 から標準で使用でき、依存モジュールの自動検知、バージョン固定、バージョンアップ検知などができる。 依存モジュールは go.mod と go.sum というファイルで管理されるため、このファイルを git で管理し、プログラムの依存モジュールの情報を明示することができる。 node.js でいうところの npm、python …">
   <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
   
 <meta name="twitter:card" content="summary" />
@@ -28,20 +28,20 @@
     {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "Visual Studio Code を Source から build する",
+    "headline": "Go Modules の基本的なこと ",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/yonehub.y10e.com\/2019\/12\/21\/20191221_vscode_sourcebuild\/"
+        "@id": "https:\/\/yonehub.y10e.com\/2021\/02\/02\/gomod\/"
     },
     
     "genre": "posts",
     
-        "keywords": "Visual Studio Code, Tips, Mac",
+        "keywords": "go, golang",
     
-    "wordcount":  707 ,
-    "url": "https:\/\/yonehub.y10e.com\/2019\/12\/21\/20191221_vscode_sourcebuild\/",
+    "wordcount":  822 ,
+    "url": "https:\/\/yonehub.y10e.com\/2021\/02\/02\/gomod\/",
     
-        "datePublished": "2019-12-21T01:34:51\x2b09:00",
+        "datePublished": "2021-02-02T21:00:03\x2b09:00",
     
     
         "dateModified": "2021-02-02T20:46:23\x2b09:00",
@@ -147,7 +147,7 @@
     
 
     <article class="post-warp">
-        <h1 class="post-title animated flipInX">Visual Studio Code を Source から build する</h1>
+        <h1 class="post-title animated flipInX">Go Modules の基本的なこと </h1>
 
         <div class="post-meta">
             <div class="post-meta-main">
@@ -159,53 +159,14 @@
                     </span>
             </div>
             <div class="post-meta-other">
-                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-21>2019-12-21</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 707 words&nbsp;
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-02-02>2021-02-02</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 822 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
         </div>
 
         
 
-        <div class="post-toc" id="post-toc">
-                
-                <div class="post-toc-content always-active">
-                    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#1-">1. はじめに</a></li>
-        <li><a href="#2-">2. 前提条件</a></li>
-        <li><a href="#3-build--">3. Build と 実行</a></li>
-        <li><a href="#3-">3. 確認</a></li>
-        <li><a href="#4-">4. 補足</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-                </div>
-            </div>
-            <div class="post-toc-mobile" id="post-toc-mobile">
-                <details>
-                    <summary><div class="post-toc-title"><span>Index</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
-                    <div class="post-toc-content">
-                        
-                        
-                        <nav id="TableOfContentsMobile">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#1-">1. はじめに</a></li>
-        <li><a href="#2-">2. 前提条件</a></li>
-        <li><a href="#3-build--">3. Build と 実行</a></li>
-        <li><a href="#3-">3. 確認</a></li>
-        <li><a href="#4-">4. 補足</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-                    </div>
-                </details>
-            </div>
+        
 
         <div class="post-content">
             
@@ -233,83 +194,48 @@
             
             
             
-            <a class="post-dummy-target" id="1-"></a><h3>1. はじめに</h3>
-<p>2019/12/18 に <a href="https://vscode.connpass.com/event/155068/">Visual Studio Code Meetup #1</a> に参加しました。<br>
-LT で、VS Code のアイコンの種類についてのお話があり、生 Source Code からビルドすると VS Code のアイコンが違うとのことで、興味湧いたので試してみました。環境は macOS Mojave(10.14.6)です。
-アイコンはこんな感じです。</p>
-<img src="/img/20191221_vscode_build/vscode.png" width="200px">
-<a class="post-dummy-target" id="2-"></a><h3>2. 前提条件</h3>
-<p>mac だと最低限 次を事前にインストールしておく必要がありました。</p>
+            <p>Modules は Go の依存モジュール管理ツール。<br>
+Go言語 1.11 から標準で使用でき、依存モジュールの自動検知、バージョン固定、バージョンアップ検知などができる。
+依存モジュールは go.mod と go.sum というファイルで管理されるため、このファイルを git で管理し、プログラムの依存モジュールの情報を明示することができる。<br>
+node.js でいうところの npm、python でいうところの pip、.NET でいうところの nuget 的なもの。</p>
+<a class="post-dummy-target" id="heading"></a><h3>使い方</h3>
+<p>基本的な使い方としては、プロジェクトのルートディレクトリで以下の手順を実行する。</p>
+<ol>
+<li><code>go mod init</code> で初期化</li>
+<li><code>go build</code> で go プログラムをビルドする</li>
+<li><code>import</code>などで定義された module が自動インストールされる</li>
+</ol>
+<p>他にも、<br>
+<code>go list -m all</code> で現在の依存モジュールをリストしたり、<br>
+<code>go get &lt;modulename&gt;</code> で依存モジュールの追加やアップグレードをしたり、<br>
+<code>go mod tidy</code> で不要な依存モジュールを削除できたりする。</p>
+<a class="post-dummy-target" id="gomod--gosum"></a><h3>go.mod と go.sum</h3>
+<p>実際に<code>go mod init</code> して <code>go build</code> した後に生成された、go.mod と go.sum の例。<br>
+Go で Life Game をつくろうとしていたのだが、<code>github.com/gdamore/tcell</code> を import していたので依存モジュールが追加されていることがわかる。</p>
 <ul>
-<li>Git</li>
-<li>Node.js(version 10.x 以上 12.x 以下)</li>
-<li>Yarn</li>
-<li>python 2.7</li>
-<li>Xcode</li>
+<li>go.mod</li>
 </ul>
-<p>私が実際に build した環境は次の通りです。</p>
-<ul>
-<li>git version 2.20.1</li>
-<li>node v12.4.0</li>
-<li>python 2.7.17</li>
-<li>yarn version v1.21.1</li>
-<li>Xcode Version 11.3</li>
+<pre><code>module github.com/y10e/go-life
+
+go 1.13
+
+require github.com/gdamore/tcell v1.4.0 // indirect
+</code></pre><ul>
+<li>go.sum</li>
 </ul>
-<p>あと、特に version 指定はないみたいですが、npm や typescript も必要です。</p>
-<a class="post-dummy-target" id="3-build--"></a><h3>3. Build と 実行</h3>
-<p>とりあえず、vs code のリポジトリを fork しておきます。</p>
-<p><a href="https://github.com/microsoft/vscode">https://github.com/microsoft/vscode</a></p>
-<p>fork したリポジトリを local に clone します。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://github.com/&lt;YourAccount&gt;/vscode.git
-</code></pre></td></tr></table>
-</div>
-</div><p>作業に時間が空いた場合などは、念の為、本家リポジトリから pull しておきます。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> vscode
-git checkout master
-git pull https://github.com/microsoft/vscode.git master
-</code></pre></td></tr></table>
-</div>
-</div><p>あとは、yarn で build します。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> vscode
-yarn watch
-</code></pre></td></tr></table>
-</div>
-</div><p>module not found で怒られるので、npm install でインストールしていきます。
-とくに vscode-node-sqlite3 という module のインストールが必要なのですが、python 2.7 じゃないとエラーになるので注意です。
-Build が完了すると scripts のディレクトリが生成されるので、scripts/code.sh を実行します。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">./scripts/code.sh
-</code></pre></td></tr></table>
-</div>
-</div><a class="post-dummy-target" id="3-"></a><h3>3. 確認</h3>
-<p>問題なく build できて、実行ができれば次のように表示されます。</p>
-<p><img src="/img/20191221_vscode_build/run.png" alt="run"></p>
-<p><img src="/img/20191221_vscode_build/oss-code.png" alt="Code-OSS"></p>
-<a class="post-dummy-target" id="4-"></a><h3>4. 補足</h3>
-<p>実行時に次のエラーでうまく動作しなかったけど、どうやら module を build した時に node.js のバージョンが違うかったみたい。
-nodebrew 経由以外の node.js もインストールされていたので、どこかの作業でその node.js を使用したのかもしれない。</p>
+<pre><code>github.com/gdamore/encoding v1.0.0 h1:+7OoQ1Bc6eTm5niUzBa0Ctsh6JbMW6Ra+YNuAtDBdko=
+github.com/gdamore/encoding v1.0.0/go.mod h1:alR0ol34c49FCSBLjhosxzcPHQbf2trDkoo5dl+VrEg=
+github.com/gdamore/tcell v1.4.0 h1:vUnHwJRvcPQa3tzi+0QI4U9JINXYJlOz9yiaiPQ2wMU=
+github.com/gdamore/tcell v1.4.0/go.mod h1:vxEiSDZdW3L+Uhjii9c3375IlDmR05bzxY404ZVSMo0=
+github.com/lucasb-eyer/go-colorful v1.0.3 h1:QIbQXiugsb+q10B+MI+7DI1oQLdmnep86tWFlaaUAac=
+github.com/lucasb-eyer/go-colorful v1.0.3/go.mod h1:R4dSotOR9KMtayYi1e77YzuveK+i7ruzyGqttikkLy0=
+github.com/mattn/go-runewidth v0.0.7 h1:Ei8KR0497xHyKJPAv59M1dkC+rOZCMBJ+t3fZ+twI54=
+github.com/mattn/go-runewidth v0.0.7/go.mod h1:H031xJmbD/WCDINGzjvQ9THkh0rPKHF+m2gUSrubnMI=
+golang.org/x/sys v0.0.0-20190626150813-e07cf5db2756/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/text v0.3.0 h1:g61tztE5qeGQ89tm6NTjjM9VPIm088od1l6aSorWRWg=
+golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
+</code></pre><a class="post-dummy-target" id="heading1"></a><h3>現在の依存モジュールをリスト</h3>
+<p>上記の状態で <code>go list -m all</code> すると依存関係のあるモジュールがリストアップされる。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -317,26 +243,102 @@ nodebrew 経由以外の node.js もインストールされていたので、�
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">Error: The module <span class="s1">&#39;/Users/xxx/WorkSpace/github-repo/vscode/node_modules/spdlog/build/Release/spdlog.node&#39;</span>
-was compiled against a different Node.js version using
-NODE_MODULE_VERSION 72. This version of Node.js requires
-NODE_MODULE_VERSION 73. Please try re-compiling or re-installing
-the module <span class="o">(</span><span class="k">for</span> instance, using <span class="sb">`</span>npm rebuild<span class="sb">`</span> or <span class="sb">`</span>npm install<span class="sb">`</span><span class="o">)</span>.
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ go list -m all
+github.com/y10e/go-life
+github.com/gdamore/encoding v1.0.0
+github.com/gdamore/tcell v1.4.0
+github.com/lucasb-eyer/go-colorful v1.0.3
+github.com/mattn/go-runewidth v0.0.7
+golang.org/x/sys v0.0.0-20190626150813-e07cf5db2756
+golang.org/x/text v0.3.0
 </code></pre></td></tr></table>
 </div>
-</div><p>nodebrew だけに統一した上で、electron-rebuild したら正常に動作するようになりました。</p>
+</div><a class="post-dummy-target" id="heading2"></a><h3>依存モジュールの追加</h3>
+<p>試しに glog を <code>go get</code> してみる。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="k">$(</span>npm bin<span class="k">)</span>/electron-rebuild
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ go get github.com/golang/glog
+go: finding github.com/golang/glog latest
+go: downloading github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
+go: extracting github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
 </code></pre></td></tr></table>
 </div>
-</div><p>参考:Electron Rebuild<br>
-<a href="https://github.com/electron/electron-rebuild">https://github.com/electron/electron-rebuild</a></p>
+</div><p>このとき、<code>go list -m all</code> や go.mod, go.sum をみると glog が追加されているのがわかる。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ go list -m all
+github.com/y10e/go-life
+github.com/gdamore/encoding v1.0.0
+github.com/gdamore/tcell v1.4.0
+github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
+github.com/lucasb-eyer/go-colorful v1.0.3
+github.com/mattn/go-runewidth v0.0.7
+golang.org/x/sys v0.0.0-20190626150813-e07cf5db2756
+golang.org/x/text v0.3.0
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>go.mod</li>
+</ul>
+<pre><code>module github.com/y10e/go-life
+
+go 1.13
+
+require (
+	github.com/gdamore/tcell v1.4.0 // indirect
+	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b // indirect
+)
+</code></pre><ul>
+<li>go.sum</li>
+</ul>
+<pre><code>github.com/gdamore/encoding v1.0.0 h1:+7OoQ1Bc6eTm5niUzBa0Ctsh6JbMW6Ra+YNuAtDBdko=
+github.com/gdamore/encoding v1.0.0/go.mod h1:alR0ol34c49FCSBLjhosxzcPHQbf2trDkoo5dl+VrEg=
+github.com/gdamore/tcell v1.4.0 h1:vUnHwJRvcPQa3tzi+0QI4U9JINXYJlOz9yiaiPQ2wMU=
+github.com/gdamore/tcell v1.4.0/go.mod h1:vxEiSDZdW3L+Uhjii9c3375IlDmR05bzxY404ZVSMo0=
+github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b h1:VKtxabqXZkF25pY9ekfRL6a582T4P37/31XEstQ5p58=
+github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b/go.mod h1:SBH7ygxi8pfUlaOkMMuAQtPIUF8ecWP5IEl/CR7VP2Q=
+github.com/lucasb-eyer/go-colorful v1.0.3 h1:QIbQXiugsb+q10B+MI+7DI1oQLdmnep86tWFlaaUAac=
+github.com/lucasb-eyer/go-colorful v1.0.3/go.mod h1:R4dSotOR9KMtayYi1e77YzuveK+i7ruzyGqttikkLy0=
+github.com/mattn/go-runewidth v0.0.7 h1:Ei8KR0497xHyKJPAv59M1dkC+rOZCMBJ+t3fZ+twI54=
+github.com/mattn/go-runewidth v0.0.7/go.mod h1:H031xJmbD/WCDINGzjvQ9THkh0rPKHF+m2gUSrubnMI=
+golang.org/x/sys v0.0.0-20190626150813-e07cf5db2756/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/text v0.3.0 h1:g61tztE5qeGQ89tm6NTjjM9VPIm088od1l6aSorWRWg=
+golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
+</code></pre><a class="post-dummy-target" id="heading3"></a><h3>使用していないモジュールを削除</h3>
+<p><code>go mod tidy</code> で使用していないモジュールを削除する。glog が削除されていることがわかる。</p>
+<pre><code>$ go mod tidy
+$ go list -m all
+github.com/y10e/go-life
+github.com/gdamore/encoding v1.0.0
+github.com/gdamore/tcell v1.4.0
+github.com/lucasb-eyer/go-colorful v1.0.3
+github.com/mattn/go-runewidth v0.0.7
+golang.org/x/sys v0.0.0-20190626150813-e07cf5db2756
+golang.org/x/text v0.3.0
+</code></pre><a class="post-dummy-target" id="heading4"></a><h3>参考</h3>
+<p><a href="https://golang.org/cmd/go/#hdr-Compile_and_run_Go_program">Command go</a></p>
 
         </div>
 
@@ -354,7 +356,7 @@ the module <span class="o">(</span><span class="k">for</span> instance, using <s
             <div class="post-info-md">
                 
                     
-                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/index.md" target="_blank"></a></span>
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2021/02/02/gomod/index.md" target="_blank"></a></span>
                     
                 
             </div>
@@ -362,18 +364,18 @@ the module <span class="o">(</span><span class="k">for</span> instance, using <s
                 
                     <span>
     
-        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f21%2f20191221_vscode_sourcebuild%2f&amp;text=Visual%20Studio%20Code%20%e3%82%92%20Source%20%e3%81%8b%e3%82%89%20build%20%e3%81%99%e3%82%8b&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f02%2fgomod%2f&amp;text=Go%20Modules%20%e3%81%ae%e5%9f%ba%e6%9c%ac%e7%9a%84%e3%81%aa%e3%81%93%e3%81%a8%20&amp;via=y10exxx" target="_blank" title="Share on Twitter">
             <i class="fab fa-twitter fa-fw"></i>
         </a>
     
     
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f21%2f20191221_vscode_sourcebuild%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f02%2fgomod%2f" target="_blank" title="Share on Facebook">
             <i class="fab fa-facebook-square fa-fw"></i>
         </a>
     
     
     
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f21%2f20191221_vscode_sourcebuild%2f&amp;title=Visual%20Studio%20Code%20%e3%82%92%20Source%20%e3%81%8b%e3%82%89%20build%20%e3%81%99%e3%82%8b" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f02%2fgomod%2f&amp;title=Go%20Modules%20%e3%81%ae%e5%9f%ba%e6%9c%ac%e7%9a%84%e3%81%aa%e3%81%93%e3%81%a8%20" target="_blank" title="Share on LinkedIn">
             <i class="fab fa-linkedin fa-fw"></i>
         </a>
     
@@ -394,15 +396,11 @@ the module <span class="o">(</span><span class="k">for</span> instance, using <s
             
                 
                     <span class="tag">
-                        <a href="https://yonehub.y10e.com/tags/visual-studio-code/"><i class="fas fa-tag fa-fw"></i>Visual Studio Code</a>
+                        <a href="https://yonehub.y10e.com/tags/go/"><i class="fas fa-tag fa-fw"></i>go</a>
                     </span>
                 
                     <span class="tag">
-                        <a href="https://yonehub.y10e.com/tags/tips/"><i class="fas fa-tag fa-fw"></i>Tips</a>
-                    </span>
-                
-                    <span class="tag">
-                        <a href="https://yonehub.y10e.com/tags/mac/"><i class="fas fa-tag fa-fw"></i>Mac</a>
+                        <a href="https://yonehub.y10e.com/tags/golang/"><i class="fas fa-tag fa-fw"></i>golang</a>
                     </span>
                 
             
@@ -414,10 +412,10 @@ the module <span class="o">(</span><span class="k">for</span> instance, using <s
 
     <div class="post-nav">
         
-            <a href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_meetup/" class="prev" rel="prev" title="Visual Studio Code Meetup #1 の参加メモ"><i class="fas fa-angle-left fa-fw"></i>Visual Studio Code Meetup #1 の参加メモ</a>
+            <a href="https://yonehub.y10e.com/2021/02/01/gobasic/" class="prev" rel="prev" title="Go の基本的なあれこれ #1"><i class="fas fa-angle-left fa-fw"></i>Go の基本的なあれこれ #1</a>
         
         
-            <a href="https://yonehub.y10e.com/2019/12/24/20191223_git_gitignore/" class="next" rel="next" title="git 管理から特定のファイル、ディレクトリを除外する(.gitignore)">git 管理から特定のファイル、ディレクトリを除外する(.gitignore)<i class="fas fa-angle-right fa-fw"></i></a>
+            <a href="https://yonehub.y10e.com/2021/02/03/gobasic2/" class="next" rel="next" title="Go の基本的なあれこれ #2">Go の基本的なあれこれ #2<i class="fas fa-angle-right fa-fw"></i></a>
         
     </div>
 </div>

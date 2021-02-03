@@ -1,37 +1,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
         <url>
-            <loc>https://yonehub.y10e.com/categories/</loc>
-            
-                <lastmod>2021-02-01T23:58:10+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://yonehub.y10e.com/categories/development/</loc>
-            
-                <lastmod>2021-02-01T23:58:10+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>https://yonehub.y10e.com/tags/go/</loc>
             
-                <lastmod>2021-02-01T23:58:10+09:00</lastmod>
+                <lastmod>2021-02-02T20:46:23+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -43,9 +15,9 @@
         </url>
     
         <url>
-            <loc>https://yonehub.y10e.com/2021/02/01/gobasic/</loc>
+            <loc>https://yonehub.y10e.com/2021/02/03/gobasic2/</loc>
             
-                <lastmod>2021-02-01T23:58:10+09:00</lastmod>
+                <lastmod>2021-01-31T22:40:06+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -59,7 +31,7 @@
         <url>
             <loc>https://yonehub.y10e.com/tags/golang/</loc>
             
-                <lastmod>2021-02-01T23:58:10+09:00</lastmod>
+                <lastmod>2021-02-02T20:46:23+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -73,7 +45,7 @@
         <url>
             <loc>https://yonehub.y10e.com/posts/</loc>
             
-                <lastmod>2021-02-01T23:58:10+09:00</lastmod>
+                <lastmod>2021-02-02T20:46:23+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -87,7 +59,7 @@
         <url>
             <loc>https://yonehub.y10e.com/tags/</loc>
             
-                <lastmod>2021-02-01T23:58:10+09:00</lastmod>
+                <lastmod>2021-02-02T20:46:23+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -101,7 +73,63 @@
         <url>
             <loc>https://yonehub.y10e.com/</loc>
             
-                <lastmod>2021-02-01T23:58:10+09:00</lastmod>
+                <lastmod>2021-02-02T20:46:23+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/categories/</loc>
+            
+                <lastmod>2021-02-02T20:46:23+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/categories/development/</loc>
+            
+                <lastmod>2021-02-02T20:46:23+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/2021/02/02/gomod/</loc>
+            
+                <lastmod>2021-02-02T20:46:23+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/2021/02/01/gobasic/</loc>
+            
+                <lastmod>2021-02-02T20:46:23+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -339,7 +367,7 @@
         <url>
             <loc>https://yonehub.y10e.com/tags/tips/</loc>
             
-                <lastmod>2021-01-04T22:28:55+09:00</lastmod>
+                <lastmod>2021-02-02T20:46:23+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -379,7 +407,7 @@
         </url>
     
         <url>
-            <loc>https://yonehub.y10e.com/tags/nontech/</loc>
+            <loc>https://yonehub.y10e.com/categories/nontech/</loc>
             
                 <lastmod>2021-01-01T00:12:49+09:00</lastmod>
             
@@ -393,7 +421,7 @@
         </url>
     
         <url>
-            <loc>https://yonehub.y10e.com/categories/nontech/</loc>
+            <loc>https://yonehub.y10e.com/tags/nontech/</loc>
             
                 <lastmod>2021-01-01T00:12:49+09:00</lastmod>
             
@@ -535,7 +563,7 @@
         <url>
             <loc>https://yonehub.y10e.com/tags/mac/</loc>
             
-                <lastmod>2021-01-21T22:57:23+09:00</lastmod>
+                <lastmod>2021-02-02T20:46:23+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -549,7 +577,7 @@
         <url>
             <loc>https://yonehub.y10e.com/tags/visual-studio-code/</loc>
             
-                <lastmod>2019-12-27T23:17:14+09:00</lastmod>
+                <lastmod>2021-02-02T20:46:23+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -563,7 +591,7 @@
         <url>
             <loc>https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/</loc>
             
-                <lastmod>2019-12-22T04:05:21+09:00</lastmod>
+                <lastmod>2021-02-02T20:46:23+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -577,7 +605,7 @@
         <url>
             <loc>https://yonehub.y10e.com/2019/12/21/20191221_vscode_meetup/</loc>
             
-                <lastmod>2019-12-27T23:17:14+09:00</lastmod>
+                <lastmod>2021-02-02T20:46:23+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>

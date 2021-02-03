@@ -3,12 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Visual Studio Code を Source から build する | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Go の基本的なあれこれ #2 | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noodp" />
 <meta name="Description" content="Cloud Engineer&#39;s blog">
-<link rel="prev" href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_meetup/" />
-<link rel="next" href="https://yonehub.y10e.com/2019/12/24/20191223_git_gitignore/" />
-<link rel="canonical" href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/" />
+<link rel="prev" href="https://yonehub.y10e.com/2021/02/02/gomod/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2021/02/03/gobasic2/" />
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -18,8 +17,8 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-  <meta name="twitter:title" content="Visual Studio Code を Source から build する" />
-  <meta name="twitter:description" content="1. はじめに 2019/12/18 に Visual Studio Code Meetup #1 に参加しました。 LT で、VS Code のアイコンの種類についてのお話があり、生 Source Code からビルドすると VS Code のアイコンが違うとのことで、興味湧いたので試してみました。環境は macOS Mojave(10.14.6)です。 アイコンはこんな感じです。 2. 前提条 …">
+  <meta name="twitter:title" content="Go の基本的なあれこれ #2" />
+  <meta name="twitter:description" content="GOROOT GoSDK の配置場所を定義する環境変数。 Linux だと GOROOT=&quot;/usr/lib/go-x.xx&quot;、Windows だと GOROOT=c:\go が既定で設定されている。 異なるGoバージョンを共存して使用するというようなシナリオがない限り、この変数を変更することは基本的にない。 $GOPATH と $GOROOT といった Go 環境変数は go …">
   <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
   
 <meta name="twitter:card" content="summary" />
@@ -28,23 +27,23 @@
     {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "Visual Studio Code を Source から build する",
+    "headline": "Go の基本的なあれこれ #2",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/yonehub.y10e.com\/2019\/12\/21\/20191221_vscode_sourcebuild\/"
+        "@id": "https:\/\/yonehub.y10e.com\/2021\/02\/03\/gobasic2\/"
     },
     
     "genre": "posts",
     
-        "keywords": "Visual Studio Code, Tips, Mac",
+        "keywords": "go, golang",
     
-    "wordcount":  707 ,
-    "url": "https:\/\/yonehub.y10e.com\/2019\/12\/21\/20191221_vscode_sourcebuild\/",
+    "wordcount":  1271 ,
+    "url": "https:\/\/yonehub.y10e.com\/2021\/02\/03\/gobasic2\/",
     
-        "datePublished": "2019-12-21T01:34:51\x2b09:00",
+        "datePublished": "2021-02-03T22:28:33\x2b09:00",
     
     
-        "dateModified": "2021-02-02T20:46:23\x2b09:00",
+        "dateModified": "2021-01-31T22:40:06\x2b09:00",
     
     
         "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
@@ -147,21 +146,17 @@
     
 
     <article class="post-warp">
-        <h1 class="post-title animated flipInX">Visual Studio Code を Source から build する</h1>
+        <h1 class="post-title animated flipInX">Go の基本的なあれこれ #2</h1>
 
         <div class="post-meta">
             <div class="post-meta-main">
                 <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
-                <span class="post-category">
-                        included in
-                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/development/">Development</a>
-                            
-                    </span>
+                
             </div>
             <div class="post-meta-other">
-                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-21>2019-12-21</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 707 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-02-03>2021-02-03</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1271 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
         </div>
 
         
@@ -173,11 +168,13 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#1-">1. はじめに</a></li>
-        <li><a href="#2-">2. 前提条件</a></li>
-        <li><a href="#3-build--">3. Build と 実行</a></li>
-        <li><a href="#3-">3. 確認</a></li>
-        <li><a href="#4-">4. 補足</a></li>
+        <li><a href="#goroot">GOROOT</a></li>
+        <li><a href="#gopath">GOPATH</a></li>
+        <li><a href="#go-install">go install</a></li>
+        <li><a href="#go-clean">go clean</a></li>
+        <li><a href="#go-fmt">go fmt</a></li>
+        <li><a href="#go-doc">go doc</a></li>
+        <li><a href="#heading">参考</a></li>
       </ul>
     </li>
   </ul>
@@ -194,11 +191,13 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#1-">1. はじめに</a></li>
-        <li><a href="#2-">2. 前提条件</a></li>
-        <li><a href="#3-build--">3. Build と 実行</a></li>
-        <li><a href="#3-">3. 確認</a></li>
-        <li><a href="#4-">4. 補足</a></li>
+        <li><a href="#goroot">GOROOT</a></li>
+        <li><a href="#gopath">GOPATH</a></li>
+        <li><a href="#go-install">go install</a></li>
+        <li><a href="#go-clean">go clean</a></li>
+        <li><a href="#go-fmt">go fmt</a></li>
+        <li><a href="#go-doc">go doc</a></li>
+        <li><a href="#heading">参考</a></li>
       </ul>
     </li>
   </ul>
@@ -233,110 +232,95 @@
             
             
             
-            <a class="post-dummy-target" id="1-"></a><h3>1. はじめに</h3>
-<p>2019/12/18 に <a href="https://vscode.connpass.com/event/155068/">Visual Studio Code Meetup #1</a> に参加しました。<br>
-LT で、VS Code のアイコンの種類についてのお話があり、生 Source Code からビルドすると VS Code のアイコンが違うとのことで、興味湧いたので試してみました。環境は macOS Mojave(10.14.6)です。
-アイコンはこんな感じです。</p>
-<img src="/img/20191221_vscode_build/vscode.png" width="200px">
-<a class="post-dummy-target" id="2-"></a><h3>2. 前提条件</h3>
-<p>mac だと最低限 次を事前にインストールしておく必要がありました。</p>
-<ul>
-<li>Git</li>
-<li>Node.js(version 10.x 以上 12.x 以下)</li>
-<li>Yarn</li>
-<li>python 2.7</li>
-<li>Xcode</li>
-</ul>
-<p>私が実際に build した環境は次の通りです。</p>
-<ul>
-<li>git version 2.20.1</li>
-<li>node v12.4.0</li>
-<li>python 2.7.17</li>
-<li>yarn version v1.21.1</li>
-<li>Xcode Version 11.3</li>
-</ul>
-<p>あと、特に version 指定はないみたいですが、npm や typescript も必要です。</p>
-<a class="post-dummy-target" id="3-build--"></a><h3>3. Build と 実行</h3>
-<p>とりあえず、vs code のリポジトリを fork しておきます。</p>
-<p><a href="https://github.com/microsoft/vscode">https://github.com/microsoft/vscode</a></p>
-<p>fork したリポジトリを local に clone します。</p>
+            <a class="post-dummy-target" id="goroot"></a><h3>GOROOT</h3>
+<p>GoSDK の配置場所を定義する環境変数。
+Linux だと <code>GOROOT=&quot;/usr/lib/go-x.xx&quot;</code>、Windows だと <code>GOROOT=c:\go</code> が既定で設定されている。
+異なるGoバージョンを共存して使用するというようなシナリオがない限り、この変数を変更することは基本的にない。<br>
+$GOPATH と $GOROOT といった Go 環境変数は <code>go env</code> で設定値を確認することができる。</p>
+<a class="post-dummy-target" id="gopath"></a><h3>GOPATH</h3>
+<p>GOPATHは、ワークスペースのルートパスを定義する変数。<br>
+既定では Linux だと <code>GOPATH=&quot;/home/&lt;user&gt;/go</code> (=<code>$HOME/go</code>), Windows だと  <code>GOPATH=C:\Users\&lt;user&gt;\go</code> (=<code>%USERPROFILE%\go</code>) になる。<br>
+この GOPATH は import 文の解決に利用される。
+GOPATH にリストされている各ディレクトリは、以下のような決められた構造を持つ必要がある。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://github.com/&lt;YourAccount&gt;/vscode.git
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">GOPATH</span><span class="o">=</span>/home/user/go
+
+    /home/user/go/
+        src/
+            foo/
+                bar/               <span class="o">(</span>go code in package bar<span class="o">)</span>
+                    x.go
+                quux/              <span class="o">(</span>go code in package main<span class="o">)</span>
+                    y.go
+        bin/
+            quux                   <span class="o">(</span>installed <span class="nb">command</span><span class="o">)</span>
+        pkg/
+            linux_amd64/
+                foo/
+                    bar.a          <span class="o">(</span>installed package object<span class="o">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>作業に時間が空いた場合などは、念の為、本家リポジトリから pull しておきます。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> vscode
-git checkout master
-git pull https://github.com/microsoft/vscode.git master
-</code></pre></td></tr></table>
-</div>
-</div><p>あとは、yarn で build します。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> vscode
-yarn watch
-</code></pre></td></tr></table>
-</div>
-</div><p>module not found で怒られるので、npm install でインストールしていきます。
-とくに vscode-node-sqlite3 という module のインストールが必要なのですが、python 2.7 じゃないとエラーになるので注意です。
-Build が完了すると scripts のディレクトリが生成されるので、scripts/code.sh を実行します。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">./scripts/code.sh
-</code></pre></td></tr></table>
-</div>
-</div><a class="post-dummy-target" id="3-"></a><h3>3. 確認</h3>
-<p>問題なく build できて、実行ができれば次のように表示されます。</p>
-<p><img src="/img/20191221_vscode_build/run.png" alt="run"></p>
-<p><img src="/img/20191221_vscode_build/oss-code.png" alt="Code-OSS"></p>
-<a class="post-dummy-target" id="4-"></a><h3>4. 補足</h3>
-<p>実行時に次のエラーでうまく動作しなかったけど、どうやら module を build した時に node.js のバージョンが違うかったみたい。
-nodebrew 経由以外の node.js もインストールされていたので、どこかの作業でその node.js を使用したのかもしれない。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">Error: The module <span class="s1">&#39;/Users/xxx/WorkSpace/github-repo/vscode/node_modules/spdlog/build/Release/spdlog.node&#39;</span>
-was compiled against a different Node.js version using
-NODE_MODULE_VERSION 72. This version of Node.js requires
-NODE_MODULE_VERSION 73. Please try re-compiling or re-installing
-the module <span class="o">(</span><span class="k">for</span> instance, using <span class="sb">`</span>npm rebuild<span class="sb">`</span> or <span class="sb">`</span>npm install<span class="sb">`</span><span class="o">)</span>.
-</code></pre></td></tr></table>
-</div>
-</div><p>nodebrew だけに統一した上で、electron-rebuild したら正常に動作するようになりました。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="k">$(</span>npm bin<span class="k">)</span>/electron-rebuild
-</code></pre></td></tr></table>
-</div>
-</div><p>参考:Electron Rebuild<br>
-<a href="https://github.com/electron/electron-rebuild">https://github.com/electron/electron-rebuild</a></p>
+</div><p>src ディレクトリにはソース コードが格納される。<br>
+pkg ディレクトリには、インストールされたパッケージ オブジェクトが格納される。<br>
+例えば、DIR/src/foo/bar に配置されたソースがある場合、DIR が GOPATH にリストされているディレクトリであれば、パッケージは <code>foo/bar</code> としてインポートすることができる。<br>
+bin ディレクトリには、コンパイル済みコマンドが格納される。<br>
+また、<code>internal</code> という名前のディレクトリを配置すると、同一ディレクトリ内またはディレクトリ以下のコードからのみインポートのみ可能とすることができる。</p>
+<p>GOPATH は変更可能で、各環境での変更方法などの詳細は <a href="https://github.com/golang/go/wiki/SettingGOPATH">SettingGOPATH</a> に記載がある。</p>
+<p>Go 1.13 から go.mod が存在する状態で go get するときに module-aware mode となり、
+$GOPATH/pkg/mod の下に依存モジュールが保存されるようになった。</p>
+<a class="post-dummy-target" id="go-install"></a><h3>go install</h3>
+<pre><code>go install [-i] [build flags] [packages]
+</code></pre><p>指定されたパッケージをコンパイルして、インストールする。実行ファイルは、GOBIN 環境変数で設定されたディレクトリに配置される。
+デフォルトでは、<code>$GOPATH/bin</code>　となるが GOPATH 環境変数が設定されていない場合は、<code>$HOME/go/bin</code> に配置される。</p>
+<a class="post-dummy-target" id="go-clean"></a><h3>go clean</h3>
+<pre><code>go clean [clean flags] [build flags] [packages]
+</code></pre><p>buid などで作成された source ディレクトリ内の以下のオブジェクトファイルを削除することができる。</p>
+<pre><code>_obj/            old object directory, left from Makefiles
+_test/           old test directory, left from Makefiles
+_testmain.go     old gotest file, left from Makefiles
+test.out         old test log, left from Makefiles
+build.out        old test log, left from Makefiles
+*.[568ao]        object files, left from Makefiles
+
+DIR(.exe)        from go build
+DIR.test(.exe)   from go test -c
+MAINFILE(.exe)   from go build MAINFILE.go
+*.so             from SWIG
+</code></pre><p>-i フラグを指定すると、インストール済みバイナリ (<code>go install</code> で作成されるもの) が削除される。<br>
+-n フラグを指定すると、実際には削除されずに削除されるファイルが出力される。<br>
+-r フラグを指定すると、インポートパスで指定されたパッケージのすべての依存関係に対して clean が再帰的に適用される。<br>
+-x フラグを指定すると、削除コマンドが出力され、削除が同時に実行される。<br>
+-cache フラグを指定すると、<code>go build</code>のキャッシュ全体が削除される。<br>
+-testcache フラグを指定すると、<code>go build</code>のキャッシュ内のテスト結果が全て削除される。<br>
+-modcache フラグを指定すると、依存関係のあるソースコードを含む module ダウンロードキャッシュ全体が削除される。</p>
+<a class="post-dummy-target" id="go-fmt"></a><h3>go fmt</h3>
+<pre><code>go fmt [-n] [-x] [packages]
+</code></pre><p><code>gofmt -l -w</code> コマンドを実行し、タブや空白などで Go プログラムのフォーマットを整形してくれる。</p>
+<a class="post-dummy-target" id="go-doc"></a><h3>go doc</h3>
+<pre><code>go doc [-u] [-c] [package|[package.]symbol[.methodOrField]]
+</code></pre><p>Goのパッケージのドキュメントを参照するためのコマンド</p>
+<a class="post-dummy-target" id="heading"></a><h3>参考</h3>
+<p><a href="https://golang.org/cmd/go/#hdr-Compile_and_install_packages_and_dependencies">Compile and install packages and dependencies</a><br>
+<a href="https://golang.org/cmd/go/#hdr-Remove_object_files_and_cached_files">Remove object files and cached files</a><br>
+<a href="https://golang.org/cmd/go/#hdr-Gofmt__reformat__package_sources">Gofmt (reformat) package sources</a><br></p>
 
         </div>
 
@@ -344,7 +328,7 @@ the module <span class="o">(</span><span class="k">for</span> instance, using <s
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>This article is updated with 2021-02-02</span>
+                <span>This article is updated with 2021-01-31</span>
             </div>
             <div class="post-info-license">
                 
@@ -354,7 +338,7 @@ the module <span class="o">(</span><span class="k">for</span> instance, using <s
             <div class="post-info-md">
                 
                     
-                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/index.md" target="_blank"></a></span>
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2021/02/03/gobasic2/index.md" target="_blank"></a></span>
                     
                 
             </div>
@@ -362,18 +346,18 @@ the module <span class="o">(</span><span class="k">for</span> instance, using <s
                 
                     <span>
     
-        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f21%2f20191221_vscode_sourcebuild%2f&amp;text=Visual%20Studio%20Code%20%e3%82%92%20Source%20%e3%81%8b%e3%82%89%20build%20%e3%81%99%e3%82%8b&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f03%2fgobasic2%2f&amp;text=Go%20%e3%81%ae%e5%9f%ba%e6%9c%ac%e7%9a%84%e3%81%aa%e3%81%82%e3%82%8c%e3%81%93%e3%82%8c%20%232&amp;via=y10exxx" target="_blank" title="Share on Twitter">
             <i class="fab fa-twitter fa-fw"></i>
         </a>
     
     
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f21%2f20191221_vscode_sourcebuild%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f03%2fgobasic2%2f" target="_blank" title="Share on Facebook">
             <i class="fab fa-facebook-square fa-fw"></i>
         </a>
     
     
     
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f21%2f20191221_vscode_sourcebuild%2f&amp;title=Visual%20Studio%20Code%20%e3%82%92%20Source%20%e3%81%8b%e3%82%89%20build%20%e3%81%99%e3%82%8b" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f03%2fgobasic2%2f&amp;title=Go%20%e3%81%ae%e5%9f%ba%e6%9c%ac%e7%9a%84%e3%81%aa%e3%81%82%e3%82%8c%e3%81%93%e3%82%8c%20%232" target="_blank" title="Share on LinkedIn">
             <i class="fab fa-linkedin fa-fw"></i>
         </a>
     
@@ -394,15 +378,11 @@ the module <span class="o">(</span><span class="k">for</span> instance, using <s
             
                 
                     <span class="tag">
-                        <a href="https://yonehub.y10e.com/tags/visual-studio-code/"><i class="fas fa-tag fa-fw"></i>Visual Studio Code</a>
+                        <a href="https://yonehub.y10e.com/tags/go/"><i class="fas fa-tag fa-fw"></i>go</a>
                     </span>
                 
                     <span class="tag">
-                        <a href="https://yonehub.y10e.com/tags/tips/"><i class="fas fa-tag fa-fw"></i>Tips</a>
-                    </span>
-                
-                    <span class="tag">
-                        <a href="https://yonehub.y10e.com/tags/mac/"><i class="fas fa-tag fa-fw"></i>Mac</a>
+                        <a href="https://yonehub.y10e.com/tags/golang/"><i class="fas fa-tag fa-fw"></i>golang</a>
                     </span>
                 
             
@@ -414,10 +394,8 @@ the module <span class="o">(</span><span class="k">for</span> instance, using <s
 
     <div class="post-nav">
         
-            <a href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_meetup/" class="prev" rel="prev" title="Visual Studio Code Meetup #1 の参加メモ"><i class="fas fa-angle-left fa-fw"></i>Visual Studio Code Meetup #1 の参加メモ</a>
+            <a href="https://yonehub.y10e.com/2021/02/02/gomod/" class="prev" rel="prev" title="Go Modules の基本的なこと "><i class="fas fa-angle-left fa-fw"></i>Go Modules の基本的なこと </a>
         
-        
-            <a href="https://yonehub.y10e.com/2019/12/24/20191223_git_gitignore/" class="next" rel="next" title="git 管理から特定のファイル、ディレクトリを除外する(.gitignore)">git 管理から特定のファイル、ディレクトリを除外する(.gitignore)<i class="fas fa-angle-right fa-fw"></i></a>
         
     </div>
 </div>
