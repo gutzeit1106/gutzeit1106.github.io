@@ -223,6 +223,53 @@
     
     
     <h1 class="post-title post-list-title" itemprop="name headline">
+        <a href="https://yonehub.y10e.com/2020/04/06/0406_shell_azurerest/">Shell で Azure REST API を Call する</a>
+    </h1>
+
+    <div class="post-meta">
+        <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+        published on&nbsp;<time datetime=2020-04-06>2020-04-06</time>&nbsp;
+        <span class="post-category">
+                included in
+                <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/tech/">Tech</a>
+                    
+            </span>
+    </div>
+    <div class="post-content">
+        
+            
+            
+            
+            
+            
+            
+            
+            Azure には リソースの管理用の REST API が用意されている。ポータルや Azure Powershell、CLI、Management SDKといったツール群は、この REST-API を Call して操作を実現している。 大体の場合はポータルやツール群を使用することで事足りるけども、新機能の操作やREST-APIのリクエストを自由に指定して操作を試したい場合に REST を直接呼び出したい場合があり、シェルからさくっと呼び出したいという声をわりとよく聞く。 自分
+        
+    </div>
+    <div class="post-footer">
+        <a href="https://yonehub.y10e.com/2020/04/06/0406_shell_azurerest/">Read More</a>
+        
+            <div class="post-tags">
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/azure/"><i class="fas fa-tag fa-fw"></i>Azure</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/tips/"><i class="fas fa-tag fa-fw"></i>Tips</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/shell/"><i class="fas fa-tag fa-fw"></i>Shell</a></span>
+                
+            </div>
+        
+    </div>
+</article><article class="post" itemscope itemtype="http://schema.org/Article">
+    
+    
+    
+
+    
+    
+    
+    <h1 class="post-title post-list-title" itemprop="name headline">
         <a href="https://yonehub.y10e.com/2020/01/06/0101_books2020/">2020年に読みたい技術関連書籍（積読リスト）</a>
     </h1>
 
@@ -317,7 +364,7 @@
         published on&nbsp;<time datetime=2019-12-24>2019-12-24</time>&nbsp;
         <span class="post-category">
                 included in
-                <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/tech/">Tech</a>
+                <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/development/">Development</a>
                     
             </span>
     </div>
@@ -529,51 +576,6 @@
                     &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/logicapps/"><i class="fas fa-tag fa-fw"></i>LogicApps</a></span>
                 
                     &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/vmss/"><i class="fas fa-tag fa-fw"></i>VMSS</a></span>
-                
-            </div>
-        
-    </div>
-</article><article class="post" itemscope itemtype="http://schema.org/Article">
-    
-    
-    
-
-    
-    
-    
-    <h1 class="post-title post-list-title" itemprop="name headline">
-        <a href="https://yonehub.y10e.com/2019/12/14/20191214_azure_aci_cmd/">Azure Container Instances の起動・停止・再起動 by Azure Powershell</a>
-    </h1>
-
-    <div class="post-meta">
-        <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
-        published on&nbsp;<time datetime=2019-12-14>2019-12-14</time>&nbsp;
-        <span class="post-category">
-                included in
-                <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/cloud/">Cloud</a>
-                    
-            </span>
-    </div>
-    <div class="post-content">
-        
-            
-            
-            
-            
-            
-            
-            
-            はじめに Azure Container Instances を Azure Powershell で操作しようとコマンド一覧を確認していたが、次の通り Get（参照）, New（作成）, Remove（削除）などしか用意されていない。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 PS Azure:\&gt; gcm *Az*ContainerGroup* CommandType Name Version Source ----------- ---- ------- ------ Alias Get-AzureRmContainerGroup Alias New-AzureRmContainerGroup Alias Remove-AzureRmContainerGroup Cmdlet Get-AzContainerGroup 1.0.1 Az.ContainerInstance Cmdlet New-AzContainerGroup 1.0.1 Az.ContainerInstance Cmdlet Remove-AzContainerGroup 1.0.1 Az.ContainerInstance Azure:/ PS Azure:\&gt; gcm *Az*ContainerInstance* CommandType Name Version Source ----------- ---- ------- ------ Alias Get-AzureRmContainerInstanceLog Cmdlet Get-AzContainerInstanceLog 1.0.1 Az.ContainerInstance REST API では、start、stop、restart も用意されているけど、Azure Powershell のコマンドとしては提供されていないみ
-        
-    </div>
-    <div class="post-footer">
-        <a href="https://yonehub.y10e.com/2019/12/14/20191214_azure_aci_cmd/">Read More</a>
-        
-            <div class="post-tags">
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/azure/"><i class="fas fa-tag fa-fw"></i>Azure</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/container/"><i class="fas fa-tag fa-fw"></i>Container</a></span>
                 
             </div>
         
