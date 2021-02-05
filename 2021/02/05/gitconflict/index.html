@@ -3,12 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>git 管理から特定のファイル、ディレクトリを除外する(.gitignore) | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>git pull で conflict した場合の対処方法  | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noodp" />
 <meta name="Description" content="Cloud Engineer&#39;s blog">
-<link rel="prev" href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/" />
-<link rel="next" href="https://yonehub.y10e.com/2019/12/31/20191231_summary2019/" />
-<link rel="canonical" href="https://yonehub.y10e.com/2019/12/24/20191223_git_gitignore/" />
+<link rel="prev" href="https://yonehub.y10e.com/2021/02/04/gitinit/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2021/02/05/gitconflict/" />
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -18,8 +17,8 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-  <meta name="twitter:title" content="git 管理から特定のファイル、ディレクトリを除外する(.gitignore)" />
-  <meta name="twitter:description" content="秘匿性のあるファイルやキャッシュなどの一時ファイルなど git リポジトリのバージョン管理から特定のファイルやフォルダを除外したいときには .gitignore ファイルを作成します。 Mac だと, finder のメタ情報を持つ .DS_store がディレクトリの至るところに作成されるので, git を使う場合、除外設定しておかないと面倒です。 基本ルール 最も基本的な設定方法は, リポジト …">
+  <meta name="twitter:title" content="git pull で conflict した場合の対処方法 " />
+  <meta name="twitter:description" content="git pull した時に以下のようなエラーで conflict が発生した場合の対処をまとめる error: Your local changes to the following files would be overwritten by merge: Directory/File Please, commit your changes or stash them before you can …">
   <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
   
 <meta name="twitter:card" content="summary" />
@@ -28,20 +27,20 @@
     {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "git 管理から特定のファイル、ディレクトリを除外する(.gitignore)",
+    "headline": "git pull で conflict した場合の対処方法 ",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/yonehub.y10e.com\/2019\/12\/24\/20191223_git_gitignore\/"
+        "@id": "https:\/\/yonehub.y10e.com\/2021\/02\/05\/gitconflict\/"
     },
     
     "genre": "posts",
     
         "keywords": "git, github",
     
-    "wordcount":  1141 ,
-    "url": "https:\/\/yonehub.y10e.com\/2019\/12\/24\/20191223_git_gitignore\/",
+    "wordcount":  460 ,
+    "url": "https:\/\/yonehub.y10e.com\/2021\/02\/05\/gitconflict\/",
     
-        "datePublished": "2019-12-24T23:05:15\x2b09:00",
+        "datePublished": "2021-02-05T22:32:01\x2b09:00",
     
     
         "dateModified": "2021-02-04T21:42:53\x2b09:00",
@@ -147,7 +146,7 @@
     
 
     <article class="post-warp">
-        <h1 class="post-title animated flipInX">git 管理から特定のファイル、ディレクトリを除外する(.gitignore)</h1>
+        <h1 class="post-title animated flipInX">git pull で conflict した場合の対処方法 </h1>
 
         <div class="post-meta">
             <div class="post-meta-main">
@@ -159,9 +158,9 @@
                     </span>
             </div>
             <div class="post-meta-other">
-                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-24>2019-12-24</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1141 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-02-05>2021-02-05</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 460 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>1 min&nbsp;</div>
         </div>
 
         
@@ -173,11 +172,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#heading">基本ルール</a></li>
-        <li><a href="#heading1">文法</a></li>
-        <li><a href="#heading2">参考ファイル</a></li>
-        <li><a href="#heading3">補足</a></li>
-        <li><a href="#heading4">関連</a></li>
+        <li><a href="#1-stash-">1. stash でワーキングツリーの内容を退避</a></li>
+        <li><a href="#2--">2. 強制マージ (リモートリポジトリの状態にする)</a></li>
+        <li><a href="#heading">参考</a></li>
       </ul>
     </li>
   </ul>
@@ -194,11 +191,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#heading">基本ルール</a></li>
-        <li><a href="#heading1">文法</a></li>
-        <li><a href="#heading2">参考ファイル</a></li>
-        <li><a href="#heading3">補足</a></li>
-        <li><a href="#heading4">関連</a></li>
+        <li><a href="#1-stash-">1. stash でワーキングツリーの内容を退避</a></li>
+        <li><a href="#2--">2. 強制マージ (リモートリポジトリの状態にする)</a></li>
+        <li><a href="#heading">参考</a></li>
       </ul>
     </li>
   </ul>
@@ -233,29 +228,48 @@
             
             
             
-            <p>秘匿性のあるファイルやキャッシュなどの一時ファイルなど git リポジトリのバージョン管理から特定のファイルやフォルダを除外したいときには .gitignore ファイルを作成します。<br>
-Mac だと, finder のメタ情報を持つ .DS_store がディレクトリの至るところに作成されるので, git を使う場合、除外設定しておかないと面倒です。</p>
-<a class="post-dummy-target" id="heading"></a><h3>基本ルール</h3>
-<p>最も基本的な設定方法は, リポジトリのルートの直下に 1 つの .gitignore ファイルを配置することです。これによってリポジトリ配下のディレクトリに再帰的に .gitignore の設定が適用されます。<br>
-サブディレクトリにも .gitignore を配置することも可能です。サブディレクトリに配置された .gitignore は、配置したディレクトリ以下にのみ適用され、また上位の .gitignore のルールは優先度は低くなり、同じルールがあった場合はより深い階層のルールが優先されます。</p>
-<a class="post-dummy-target" id="heading1"></a><h3>文法</h3>
-<p>原則は以下の通りです。</p>
-<ul>
-<li>空白行, # で開始される行は無視されます</li>
-<li>.gitignore が配置されたパスから再帰的に下位ディレクトリに適応されます</li>
-<li>/からパターンを記載することで再帰性を無効にしたパターンを指定できます</li>
-<li>パターンの最後に/を置くことでディレクトリを指定することができます</li>
-<li>! で開始することで gitignore の設定を無視します</li>
-</ul>
-<p>また、正規表現のような指定も可能です。</p>
-<ul>
-<li>アスタリスク（*）: 0 個以上の文字</li>
-<li>[abc] : 括弧内の任意の文字</li>
-<li>? : 単一の文字</li>
-<li>[0-9] : 0 から 9 までのいづれかの文字</li>
-<li>**  : 0 個以上のファイルあるいはディレクトリ</li>
-</ul>
-<p>具体的なサンプルも記載します。</p>
+            <p>git pull した時に以下のようなエラーで conflict が発生した場合の対処をまとめる</p>
+<pre><code>error: Your local changes to the following files would be overwritten by merge:
+    Directory/File
+Please, commit your changes or stash them before you can merge.
+</code></pre><a class="post-dummy-target" id="1-stash-"></a><h3>1. stash でワーキングツリーの内容を退避</h3>
+<p>コンフリクトを起こしているワーキングツリーの内容を <code>git stash</code> で退避する。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ git stash
+</code></pre></td></tr></table>
+</div>
+</div><p>stash で退避した内容を確認する。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ git stash list
+</code></pre></td></tr></table>
+</div>
+</div><p>この状態で pull すると成功する。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ git pull origin main
+</code></pre></td></tr></table>
+</div>
+</div><p>退避した内容を <code>git stash pop</code> で戻す。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ git stash pop
+</code></pre></td></tr></table>
+</div>
+</div><p>pull で取り込んだ内容とコンフリクトしている箇所は, <code>git status</code> で確認できる。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -268,60 +282,54 @@ Mac だと, finder のメタ情報を持つ .DS_store がディレクトリの�
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">#拡張子 .a の全てのファイルを除外</span>
-*.a
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ git status
+On branch main
+Your branch is up to date with <span class="s1">&#39;origin/main&#39;</span>.
 
-<span class="c1">#上の設定の例外として lib.a は管理に含める。</span>
-!lib.a
+Unmerged paths:
+  <span class="o">(</span>use <span class="s2">&#34;git restore --staged &lt;file&gt;...&#34;</span> to unstage<span class="o">)</span>
+  <span class="o">(</span>use <span class="s2">&#34;git add &lt;file&gt;...&#34;</span> to mark resolution<span class="o">)</span>
+        both modified:   ***
 
-<span class="c1">#カレントディレクトリの TODO のみ除外。サブディレクトリ配下の TODO は除外されない</span>
-/TODO
-
-<span class="c1">#ディレクトリ build 配下の全てのファイルを除外</span>
-build/
-
-<span class="c1">#例えば、doc/notes.txt を除外するが, doc/server/arch.txt は除外しない</span>
-doc/*.txt
-
-<span class="c1">#doc/配下の全ての .pdf ファイルを除外する doc/a.pdf, doc/a/a.pdf なども含む</span>
-doc/**/*.pdf
+no changes added to commit <span class="o">(</span>use <span class="s2">&#34;git add&#34;</span> and/or <span class="s2">&#34;git commit -a&#34;</span><span class="o">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><a class="post-dummy-target" id="heading2"></a><h3>参考ファイル</h3>
-<p>自分で文法を理解することも大切だと思いますが、既に出来合いのものを利用することもできます。<br>
-<a href="https://www.gitignore.io/">gitignore.io</a>では、プログラミング言語などから一般的な .gitignore ファイルを生成することができて非常に便利です。</p>
-<p>また、github も主な .gitignore ファイルをコレクションしています。</p>
-<p>github/gitignore<br>
-<a href="https://github.com/github/gitignore">https://github.com/github/gitignore</a></p>
-<p>もっと小規模なものだと、octocat くんが、汎用的な.gitignore設定のサンプルをgistで公開してくれているので、とりあえずこれを設定してみるのも良いかと思います。</p>
-<script src="https://gist.github.com/octocat/9257657.js"></script>
-<a class="post-dummy-target" id="heading3"></a><h3>補足</h3>
-<p>特定のリポジトリだけでなく、ユーザが全ての状況で git 管理から除外する設定を行いたい場合もあります。(global)
-この場合は ~/.gitignore_global に .gitignore ファイルを作成して次のコマンドを実行します。</p>
+</div><p>コンフリクトした箇所にはこんな感じで変更前と変更後が表示されるので修正する。</p>
+<pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
+xxxxx
+=======
+xxxxx
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes
+</code></pre><p>修正したら <code>git add</code>, <code>git commit</code>, <code>git push</code> する。</p>
+<a class="post-dummy-target" id="2--"></a><h3>2. 強制マージ (リモートリポジトリの状態にする)</h3>
+<ol>
+<li>リモートリポジトリの最新をリモート追跡ブランチ (origin/main) に取り込む。</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">$ git config --global core.excludesfile ~/.gitignore_global
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ git fetch origin main
 </code></pre></td></tr></table>
 </div>
-</div><p>また、 .gitigonore 自体をリポジトリ管理したくない場合は、リポジトリ配下にある .git/info/exclude にルールを追加します。</p>
-<a class="post-dummy-target" id="heading4"></a><h3>関連</h3>
-<p>Git<br>
-<a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring">https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring</a><br>
-<a href="https://git-scm.com/docs/gitignore">https://git-scm.com/docs/gitignore</a></p>
-<p>Github Help - Ignoring files<br>
-<a href="https://help.github.com/en/github/using-git/ignoring-files">https://help.github.com/en/github/using-git/ignoring-files</a></p>
+</div><ol start="2">
+<li>ワーキングディレクトリをリモート追跡ブランチ (origin/main) に強制的に変更する</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ git reset --hard origin/main
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="heading"></a><h3>参考</h3>
+<p><a href="https://qiita.com/fnobi/items/ec036c1b5d7ee5a8517c">git-resetは結局何を戻すのか</a></p>
+<p><a href="https://qiita.com/forest1/items/f7c821565a7a7d64d60f">git reset 解説</a></p>
+<p><a href="https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%81%95%E3%81%BE%E3%81%96%E3%81%BE%E3%81%AA%E3%83%84%E3%83%BC%E3%83%AB-%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E8%A9%B3%E8%AA%AC">Git のさまざまなツール - リセットコマンド詳説</a></p>
 
         </div>
 
@@ -339,7 +347,7 @@ doc/**/*.pdf
             <div class="post-info-md">
                 
                     
-                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2019/12/24/20191223_git_gitignore/index.md" target="_blank"></a></span>
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2021/02/05/gitconflict/index.md" target="_blank"></a></span>
                     
                 
             </div>
@@ -347,18 +355,18 @@ doc/**/*.pdf
                 
                     <span>
     
-        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f24%2f20191223_git_gitignore%2f&amp;text=git%20%e7%ae%a1%e7%90%86%e3%81%8b%e3%82%89%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%80%81%e3%83%87%e3%82%a3%e3%83%ac%e3%82%af%e3%83%88%e3%83%aa%e3%82%92%e9%99%a4%e5%a4%96%e3%81%99%e3%82%8b%28.gitignore%29&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f05%2fgitconflict%2f&amp;text=git%20pull%20%e3%81%a7%20conflict%20%e3%81%97%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e5%af%be%e5%87%a6%e6%96%b9%e6%b3%95%20&amp;via=y10exxx" target="_blank" title="Share on Twitter">
             <i class="fab fa-twitter fa-fw"></i>
         </a>
     
     
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f24%2f20191223_git_gitignore%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f05%2fgitconflict%2f" target="_blank" title="Share on Facebook">
             <i class="fab fa-facebook-square fa-fw"></i>
         </a>
     
     
     
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2019%2f12%2f24%2f20191223_git_gitignore%2f&amp;title=git%20%e7%ae%a1%e7%90%86%e3%81%8b%e3%82%89%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%80%81%e3%83%87%e3%82%a3%e3%83%ac%e3%82%af%e3%83%88%e3%83%aa%e3%82%92%e9%99%a4%e5%a4%96%e3%81%99%e3%82%8b%28.gitignore%29" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f05%2fgitconflict%2f&amp;title=git%20pull%20%e3%81%a7%20conflict%20%e3%81%97%e3%81%9f%e5%a0%b4%e5%90%88%e3%81%ae%e5%af%be%e5%87%a6%e6%96%b9%e6%b3%95%20" target="_blank" title="Share on LinkedIn">
             <i class="fab fa-linkedin fa-fw"></i>
         </a>
     
@@ -395,10 +403,8 @@ doc/**/*.pdf
 
     <div class="post-nav">
         
-            <a href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/" class="prev" rel="prev" title="Visual Studio Code を Source から build する"><i class="fas fa-angle-left fa-fw"></i>Visual Studio Code を Source から build する</a>
+            <a href="https://yonehub.y10e.com/2021/02/04/gitinit/" class="prev" rel="prev" title="git init の手順"><i class="fas fa-angle-left fa-fw"></i>git init の手順</a>
         
-        
-            <a href="https://yonehub.y10e.com/2019/12/31/20191231_summary2019/" class="next" rel="next" title="2019年の振り返り・雑感">2019年の振り返り・雑感<i class="fas fa-angle-right fa-fw"></i></a>
         
     </div>
 </div>
