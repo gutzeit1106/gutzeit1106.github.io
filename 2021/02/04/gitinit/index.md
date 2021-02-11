@@ -53,7 +53,7 @@ git push -u origin main
 この時、こんな感じで push ができない場合がある。
 
 ```sh
-$ git push -u origin main
+$ git push -u origin main -v
 error: src refspec main does not match any
 error: failed to push some refs to 'https://github.com/xxx/xxx.git'
 ```
