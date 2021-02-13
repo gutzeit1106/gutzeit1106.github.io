@@ -1,9 +1,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
         <url>
+            <loc>https://yonehub.y10e.com/2021/02/13/vscodeshortcut/</loc>
+            
+                <lastmod>2021-02-13T21:30:24+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
             <loc>https://yonehub.y10e.com/categories/</loc>
             
-                <lastmod>2021-02-11T23:58:17+09:00</lastmod>
+                <lastmod>2021-02-13T21:30:24+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -17,7 +31,77 @@
         <url>
             <loc>https://yonehub.y10e.com/categories/development/</loc>
             
-                <lastmod>2021-02-11T23:58:17+09:00</lastmod>
+                <lastmod>2021-02-13T21:30:24+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/posts/</loc>
+            
+                <lastmod>2021-02-13T21:30:24+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/tags/</loc>
+            
+                <lastmod>2021-02-13T21:30:24+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/tags/tips/</loc>
+            
+                <lastmod>2021-02-13T21:30:24+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/tags/visual-studio-code/</loc>
+            
+                <lastmod>2021-02-13T21:30:24+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/</loc>
+            
+                <lastmod>2021-02-13T21:30:24+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -58,48 +142,6 @@
     
         <url>
             <loc>https://yonehub.y10e.com/tags/github/</loc>
-            
-                <lastmod>2021-02-11T23:58:17+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://yonehub.y10e.com/posts/</loc>
-            
-                <lastmod>2021-02-11T23:58:17+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://yonehub.y10e.com/tags/</loc>
-            
-                <lastmod>2021-02-11T23:58:17+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://yonehub.y10e.com/</loc>
             
                 <lastmod>2021-02-11T23:58:17+09:00</lastmod>
             
@@ -393,20 +435,6 @@
         </url>
     
         <url>
-            <loc>https://yonehub.y10e.com/tags/tips/</loc>
-            
-                <lastmod>2021-02-02T20:46:23+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>https://yonehub.y10e.com/2021/01/02/books2021/</loc>
             
                 <lastmod>2021-01-03T00:45:34+09:00</lastmod>
@@ -590,20 +618,6 @@
     
         <url>
             <loc>https://yonehub.y10e.com/tags/mac/</loc>
-            
-                <lastmod>2021-02-02T20:46:23+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://yonehub.y10e.com/tags/visual-studio-code/</loc>
             
                 <lastmod>2021-02-02T20:46:23+09:00</lastmod>
             
