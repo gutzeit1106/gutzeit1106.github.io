@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Azure Update - 2021.2.15 | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="Cloud Engineer&#39;s blog">
+<link rel="prev" href="https://yonehub.y10e.com/2021/02/13/vscodeshortcut/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2021/02/15/azureupdate2021feb/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+  <meta name="twitter:title" content="Azure Update - 2021.2.15" />
+  <meta name="twitter:description" content="日本は 2 月なのに暖かいけど、テキサスは寒波で -10 度以下になっているらしい。 ARM Azure Resource Graph unlocks enhanced discovery for ServiceNow ServiceNow が Azure Resource Graph と統合されて検知できるようになった。 How to debug unexpected Azure Policy …">
+  <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
+  
+<meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y10exxx" />
+  <meta name="twitter:creator" content="@y10exxx" /><script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Azure Update - 2021.2.15",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/yonehub.y10e.com\/2021\/02\/15\/azureupdate2021feb\/"
+    },
+    
+    "genre": "posts",
+    
+        "keywords": "azure",
+    
+    "wordcount":  1118 ,
+    "url": "https:\/\/yonehub.y10e.com\/2021\/02\/15\/azureupdate2021feb\/",
+    
+        "datePublished": "2021-02-15T23:15:57\x2b09:00",
+    
+    
+        "dateModified": "2021-02-15T23:15:57\x2b09:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Yusuke.Yoneda",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/yonehub.y10e.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            if (!window.localStorage.getItem('theme')){
+                var current = new Date();
+                if (current.getHours() >= 23 || current.getHours() <= 4){
+                    window.localStorage.setItem('theme', 'dark');
+                    location.reload();
+                }else{
+                    window.localStorage.setItem('theme', 'light');
+                }
+            }
+
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://yonehub.y10e.com/">YONEHUB</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Archive</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tools" title=""><i class="fas fa-tools"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://yonehub.y10e.com/">YONEHUB</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Archive</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tools" title=""><i class="fas fa-tools"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Azure Update - 2021.2.15</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/cloud/">Cloud</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-02-15>2021-02-15</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1118 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                
+                <div class="post-toc-content always-active">
+                    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#arm">ARM</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#apim">APIM</a></li>
+        <li><a href="#azure-quantum">Azure Quantum</a></li>
+        <li><a href="#messaging">Messaging</a></li>
+        <li><a href="#storage">Storage</a></li>
+        <li><a href="#aks">AKS</a></li>
+        <li><a href="#sevice-fabric">Sevice Fabric</a></li>
+        <li><a href="#sql">SQL</a></li>
+        <li><a href="#monitor">Monitor</a></li>
+        <li><a href="#backup">Backup</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#power-bi">Power BI</a></li>
+        <li><a href="#databrics">Databrics</a></li>
+        <li><a href="#iot">IoT</a></li>
+        <li><a href="#cognitive">Cognitive</a></li>
+        <li><a href="#other">Other</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Index</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#arm">ARM</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#apim">APIM</a></li>
+        <li><a href="#azure-quantum">Azure Quantum</a></li>
+        <li><a href="#messaging">Messaging</a></li>
+        <li><a href="#storage">Storage</a></li>
+        <li><a href="#aks">AKS</a></li>
+        <li><a href="#sevice-fabric">Sevice Fabric</a></li>
+        <li><a href="#sql">SQL</a></li>
+        <li><a href="#monitor">Monitor</a></li>
+        <li><a href="#backup">Backup</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#power-bi">Power BI</a></li>
+        <li><a href="#databrics">Databrics</a></li>
+        <li><a href="#iot">IoT</a></li>
+        <li><a href="#cognitive">Cognitive</a></li>
+        <li><a href="#other">Other</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <p>日本は 2 月なのに暖かいけど、テキサスは寒波で -10 度以下になっているらしい。</p>
+<a class="post-dummy-target" id="arm"></a><h3>ARM</h3>
+<p><a href="https://azure.microsoft.com/en-us/blog/azure-resource-graph-unlocks-enhanced-discovery-for-servicenow/">Azure Resource Graph unlocks enhanced discovery for ServiceNow</a><br>
+ServiceNow が Azure Resource Graph と統合されて検知できるようになった。</p>
+<p><a href="https://techcommunity.microsoft.com/t5/azure-paas-blog/how-to-debug-unexpected-azure-policy-compliance-status-for-azure/ba-p/2111068">How to debug unexpected Azure Policy compliance status for Azure resources?</a><br>
+Azure Policy のデバッグ方法についての blog</p>
+<a class="post-dummy-target" id="functions"></a><h3>Functions</h3>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/versions-no-longer-required-for-key-vault-references-in-app-service-and-azure-functions/">Versions no longer required for Key Vault references in App Service and Azure Functions</a><br>
+KeyVault でバージョンを指定しなくても自動的に最新が選択されるようになった</p>
+<a class="post-dummy-target" id="apim"></a><h3>APIM</h3>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/support-for-azure-api-management-certificates-in-azure-key-vault-has-reached-general-availability/">Support for Azure API Management certificates in Azure Key Vault has reached general availability.</a><br>
+Azure APIManagement と Keyvault の統合が一般提供。</p>
+<a class="post-dummy-target" id="azure-quantum"></a><h3>Azure Quantum</h3>
+<p><a href="https://cloudblogs.microsoft.com/quantum/2021/02/01/azure-quantum-preview/">Azure Quantum is now in Public Preview</a><br>
+量子コンピューティングサービスの Azure Quantum が Public Preview になった。Microsoft QIO というプロバイダーであれば 1h の無料枠があるみたい。
+本番相当のものを選ぶとすごいお金が発生するので注意が必要。</p>
+<a class="post-dummy-target" id="messaging"></a><h3>Messaging</h3>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/azure-event-grid-is-now-in-public-preview-for-azure-cache-for-redis/">Azure Event Grid is now in public preview for Azure Cache for Redis</a><br>
+redis を Event Grid の subscriber として使用できるようになり、エクスポート、インポート、またはスケーリングなどの redis 上のイベントを扱えるようになった。preview</p>
+<a class="post-dummy-target" id="storage"></a><h3>Storage</h3>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/append-blob-support-for-azure-data-lake-storage-preview/">Append blob support for Azure Data Lake Storage is now in limited public preview</a><br>
+ADLS Gen2 で append blob が preview サポート</p>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/ingest-up-to-10-files-and-blobs-with-intuitive-ux/">General availability: Ingest up to 10 files and blobs with the new Azure Data Explorer intuitive UX</a><br>
+Azure Data Explorer で blob や files のデータが取り込めるようになった</p>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/general-availability-soft-delete-for-azure-file-shares-is-now-on-by-default-for-new-storage-accounts/">General availability: Soft delete for Azure file shares is now on by default for new storage accounts</a><br>
+Azure Files の論理削除が規定で有効になった。論理削除のデータはスナップショットとして扱われるらしい。</p>
+<a class="post-dummy-target" id="aks"></a><h3>AKS</h3>
+<p><a href="https://github.com/Azure/AKS/releases/tag/2021-02-01">Release 2021-02-01</a> <br>
+VM gen 2 が正式に GA サポートされたり。</p>
+<p><a href="https://github.com/Azure/AKS/releases/tag/2021-02-08">Release 2021-02-08</a><br>
+クラスターの完全停止が GA されたり。</p>
+<a class="post-dummy-target" id="sevice-fabric"></a><h3>Sevice Fabric</h3>
+<p><a href="https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-2-fifth-refresh-release/ba-p/2096575">Azure Service Fabric 7.2 Fifth Refresh Release</a></p>
+<p><a href="https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-1-tenth-refresh-release/ba-p/2096558">Azure Service Fabric 7.1 Tenth Refresh Release</a></p>
+<a class="post-dummy-target" id="sql"></a><h3>SQL</h3>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/additional-iops-feature-for-mysql-flexible-server-in-preview/">Additional IOPS feature for MySQL - Flexible Server in public preview</a></p>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/general-availability-stopstart-functionality-for-azure-database-for-mysql/">General availability: Stop/start functionality for Azure Database for MySQL</a><br></p>
+<p>MySQL-FlexibleServer で IOPS 追加できる機能がパブリックプレビュー</p>
+<a class="post-dummy-target" id="monitor"></a><h3>Monitor</h3>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/it-service-management-connector-itsmc-is-now-certified-with-servicenow-paris-version/">IT Service Management Connector (ITSMC) is now certified with ServiceNow Paris version</a></p>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/new-azure-monitor-agent-available-on-latest-linux-distros-and-new-regions/">New Azure Monitor Agent available on latest Linux distros and new regions</a></p>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/support-for-sap-application-netweaver-and-operating-system-linux-telemetry-in-azure-monitor-for-sap-solutions/">Support for SAP Application (NetWeaver) and Operating System (Linux) telemetry in Azure Monitor for SAP Solutions</a></p>
+<a class="post-dummy-target" id="backup"></a><h3>Backup</h3>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/support-for-more-workloads-and-tag-based-policies-now-in-backup-center-public-preview/">Support for more workloads, tag based policies now in Backup Center public preview</a><br>
+Backup Center で SQL in Azure VM, SAP HANA in Azure VM, Azure Files が対応するようになった。preview</p>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/azure-backup-for-sap-hana-soft-limit-increased-from-2-tb-to-8-tb/">Azure Backup for SAP HANA: Soft limit increased from 2 TB to 8 TB</a><br>
+SAP HANA の Azure Backup が 8 TB まで許容できるようになった</p>
+<a class="post-dummy-target" id="security"></a><h3>Security</h3>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/asc-january2021-1/">Azure Security Center—General availability updates for January 2021</a><br>
+Azure Security Center の 2021/1 に GA になった機能</p>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/asc-january2021-2/">Azure Security Center—Public preview updates for January 2021</a><br>
+Azure Security Center の 2021/1 にパブリックプレビューとなった機能</p>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/azure-attestation/">Microsoft Azure Attestation is now generally available</a><br>
+<a href="https://docs.microsoft.com/ja-jp/azure/attestation/overview">Microsoft Azure アテステーション</a>が一般提供。</p>
+<a class="post-dummy-target" id="power-bi"></a><h3>Power BI</h3>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/power-bi-embedded-generation-2-preview/">Announcing Power BI Embedded Generation 2 public preview</a> <br>
+パフォーマンスやスケール性など向上した Power BI Premium Generation 2 が　Public Preview</p>
+<a class="post-dummy-target" id="databrics"></a><h3>Databrics</h3>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/azure-databricks-achieves-dod-impact-level-5-il5-on-microsoft-azure-government/">Azure Databricks Achieves DoD Impact Level 5 (IL5) on Microsoft Azure Government</a></p>
+<a class="post-dummy-target" id="iot"></a><h3>IoT</h3>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/azure-iot-central-feature-updates-january-2021/">Azure IoT Central new and updated features—January 2021</a></p>
+<a class="post-dummy-target" id="cognitive"></a><h3>Cognitive</h3>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/general-availability-custom-neural-voice-a-custom-texttospeech-capability-within-speech-service/">General Availability: Custom Neural Voice, a Text-to-Speech capability within Speech Service</a><br>
+Custom Neural Voice によるテキスト読み上げ機能が GA</p>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/public-preview-azure-machine-learning-responsible-ml-updates/">Public preview: Azure Machine Learning - Responsible ML updates</a><br></p>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/computer-vision-read-ocr-languages-update-preview/">OCR support for 73 languages in the Cognitive Services Computer Vision public preview</a><br>
+Computer Vision で 73 言語の OCR がパブリックプレビュー
+<br></p>
+<a class="post-dummy-target" id="other"></a><h3>Other</h3>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/172-azure-offerings-achieve-hitrust-certification/">172 Azure offerings achieve HITRUST certification</a><br>
+172 の Azure オファリング が HITRUST CSF certification の認定を受けた。</p>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/azure-achieves-its-first-pci-3ds-certification/">Azure achieves its first PCI 3DS certification</a> <br>
+PCI 3-D Secure (PCI 3DS) certification の認定を受けた。</p>
+<p><a href="https://azure.microsoft.com/en-us/blog/azure-ddos-protection-2020-year-in-review/">Azure DDoS Protection—2020 year in review</a><br>
+COVID-19で DDoS 攻撃が増えたらしい。</p>
+<p><a href="https://techcommunity.microsoft.com/t5/azure-tools/az-next-ai-powered-interactive-assistant/ba-p/2118582">az next: AI-powered interactive assistant</a><br>
+az next という azure cli の新しいコマンドモード</p>
+<p><a href="https://azure.microsoft.com/ja-jp/updates/new-planned-datacenter-region-in-georgia-east-us-3/">New planned datacenter region in Georgia (East US 3)</a><br>
+East US 3 のリージョンが追加される予定</p>
+<hr>
+<p>既存サービスの新規リージョン対応　と Piblic Cloud じゃない Goverment, MoonCake などは省いてます</p>
+
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2021-02-15</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2021/02/15/azureupdate2021feb/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f15%2fazureupdate2021feb%2f&amp;text=Azure%20Update%20-%202021.2.15&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f15%2fazureupdate2021feb%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+    
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f15%2fazureupdate2021feb%2f&amp;title=Azure%20Update%20-%202021.2.15" target="_blank" title="Share on LinkedIn">
+            <i class="fab fa-linkedin fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/azure/"><i class="fas fa-tag fa-fw"></i>azure</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://yonehub.y10e.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://yonehub.y10e.com/2021/02/13/vscodeshortcut/" class="prev" rel="prev" title=" VS Code のショートカットバインドを変更する方法"><i class="fas fa-angle-left fa-fw"></i> VS Code のショートカットバインドを変更する方法</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            　　<div id="disqus_thread"></div>
+        <script>
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yonehub.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://yonehub.y10e.com/">Yusuke.Yoneda</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133674179-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>
