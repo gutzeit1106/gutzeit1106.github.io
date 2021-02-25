@@ -47,6 +47,13 @@ git config user.email "<UserEmail>" # github email
 
 ```sh
 git remote add origin https://github.com/xxx/xxx.git
+```
+
+このあと、add して　commit して push する。
+
+```
+git add .
+git commit -m "fist commit"
 git push -u origin main
 ```
 
