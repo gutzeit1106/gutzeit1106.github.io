@@ -3,12 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>git init の手順 | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Visual Studio で build の実行ファイルをプロジェクトと別名にする | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noodp" />
 <meta name="Description" content="Cloud Engineer&#39;s blog">
-<link rel="prev" href="https://yonehub.y10e.com/2021/02/03/gobasic2/" />
-<link rel="next" href="https://yonehub.y10e.com/2021/02/05/gitconflict/" />
-<link rel="canonical" href="https://yonehub.y10e.com/2021/02/04/gitinit/" />
+<link rel="prev" href="https://yonehub.y10e.com/2021/02/15/azureupdate2021feb/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2021/03/06/vsbuild/" />
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -18,8 +17,8 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-  <meta name="twitter:title" content="git init の手順" />
-  <meta name="twitter:description" content="git init など、リポジトリを作成して git 管理し始める時の手順を忘れがちなため備忘録。 既存のローカル環境がない場合 github などに既存のリモートリポジトリがない状態から、新規にリモートリポジトリを作成して、ローカルに clone してくる場合。 シンプルで基本的なパターン。 1 git clone https://github.com/xxx/xxx.git #リモートリポジト …">
+  <meta name="twitter:title" content="Visual Studio で build の実行ファイルをプロジェクトと別名にする" />
+  <meta name="twitter:description" content="Visual Studio で build したり、publish(発行) するとデフォルトではプロジェクト名と同じファイル名の実行ファイルが生成される。例えば、ConsoleApp というプロジェクトだと ConsoleApp.exe となる。 これを任意の名称の実行ファイルに変えたいなと調べたところ、プロジェクトのプロパティからアプリケーション &gt; アセンブリ名を変更することで可能だっ …">
   <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
   
 <meta name="twitter:card" content="summary" />
@@ -28,23 +27,23 @@
     {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "git init の手順",
+    "headline": "Visual Studio で build の実行ファイルをプロジェクトと別名にする",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/yonehub.y10e.com\/2021\/02\/04\/gitinit\/"
+        "@id": "https:\/\/yonehub.y10e.com\/2021\/03\/06\/vsbuild\/"
     },
     
     "genre": "posts",
     
-        "keywords": "git, github",
+        "keywords": "VisualStudio, Tips",
     
-    "wordcount":  724 ,
-    "url": "https:\/\/yonehub.y10e.com\/2021\/02\/04\/gitinit\/",
+    "wordcount":  202 ,
+    "url": "https:\/\/yonehub.y10e.com\/2021\/03\/06\/vsbuild\/",
     
-        "datePublished": "2021-02-04T21:28:50\x2b09:00",
+        "datePublished": "2021-03-06T23:29:02\x2b09:00",
     
     
-        "dateModified": "2021-02-25T23:24:19\x2b09:00",
+        "dateModified": "2021-03-06T23:29:02\x2b09:00",
     
     
         "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
@@ -147,7 +146,7 @@
     
 
     <article class="post-warp">
-        <h1 class="post-title animated flipInX">git init の手順</h1>
+        <h1 class="post-title animated flipInX">Visual Studio で build の実行ファイルをプロジェクトと別名にする</h1>
 
         <div class="post-meta">
             <div class="post-meta-main">
@@ -159,9 +158,9 @@
                     </span>
             </div>
             <div class="post-meta-other">
-                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-02-04>2021-02-04</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 724 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-03-06>2021-03-06</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 202 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>1 min&nbsp;</div>
         </div>
 
         
@@ -169,16 +168,7 @@
         <div class="post-toc" id="post-toc">
                 
                 <div class="post-toc-content always-active">
-                    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#heading">既存のローカル環境がない場合</a></li>
-        <li><a href="#heading1">既存のローカルディレクトリをリモートリポジトリに同期する場合</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+                    <nav id="TableOfContents"></nav>
                 </div>
             </div>
             <div class="post-toc-mobile" id="post-toc-mobile">
@@ -187,16 +177,7 @@
                     <div class="post-toc-content">
                         
                         
-                        <nav id="TableOfContentsMobile">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#heading">既存のローカル環境がない場合</a></li>
-        <li><a href="#heading1">既存のローカルディレクトリをリモートリポジトリに同期する場合</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+                        <nav id="TableOfContentsMobile"></nav>
                     </div>
                 </details>
             </div>
@@ -227,129 +208,18 @@
             
             
             
-            <p>git init など、リポジトリを作成して git 管理し始める時の手順を忘れがちなため備忘録。</p>
-<a class="post-dummy-target" id="heading"></a><h3>既存のローカル環境がない場合</h3>
-<p>github などに既存のリモートリポジトリがない状態から、新規にリモートリポジトリを作成して、ローカルに clone してくる場合。
-シンプルで基本的なパターン。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://github.com/xxx/xxx.git <span class="c1">#リモートリポジトリから clone してくる</span> 
-</code></pre></td></tr></table>
-</div>
-</div><p>ローカルのユーザ設定を確認して設定しておかないと push した時に、想定と違うユーザで commit したことになるので注意が必要。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git config user.name <span class="c1">#ユーザ名の設定確認</span>
-git config user.email <span class="c1">#ユーザemailの設定確認</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>もし、何も設定されていない、想定と異なるような場合は明示的に指定しておく。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git config user.name <span class="s2">&#34;&lt;UserName&gt;&#34;</span> <span class="c1"># github username</span>
-git config user.email <span class="s2">&#34;&lt;UserEmail&gt;&#34;</span> <span class="c1"># github email</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>あとはファイル追加したり、編集して、add, commit, push する。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git add .
-git commim -m <span class="s2">&#34;hogefuga&#34;</span>
-git push
-</code></pre></td></tr></table>
-</div>
-</div><a class="post-dummy-target" id="heading1"></a><h3>既存のローカルディレクトリをリモートリポジトリに同期する場合</h3>
-<p>同期したいローカルディレクトリに移動して、git init で git リポジトリとして初期化する</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git init
-git config user.name <span class="s2">&#34;&lt;UserName&gt;&#34;</span> <span class="c1"># github username</span>
-git config user.email <span class="s2">&#34;&lt;UserEmail&gt;&#34;</span> <span class="c1"># github email</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>リモートリポジトリの設定をおこなう。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git remote add origin https://github.com/xxx/xxx.git
-</code></pre></td></tr></table>
-</div>
-</div><p>このあと、add して　commit して push する。</p>
-<pre><code>git add .
-git commit -m &quot;fist commit&quot;
-git push -u origin main
-</code></pre><p>この時、こんな感じで push ができない場合がある。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">$ git push -u origin main -v
-error: src refspec main does not match any
-error: failed to push some refs to <span class="s1">&#39;https://github.com/xxx/xxx.git&#39;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>github はデフォルトの branch が master から main に変わったので、ローカルの branch が master だと branch が一致しないと怒られる。
-そんな時は、<code>git branch</code> で branch 名を確認して、<code>-m</code> で main に変更してから push すれば良い。</p>
-<pre><code>$ git branch
-* master
-$ git branch -m master main
-$ git push -u origin main
-</code></pre><p>関連としてリモートリポジトリの設定を確認する場合は、 <code>git remote -v</code> を使用する。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">$ git remote -v
-origin	https://github.com/xxx/xxx <span class="o">(</span>fetch<span class="o">)</span>
-origin	https://github.com/xxx/xxx <span class="o">(</span>push<span class="o">)</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>またリモートリポジトリの設定を削除する場合は、<code>git remote remove</code> を使う。もし <code>git remote add</code> を間違えたならこれで削除して再度 <code>add</code> すれば良い。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git remote remove origin
-</code></pre></td></tr></table>
-</div>
-</div>
+            <p>Visual Studio で build したり、publish(発行) するとデフォルトではプロジェクト名と同じファイル名の実行ファイルが生成される。例えば、ConsoleApp というプロジェクトだと ConsoleApp.exe となる。<br>
+これを任意の名称の実行ファイルに変えたいなと調べたところ、プロジェクトのプロパティからアプリケーション &gt; アセンブリ名を変更することで可能だった。<br>
+例えば、 ConsoleApp というプロジェクトだけども App.exe で生成したい場合は、次のように指定すれば良い。</p>
+<p><img src="/img/2021/Mar/build.png" alt="build.png"></p>
+
         </div>
 
         <div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>This article is updated with 2021-02-25</span>
+                <span>This article is updated with 2021-03-06</span>
             </div>
             <div class="post-info-license">
                 
@@ -359,7 +229,7 @@ origin	https://github.com/xxx/xxx <span class="o">(</span>push<span class="o">)<
             <div class="post-info-md">
                 
                     
-                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2021/02/04/gitinit/index.md" target="_blank"></a></span>
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2021/03/06/vsbuild/index.md" target="_blank"></a></span>
                     
                 
             </div>
@@ -367,18 +237,18 @@ origin	https://github.com/xxx/xxx <span class="o">(</span>push<span class="o">)<
                 
                     <span>
     
-        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f04%2fgitinit%2f&amp;text=git%20init%20%e3%81%ae%e6%89%8b%e9%a0%86&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f03%2f06%2fvsbuild%2f&amp;text=Visual%20Studio%20%e3%81%a7%20build%20%e3%81%ae%e5%ae%9f%e8%a1%8c%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%a8%e5%88%a5%e5%90%8d%e3%81%ab%e3%81%99%e3%82%8b&amp;via=y10exxx" target="_blank" title="Share on Twitter">
             <i class="fab fa-twitter fa-fw"></i>
         </a>
     
     
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f04%2fgitinit%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2021%2f03%2f06%2fvsbuild%2f" target="_blank" title="Share on Facebook">
             <i class="fab fa-facebook-square fa-fw"></i>
         </a>
     
     
     
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f04%2fgitinit%2f&amp;title=git%20init%20%e3%81%ae%e6%89%8b%e9%a0%86" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f03%2f06%2fvsbuild%2f&amp;title=Visual%20Studio%20%e3%81%a7%20build%20%e3%81%ae%e5%ae%9f%e8%a1%8c%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%a8%e5%88%a5%e5%90%8d%e3%81%ab%e3%81%99%e3%82%8b" target="_blank" title="Share on LinkedIn">
             <i class="fab fa-linkedin fa-fw"></i>
         </a>
     
@@ -399,11 +269,11 @@ origin	https://github.com/xxx/xxx <span class="o">(</span>push<span class="o">)<
             
                 
                     <span class="tag">
-                        <a href="https://yonehub.y10e.com/tags/git/"><i class="fas fa-tag fa-fw"></i>git</a>
+                        <a href="https://yonehub.y10e.com/tags/visualstudio/"><i class="fas fa-tag fa-fw"></i>VisualStudio</a>
                     </span>
                 
                     <span class="tag">
-                        <a href="https://yonehub.y10e.com/tags/github/"><i class="fas fa-tag fa-fw"></i>github</a>
+                        <a href="https://yonehub.y10e.com/tags/tips/"><i class="fas fa-tag fa-fw"></i>Tips</a>
                     </span>
                 
             
@@ -415,10 +285,8 @@ origin	https://github.com/xxx/xxx <span class="o">(</span>push<span class="o">)<
 
     <div class="post-nav">
         
-            <a href="https://yonehub.y10e.com/2021/02/03/gobasic2/" class="prev" rel="prev" title="Go の基本的なあれこれ #2"><i class="fas fa-angle-left fa-fw"></i>Go の基本的なあれこれ #2</a>
+            <a href="https://yonehub.y10e.com/2021/02/15/azureupdate2021feb/" class="prev" rel="prev" title="Azure Update - 2021.2.15"><i class="fas fa-angle-left fa-fw"></i>Azure Update - 2021.2.15</a>
         
-        
-            <a href="https://yonehub.y10e.com/2021/02/05/gitconflict/" class="next" rel="next" title="git pull で conflict した場合の対処方法 ">git pull で conflict した場合の対処方法 <i class="fas fa-angle-right fa-fw"></i></a>
         
     </div>
 </div>
