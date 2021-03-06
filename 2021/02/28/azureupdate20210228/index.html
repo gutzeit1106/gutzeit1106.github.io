@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Azure Update - 2021.2.28 | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="Cloud Engineer&#39;s blog">
+<link rel="prev" href="https://yonehub.y10e.com/2021/02/15/azureupdate2021feb/" />
+<link rel="next" href="https://yonehub.y10e.com/2021/03/06/vsbuild/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2021/02/28/azureupdate20210228/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+  <meta name="twitter:title" content="Azure Update - 2021.2.28" />
+  <meta name="twitter:description" content="来週は ignite ですね。今週はやたらと廃止系が多い。 Azure AD Please upgrade your Azure AD Connect sync to a newer version by 29 February 2024 バージョン 1.1.751.0 以前 の Azure AD Connect は2024年2月29日に廃止される Email one-time passcode …">
+  <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
+  
+<meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y10exxx" />
+  <meta name="twitter:creator" content="@y10exxx" /><script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Azure Update - 2021.2.28",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/yonehub.y10e.com\/2021\/02\/28\/azureupdate20210228\/"
+    },
+    
+    "genre": "posts",
+    
+        "keywords": "azure",
+    
+    "wordcount":  1652 ,
+    "url": "https:\/\/yonehub.y10e.com\/2021\/02\/28\/azureupdate20210228\/",
+    
+        "datePublished": "2021-02-28T21:52:50\x2b09:00",
+    
+    
+        "dateModified": "2021-03-07T01:09:19\x2b09:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Yusuke.Yoneda",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/yonehub.y10e.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            if (!window.localStorage.getItem('theme')){
+                var current = new Date();
+                if (current.getHours() >= 23 || current.getHours() <= 4){
+                    window.localStorage.setItem('theme', 'dark');
+                    location.reload();
+                }else{
+                    window.localStorage.setItem('theme', 'light');
+                }
+            }
+
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://yonehub.y10e.com/">YONEHUB</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Archive</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tools" title=""><i class="fas fa-tools"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://yonehub.y10e.com/">YONEHUB</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Archive</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tools" title=""><i class="fas fa-tools"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Azure Update - 2021.2.28</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/cloud/">Cloud</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-02-28>2021-02-28</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1652 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>4 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                
+                <div class="post-toc-content always-active">
+                    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#azure-ad">Azure AD</a></li>
+        <li><a href="#vm">VM</a></li>
+        <li><a href="#aks">AKS</a></li>
+        <li><a href="#storage">Storage</a></li>
+        <li><a href="#site-recovery">Site Recovery</a></li>
+        <li><a href="#migrate">Migrate</a></li>
+        <li><a href="#application-gateway">Application Gateway</a></li>
+        <li><a href="#front-door">Front Door</a></li>
+        <li><a href="#azure-firewall">Azure Firewall</a></li>
+        <li><a href="#key-vault">Key Vault</a></li>
+        <li><a href="#monitor">Monitor</a></li>
+        <li><a href="#app-service">App Service</a></li>
+        <li><a href="#api-management">API Management</a></li>
+        <li><a href="#batch">Batch</a></li>
+        <li><a href="#service-bus">Service Bus</a></li>
+        <li><a href="#media-service">Media Service</a></li>
+        <li><a href="#cognitive">Cognitive</a></li>
+        <li><a href="#cosmosdb">CosmosDB</a></li>
+        <li><a href="#sql">SQL</a></li>
+        <li><a href="#power-bi">Power BI</a></li>
+        <li><a href="#data-factory">Data Factory</a></li>
+        <li><a href="#hd-insight">HD Insight</a></li>
+        <li><a href="#machine-learning">Machine Learning</a></li>
+        <li><a href="#iot">IoT</a></li>
+        <li><a href="#azure-stack">Azure Stack</a></li>
+        <li><a href="#other">Other</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Index</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#azure-ad">Azure AD</a></li>
+        <li><a href="#vm">VM</a></li>
+        <li><a href="#aks">AKS</a></li>
+        <li><a href="#storage">Storage</a></li>
+        <li><a href="#site-recovery">Site Recovery</a></li>
+        <li><a href="#migrate">Migrate</a></li>
+        <li><a href="#application-gateway">Application Gateway</a></li>
+        <li><a href="#front-door">Front Door</a></li>
+        <li><a href="#azure-firewall">Azure Firewall</a></li>
+        <li><a href="#key-vault">Key Vault</a></li>
+        <li><a href="#monitor">Monitor</a></li>
+        <li><a href="#app-service">App Service</a></li>
+        <li><a href="#api-management">API Management</a></li>
+        <li><a href="#batch">Batch</a></li>
+        <li><a href="#service-bus">Service Bus</a></li>
+        <li><a href="#media-service">Media Service</a></li>
+        <li><a href="#cognitive">Cognitive</a></li>
+        <li><a href="#cosmosdb">CosmosDB</a></li>
+        <li><a href="#sql">SQL</a></li>
+        <li><a href="#power-bi">Power BI</a></li>
+        <li><a href="#data-factory">Data Factory</a></li>
+        <li><a href="#hd-insight">HD Insight</a></li>
+        <li><a href="#machine-learning">Machine Learning</a></li>
+        <li><a href="#iot">IoT</a></li>
+        <li><a href="#azure-stack">Azure Stack</a></li>
+        <li><a href="#other">Other</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <p>来週は ignite ですね。今週はやたらと廃止系が多い。</p>
+<a class="post-dummy-target" id="azure-ad"></a><h3>Azure AD</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/please-upgrade-your-azure-ad-connect-sync-to-a-newer-version-by-29-february-2024/">Please upgrade your Azure AD Connect sync to a newer version by 29 February 2024</a>
+バージョン 1.1.751.0 以前 の Azure AD Connect は2024年2月29日に廃止される</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/email-onetime-passcode-authentication-on-by-default-starting-october-2021/">Email one-time passcode authentication on by default starting October 2021</a></p>
+<a class="post-dummy-target" id="vm"></a><h3>VM</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/automatic-extension-upgrade-now-in-preview/">Automatic Azure VM extension upgrade capabilities now in public preview</a><br>
+Azure VM拡張機能を自動的にアップグレードする機能がパブリックプレビュー。マイナーバージョンは前から自動更新可能だった記憶があるのでメジャーバージョンのアップグレードかな。</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/the-g5-and-gs5-azure-vms-will-no-longer-be-hardwareisolated-on-28-february-2022/">The G5 and GS5 Azure VMs will no longer be hardware-isolated on 28 February 2022</a> <br>
+2022年2月28日以降、G5およびGS5 Azure VMはハードウェアで分離されなくなり、G5 および GS5 AzureVM でハードウェアが独立していることは保証されなくなる。以降は dedicated host を使おう。</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/the-e64iv3-e64isv3-azure-vms-will-not-be-hardwareisolated-on-28-february-2022/">The E64i_v3 &amp; E64is_v3 Azure VMs will not be hardware-isolated on 28 February 2022</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/the-gs5-azure-virtual-machines-will-no-longer-be-sap-hana-certified-on-28-february-2022/">The GS5 Azure Virtual Machines will no longer be SAP HANA Certified on 28 February 2022</a><br>
+GS5 VM は 2022年2月28日以降 SAP HANA 認定じゃなくなる。E64ds_v4が推奨。</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-image-builder-service-now-generally-available/">Azure Image Builder Service now generally available</a></p>
+<a class="post-dummy-target" id="aks"></a><h3>AKS</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/enabling-ibm-websphere-on-azure-kubernetes-service/">General availability: Enabling IBM WebSphere on Azure Kubernetes Service</a><br>
+AKS 上で IBM WebSphere を有効化することが GA になった</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/aks-legacy-azure-ad-integration-will-be-retired-on-29-february-2024/">AKS legacy Azure AD integration will be retired on 29 February 2024</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/general-availability-azure-red-hat-openshift-support-for-openshift-46/">General Availability: Azure Red Hat OpenShift support for OpenShift 4.6</a></p>
+<a class="post-dummy-target" id="storage"></a><h3>Storage</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/action-required-switch-to-azure-data-lake-storage-gen2-by-29-february-2024/">Action required: Switch to Azure Data Lake Storage Gen2 by 29 February 2024 </a> on 2021-02-25<br>
+2024年2月29日にAzure Data Lake StorageGen 1 が廃止。Data Lake Gen 2 に切り替える必要がある。</p>
+<a class="post-dummy-target" id="site-recovery"></a><h3>Site Recovery</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/site-recovery-update-rollup-54-february-2021/">Azure Site Recovery update rollup 54 is now generally available - February 2021</a> on 2021-02-26 <br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/cross-region-restore-of-azure-vms-now-generally-available/">Cross Region Restore of Azure VMs now generally available</a><br></p>
+<a class="post-dummy-target" id="migrate"></a><h3>Migrate</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/we-are-retiring-classic-azure-migrate-on-29-february-2024/">We are retiring Classic Azure Migrate on 29 February 2024</a> on 2021-02-25<br>
+2024年2月29日に Classic Azure Migrate が廃止されることがアナウンス。</p>
+<a class="post-dummy-target" id="application-gateway"></a><h3>Application Gateway</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-application-gateway-analytics-will-be-retired-on-29-february-2024/">Azure Application Gateway analytics will be retired on 29 February 2024</a><br>
+Application Gateway analytics が　2024年2月29日　に廃止。</p>
+<a class="post-dummy-target" id="front-door"></a><h3>Front Door</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-front-door-standard-and-premium-now-in-public-preview/">Azure Front Door Standard and Premium now in public preview</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/web-application-firewall-integration-with-azure-front-door-standard-and-premium-sku/">Web Application Firewall Integration with Azure Front Door Standard and Premium SKU</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/web-application-firewall-for-azure-front-door-managed-ruleset-refresh/">General availability: Web Application Firewall for Azure Front Door managed ruleset refresh</a></p>
+<a class="post-dummy-target" id="azure-firewall"></a><h3>Azure Firewall</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-firewall-premium-now-in-public-preview/">Azure Firewall Premium now in public preview</a><br>
+Azure Firewall Premium が public preview になった。TLS検査や、IDPS、webカテゴリ、URLフィルタリングなどが使用できる。</p>
+<a class="post-dummy-target" id="key-vault"></a><h3>Key Vault</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-rolebased-access-control-rbac-for-azure-key-vault-data-plane-authorization-is-now-available/">Azure role-based access control (RBAC) for Azure Key Vault data plane authorization is now generally available</a> on 2021-02-16<br>
+Key Vault への Data plane　へのアクセスが RBAC で制御可能になった。GA。</p>
+<a class="post-dummy-target" id="monitor"></a><h3>Monitor</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/start-using-new-alerts-in-azure-monitor-for-azure-china-21vianet/">Start using new alerts in Azure Monitor for Azure China 21Vianet </a> on 2021-02-25 <br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/start-using-new-alerts-in-azure-monitor-for-azure-government-cloud/">Start using new alerts in Azure Monitor for Azure Government Cloud </a> on 2021-02-25<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/we-re-retiring-classic-application-insights-on-29-february-2024/">We’re retiring Classic Application Insights on 29 February 2024</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/we-re-retiring-azure-network-watcher-connection-monitor-classic-on-29-february-2024/">We’re retiring Azure Network Watcher Connection Monitor (classic) on 29 February 2024</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/we-re-retiring-network-performance-monitor-on-29-february-2024/">We’re retiring Network Performance Monitor on 29 February 2024</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/net-core-support-for-analysis-services-client-libraries-is-ga/">.NET Core support for Analysis Services client libraries is generally available</a><br>
+Azure Analysis Services Client Library の　.NETCore サポート版がGA</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/new-disk-bursting-metrics/">New disk bursting metrics</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/public-preview-application-insights-autoinstrumentation-for-net5-app-services/">Public preview: Application Insights auto-instrumentation for .NET5 App Services</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/application-insights-availability-troubleshooting-report-for-url-tests/">Application Insights availability troubleshooting report for URL tests</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/generally-available-application-insights-synthetic-monitoring-sla-report-template/">Generally available: Application Insights synthetic monitoring SLA report template</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/public-preview-application-insights-work-item-integration-for-azure-devops-github/">Public preview: Application Insights work item integration for Azure DevOps &amp; GitHub</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/datadog-integration-with-azure-public-preview/">Datadog integration with Azure: Public Preview</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/earlier-versions-of-analysis-services-client-libraries-will-retire-on-30-june-2021/">Earlier versions of Analysis Services client libraries will retire on 30 June 2021</a></p>
+<a class="post-dummy-target" id="app-service"></a><h3>App Service</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/community-support-for-python-36-is-ending-on-23-december-2021/">Community support for Python 3.6 is ending on 23 December 2021</a><br>
+WindowsおよびLinuxでのPython3.6の延長サポートが2021年12月23日に終了することに伴い、App Service でもサポート終了。</p>
+<a class="post-dummy-target" id="api-management"></a><h3>API Management</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/api-management-diagnostics-now-available-in-public-preview/">API Management Diagnostics now available in public previe</a><br>
+App Service でできるようないろんなトラブルシューティング解析がポータルからできるようになった。</p>
+<a class="post-dummy-target" id="batch"></a><h3>Batch</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-batch-rendering-vm-images-licensing-will-be-retired-on-29-february-2024/">Azure Batch rendering VM images &amp; licensing will be retired on 29 February 2024</a> on 2021-02-24 <br>
+Azure Batch のノードプールでは、現在グラフィックスおよびレンダリングアプリケーションがプリインストールされた Marketplace VM イメージを使用できるが、これらのVMイメージと有料ライセンスが、2024年2月29日以降使用できなくなる。以後はカスタムイメージを作成する必要がある。</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-batch-cloudserviceconfiguration-pools-will-be-retired-on-29-february-2024/">Azure Batch ‘CloudServiceConfiguration’ pools will be retired on 29 February 2024</a><br>
+Azure Batch の CloudServiceConfiguration pool　が 2024年2月29日 でリタイア。VMSS プールを使っていくことになる。</p>
+<a class="post-dummy-target" id="service-bus"></a><h3>Service Bus</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/announcing-ga-support-for-java-message-service-jms-20-api-on-azure-service-bus-premium/">General availability support for Java Message Service (JMS) 2.0 API on Azure Service Bus Premium</a></p>
+<a class="post-dummy-target" id="media-service"></a><h3>Media Service</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/update-your-azure-media-services-rest-api-and-sdks-to-v3-by-29-february-2024/">Update your Azure Media Services REST API and SDKs to v3 by 29 February 2024</a></p>
+<a class="post-dummy-target" id="cognitive"></a><h3>Cognitive</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/we-re-retiring-the-standard-version-of-custom-voice-on-29-february-2024/">We’re retiring the standard version of Custom Voice on 29 February 2024</a> on 2021-02-24<br>
+Custom Voice のスタンダードバージョンが 2024年2月29日に廃止。</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/we-are-retiring-azure-cognitive-services-text-analytics-v2x-on-29-february-2024/">We are retiring Azure Cognitive Services Text Analytics v2.x on 29 February 2024</a> on 2021-02-24<br>
+ext Analytics v2.x が 2024年2月29日に廃止</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-batch-transcription-and-customization-rest-api-v2-will-be-retired-by-29-february-2024/">Azure Batch Transcription and Customization Rest API v2 will be retired by 29 February 2024</a>　on 2021-02-24 <br>
+Azure Batch Transcription and Customization Rest API v2が、2024年2月29日に廃止。</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-cognitive-services-translator-releases-nine-new-languages/">General availability: Azure Cognitive Services Translator releases nine new languages</a></p>
+<a class="post-dummy-target" id="cosmosdb"></a><h3>CosmosDB</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/update-the-azure-cosmos-db-java-sdk-by-29-february-2024/">Update the Azure Cosmos DB Java SDK by 29 February 2024</a> on 2021-02-25<br>
+AzureCosmos DB JavaSDK の Sync 2.xバージョンが廃止</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/more-ways-to-use-composite-indexes-in-azure-cosmos-db-now-generally-available-2/">More ways to use composite indexes in Azure Cosmos DB now generally available</a><br></p>
+<a class="post-dummy-target" id="sql"></a><h3>SQL</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/log-replay-service-for-azure-sql-managed-instance-in-public-preview/">Log Replay Service for Azure SQL Managed Instance in public preview</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/additional-iops-feature-for-mysql-flexible-server-in-preview-4/">Additional IOPS feature for MySQL - Flexible Server in preview </a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-database-for-postgresql-ending-support-for-postgresql-version-96-on-11-november-2021/">Azure Database for PostgreSQL ending support for PostgreSQL version 9.6 on 11 November 2021</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-database-for-postgresql-hyperscale-citus-audit-logging-via-pgaudit-now-in-public-preview/">Azure Database for PostgreSQL – Hyperscale (Citus) audit logging via pgAudit now in public preview</a></p>
+<a class="post-dummy-target" id="power-bi"></a><h3>Power BI</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/power-bi-connector-for-azure-databricks-is-now-generally-available/">Power BI Connector for Azure Databricks is now generally available</a> on 2021-02-26<br>
+Power BI Connector for AzureDatabrick が GA</p>
+<a class="post-dummy-target" id="data-factory"></a><h3>Data Factory</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/general-availability-data-flows-in-azure-data-factory-and-azure-synapse-now-support-reserved-instances/">General availability: Data flows in Azure Data Factory and Azure Synapse now support Reserved Instances</a></p>
+<a class="post-dummy-target" id="hd-insight"></a><h3>HD Insight</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-dav4series-vms-are-available-in-azure-hdinsight/">Azure Dav4-series VMs are available in Azure HDInsight</a></p>
+<a class="post-dummy-target" id="machine-learning"></a><h3>Machine Learning</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/general-availability-azure-machine-learning-updates-for-native-terminal/">General availability: Azure Machine Learning updates for native terminal</a></p>
+<a class="post-dummy-target" id="iot"></a><h3>IoT</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/iot-edge1-1-0/">Azure IoT Edge 1.1.0 release is now generally available</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-sphere-os-version-2102-is-now-available-for-evaluation/">Azure Sphere OS version 21.02 is now available for evaluation</a></p>
+<a class="post-dummy-target" id="azure-stack"></a><h3>Azure Stack</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-stack-edge-pro-fpga-is-retiring-on-28-february-2024/">Azure Stack Edge Pro FPGA is retiring on 29 February 2024</a> on 2021-02-25<br>
+Azure Stack Edge ProFPGA が 2024年2月29日 に廃止</p>
+<a class="post-dummy-target" id="other"></a><h3>Other</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/microsoft-plans-to-establish-first-datacenter-region-in-indonesia/">Microsoft plans to establish first datacenter region in Indonesia</a> on 2021-02-24<br>
+インドネシアにデータセンターができる</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/update-your-scripts-to-use-az-powershell-modules-by-29-february-2024/">Update your scripts to use Az PowerShell modules by 29 February 2024</a><br>
+AzureRM Module が 2024年2月29日 に廃止</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/jenkins-plugins-for-azure-are-being-retired-on-29-february-2024/">Jenkins plug-ins for Azure are being retired on 29 February 2024</a></p>
+
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2021-03-07</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2021/02/28/azureupdate20210228/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f28%2fazureupdate20210228%2f&amp;text=Azure%20Update%20-%202021.2.28&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f28%2fazureupdate20210228%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+    
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f02%2f28%2fazureupdate20210228%2f&amp;title=Azure%20Update%20-%202021.2.28" target="_blank" title="Share on LinkedIn">
+            <i class="fab fa-linkedin fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/azure/"><i class="fas fa-tag fa-fw"></i>azure</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://yonehub.y10e.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://yonehub.y10e.com/2021/02/15/azureupdate2021feb/" class="prev" rel="prev" title="Azure Update - 2021.2.15"><i class="fas fa-angle-left fa-fw"></i>Azure Update - 2021.2.15</a>
+        
+        
+            <a href="https://yonehub.y10e.com/2021/03/06/vsbuild/" class="next" rel="next" title="Visual Studio で build の実行ファイルをプロジェクトと別名にする">Visual Studio で build の実行ファイルをプロジェクトと別名にする<i class="fas fa-angle-right fa-fw"></i></a>
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            　　<div id="disqus_thread"></div>
+        <script>
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yonehub.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://yonehub.y10e.com/">Yusuke.Yoneda</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133674179-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>

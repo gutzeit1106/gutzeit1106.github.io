@@ -223,6 +223,51 @@
     
     
     <h1 class="post-title post-list-title" itemprop="name headline">
+        <a href="https://yonehub.y10e.com/2019/12/24/20191223_git_gitignore/">git 管理から特定のファイル、ディレクトリを除外する(.gitignore)</a>
+    </h1>
+
+    <div class="post-meta">
+        <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+        published on&nbsp;<time datetime=2019-12-24>2019-12-24</time>&nbsp;
+        <span class="post-category">
+                included in
+                <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/development/">Development</a>
+                    
+            </span>
+    </div>
+    <div class="post-content">
+        
+            
+            
+            
+            
+            
+            
+            
+            秘匿性のあるファイルやキャッシュなどの一時ファイルなど git リポジトリのバージョン管理から特定のファイルやフォルダを除外したいときには .gitignore ファイルを作成します。 Mac だと, finder のメタ情報を持つ .DS_store がディレクトリの至るところに作成されるので, git を使う場合、除外設定しておかないと面倒です。 基本ルール 最も基本的な設定方法は, リポジトリのルートの直下に 1 つの .gitignore ファイルを配置することです。これによってリポジトリ配下のディ
+        
+    </div>
+    <div class="post-footer">
+        <a href="https://yonehub.y10e.com/2019/12/24/20191223_git_gitignore/">Read More</a>
+        
+            <div class="post-tags">
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/git/"><i class="fas fa-tag fa-fw"></i>git</a></span>
+                
+                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/github/"><i class="fas fa-tag fa-fw"></i>github</a></span>
+                
+            </div>
+        
+    </div>
+</article><article class="post" itemscope itemtype="http://schema.org/Article">
+    
+    
+    
+
+    
+    
+    
+    <h1 class="post-title post-list-title" itemprop="name headline">
         <a href="https://yonehub.y10e.com/2019/12/21/20191221_vscode_sourcebuild/">Visual Studio Code を Source から build する</a>
     </h1>
 
@@ -535,57 +580,6 @@
                     &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/tips/"><i class="fas fa-tag fa-fw"></i>Tips</a></span>
                 
                     &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/mac/"><i class="fas fa-tag fa-fw"></i>Mac</a></span>
-                
-            </div>
-        
-    </div>
-</article><article class="post" itemscope itemtype="http://schema.org/Article">
-    
-    
-    
-
-    
-    
-    
-    <h1 class="post-title post-list-title" itemprop="name headline">
-        <a href="https://yonehub.y10e.com/2019/11/29/20191130_dapr_aks_helloworld/">Azure Kubernetes Service(AKS) で Dapr を動かす(HelloWord編)</a>
-    </h1>
-
-    <div class="post-meta">
-        <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
-        published on&nbsp;<time datetime=2019-11-29>2019-11-29</time>&nbsp;
-        <span class="post-category">
-                included in
-                <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/development/">Development</a>
-                    
-            </span>
-    </div>
-    <div class="post-content">
-        
-            
-            
-            
-            
-            
-            
-            
-            前回は、AKS 上で Dapr をセットアップしました。 次は、Azure Kubernetes Service(AKS) 上で dapr のサンプルアプリケーションを動作させてみます。（前回と同様、動作検証時の dapr は v0.2 になります。） 最終的なアーキテクチャは次の通りです。 dapr がインストールされた環境で、python と node.js の POD が動作します。python と node.js の POD は、それぞれの POD 内でサイドカーとして動作する dapr API を経由して、state 情報の更新と取得が行われます。 0. ドキュメント Hello
-        
-    </div>
-    <div class="post-footer">
-        <a href="https://yonehub.y10e.com/2019/11/29/20191130_dapr_aks_helloworld/">Read More</a>
-        
-            <div class="post-tags">
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/dapr/"><i class="fas fa-tag fa-fw"></i>dapr</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/container/"><i class="fas fa-tag fa-fw"></i>Container</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/aks/"><i class="fas fa-tag fa-fw"></i>AKS</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/kubernetes/"><i class="fas fa-tag fa-fw"></i>kubernetes</a></span>
-                
-                    &nbsp;&nbsp;<span class="tag"><a href="https://yonehub.y10e.com/tags/microsoft/"><i class="fas fa-tag fa-fw"></i>Microsoft</a></span>
                 
             </div>
         
