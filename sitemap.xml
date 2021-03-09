@@ -1,9 +1,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
         <url>
-            <loc>https://yonehub.y10e.com/categories/</loc>
+            <loc>https://yonehub.y10e.com/2021/03/07/azupdate0306/</loc>
             
-                <lastmod>2021-03-07T01:09:19+09:00</lastmod>
+                <lastmod>2021-03-07T21:52:50+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -15,9 +15,37 @@
         </url>
     
         <url>
-            <loc>https://yonehub.y10e.com/categories/development/</loc>
+            <loc>https://yonehub.y10e.com/tags/azureupdate/</loc>
             
-                <lastmod>2021-03-07T01:09:19+09:00</lastmod>
+                <lastmod>2021-03-07T21:52:50+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/categories/</loc>
+            
+                <lastmod>2021-03-07T21:52:50+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/categories/cloud/</loc>
+            
+                <lastmod>2021-03-07T21:52:50+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -31,7 +59,7 @@
         <url>
             <loc>https://yonehub.y10e.com/posts/</loc>
             
-                <lastmod>2021-03-07T01:09:19+09:00</lastmod>
+                <lastmod>2021-03-07T21:52:50+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -44,6 +72,34 @@
     
         <url>
             <loc>https://yonehub.y10e.com/tags/</loc>
+            
+                <lastmod>2021-03-07T21:52:50+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/</loc>
+            
+                <lastmod>2021-03-07T21:52:50+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://yonehub.y10e.com/categories/development/</loc>
             
                 <lastmod>2021-03-07T01:09:19+09:00</lastmod>
             
@@ -99,51 +155,9 @@
         </url>
     
         <url>
-            <loc>https://yonehub.y10e.com/</loc>
-            
-                <lastmod>2021-03-07T01:09:19+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://yonehub.y10e.com/tags/azure/</loc>
-            
-                <lastmod>2021-03-07T01:09:19+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>https://yonehub.y10e.com/2021/02/28/azureupdate20210228/</loc>
             
-                <lastmod>2021-03-07T01:09:19+09:00</lastmod>
-            
-            
-                <changefreq>daily</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://yonehub.y10e.com/categories/cloud/</loc>
-            
-                <lastmod>2021-03-07T01:09:19+09:00</lastmod>
+                <lastmod>2021-03-07T01:10:00+09:00</lastmod>
             
             
                 <changefreq>daily</changefreq>
@@ -337,6 +351,20 @@
         </url>
     
         <url>
+            <loc>https://yonehub.y10e.com/tags/azure/</loc>
+            
+                <lastmod>2021-01-23T22:43:30+09:00</lastmod>
+            
+            
+                <changefreq>daily</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
             <loc>https://yonehub.y10e.com/2021/01/23/redistimeoutclientissue/</loc>
             
                 <lastmod>2021-01-23T22:43:30+09:00</lastmod>
@@ -519,7 +547,7 @@
         </url>
     
         <url>
-            <loc>https://yonehub.y10e.com/tags/nontech/</loc>
+            <loc>https://yonehub.y10e.com/categories/nontech/</loc>
             
                 <lastmod>2021-01-01T00:12:49+09:00</lastmod>
             
@@ -533,7 +561,7 @@
         </url>
     
         <url>
-            <loc>https://yonehub.y10e.com/categories/nontech/</loc>
+            <loc>https://yonehub.y10e.com/tags/nontech/</loc>
             
                 <lastmod>2021-01-01T00:12:49+09:00</lastmod>
             

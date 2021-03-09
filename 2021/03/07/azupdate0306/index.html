@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Azure Update - 2021.3.06 | YONEHUB</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="Cloud Engineer&#39;s blog">
+<link rel="prev" href="https://yonehub.y10e.com/2021/03/06/vsbuild/" />
+<link rel="canonical" href="https://yonehub.y10e.com/2021/03/07/azupdate0306/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+  <meta name="twitter:title" content="Azure Update - 2021.3.06" />
+  <meta name="twitter:description" content="Ignite があったせいかいつにもまして update が多い。 人力での更新は時間がかかりすぎるので、Logic App, Functions 組み合わせて省力化を進めてるが、もっと効率化していこう。 IaaS &amp; Netowrking VM Improve Azure Spot Virtual Machines runtime and simulate evictions with …">
+  <meta name="twitter:image" content="https://yonehub.y10e.com/card.png" />
+  
+<meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y10exxx" />
+  <meta name="twitter:creator" content="@y10exxx" /><script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Azure Update - 2021.3.06",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/yonehub.y10e.com\/2021\/03\/07\/azupdate0306\/"
+    },
+    
+    "genre": "posts",
+    
+        "keywords": "azureupdate",
+    
+    "wordcount":  1457 ,
+    "url": "https:\/\/yonehub.y10e.com\/2021\/03\/07\/azupdate0306\/",
+    
+        "datePublished": "2021-03-07T21:52:50\x2b09:00",
+    
+    
+        "dateModified": "2021-03-07T21:52:50\x2b09:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "Yusuke.Yoneda",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/yonehub.y10e.com\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            if (!window.localStorage.getItem('theme')){
+                var current = new Date();
+                if (current.getHours() >= 23 || current.getHours() <= 4){
+                    window.localStorage.setItem('theme', 'dark');
+                    location.reload();
+                }else{
+                    window.localStorage.setItem('theme', 'light');
+                }
+            }
+
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://yonehub.y10e.com/">YONEHUB</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Archive</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tools" title=""><i class="fas fa-tools"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://yonehub.y10e.com/">YONEHUB</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts" title="">Archive</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/categories" title="">Categories</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/about" title="">About</a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/posts/index.xml" title=""><i class="fas fa-rss-square"></i></a>
+            
+                <a class="menu-item" href="https://yonehub.y10e.com/tools" title=""><i class="fas fa-tools"></i></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Azure Update - 2021.3.06</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://yonehub.y10e.com/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Yusuke.Yoneda&nbsp;</a>
+                <span class="post-category">
+                        included in
+                        <i class="far fa-folder fa-fw"></i><a href="https://yonehub.y10e.com/categories/cloud/">Cloud</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2021-03-07>2021-03-07</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1457 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                
+                <div class="post-toc-content always-active">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#iaas--netowrking">IaaS & Netowrking</a>
+      <ul>
+        <li><a href="#vm">VM</a></li>
+        <li><a href="#aks">AKS</a></li>
+        <li><a href="#vpn">VPN</a></li>
+        <li><a href="#load-balancer">Load Balancer</a></li>
+      </ul>
+    </li>
+    <li><a href="#management">Management</a>
+      <ul>
+        <li><a href="#container-insights">Container insights</a></li>
+        <li><a href="#application-insights">Application insights</a></li>
+        <li><a href="#azure-backup">Azure Backup</a></li>
+        <li><a href="#azure-automate">Azure Automate</a></li>
+        <li><a href="#azure-security-center">Azure Security Center</a></li>
+        <li><a href="#azure-migrate">Azure Migrate</a></li>
+      </ul>
+    </li>
+    <li><a href="#paas">PaaS</a>
+      <ul>
+        <li><a href="#apim">APIM</a></li>
+        <li><a href="#redis">Redis</a></li>
+        <li><a href="#event-hub">Event Hub</a></li>
+        <li><a href="#azure-communication-services">Azure Communication Services</a></li>
+        <li><a href="#spring-cloud">Spring Cloud</a></li>
+      </ul>
+    </li>
+    <li><a href="#sql">SQL</a>
+      <ul>
+        <li><a href="#azure-sql-db">Azure SQL DB</a></li>
+        <li><a href="#cosmos">Cosmos</a></li>
+      </ul>
+    </li>
+    <li><a href="#big-data--ai">Big Data & AI</a>
+      <ul>
+        <li><a href="#azure-purview">Azure Purview</a></li>
+      </ul>
+    </li>
+    <li><a href="#iot">IoT</a></li>
+    <li><a href="#others">Others</a></li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>Index</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li><a href="#iaas--netowrking">IaaS & Netowrking</a>
+      <ul>
+        <li><a href="#vm">VM</a></li>
+        <li><a href="#aks">AKS</a></li>
+        <li><a href="#vpn">VPN</a></li>
+        <li><a href="#load-balancer">Load Balancer</a></li>
+      </ul>
+    </li>
+    <li><a href="#management">Management</a>
+      <ul>
+        <li><a href="#container-insights">Container insights</a></li>
+        <li><a href="#application-insights">Application insights</a></li>
+        <li><a href="#azure-backup">Azure Backup</a></li>
+        <li><a href="#azure-automate">Azure Automate</a></li>
+        <li><a href="#azure-security-center">Azure Security Center</a></li>
+        <li><a href="#azure-migrate">Azure Migrate</a></li>
+      </ul>
+    </li>
+    <li><a href="#paas">PaaS</a>
+      <ul>
+        <li><a href="#apim">APIM</a></li>
+        <li><a href="#redis">Redis</a></li>
+        <li><a href="#event-hub">Event Hub</a></li>
+        <li><a href="#azure-communication-services">Azure Communication Services</a></li>
+        <li><a href="#spring-cloud">Spring Cloud</a></li>
+      </ul>
+    </li>
+    <li><a href="#sql">SQL</a>
+      <ul>
+        <li><a href="#azure-sql-db">Azure SQL DB</a></li>
+        <li><a href="#cosmos">Cosmos</a></li>
+      </ul>
+    </li>
+    <li><a href="#big-data--ai">Big Data & AI</a>
+      <ul>
+        <li><a href="#azure-purview">Azure Purview</a></li>
+      </ul>
+    </li>
+    <li><a href="#iot">IoT</a></li>
+    <li><a href="#others">Others</a></li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <p>Ignite があったせいかいつにもまして update が多い。
+人力での更新は時間がかかりすぎるので、Logic App, Functions 組み合わせて省力化を進めてるが、もっと効率化していこう。</p>
+<a class="post-dummy-target" id="iaas--netowrking"></a><h2>IaaS &amp; Netowrking</h2>
+<a class="post-dummy-target" id="vm"></a><h3>VM</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/improve-azure-spot-virtual-machines-runtime-and-simulate-evictions-with-new-features-in-public-preview/">Improve Azure Spot Virtual Machines runtime and simulate evictions with new features in public preview</a> on 2021-03-03<br>
+容量が原因で削除された VMSS の Spot VM を AI によって自動的に復元して、ターゲットのインスタンス数を確保しようとする機能らしい。
+コストとインスタンス数確保のいいとこどり的な機能。Public Preview。<br>
+詳細は<a href="https://docs.microsoft.com/ja-jp/azure/virtual-machine-scale-sets/use-spot#try--restore-preview">ここ</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/ondemand-capacity-reservations-in-public-preview/">On-demand capacity reservations in public preview</a> on 2021-03-03<br>
+仮想マシンの容量を先取り確保する機能が public preview。
+別途申し込みが必要なようだけども allocation failure 対策に良いかもしれない。</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/general-availability-new-simplified-nsx-networking-experience-for-azure-vmware-solution/">General availability: New Simplified NSX networking experience for Azure VMware Solution</a> on 2021-03-04<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/zone-redundant-storage-zrs-option-for-azure-managed-disks-in-limited-preview/">Zone Redundant Storage (ZRS) option for Azure managed disks in limited preview</a> on 2021-03-02<br>
+Managed Disk(Premium SSD / Standard SSD) でゾーン冗長オプションが Limited Preview に。</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/public-preview-change-performance-tiers-for-premium-ssd-managed-disks-with-no-downtime/">Public preview: Change performance tiers for Premium SSD managed disks with no downtime</a> on 2021-03-02<br>
+Premium SSD で実行中の VM に接続されていてもダウンタイムなしに パフォーマンス Tier を変更できる機能が Public Preview。これどうやってるんだろうか。</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/ondemand-disk-bursting-for-premium-ssds-now-in-public-preview/">On-demand disk bursting for Premium SSDs now in public preview </a> on  2021-03-02<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/trustedlaunch/">Azure trusted launch for Virtual Machines now in public preview</a> on 2021-03-03<br>
+gen2 VM で vTPM, セキュアブートが public preview</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/windows-server-2022-is-now-available-in-preview/">Windows Server 2022 is now available in preview.</a> on 2021-03-02<br>
+次は 2022 なんですね。Azure 連携と Security が強化されそうな予感。</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/new-orchestration-mode-for-azure-virtual-machine-scale-sets-now-in-public-preview/">New orchestration mode for Azure Virtual Machine Scale Sets now in public preview</a> on  2021-03-03<br>
+Flexible orchestration mode が追加されて、通常 VM を VMSS 配下で管理出来たり。
+<a href="https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes#a-comparison-of-flexible-uniform-and-availability-sets">既存のモードとの比較</a></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/automatic-vm-guest-patching-now-in-preview-linux/">Automatic VM guest patching is now in public preview for Linux VMs</a> on 2021-03-03<br>
+Linux VM でゲスト OS の自動パッチ適用機能が public previewに・</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-vmware-solution-now-generally-available-in-the-southeast-asia-region/">Azure VMware Solution now generally available in the Southeast Asia region</a> on 2021-03-05<br></p>
+<a class="post-dummy-target" id="aks"></a><h3>AKS</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/public-preview-azure-key-vault-csi-driver-support-in-azure-kubernetes-service/">Public preview: Azure Key Vault CSI driver support in Azure Kubernetes Service</a> on  2021-03-02<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/confidential-computing-nodes-aks-ga/">Confidential computing nodes (DCSv2) on Azure Kubernetes Service (AKS) is generally available</a> on 2021-03-02<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-arc-enabled-kubernetes-is-now-generally-available/">Azure Arc enabled Kubernetes is now generally available</a> on 2021-03-02 <br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/general-availability-justintime-access-support-in-aks/">General availability: Just-In-Time Access support in AKS </a> on  2021-03-02<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/general-availability-deploy-weblogic-on-azure-kubernetes-service-aks-using-custom-docker-images/">General availability: Deploy WebLogic on Azure Kubernetes Service (AKS) using custom Docker images</a> on 2021-03-02<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/public-preview-dynamic-ip-allocation-enhanced-subnet-support-in-aks/">Public preview: Dynamic IP allocation &amp; enhanced subnet support in AKS </a> on 2021-03-02 <br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/general-availability-app-gateway-ingress-controller-addon-for-aks/">General availability: App Gateway ingress controller add-on for AKS</a> on  2021-03-02<br></p>
+<a class="post-dummy-target" id="vpn"></a><h3>VPN</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/multiple-new-features-for-azure-vpn-gateway-in-public-preview/">Multiple new features for Azure VPN Gateway in public preview</a> on  2021-03-02 17:00:24Z<br></p>
+<a class="post-dummy-target" id="load-balancer"></a><h3>Load Balancer</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/iplbga/">Azure Load Balancer support for IP-based backend pool management is now generally available</a> on 2021-03-02<br>
+Standard LB で NIC でなく IP ベースでバックエンドに配置可能に</p>
+<a class="post-dummy-target" id="management"></a><h2>Management</h2>
+<a class="post-dummy-target" id="container-insights"></a><h3>Container insights</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/general-availability-of-persistent-volume-monitoring-reports-tab-in-container-insights/">General availability of Persistent Volume monitoring &amp; Reports tab in Container Insights</a> on 2021-03-02<br>
+AKS の Persistent Volume の監視機能が追加</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azmon-livelogs-pods/">General availability: Azure monitor for containers now supports Pods &amp; Replica set live logs in AKS resource view</a> on 2021-03-05<br>
+AKS の Pods と Replica set live logs も監視可能に</p>
+<a class="post-dummy-target" id="application-insights"></a><h3>Application insights</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/general-availability-application-insights-nocode-enablement-on-nodejs-linux-app-service-environments/">General availability: Application insights no-code enablement on Node.js Linux App Service Environments</a> on 2021-03-02<br>
+Linux Web App の Node.js でノーコードで Application Inisightsが有効にできるようになった</p>
+<a class="post-dummy-target" id="azure-backup"></a><h3>Azure Backup</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-backup-for-sap-hana-incremental-backup-is-now-generally-available/">Azure Backup for SAP HANA: Incremental backup is now generally available</a> on  2021-03-01<br>
+SAP HANA での増分バックアップが GA</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-backup-blob-op-backup-preview/">Azure Backup: Operational backup for Azure Blobs is now in public preview</a> on  2021-03-01<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-backup-now-supports-archive-tier-for-backup-of-azure-virtual-machines-and-sql-server-in-azure-vms/">Limited preview: Azure Backup now supports archive tier for backup of Azure Virtual Machines and SQL Server in Azure VMs </a> on  2021-03-02 17:00:10Z<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/backup-reports-is-now-generally-available/">Backup Reports is now generally available</a> on  2021-03-02 17:00:03Z<br></p>
+<a class="post-dummy-target" id="azure-automate"></a><h3>Azure Automate</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/public-preview-announcing-new-capabilities-for-azure-automanage/">Public preview: Announcing new capabilities for Azure Automanage</a> on  2021-03-02 17:00:11Z<br></p>
+<a class="post-dummy-target" id="azure-security-center"></a><h3>Azure Security Center</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/asc-february2021-2/">Azure Security Center: Public preview updates for February 2021</a> on 2021-03-01<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/asc-february2021-1/">Azure Security Center: General availability updates for February 2021</a> on 2021-03-01<br></p>
+<a class="post-dummy-target" id="azure-migrate"></a><h3>Azure Migrate</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-migrate-azure-vmware-solution-assessment-ga/">Generally available: Plan your migration to Azure VMware Solution using Azure Migrate</a> on 2021-03-02<br>
+Azure Migrate で Azure VMware Solution の移行評価が対応</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/public-preview-containerize-and-migrate-apps-to-azure-kubernetes-service-with-azure-migrate-app-containerization/">Public preview: Containerize and migrate apps to Azure Kubernetes Service with Azure Migrate: App Containerization </a> on 2021-03-02<br>
+Azure Migrate で AKS 移行をサポートする App Containerization 機能が追加</p>
+<a class="post-dummy-target" id="paas"></a><h2>PaaS</h2>
+<a class="post-dummy-target" id="apim"></a><h3>APIM</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/general-availability-azure-api-management-now-has-named-values-integration-with-azure-key-vault/">General availability: Azure API Management now has named values integration with Azure Key Vault</a> on  2021-03-03<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-api-management-extension-for-visual-studio-code-now-generally-available/">Azure API Management extension for Visual Studio Code now generally available</a> on  2021-03-03<br></p>
+<a class="post-dummy-target" id="redis"></a><h3>Redis</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/new-enterprise-and-enterprise-flash-tiers-for-azure-cache-for-redis-now-generally-available/">New Enterprise and Enterprise Flash tiers for Azure Cache for Redis now generally available</a> on  2021-03-02<br>
+Azure Cache for Redis で Redis Enterprise Tier が一般提供開始。</p>
+<a class="post-dummy-target" id="event-hub"></a><h3>Event Hub</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/event-hubs-on-azure-stack-hub-for-disconnected-scenarios-is-now-generally-available/">Event Hubs on Azure Stack Hub for disconnected scenarios is now generally available</a> on  2021-03-01 17:00:04Z<br></p>
+<a class="post-dummy-target" id="azure-communication-services"></a><h3>Azure Communication Services</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/public-preview-azure-communication-services-interoperability-with-microsoft-teams/">Public preview: Azure Communication Services interoperability with Microsoft Teams </a> on  2021-03-02 17:00:13Z<br></p>
+<a class="post-dummy-target" id="spring-cloud"></a><h3>Spring Cloud</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-spring-cloud-general-availability-of-managed-virtual-network-and-autoscale/">Azure Spring Cloud: General availability of Managed Virtual Network and Autoscale</a> on  2021-03-02 17:00:05Z<br></p>
+<a class="post-dummy-target" id="sql"></a><h2>SQL</h2>
+<a class="post-dummy-target" id="azure-sql-db"></a><h3>Azure SQL DB</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/public-preview-maintenance-window-for-azure-sql-database-and-azure-sql-managed-instance/">Public preview: Maintenance window for Azure SQL Database and Azure SQL Managed Instance</a> on  2021-03-02<br>
+SQL Database と SQL Managed Instance でメンテナンスウィンドウ機能が Public Preview</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/advance-notifications-for-azure-sql-database-now-in-public-preview/">Advance notifications for Azure SQL Database now in public preview</a> on 2021-03-02<br>
+計画メンテナンスの事前通知機能が Public Preview</p>
+<p><a href="https://azure.microsoft.com/en-us/updates/public-preview-at-scale-discovery-and-assessment-for-sql-server-migration-to-azure-sql/">Public preview: At scale discovery and assessment for SQL Server migration to Azure SQL</a> on  2021-03-02 17:00:23Z<br></p>
+<a class="post-dummy-target" id="cosmos"></a><h3>Cosmos</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-cosmos-db-api-for-mongodb-supports-version-40/">Azure Cosmos DB API for MongoDB supports version 4.0</a> on  2021-03-02 17:00:18Z<br></p>
+<a class="post-dummy-target" id="big-data--ai"></a><h2>Big Data &amp; AI</h2>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-machine-learning-arc-enabled-machine-learning/">Azure Machine Learning - Arc enabled machine learning</a> on  2021-03-02 17:00:14Z<br></p>
+<a class="post-dummy-target" id="azure-purview"></a><h3>Azure Purview</h3>
+<p><a href="https://azure.microsoft.com/en-us/updates/public-preview-azure-purview-powered-search-in-azure-synapse-analytics-workspaces/">Public preview: Azure Purview powered search in Azure Synapse Analytics workspaces</a> on  2021-03-02 17:00:19Z<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/public-preview-scan-and-classify-amazon-aws-s3-data-using-azure-purview/">Public preview: Scan and classify Amazon AWS S3 data using Azure Purview</a> on  2021-03-02 17:00:20Z<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/scan-and-view-lineage-of-data-stored-in-sap-erp-and-oracle-db-using-azure-purview/">Scan and view lineage of data stored in SAP ERP and Oracle DB using Azure Purview</a> on  2021-03-02 17:00:19Z<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/public-preview-azure-purview-data-catalog-now-supports-hierarchical-glossary/">Public preview: Azure Purview Data Catalog now supports hierarchical glossary</a> on  2021-03-02 17:00:20Z<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/public-preview-azure-purview-bulk-edit-enhancements/">Public preview: Azure Purview Bulk Edit enhancements</a> on  2021-03-04 20:48:28Z<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/public-preview-azure-purview-resource-set-configuration-enhancements/">Public preview: Azure Purview Resource Set configuration enhancements</a> on  2021-03-03 17:00:18Z<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/public-preview-register-azure-subscriptions-and-resource-groups-with-azure-purview/">Public preview: Register Azure subscriptions and Resource Groups with Azure Purview </a> on  2021-03-03 17:00:17Z<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-managed-instance-for-apache-cassandra-service-now-in-public-preview/">Azure Managed Instance for Apache Cassandra service now in public preview</a> on  2021-03-02 17:00:13Z<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-machine-learning-generally-available-announcements-at-ignite-march-2021/">Azure Machine Learning - Generally available announcements at Ignite, March 2021. </a> on  2021-03-02 17:00:14Z<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-stream-analytics-dedicated-now-generally-available/">Azure Stream Analytics Dedicated now generally available</a> on  2021-03-02 17:00:21Z<br></p>
+<a class="post-dummy-target" id="iot"></a><h2>IoT</h2>
+<p><a href="https://azure.microsoft.com/en-us/updates/device-update-for-iot-hub-in-public-preview/">Device Update for IoT Hub in public preview</a> on 2021-03-02 <br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-sphere-os-version-2102-update-1-is-now-available-for-evaluation/">Azure Sphere OS version 21.02 Update 1 is now available for evaluation</a> on  2021-03-01<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azure-sphere-version-2102-is-now-available/">Azure Sphere version 21.02 is now available </a> on 2021-03-04 <br></p>
+<a class="post-dummy-target" id="others"></a><h2>Others</h2>
+<p><a href="https://azure.microsoft.com/en-us/updates/azureremoterenderingga/">Azure Remote Rendering is now generally available </a> on  2021-03-02 17:00:25Z<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/azureobjectanchorspreview/">Azure Object Anchors is now in public preview</a> on  2021-03-02 17:00:24Z<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/general-availability-announcing-private-azure-marketplace/">General availability: Announcing private Azure Marketplace</a> on  2021-03-02 16:00:02Z<br></p>
+<p><a href="https://azure.microsoft.com/en-us/updates/microsoft-power-fx-the-opensource-lowcode-programming-language-is-in-public-preview/">Microsoft Power Fx: The open-source low-code programming language is in public preview</a> on  2021-03-02 17:00:25Z<br></p>
+
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>This article is updated with 2021-03-07</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://yonehub.y10e.com/2021/03/07/azupdate0306/index.md" target="_blank"></a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f03%2f07%2fazupdate0306%2f&amp;text=Azure%20Update%20-%202021.3.06&amp;via=y10exxx" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyonehub.y10e.com%2f2021%2f03%2f07%2fazupdate0306%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+    
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyonehub.y10e.com%2f2021%2f03%2f07%2fazupdate0306%2f&amp;title=Azure%20Update%20-%202021.3.06" target="_blank" title="Share on LinkedIn">
+            <i class="fab fa-linkedin fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://yonehub.y10e.com/tags/azureupdate/"><i class="fas fa-tag fa-fw"></i>azureupdate</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://yonehub.y10e.com/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://yonehub.y10e.com/2021/03/06/vsbuild/" class="prev" rel="prev" title="Visual Studio で build の実行ファイルをプロジェクトと別名にする"><i class="fas fa-angle-left fa-fw"></i>Visual Studio で build の実行ファイルをプロジェクトと別名にする</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            　　<div id="disqus_thread"></div>
+        <script>
+        
+
+        
+
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yonehub.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://yonehub.y10e.com/">Yusuke.Yoneda</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133674179-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>
