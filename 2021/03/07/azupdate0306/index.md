@@ -101,8 +101,7 @@ Azure Migrate で Azure VMware Solution の移行評価が対応
 [Public preview: Containerize and migrate apps to Azure Kubernetes Service with Azure Migrate: App Containerization ](https://azure.microsoft.com/en-us/updates/public-preview-containerize-and-migrate-apps-to-azure-kubernetes-service-with-azure-migrate-app-containerization/) on 2021-03-02<br>
 Azure Migrate で AKS 移行をサポートする App Containerization 機能が追加
 
-PaaS
----
+## PaaS
 ### APIM
 [General availability: Azure API Management now has named values integration with Azure Key Vault](https://azure.microsoft.com/en-us/updates/general-availability-azure-api-management-now-has-named-values-integration-with-azure-key-vault/) on  2021-03-03<br>
 
